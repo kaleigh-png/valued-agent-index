@@ -294,7 +294,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 
 <footer><div class="wrap">
   <span id="footStamp" class="tnum"></span>
-  <span>Valued Agent Reseller</span>
+  <span>Powered by <a href="https://brine.ai" target="_blank" rel="noopener">Brine AI</a></span>
 </div></footer>
 
 <script>
@@ -371,7 +371,6 @@ function viewIndex(){
     </div>
     <div class="fpanel" id="fpanel" ${S.fopen?'':'hidden'}>
       <div class="row"><span class="lbl">Must pass</span>${ORDER.map(k => `<button class="opt" type="button" data-must="${k}" aria-pressed="${S.must.includes(k)}">${esc(SHORT[k])}</button>`).join('')}</div>
-      <div class="row"><span class="lbl">Type</span>${['All','Agent','Framework'].map(t => `<button class="opt" type="button" data-type="${t}" aria-pressed="${S.type===t}">${t==='All'?'All':t+'s'}</button>`).join('')}</div>
       <div class="row"><span class="lbl">Sort</span>${[['rank','Rank'],['momentum','Momentum'],['reviews','Most reviewed']].map(([v,l]) => `<button class="opt" type="button" data-sort="${v}" aria-pressed="${S.sort===v}">${l}</button>`).join('')}</div>
     </div>
     <div class="count"><button class="linkbtn" id="reset" type="button" ${nf||S.industry!=='All'||S.q?'':'hidden'}>Clear all</button></div>
@@ -386,7 +385,7 @@ function viewIndex(){
     else { S[key] = v; document.querySelectorAll(`[${attr}]`).forEach(x => x.setAttribute('aria-pressed', x === b)); }
     renderRows(true); syncReset();
   });
-  setOpt('data-must', 'must', true); setOpt('data-type', 'type'); setOpt('data-sort', 'sort');
+  setOpt('data-must', 'must', true); setOpt('data-sort', 'sort');
   $('#reset').onclick = () => { Object.assign(S, {industry:'All', type:'All', must:[], q:'', sort:'rank'}); viewIndex(); };
   renderRows(false);
 }
@@ -539,10 +538,11 @@ function viewAgent(id){
         <h1 style="margin-top:10px">${esc(a.name)}</h1>
         <p>${esc(a.description)}</p>
         <div class="acts">
-          <a class="btn" href="#manage" id="mg">Manage it for me</a>
-          <button class="btn sec" type="button" id="cmpb">${inCmp ? '✓ Comparing' : 'Compare'}</button>
-          ${a.url ? `<a class="txt" href="${esc(a.url)}" target="_blank" rel="noopener">Website ›</a>` : ''}
-          ${a.repo_url ? `<a class="txt" href="${esc(a.repo_url)}" target="_blank" rel="noopener">Code ›</a>` : ''}
+          <a class="btn" href="#manage" id="mg">Get help with this agent</a>
+          ${g.open_source && a.repo_url ? `<a class="btn sec" href="${esc(a.repo_url)}" target="_blank" rel="noopener">Run it yourself ›</a>` : a.url ? `<a class="btn sec" href="${esc(a.url)}" target="_blank" rel="noopener">Get it from the maker ›</a>` : ''}
+          <button class="linkbtn" type="button" id="cmpb" style="font-size:15px">${inCmp ? '✓ Comparing' : 'Compare'}</button>
+          ${a.url && a.url !== a.repo_url ? `<a class="txt" href="${esc(a.url)}" target="_blank" rel="noopener">Website ›</a>` : ''}
+          ${a.repo_url && !(g.open_source && a.repo_url) ? `<a class="txt" href="${esc(a.repo_url)}" target="_blank" rel="noopener">Code ›</a>` : ''}
         </div>
       </div>
       <div class="big"><b>${a.score}</b><span>of 12 checks passed</span><div class="ubig" id="ubig">${userBig(a.id)}</div></div>
@@ -558,6 +558,7 @@ function viewAgent(id){
     <section class="sec-block" id="getit"><h2>How to get it <span class="tag-ns">Not scored</span></h2>
       <div class="callout"><div><h3>Manage it for me</h3><p>${provs(a.id,'managed').length ? `Run for customers by ${provs(a.id,'managed').map(plink).join(', ')}.` : (g.listed_managers||[]).length ? esc(g.listed_managers.join(', ')) : 'A provider sets it up and keeps it running for a monthly fee.'}</p></div><a class="btn" href="#manage" id="mg2">Request a provider</a></div>
       <div class="rows">
+        <div class="r"><div><div class="k">Do it yourself</div><div class="h">${g.open_source ? `Open source${a.license ? ` (${esc(a.license)})` : ''}${g.self_host ? ' · runs in your environment' : ''}. ${a.repo_url ? `<a href="${esc(a.repo_url)}" target="_blank" rel="noopener">Get the code ›</a>` : ''}` : 'Not open source. Use the maker\'s own version.'}</div></div>${yesno(g.open_source)}</div>
         <div class="r"><div><div class="k">Who resells it?</div><div class="h">${[...provs(a.id,'reseller').map(plink), ...g.listed_resellers.map(esc)].join(', ') || 'No reseller listed yet.'} <a href="#claim">Resell it ›</a></div></div></div>
         <div class="r"><div><div class="k">Maker has a reseller program</div></div>${yesno(g.reseller_program.answer)}</div>
         <div class="r"><div><div class="k">Referral only?</div><div class="h">They pay referrals but don't let you resell it.</div></div>${yesno(g.referral_program.answer && !g.reseller_program.answer && !g.listed_resellers.length)}</div>
@@ -589,7 +590,7 @@ function viewMethod(){
     <h1 style="margin-top:12px">How we score</h1>
     <p class="muted" style="font-size:19px;margin-top:16px">An agent gets on the list by trending and gets its rank from twelve yes/no checks. The same evidence always gives the same rank.</p>
     <h2>Who gets listed</h2>
-    <p>An agent joins when it is mentioned ${(S.run.min_sources_applied || S.run.min_sources_requested) === 1 ? 'on GitHub, Hacker News or Reddit' : `on at least ${S.run.min_sources_applied || S.run.min_sources_requested} of GitHub, Hacker News and Reddit`} in the last ${S.run.window_days} days. The list shows the top 50 by mentions, then by stars gained.</p>
+    <p>An agent here is software that does a job on someone's behalf. Lists, frameworks, SDKs, courses, benchmarks and news articles don't count. It joins when its code or its homepage is mentioned ${(S.run.min_sources_applied || S.run.min_sources_requested) === 1 ? 'on GitHub, Hacker News or Reddit' : `on at least ${S.run.min_sources_applied || S.run.min_sources_requested} of GitHub, Hacker News and Reddit`} in the last ${S.run.window_days} days. The list shows the top 50 by mentions, then by stars gained.</p>
     <h2>The 12 checks</h2>
     <p>Each check is Yes or No. A Yes needs a quote on a public page. Unknown counts as No.</p>
     <div class="rubric">${groups.map(g => `<div><b>${esc(g)}</b><ol>${S.run.checks.filter(c=>c.group===g).map(c=>`<li>${esc(c.question)}</li>`).join('')}</ol></div>`).join('')}</div>

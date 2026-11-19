@@ -22,6 +22,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Check the listing gate against fixed cases
+        run: python tests/test_gate.py
+
       - name: Run the scraper
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -30,7 +33,7 @@ jobs:
           python scraper.py --min-sources 1
 
       - name: Copy today's data into the site
-        run: cp data/agents.json data/run.json data/history.json site/
+        run: cp data/agents.json data/run.json data/history.json data/rejects.json site/
 
       # Pushing this commit is what publishes: Vercel watches the repo and
       # redeploys the site/ folder on every push to main.

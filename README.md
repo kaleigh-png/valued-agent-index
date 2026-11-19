@@ -1,7 +1,7 @@
 # Valued Agent Reseller: trending agent index (prototype)
 
 ## What it does
-1. **Finds trending agents.** It checks GitHub (agent repos ranked by stars gained), Hacker News and Reddit over the last 14 days. With the default `--min-sources 2`, an agent has to show up in at least 2 sources to be listed.
+1. **Finds trending agents.** It checks GitHub (agent repos ranked by stars gained), Hacker News and Reddit over the last 14 days. A candidate is a repo or a product homepage that describes itself as an agent or assistant; news articles only count as mentions, and lists, frameworks, SDKs, courses, benchmarks and templates are dropped (`AGENT_RX`, `NOT_AGENT_RX`, `ARTICLE_RX`). With the default `--min-sources 2`, an agent has to show up in at least 2 sources to be listed.
 2. **Collects public evidence.** That means the README and SECURITY.md, plus the agent's own site: home, /pricing, /security, /trust, /privacy, /docs, /customers and /changelog. It respects robots.txt.
 3. **Scores 12 yes/no checks with fixed rules (no AI).** A Yes needs a matching quote on a public page, and the quote and URL are saved. Unknown counts as No.
 4. **Orders the list.** Score first, then mentions, then stars gained, then name A to Z. The same data always produces the same order.

@@ -26,6 +26,10 @@ th{color:var(--muted);font-weight:500}
 <form id="f"><input id="k" type="password" placeholder="Admin key" autocomplete="off"><button type="submit">Load</button></form>
 <p class="msg" id="m"></p>
 <div id="out"></div>
+<h2>Today's list: why each agent is in</h2>
+<div id="list" class="msg">Loading…</div>
+<h2>Rejected this run</h2>
+<div id="rej" class="msg">Loading…</div>
 <script>
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const COLS = { claim: ['ts','role','agent','co','em','web','about','ev'], manage: ['ts','magent','mjob','mco','mem','provider'], pulse: ['ts','pem','pind'] };
@@ -41,6 +45,17 @@ async function load(key){
     ? `<table><tr>${COLS[k].map(c => `<th>${c}</th>`).join('')}</tr>${data[k].map(r => `<tr>${COLS[k].map(c => `<td>${esc(c === 'ts' ? String(r[c]).slice(0,16).replace('T',' ') : r[c])}</td>`).join('')}</tr>`).join('')}</table>`
     : '<p class="msg">None yet.</p>')).join('');
 }
+(async () => {
+  try {
+    const agents = await fetch('/agents.json', {cache:'no-store'}).then(r => r.json());
+    document.getElementById('list').outerHTML = `<table><tr><th>#</th><th>agent</th><th>score</th><th>kind</th><th>matched</th><th>sources</th><th>mentions</th></tr>${agents.map(x => `<tr><td>${x.rank}</td><td><a href="/#agent-${esc(x.id)}">${esc(x.name)}</a><br><span style="color:var(--muted)">${esc((x.description||'').slice(0,90))}</span></td><td>${x.score}</td><td>${esc((x.why||{}).kind||'')}</td><td>${esc((x.why||{}).matched||'')}${((x.why||{}).topics||[]).length ? ' · ' + esc(x.why.topics.join(', ')) : ''}</td><td>${esc((x.sources||[]).join(', '))}</td><td>${x.mentions_14d}</td></tr>`).join('')}</table>`;
+  } catch { document.getElementById('list').textContent = 'Could not load agents.json.'; }
+  try {
+    const r = await fetch('/rejects.json', {cache:'no-store'}); if (!r.ok) throw 0;
+    const d = await r.json();
+    document.getElementById('rej').outerHTML = `<p class="msg">${esc(d.rejected.length)} rejected on the run at ${esc(String(d.run_at).replace('T',' '))}</p><table><tr><th>candidate</th><th>reason</th><th>text</th></tr>${d.rejected.map(x => `<tr><td>${esc(x.key)}</td><td>${esc(x.reason)}</td><td style="color:var(--muted)">${esc(x.text)}</td></tr>`).join('')}</table>`;
+  } catch { document.getElementById('rej').textContent = 'No reject log published yet. It appears after the next daily run.'; }
+})();
 document.getElementById('f').onsubmit = e => { e.preventDefault(); load(document.getElementById('k').value.trim()); };
 try { const k = localStorage.getItem('admin-key'); if (k) { document.getElementById('k').value = k; load(k); } } catch {}
 </script>

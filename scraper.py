@@ -129,7 +129,63 @@ def src_reddit(window_days):
     return out
 
 
-# ------------------------------------------------------- entity resolution
+# ------------------------------------------------------- what counts
+# An agent here is a worker: software that does a job on someone's behalf.
+# Lists, frameworks, SDKs, courses, benchmarks and news articles are not.
+AGENT_RX = re.compile(r"\b(agents?|agentic|assistant|copilot|autonomous|automates?|automation)\b", re.I)
+NOT_AGENT_RX = re.compile(
+    r"\b(awesome|curated|list of|collection|framework|sdk|library|toolkit|boilerplate|template|starter|"
+    r"benchmark|leaderboard|dataset|eval(uation)?s?|paper|survey|course|tutorial|cheat ?sheet|guidance|guidelines|"
+    r"skills?|prompts?|plugins? for|examples?|cookbook|workshop|roadmap|interview|study notes|"
+    r"blog|newsletter|index(es)? (of|the)|directory|catalog|"
+    r"gateway|router|proxy|runtime|harness|headless browser|mcp server|search engine|protocol|"
+    r"orchestrat\w+|observability|tracing|memory layer)\b", re.I)
+# Agents built to deceive, evade or abuse are never listed, whatever their score.
+NEFARIOUS_RX = re.compile(
+    r"\b(stealth|undetectable|anti-?detect(ion)?|evade|evasion|bypass(es|ing)? (bot|captcha|detection|paywall|2fa|mfa|rate limit)|"
+    r"captcha (solver|solving|bypass)|passes? (every|all) bot detection|jailbreaks?|malware|ransomware|keylogger|"
+    r"credential (stealer|harvest\w*|dump\w*)|phishing|spam(ming|mer)?|fake (reviews?|followers|engagement|accounts?)|"
+    r"account (farming|creation bot)|sockpuppets?|botnet|ddos|exploit kit|carding|scalper|sniper bot|"
+    r"mass (dm|messag\w+)|auto-?(like|follow|comment)r?s?|cheat(s|ing)?|aimbot|crack(ed|ing)?)\b", re.I)
+ARTICLE_RX = re.compile(r"/(blog|news|post|posts|p|article|articles|story|stories|changelog|releases?|docs?|"
+                        r"research|press|newsroom|announc\w*|updates?|engineering|learn|guide|guides|"
+                        r"\d{4})(/|$)", re.I)
+
+
+REJECTS = []  # [{key, reason, text}] written to data/rejects.json after every run
+
+
+def reject(key, reason, text=""):
+    REJECTS.append({"key": key, "reason": reason, "text": (text or "")[:120]})
+
+
+def why_not_agent(text):
+    """None if the text describes an agent; otherwise the reason it does not."""
+    text = text or ""
+    n = NEFARIOUS_RX.search(text)
+    if n:
+        return f"safety: {n.group(0).lower()}"
+    m = NOT_AGENT_RX.search(text)
+    if m:
+        return f"describes itself as a {m.group(0).lower()}, not a worker"
+    if not AGENT_RX.search(text):
+        return "never calls itself an agent, assistant or copilot"
+    return None
+
+
+def looks_like_agent(text):
+    return why_not_agent(text) is None
+
+
+def is_product_url(url):
+    """A homepage or a GitHub repo, not an article or a deep page."""
+    p = urlparse(url)
+    if p.netloc.lower().removeprefix("www.") == "github.com":
+        return len([x for x in p.path.split("/") if x]) == 2
+    parts = [x for x in p.path.split("/") if x]
+    return len(parts) <= 1 and not ARTICLE_RX.search(p.path)
+
+
 SKIP_DOMAINS = {"youtube.com", "twitter.com", "x.com", "medium.com", "arxiv.org",
                 "substack.com", "linkedin.com", "techcrunch.com", "theverge.com",
                 "news.ycombinator.com", "huggingface.co", "docs.google.com"}
@@ -147,15 +203,27 @@ def key_for_url(url):
 
 
 def merge(mentions):
-    agents = {}
+    agents, loose = {}, []
     for m in mentions:
         k = m.get("key") or key_for_url(m["url"])
         if not k:
             continue
+        m["key"] = k
+        if m.get("repo") is None:
+            if not is_product_url(m["url"]):
+                loose.append(m)      # an article: counts as a mention, never makes a candidate
+                continue
+            r = why_not_agent(m["title"])
+            if r:
+                loose.append(m); reject(k, r, m["title"])
+                continue
         a = agents.setdefault(k, {"key": k, "mentions": [], "repo": None})
         a["mentions"].append(m)
         if m.get("repo"):
             a["repo"] = m["repo"]
+    for m in loose:
+        if m["key"] in agents:
+            agents[m["key"]]["mentions"].append(m)
     # fold a website record into its GitHub record when the repo lists it as homepage
     for k, a in list(agents.items()):
         if a["repo"] and a["repo"].get("homepage"):
@@ -222,8 +290,22 @@ def collect_pages(agent):
                     reachable = False
                 continue
             kind = path.strip("/") or "home"
+            if kind == "home":
+                agent["_meta"] = page_meta(r.text)
             pages.append({"url": base + path, "text": strip_html(r.text), "kind": kind})
     return pages
+
+
+def page_meta(html):
+    """Site name and one-line description from a homepage, for agents without a repo."""
+    def grab(rx):
+        m = re.search(rx, html, re.I | re.S)
+        return htmllib.unescape(re.sub(r"\s+", " ", m.group(1))).strip() if m else ""
+    name = grab(r'<meta[^>]+property=["\']og:site_name["\'][^>]+content=["\']([^"\']+)') \
+        or grab(r"<title[^>]*>([^<|–—-]{2,60})")
+    desc = grab(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']+)') \
+        or grab(r'<meta[^>]+property=["\']og:description["\'][^>]+content=["\']([^"\']+)')
+    return {"name": name.strip(), "description": desc[:200]}
 
 
 # ------------------------------------------------------------ the 12 checks
@@ -260,7 +342,8 @@ def quote_around(text, s, e, pad=90, reach=150, cap=320):
     else:
         end = text.find(" ", e + pad, hi)
         end, tail = (end, "…") if end != -1 else (e + pad, "…")
-    if lead and tail:                                    # no sentence either side: menu or badge text, keep it short
+    sentence_edge = bool(ends) or bool(m)
+    if not sentence_edge and end - start > 120:          # menu or badge text with no sentences: keep it short
         start = text.rfind(" ", max(0, s - 45), s) + 1 or max(0, s - 45)
         end = text.find(" ", e, min(len(text), e + 45))
         end = end if end != -1 else min(len(text), e + 45)
@@ -473,6 +556,18 @@ def main():
         if len(srcs) < min_sources:
             continue
         repo = ag["repo"] or {}
+        if repo:
+            blob = " ".join([repo.get("name") or "", repo.get("description") or "", " ".join(repo.get("topics", []))])
+            r = why_not_agent(blob) or (re.search(FRAMEWORK_RX, blob, re.I) and "describes itself as a framework")
+            if r:
+                reject(k, r, blob); continue
+            if (repo.get("stargazers_count") or 0) < 200 and not repo.get("homepage"):
+                reject(k, "under 200 stars and no homepage", blob); continue
+            ag["_why"] = {"kind": "GitHub repo", "matched": AGENT_RX.search(blob).group(0).lower(),
+                          "topics": [t for t in repo.get("topics", []) if "agent" in t][:3]}
+        else:
+            title = next((m["title"] for m in ag["mentions"]), "")
+            ag["_why"] = {"kind": "product site", "matched": (AGENT_RX.search(title) or AGENT_RX.search("agent")).group(0).lower(), "topics": []}
         stars = repo.get("stargazers_count")
         age = max(1.0, days_ago(repo["created_at"])) if repo.get("created_at") else None
         if stars is not None and k in snap7:
@@ -495,9 +590,19 @@ def main():
         print(f"[{i}/{len(rows)}] {ag['key']}", file=sys.stderr)
         repo = ag["repo"] or {}
         pages = collect_pages(ag)
+        hit = next((h for h in (NEFARIOUS_RX.search(pg["text"][:6000]) for pg in pages if pg["kind"] in ("readme", "home")) if h), None)
+        if hit:
+            reject(ag["key"], f"safety: {hit.group(0).lower()} on its own page"); continue
         checks = run_checks(ag, pages)
-        desc = repo.get("description") or next((m["title"] for m in ag["mentions"]), "")
-        name = repo.get("name") or ag["key"].split(":", 1)[1]
+        meta = ag.get("_meta") or {}
+        desc = repo.get("description") or meta.get("description") or next((m["title"] for m in ag["mentions"]), "")
+        name = repo.get("name") or meta.get("name") or ag["key"].split(":", 1)[1]
+        if not repo and not pages:
+            reject(ag["key"], "homepage could not be read"); continue
+        if not repo and meta.get("description"):
+            r = why_not_agent(" ".join([meta.get("name", ""), meta["description"], next((m["title"] for m in ag["mentions"]), "")]))
+            if r and NOT_AGENT_RX.search(meta["description"]):
+                reject(ag["key"], "its own homepage " + r, meta["description"]); continue
         blob = " ".join([desc, " ".join(repo.get("topics", []))])
         out.append({
             "id": re.sub(r"[^a-z0-9]+", "-", ag["key"].split(":", 1)[1].lower()).strip("-"),
@@ -506,12 +611,13 @@ def main():
             or ag["mentions"][0]["url"],
             "repo_url": repo.get("html_url"), "license": (repo.get("license") or {}).get("spdx_id"),
             "industry": classify(blob),
-            "type": "Framework" if re.search(FRAMEWORK_RX, blob, re.I) else "Agent",
+            "type": "Agent",
             "stars": ag["_stars"], "star_gain_7d": ag["_gain"], "momentum_basis": ag["_basis"],
             "sources": ag["_srcs"], "mentions_14d": ag["_buzz"],
             "mention_links": [{"source": m["source"], "title": m["title"], "url": m["url"],
                                "date": m["date"][:10]} for m in ag["mentions"]][:8],
             "pages_checked": [p["url"] for p in pages],
+            "why": ag.get("_why"),
             "checks": checks, "score": sum(1 for c in checks.values() if c["answer"]),
             "get_it": get_it(pages, checks, repo),
         })
@@ -527,6 +633,8 @@ def main():
     (OUT / "snapshots" / f"{TODAY}.json").write_text(json.dumps(
         {f"gh:{x['owner']}/{x['name']}".lower(): x["stars"] for x in out if x["stars"] is not None}))
     write_history(out)
+    (OUT / "rejects.json").write_text(json.dumps(
+        {"run_at": NOW.isoformat(timespec="minutes"), "rejected": REJECTS}, indent=1))
     (OUT / "run.json").write_text(json.dumps({
         "rubric_version": RUBRIC_VERSION, "run_at": NOW.isoformat(timespec="minutes"),
         "window_days": a.window, "min_sources_requested": a.min_sources,
