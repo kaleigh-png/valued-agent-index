@@ -1,0 +1,43 @@
+name: Daily agent index
+
+on:
+  schedule:
+    - cron: "17 10 * * *"   # every day at 10:17 UTC (5:17 AM Eastern)
+  workflow_dispatch:         # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-index
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run the scraper
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install requests
+          python scraper.py --min-sources 1
+
+      - name: Copy today's data into the site
+        run: cp data/agents.json data/run.json data/history.json site/
+
+      # Pushing this commit is what publishes: Vercel watches the repo and
+      # redeploys the site/ folder on every push to main.
+      - name: Save today's ranking to the repo (this is the archive)
+        run: |
+          git config user.name "agent-index-bot"
+          git config user.email "agent-index-bot@users.noreply.github.com"
+          git add data site
+          git commit -m "Daily index $(date -u +%F)" || echo "No changes"
+          git push

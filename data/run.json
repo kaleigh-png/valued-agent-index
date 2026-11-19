@@ -1,0 +1,75 @@
+{
+ "rubric_version": "1.0",
+ "run_at": "2026-11-19T13:47+00:00",
+ "window_days": 14,
+ "min_sources_requested": 2,
+ "min_sources_applied": 1,
+ "sources": {
+  "github": "ok",
+  "hackernews": "unreachable",
+  "reddit": "unreachable"
+ },
+ "checks": [
+  {
+   "id": "pricing",
+   "group": "Transparency",
+   "question": "Is pricing published?"
+  },
+  {
+   "id": "free",
+   "group": "Transparency",
+   "question": "Is there a free trial or free tier?"
+  },
+  {
+   "id": "docs",
+   "group": "Transparency",
+   "question": "Are the docs public?"
+  },
+  {
+   "id": "customer",
+   "group": "Proof",
+   "question": "Is there a named customer or case study?"
+  },
+  {
+   "id": "result",
+   "group": "Proof",
+   "question": "Is a measured result published?"
+  },
+  {
+   "id": "updated",
+   "group": "Proof",
+   "question": "Updated in the last 30 days?"
+  },
+  {
+   "id": "no_training",
+   "group": "Data & trust",
+   "question": "States it doesn't train on customer data?"
+  },
+  {
+   "id": "security_page",
+   "group": "Data & trust",
+   "question": "Is there a security page?"
+  },
+  {
+   "id": "certification",
+   "group": "Data & trust",
+   "question": "Third-party certification (SOC 2 Type II / ISO 27001)?"
+  },
+  {
+   "id": "your_env",
+   "group": "Data & trust",
+   "question": "Can it run in your environment?"
+  },
+  {
+   "id": "audit_logs",
+   "group": "Control",
+   "question": "Audit logs or activity history?"
+  },
+  {
+   "id": "human_approval",
+   "group": "Control",
+   "question": "Human approval step before it acts?"
+  }
+ ],
+ "agents": 50
+}
