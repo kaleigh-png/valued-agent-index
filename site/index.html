@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Valued Agent Reseller — trending AI agents, ranked on proof</title>
-<meta name="description" content="The AI agents everyone's talking about, ranked by twelve yes/no checks with public proof. Pricing, docs, security, customers and control, updated daily. No one pays for placement.">
+<title>Valued Agent Reseller: today's AI agent rankings</title>
+<meta name="description" content="Fifty trending AI agents, scored on twelve yes/no checks with a public source for every Yes. Updated daily. No one pays for placement.">
 <link rel="canonical" href="https://valuedagentreseller.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Valued Agent Reseller">
-<meta property="og:title" content="Valued Agent Reseller — trending AI agents, ranked on proof">
-<meta property="og:description" content="Twelve yes/no checks with public proof decide the rank. Updated daily. No one pays for placement.">
+<meta property="og:title" content="Valued Agent Reseller: today's AI agent rankings">
+<meta property="og:description" content="Fifty trending AI agents, scored on twelve yes/no checks with a public source for every Yes.">
 <meta property="og:url" content="https://valuedagentreseller.com/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231A1C20'/%3E%3Crect x='10' y='10' width='12' height='12' rx='2' fill='%23fff'/%3E%3C/svg%3E">
@@ -117,6 +117,7 @@ main{padding-block:0 140px;min-height:70vh}
 .sc{display:flex;flex-direction:column;gap:7px;align-items:flex-end}
 .sc .v{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
 .sc .v small{color:var(--muted);font-weight:400}
+.sc .us{font-size:12px;color:var(--muted);white-space:nowrap}
 .bar{width:100%;height:4px;border-radius:2px;background:var(--line);overflow:hidden}
 .bar i{display:block;height:100%;border-radius:2px;background:var(--up);transform-origin:left;animation:grow .7s cubic-bezier(.2,.7,.2,1) both}
 @keyframes grow{from{transform:scaleX(.35)}to{transform:none}}
@@ -153,6 +154,9 @@ main{padding-block:0 140px;min-height:70vh}
 .big{text-align:right}
 .big b{display:block;font-size:84px;font-weight:600;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
 .big span{font-size:14px;color:var(--muted)}
+.big .ubig{margin-top:18px}
+.big .ubig b{font-size:34px;letter-spacing:-.03em;line-height:1}
+.big .ubig a{font-size:14px}
 @media (max-width:700px){ .ahead{grid-template-columns:1fr} .big{text-align:left} .big b{font-size:64px} }
 .strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:36px}
 .strip>div{background:var(--soft);border-radius:14px;padding:14px 16px}
@@ -327,8 +331,8 @@ function viewIndex(){
   $('#app').innerHTML = `
     <section class="hero">
       <div class="eyebrow">Updated ${esc(nice(S.hist.latest))}</div>
-      <h1>The AI agents everyone's talking about. Ranked on proof.</h1>
-      <p>Trending puts an agent on the list. Twelve yes/no checks decide its rank, and every Yes links to its proof.</p>
+      <h1>Today's AI agent rankings</h1>
+      <p>Agents everyone is talking about this week. We run and score each to help you make a confident decision on whether you'd want to use them.</p>
       <div class="periods" role="group" aria-label="Time period">${PERIODS.map(([k,l,b]) => { const ok = !b || (dayAt(b) && dayAt(b) !== S.hist.latest); return `<button type="button" data-p="${k}" aria-pressed="${S.period===k}" ${ok?'':'disabled'} title="${ok?'':'Available from '+esc(availableFrom(b))}">${l}</button>`; }).join('')}</div>
       <div class="periodnote" id="pnote"></div>
     </section>
@@ -374,7 +378,7 @@ function renderRows(animate){
   if (pn) {
     const wk = dayAt(7);
     pn.textContent = S.period === 'now'
-      ? (wk && wk !== S.hist.latest ? `Arrows show movement since ${nice(wk)}.` : `The archive started ${nice(S.hist.first)}. Movement arrows appear after a week of daily runs.`)
+      ? (wk && wk !== S.hist.latest ? `Arrows show movement since ${nice(wk)}.` : 'Movement arrows appear after a week of daily runs.')
       : `The ranking as it stood on ${nice(dayAt(back))}.`;
   }
   $('#cnt').textContent = `${list.length} agent${list.length===1?'':'s'}`;
@@ -382,7 +386,7 @@ function renderRows(animate){
     <a class="item ${a.rank<=3?'top3':''} ${S.first?'enter':''}" role="listitem" data-id="${esc(a.id)}" href="${a._gone?'#index':'#agent-'+esc(a.id)}" style="${S.first?`animation-delay:${Math.min(i,12)*35}ms`:''}">
       <div class="rk"><b>${a.rank}</b>${a._mv ? `<span class="mv ${a._mv.cls}">${esc(a._mv.txt)}</span>` : ''}</div>
       <div class="nm"><b>${esc(a.name)}</b><span>${esc(a.description)}</span></div>
-      <div class="sc"><span class="v">${a.score} <small>of 12</small></span><div class="bar"><i style="width:${a.score/12*100}%"></i></div></div>
+      <div class="sc"><span class="v">${a.score} <small>of 12</small></span><div class="bar"><i style="width:${a.score/12*100}%"></i></div>${userScore(a.id) ? `<span class="us tnum">${userScore(a.id).pct}% · ${userScore(a.id).n} review${userScore(a.id).n===1?'':'s'}</span>` : ''}</div>
       <span class="chev" aria-hidden="true">›</span>
     </a>`).join('') : `<div class="empty"><h3>No agents match</h3>Try another industry or remove a filter.</div>`;
   S.first = false;
@@ -412,7 +416,7 @@ function viewCompare(){
   const groups = [...new Set(S.run.checks.map(c => c.group))];
   const yn = v => v ? '<span class="yes">✓</span>' : '<span class="no">—</span>';
   $('#app').innerHTML = `<a class="back" href="#index">‹ Rankings</a>
-    <div style="padding-top:28px"><h1>Compare</h1><p class="muted" style="font-size:19px;margin:12px 0 0">Same 12 checks, same evidence rules.</p></div>
+    <div style="padding-top:28px"><h1>Compare</h1></div>
     <div class="cmpwrap"><table class="cmpt">
       <thead><tr><th></th>${list.map(a => `<th><a href="#agent-${esc(a.id)}" style="color:var(--ink);font-size:19px;font-weight:600">${esc(a.name)}</a>
         <div class="${a.score===best?'bestc':''}" style="font-size:40px;font-weight:600;letter-spacing:-.04em;line-height:1.1;margin-top:6px">${a.score}<span style="font-size:15px;color:var(--muted);font-weight:400;letter-spacing:0"> of 12</span></div>
@@ -439,13 +443,23 @@ function histBlock(a){
     const W = 600, H = 120, max = Math.max(...pts.map(p => p.r), 10);
     const xy = pts.map((p,i) => [i/(pts.length-1)*(W-20)+10, (p.r-1)/(max-1)*(H-20)+10]);
     chart = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Rank over time"><polyline fill="none" stroke="var(--accent)" stroke-width="2.5" points="${xy.map(p=>p.join(',')).join(' ')}"/></svg>`;
-  } else chart = `<p class="muted small" style="margin:0">The rank line starts here. The archive began ${esc(nice(S.hist.first))}, and each daily run adds a point.</p>`;
+  } else chart = '';
   return `<div class="hist">${chart}<div class="hrow"><div>Today<b>#${a.rank}</b></div>${cell('Last week', dayAt(7))}${cell('1 month ago', dayAt(30))}<div>Days on the list<b>${pts.length}</b></div></div></div>`;
 }
-function revTxt(id){
+function userScore(id){
   const l = (S.reviews||{})[id] || [];
-  if (!l.length) return 'No reviews yet';
-  return `${Math.round(100 * l.filter(r => r.recommend === 'yes').length / l.length)}% recommend · ${l.length} review${l.length>1?'s':''}`;
+  if (!l.length) return null;
+  let yes = 0, all = 0;
+  l.forEach(r => QS.forEach(([k]) => { if (r[k]) { all++; if (r[k] === 'yes') yes++; } }));
+  return { pct: all ? Math.round(100 * yes / all) : 0, n: l.length };
+}
+function revTxt(id){
+  const u = userScore(id);
+  return u ? `${u.pct}% positive · ${u.n} review${u.n>1?'s':''}` : 'No reviews yet';
+}
+function userBig(id){
+  const u = userScore(id);
+  return u ? `<b>${u.pct}%</b><span>user score · ${u.n} review${u.n>1?'s':''}</span>` : `<a href="#reviews" class="rvlink">No reviews yet</a>`;
 }
 function viewAgent(id){
   const a = S.agents.find(x => x.id === id);
@@ -469,7 +483,7 @@ function viewAgent(id){
           ${a.repo_url ? `<a class="txt" href="${esc(a.repo_url)}" target="_blank" rel="noopener">Code ›</a>` : ''}
         </div>
       </div>
-      <div class="big"><b>${a.score}</b><span>of 12 checks proven</span></div>
+      <div class="big"><b>${a.score}</b><span>of 12 checks passed</span><div class="ubig" id="ubig">${userBig(a.id)}</div></div>
     </section>
     <div class="strip">${groups.map(gr => { const ks = ORDER.filter(k => meta[k].group === gr), y = ks.filter(k => a.checks[k].answer).length; return `<div><div class="k">${esc(gr)}</div><div class="v">${y} of ${ks.length}</div><div class="bar"><i style="width:${y/ks.length*100}%"></i></div></div>`; }).join('')}</div>
 
@@ -480,17 +494,17 @@ function viewAgent(id){
     </section>
 
     <section class="sec-block" id="getit"><h2>How to get it <span class="tag-ns">Not scored</span></h2>
-      <div class="callout"><div><h3>Manage it for me</h3><p>${(g.listed_managers||[]).length ? esc(g.listed_managers.join(', ')) : 'A provider sets it up, runs it and keeps it working, for one monthly price.'}</p></div><a class="btn" href="#manage" id="mg2">Request a provider</a></div>
+      <div class="callout"><div><h3>Manage it for me</h3><p>${(g.listed_managers||[]).length ? esc(g.listed_managers.join(', ')) : 'A provider sets it up and keeps it running for a monthly fee.'}</p></div><a class="btn" href="#manage" id="mg2">Request a provider</a></div>
       <div class="rows">
         <div class="r"><div><div class="k">Who resells it?</div><div class="h">${g.listed_resellers.length ? g.listed_resellers.map(esc).join(', ') : 'No reseller listed yet.'} <a href="#claim">Resell it ›</a></div></div></div>
         <div class="r"><div><div class="k">Maker has a reseller program</div></div>${yesno(g.reseller_program.answer)}</div>
-        <div class="r"><div><div class="k">Referral only?</div><div class="h">Referral terms but no reseller path.</div></div>${yesno(g.referral_program.answer && !g.reseller_program.answer && !g.listed_resellers.length)}</div>
+        <div class="r"><div><div class="k">Referral only?</div><div class="h">They pay referrals but don't let you resell it.</div></div>${yesno(g.referral_program.answer && !g.reseller_program.answer && !g.listed_resellers.length)}</div>
         <div class="r"><div><div class="k">Hosted on</div><div class="h">${[g.hosted_by_maker.answer ? "The maker's cloud" : null, ...g.marketplaces].filter(Boolean).map(esc).join(' · ') || 'No hosted version found.'}</div></div>${yesno(g.hosted_by_maker.answer || g.marketplaces.length)}</div>
         <div class="r"><div><div class="k">Bring it to your platform</div><div class="h">${[g.open_source ? 'Open source' : null, g.self_host ? 'Self-host' : null, ...g.bring_your_own].filter(Boolean).map(esc).join(' · ') || 'No integration paths found.'}</div></div></div>
       </div>
     </section>
 
-    <section class="sec-block" id="history"><h2>Rank over time</h2><p class="lead">From daily runs. Nothing is estimated or back-filled.</p>${histBlock(a)}</section>
+    <section class="sec-block" id="history"><h2>Rank over time</h2>${histBlock(a)}</section>
 
     ${reviewsPanel(a)}
 
@@ -511,9 +525,9 @@ function viewMethod(){
   $('#app').innerHTML = `<div class="page">
     <div class="eyebrow">Rubric v${esc(S.run.rubric_version)}</div>
     <h1 style="margin-top:12px">How we score</h1>
-    <p class="muted" style="font-size:19px;margin-top:16px">Trending decides who gets listed. Twelve yes/no checks decide the order. The same evidence always produces the same rank.</p>
+    <p class="muted" style="font-size:19px;margin-top:16px">An agent gets on the list by trending and gets its rank from twelve yes/no checks. The same evidence always gives the same rank.</p>
     <h2>Who gets listed</h2>
-    <p>An agent joins when it is mentioned in at least ${S.run.min_sources_requested} different sources (GitHub, Hacker News, Reddit) in the last ${S.run.window_days} days. The list shows the top 50 by mentions, then by stars gained.</p>
+    <p>An agent joins when it is mentioned ${(S.run.min_sources_applied || S.run.min_sources_requested) === 1 ? 'on GitHub, Hacker News or Reddit' : `on at least ${S.run.min_sources_applied || S.run.min_sources_requested} of GitHub, Hacker News and Reddit`} in the last ${S.run.window_days} days. The list shows the top 50 by mentions, then by stars gained.</p>
     <h2>The 12 checks</h2>
     <p>Each check is Yes or No. A Yes needs a quote on a public page. Unknown counts as No.</p>
     <div class="rubric">${groups.map(g => `<div><b>${esc(g)}</b><ol>${S.run.checks.filter(c=>c.group===g).map(c=>`<li>${esc(c.question)}</li>`).join('')}</ol></div>`).join('')}</div>
@@ -521,14 +535,14 @@ function viewMethod(){
     <ul><li>Score is the number of Yes answers out of 12. Every check counts the same.</li><li>Ties go to more mentions, then more stars gained, then name A to Z.</li></ul>
     <h2>History</h2>
     <p>Every daily run is saved. Movement arrows compare today with a week ago, and the archive shows past rankings exactly as they stood. Nothing is estimated or back-filled.</p>
-    <h2>What keeps it neutral</h2>
-    <ul><li>No one pays for rank. Managed providers, resellers and hosting never change a score.</li><li>User reviews sit beside the score and never change it.</li><li>Makers can add evidence, not edit answers or scores.</li><li>Rubric changes get a new version number and date.</li><li>The scraper reads public pages only and respects robots.txt.</li></ul>
+    <h2>The rules</h2>
+    <ul><li>No one pays for rank. Managed providers, resellers and hosting never change a score.</li><li>User reviews are shown next to the score and never change it.</li><li>Makers can add evidence, not edit answers or scores.</li><li>Rubric changes get a new version number and date.</li><li>The scraper reads public pages only and respects robots.txt.</li></ul>
     <h2>Known limits</h2>
     <p>Checks match text, so unusual wording can read as No, and an aside can occasionally read as Yes. Makers can fix both by claiming their listing.</p>
   </div>`;
 }
 function formShell(eyebrow, title, lede, formHtml, asideTitle, items){
-  $('#app').innerHTML = `<div class="page" style="max-width:none"><div style="max-width:640px"><div class="eyebrow">${eyebrow}</div><h1 style="margin-top:12px">${title}</h1><p class="muted" style="font-size:19px;margin-top:16px">${lede}</p></div>
+  $('#app').innerHTML = `<div class="page" style="max-width:none"><div style="max-width:640px"><div class="eyebrow">${eyebrow}</div><h1 style="margin-top:12px">${title}</h1>${lede ? `<p class="muted" style="font-size:19px;margin-top:16px">${lede}</p>` : ''}</div>
     <div class="formgrid"><form class="card" id="f" novalidate>${formHtml}<div id="done" hidden></div></form>
     <div style="padding:8px 4px"><h3>${asideTitle}</h3><ul style="padding-left:18px;color:var(--muted)">${items.map(i => `<li style="margin:8px 0">${i}</li>`).join('')}</ul></div></div></div>`;
   $('#f').onsubmit = e => {
@@ -540,18 +554,18 @@ function formShell(eyebrow, title, lede, formHtml, asideTitle, items){
   };
 }
 const agentOptions = sel => S.agents.map(a => `<option value="${esc(a.id)}" ${a.id===sel?'selected':''}>${esc(a.name)}</option>`).join('');
-const viewManage = () => formShell('Managed agents', 'Manage it for me', 'Tell us the agent and the job. A provider who already runs it for other customers sets it up and keeps it working, for one monthly price.',
-  `<label for="magent">Agent<select id="magent">${agentOptions(S.pick)}</select></label><label for="mjob">The job you want done<textarea id="mjob" rows="3" required placeholder="Draft first-pass proposal responses from our past bids"></textarea></label><div class="two"><label for="mco">Company<input id="mco" required autocomplete="organization"></label><label for="mem">Work email<input id="mem" type="email" required autocomplete="email"></label></div><button class="btn" type="submit">Request a provider</button>`,
+const viewManage = () => formShell('Managed agents', 'Manage it for me', 'Tell us what you need done and, if you know it, which agent. A provider who already runs it for other customers will set it up and keep it running for a monthly fee.',
+  `<label for="magent">Agent<select id="magent"><option value="general" ${S.pick ? '' : 'selected'}>General request (no specific agent)</option>${agentOptions(S.pick)}</select></label><label for="mjob">The job you want done<textarea id="mjob" rows="3" required placeholder="Draft first-pass proposal responses from our past bids"></textarea></label><div class="two"><label for="mco">Company<input id="mco" required autocomplete="organization"></label><label for="mem">Work email<input id="mem" type="email" required autocomplete="email"></label></div><button class="btn" type="submit">Request a provider</button>`,
   'What managed includes', ["Setup in your environment or the provider's.", 'Monitoring, fixes and updates.', 'A named person you can call.', "Your provider never changes an agent's rank."]);
 const viewClaim = () => formShell('For makers, providers and resellers', 'Claim a listing', 'Makers add evidence to their agent page. Providers and resellers list the agents they run or sell. None of it changes the score.',
   `<label for="role">I am<select id="role"><option>The maker of this agent</option><option>A provider who manages it for customers</option><option>A reseller who sells it</option><option>A referral partner</option></select></label><label for="agent">Agent<select id="agent">${agentOptions(S.pick)}</select></label><div class="two"><label for="co">Company<input id="co" required autocomplete="organization"></label><label for="em">Work email<input id="em" type="email" required autocomplete="email"></label></div><label for="ev">Evidence links, one per line<textarea id="ev" rows="3" placeholder="https://yourcompany.com/security"></textarea></label><button class="btn" type="submit">Submit claim</button>`,
   'What happens next', ['We confirm you work for the company.', 'New evidence is re-checked against the same 12 rules.', 'Providers and resellers appear under “How to get it”.']);
-const viewPulse = () => formShell('Weekly email', 'Agent Pulse', "Who moved up, who's new, and which checks flipped. One email, every Monday.",
+const viewPulse = () => formShell('Daily email', 'Agent Pulse', '',
   `<label for="pem">Email<input id="pem" type="email" required autocomplete="email"></label><label for="pind">Industries<select id="pind"><option>All industries</option>${[...new Set(S.agents.map(a=>a.industry))].sort().map(i=>`<option>${esc(i)}</option>`).join('')}</select></label><button class="btn" type="submit">Subscribe</button>`,
   "What's in it", ['Biggest movers by industry.', 'New agents on the list.', 'Checks that flipped from No to Yes.']);
 
 /* ---------- reviews (shared, stored outside the page) ---------- */
-S.reviews = {}; S.dbState = 'loading'; S.canWrite = false;
+S.reviews = {}; S.dbState = 'loading';
 const QS = [['did_job','Did it do the job you needed?'],['production','Running in production today?'],['recommend','Would you recommend it?'],['fast_setup','Live in under a week?'],['cost_ok','Cost what you expected?']];
 const ROLES = ['Executive','Operations','IT / Security','Engineering','Sales / Marketing','Finance / Legal','Other'];
 const SIZES = ['1–49','50–249','250–999','1,000–4,999','5,000+'];
@@ -560,7 +574,7 @@ const yn = v => v === 'yes' ? 'yes' : v === 'no' ? 'no' : null;
 const pick = (v, list) => list.includes(v) ? v : null;
 function reviewsPanel(a){
   return `<section class="sec-block" id="reviews"><h2>What users say <span class="tag-ns">Not scored</span></h2>
-    <p class="lead">Yes/no reviews from people who use it. Reviewers stay anonymous.</p>
+    <p class="lead">Yes/no reviews from people who use it. Reviewers stay anonymous. The user score is the share of Yes answers across every review.</p>
     <div id="rvBody"></div><div id="rvAction"></div>
     <form id="rf" hidden novalidate>
       <div class="two">
@@ -569,6 +583,7 @@ function reviewsPanel(a){
         <label for="rv-run">How you use it<select id="rv-run"><option value="">Choose…</option>${RUNS.map(r => `<option>${esc(r)}</option>`).join('')}</select></label>
       </div>
       <label for="rv-job">The job you use it for<input id="rv-job" maxlength="120" placeholder="Triage inbound security alerts"></label>
+      <label style="position:absolute;left:-9999px" aria-hidden="true">Website<input id="rv-website" tabindex="-1" autocomplete="off"></label>
       <div>${QS.map(([k,q]) => `<div class="ynq" role="radiogroup" aria-label="${esc(q)}"><span>${esc(q)}</span><span class="opts"><input type="radio" name="rv-${k}" id="rv-${k}-y" value="yes"><label for="rv-${k}-y">Yes</label><input type="radio" name="rv-${k}" id="rv-${k}-n" value="no"><label for="rv-${k}-n">No</label></span></div>`).join('')}</div>
       <label for="rv-comment">What should others know? (optional)<textarea id="rv-comment" rows="3" maxlength="600"></textarea></label>
       <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="submit" id="rv-save">Post review</button><button class="btn sec" type="button" id="rv-cancel">Cancel</button></div>
@@ -578,7 +593,7 @@ function reviewsPanel(a){
 function fillReviews(a){
   const body = $('#rvBody'); if (!body) return;
   if (S.dbState === 'loading') body.innerHTML = '<p class="muted" style="margin-top:20px">Loading reviews…</p>';
-  else if (S.dbState === 'off') body.innerHTML = '<p class="muted" style="margin-top:20px">Reviews open soon. For now the score stands on public evidence alone.</p>';
+  else if (S.dbState === 'off') body.innerHTML = '<p class="muted" style="margin-top:20px">Reviews aren\'t loading right now. Refresh to try again.</p>';
   else {
     const l = S.reviews[a.id] || [];
     body.innerHTML = !l.length ? '<p class="muted" style="margin-top:20px">No reviews yet. If you use this agent, be the first.</p>' : `
@@ -591,7 +606,7 @@ function fillReviews(a){
   const act = $('#rvAction'), form = $('#rf');
   if (!act || !form || !form.hidden) return;
   const mine = (S.reviews[a.id] || []).find(r => r.uid === S.uid);
-  act.innerHTML = S.dbState !== 'ok' ? '' : S.canWrite ? `<button class="btn sec" type="button" id="rv-open" style="margin-top:18px">${mine ? 'Update your review' : 'Write a review'}</button>` : '<p class="muted small" style="margin-top:14px">To leave a review, ask the page owner for Contributor access.</p>';
+  act.innerHTML = S.dbState !== 'ok' ? '' : `<button class="btn sec" type="button" id="rv-open" style="margin-top:18px">${mine ? 'Update your review' : 'Leave a review'}</button>`;
   const open = $('#rv-open');
   if (open) open.onclick = () => {
     form.hidden = false; act.innerHTML = '';
@@ -613,37 +628,38 @@ function bindReviews(a){
     if (QS.some(([k]) => !r[k])) { msg.textContent = 'Answer all five yes/no questions.'; return; }
     const btn = $('#rv-save'); btn.disabled = true; msg.textContent = 'Posting…';
     try {
-      const ref = S.db.doc('reviews/' + S.uid); const snap = await ref.get();
-      const cur = (snap.exists && snap.data()) || {}; cur[a.id] = r; await ref.set(cur);
-      form.hidden = true; msg.hidden = true; fillReviews(a);
-    } catch (err) {
-      msg.textContent = err && err.code === 'invalid_argument' ? "You don't have permission to post here. Ask the page owner for Contributor access." : "Your review didn't save. Check your connection and post again.";
+      const res = await fetch('/api/reviews', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...r, agent: a.id, uid: S.uid, website: $('#rv-website').value }) });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) { msg.textContent = out.error && out.error !== 'unavailable' ? out.error : "Your review didn't save. Check your connection and post again."; return; }
+      const l = (S.reviews[a.id] = (S.reviews[a.id] || []).filter(x => x.uid !== S.uid)); l.unshift(out.review);
+      form.hidden = true; msg.hidden = true; fillReviews(a); const ub = $('#ubig'); if (ub) ub.innerHTML = userBig(a.id);
+    } catch {
+      msg.textContent = "Your review didn't save. Check your connection and post again.";
     } finally { btn.disabled = false; }
   };
 }
 function refreshReviews(){
   const h = location.hash.slice(1);
-  if (h.startsWith('agent-')) { const a = S.agents.find(x => x.id === h.slice(6)); if (a) fillReviews(a); }
+  if (h.startsWith('agent-')) { const a = S.agents.find(x => x.id === h.slice(6)); if (a) { fillReviews(a); const ub = $('#ubig'); if (ub) ub.innerHTML = userBig(a.id); } }
   if (h === 'compare') viewCompare();
-  if ((!h || h === 'index') && S.sort === 'reviews') renderRows(true);
+  if (!h || h === 'index') renderRows(false);
+}
+function getUid(){
+  let u = store.get('var-uid');
+  if (!/^[a-f0-9]{32}$/.test(u || '')) { u = [...crypto.getRandomValues(new Uint8Array(16))].map(b => b.toString(16).padStart(2,'0')).join(''); store.set('var-uid', u); }
+  return u;
 }
 async function initReviews(){
-  const off = () => { S.dbState = 'off'; refreshReviews(); };
-  if (!window.claude || !window.claude.use) return off();
-  const timer = setTimeout(() => { if (S.dbState === 'loading') off(); }, 10000);
+  S.uid = getUid();
   try {
-    const [db, user] = await Promise.all([window.claude.use('db'), window.claude.use('user')]);
-    if (!db || !user) { clearTimeout(timer); return off(); }
-    S.db = db; S.uid = await user.id();
-    S.canWrite = !!S.uid && (await user.can('data.write')) !== false;
-    db.collection('reviews').onSnapshot(snap => {
-      clearTimeout(timer); S.dbState = 'ok';
-      const by = {};
-      snap.docs.forEach(d => { const data = d.data() || {}; Object.entries(data).forEach(([aid, r]) => { if (r && typeof r === 'object' && S.agents.some(x => x.id === aid)) (by[aid] = by[aid] || []).push({...r, uid: d.id}); }); });
-      Object.values(by).forEach(l => l.sort((x, y) => String(y.ts).localeCompare(String(x.ts))));
-      S.reviews = by; refreshReviews();
-    }, () => { clearTimeout(timer); off(); });
-  } catch { clearTimeout(timer); off(); }
+    const res = await fetch('/api/reviews', { cache: 'no-store' });
+    if (!res.ok) throw new Error(res.status);
+    const { byAgent } = await res.json();
+    S.reviews = {};
+    Object.entries(byAgent || {}).forEach(([aid, l]) => { if (S.agents.some(x => x.id === aid)) S.reviews[aid] = l; });
+    S.dbState = 'ok';
+  } catch { S.dbState = 'off'; }
+  refreshReviews();
 }
 
 /* ---------- routing ---------- */
