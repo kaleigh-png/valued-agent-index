@@ -1,6 +1,6 @@
 {
  "rubric_version": "1.0",
- "run_at": "2026-11-19T15:05+00:00",
+ "run_at": "2026-11-19T15:20+00:00",
  "window_days": 14,
  "min_sources_requested": 1,
  "min_sources_applied": 1,
@@ -89,5 +89,5 @@
    "question": "Human approval step before it acts?"
   }
  ],
- "agents": 50
+ "agents": 39
 }
