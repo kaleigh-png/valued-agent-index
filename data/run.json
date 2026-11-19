@@ -1,13 +1,15 @@
 {
  "rubric_version": "1.0",
- "run_at": "2026-11-19T15:20+00:00",
+ "run_at": "2026-11-19T15:41+00:00",
  "window_days": 14,
  "min_sources_requested": 1,
  "min_sources_applied": 1,
  "sources": {
   "github": "ok",
   "hackernews": "ok",
-  "reddit": "unreachable"
+  "reddit": "unreachable",
+  "producthunt": "no token",
+  "listings": "none"
  },
  "industries": [
   "Security",
@@ -25,6 +27,7 @@
   "Research & data",
   "Browser & computer use",
   "Operations & IT",
+  "Personal & everyday",
   "General purpose"
  ],
  "checks": [
@@ -89,5 +92,5 @@
    "question": "Human approval step before it acts?"
   }
  ],
- "agents": 39
+ "agents": 18
 }
