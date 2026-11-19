@@ -48,7 +48,7 @@
    "free": {
     "answer": true,
     "url": "https://socket.dev/pricing",
-    "quote": "e you& x27;ve already paid for. After that period, your account will be downgraded to the Free plan. Is there a discount available for yearly plans? Yes. If you choose to pay annually, you\u2019"
+    "quote": "After that period, your account will be downgraded to the Free plan."
    },
    "docs": {
     "answer": true,
@@ -58,12 +58,12 @@
    "customer": {
     "answer": true,
     "url": "https://socket.dev",
-    "quote": "kly 10,000+ Unique threat detections 300,000+ Code Repositories Protected 1.5M Trusted by Case Studies Security leaders love Socket See how we& x27;ve helped top companies protect their teams"
+    "quote": "\u2026Commits Secured Every Month 11.6M+ Supply chain risk signal 85+ Orgs Protected 27,000+ Attacks blocked weekly 10,000+ Unique threat detections 300,000+ Code Repositories Protected 1.5M Trusted by Case Studies Security leaders love Socket See how we've helped top companies protect their teams from supply chain attacks."
    },
    "result": {
     "answer": true,
     "url": "https://socket.dev/pricing",
-    "quote": "0 attack coverage Get Started Everything in Free, plus: Precomputed reachability analysis 60% fewer CVE false positives Risk-based priority scoring Slack security alerts Business Enterprise"
+    "quote": "\u20262,500 attack coverage Get Started Everything in Free, plus: Precomputed reachability analysis 60% fewer CVE false positives Risk-based priority scoring Slack security alerts Business Enterprise\u2026"
    },
    "updated": {
     "answer": false,
@@ -83,17 +83,17 @@
    "certification": {
     "answer": true,
     "url": "https://socket.dev",
-    "quote": "ct View All Company About Careers Events Socket Labs Investors Security Love Achievements SOC 2 Type 2 Raised $125M Fortune Cyber 60 Top Customers Company News Book a Demo Get Started Security"
+    "quote": "News Security Company Engineering Application Security Threat Research Product View All Company About Careers Events Socket Labs Investors Security Love Achievements SOC 2 Type 2 Raised $125M Fortune Cyber 60 Top Customers Company News Book a Demo Get Started Security that keeps pace with AI development What is Socket?"
    },
    "your_env": {
     "answer": true,
     "url": "https://socket.dev/pricing",
-    "quote": "in Business, plus: Function-level reachability analysis GitLab, Bitbucket, Azure DevOps & Self-Hosted Repos SCIM Provisioning & Audit Controls Private Slack Support & Migration Assistance B"
+    "quote": "\u2026in Business, plus: Function-level reachability analysis GitLab, Bitbucket, Azure DevOps & Self-Hosted Repos SCIM Provisioning & Audit Controls Private Slack Support & Migration Assistance Buy\u2026"
    },
    "audit_logs": {
     "answer": true,
     "url": "https://socket.dev/docs",
-    "quote": "rity Policies License Policy Threat Feed Package Search Users Settings API Tokens Billing Audit Log Integrations Slack Vanta SSO (Single Sign-On) Integrations SCIM SSO (Single Sign-On) sing"
+    "quote": "\u2026Security Policies License Policy Threat Feed Package Search Users Settings API Tokens Billing Audit Log Integrations Slack Vanta SSO (Single Sign-On) Integrations SCIM SSO (Single Sign-On) single-sign-on\u2026"
    },
    "human_approval": {
     "answer": false,
@@ -180,12 +180,12 @@
    "pricing": {
     "answer": true,
     "url": "https://www.tinyfish.ai",
-    "quote": "s. In the Artificial Analysis Search Index, with the same LLM for every provider, that is $0.0093 per task on average, the lowest of any search API. Cost per task Search fee + model cost (USD) Sea"
+    "quote": "In the Artificial Analysis Search Index, with the same LLM for every provider, that is $0.0093 per task on average, the lowest of any search API."
    },
    "free": {
     "answer": true,
     "url": "https://www.tinyfish.ai/pricing",
-    "quote": "Pay only for what you run. No plans, no minimums, and a contract when you need more. Get started for free Core APIs TinySearch Free $0.00 per request Live web results, ranked and structured Ranke"
+    "quote": "Get started for free Core APIs TinySearch Free $0.00 per request Live web results, ranked and structured Ranked\u2026"
    },
    "docs": {
     "answer": true,
@@ -195,12 +195,12 @@
    "customer": {
     "answer": true,
     "url": "https://www.tinyfish.ai",
-    "quote": "are goal-oriented agents, not just tools. \u201d Ankshuk R. Specialist Programmer \u00b7 Enterprise Customer stories Simple pricing for real web work. Get $8 free See full pricing TinySearch Free TinyFetch"
+    "quote": "Specialist Programmer \u00b7 Enterprise Customer stories Simple pricing for real web work."
    },
    "result": {
     "answer": true,
     "url": "https://www.tinyfish.ai",
-    "quote": "uilds AI agent solutions that deliver real results. \u201d Jonathan Lam Senior Program Manager 98.6% less manual work \u201c We have a lot of data already, but we were missing genuine crowd-sourced se"
+    "quote": "\u201d Jonathan Lam Senior Program Manager 98.6% less manual work \u201c We have a lot of data already, but we were missing genuine crowd-sourced sentiment."
    },
    "updated": {
     "answer": false,
@@ -220,7 +220,7 @@
    "certification": {
     "answer": true,
     "url": "https://www.tinyfish.ai/pricing",
-    "quote": "security review. Talk to sales Adds \u2013 Rate limits and concurrency set to your workload \u2013 ISO 27001 \u2013 Enterprise SSO \u2013 Audit logs \u2013 VPC deployment \u2013 99.99% uptime SLA Everything a run needs"
+    "quote": "Talk to sales Adds \u2013 Rate limits and concurrency set to your workload \u2013 ISO 27001 \u2013 Enterprise SSO \u2013 Audit logs \u2013 VPC deployment \u2013 99.99% uptime SLA Everything a run needs For TinyAgent and TinyBrowser LLM inference TinyAgent The model the agent reasons with."
    },
    "your_env": {
     "answer": false,
@@ -230,7 +230,7 @@
    "audit_logs": {
     "answer": true,
     "url": "https://www.tinyfish.ai/pricing",
-    "quote": "es Adds \u2013 Rate limits and concurrency set to your workload \u2013 ISO 27001 \u2013 Enterprise SSO \u2013 Audit logs \u2013 VPC deployment \u2013 99.99% uptime SLA Everything a run needs For TinyAgent and TinyBrowser"
+    "quote": "Talk to sales Adds \u2013 Rate limits and concurrency set to your workload \u2013 ISO 27001 \u2013 Enterprise SSO \u2013 Audit logs \u2013 VPC deployment \u2013 99.99% uptime SLA Everything a run needs For TinyAgent and TinyBrowser LLM inference TinyAgent The model the agent reasons with."
    },
    "human_approval": {
     "answer": false,
@@ -253,7 +253,7 @@
    "hosted_by_maker": {
     "answer": true,
     "url": "https://www.tinyfish.ai/pricing",
-    "quote": "cing Pay only for what you run. No plans, no minimums, and a contract when you need more. Get started for free Core APIs TinySearch Free $0.00 per request Live web results, ranked and structured Ranke"
+    "quote": "Get started for free Core APIs TinySearch Free $0.00 per request Live web results, ranked and structured Ranked\u2026"
    },
    "marketplaces": [],
    "bring_your_own": [
@@ -312,12 +312,12 @@
    "pricing": {
     "answer": true,
     "url": "https://www.anthropic.com/pricing",
-    "quote": "ct your apps and tools Create Artifacts Claude Design, Slides, Docs Pro For everyday work $17 Per month with annual subscription discount ( $200 billed up front). $20 if billed monthly. Try Cla"
+    "quote": "\u2026Connect your apps and tools Create Artifacts Claude Design, Slides, Docs Pro For everyday work $17 Per month with annual subscription discount ( $200 billed up front)."
    },
    "free": {
     "answer": true,
     "url": "https://www.anthropic.com/pricing",
-    "quote": "lan Plans and usage What do I get with Claude Pro? The Pro plan gives you everything in a Free plan with more usage and more of Claude& x27;s capabilities. That includes Claude Code, along"
+    "quote": "The Pro plan gives you everything in a Free plan with more usage and more of Claude's capabilities."
    },
    "docs": {
     "answer": true,
@@ -327,12 +327,12 @@
    "customer": {
     "answer": true,
     "url": "https://www.anthropic.com/pricing",
-    "quote": "Browse marketplace Customers Contact sales Resources Insights Resources Articles Webinars Customer stories Marketplace Anthropic news Learn Claude Academy Courses Tutorials Use cases Connect Event"
+    "quote": "\u2026Browse marketplace Customers Contact sales Resources Insights Resources Articles Webinars Customer stories Marketplace Anthropic news Learn Claude Academy Courses Tutorials Use cases Connect Events\u2026"
    },
    "result": {
     "answer": true,
     "url": "https://www.anthropic.com",
-    "quote": "ing Claude Opus 5.5 Claude Opus 5.5 leads in agentic coding and knowledge work, and costs 40% less to run than Opus 5 on typical workloads. Model Details Opus System Card View Read announc"
+    "quote": "Model Details Fable Mythos System Card View Read announcement Announcements Sep 22, 2026 Introducing Claude Opus 5.5 Claude Opus 5.5 leads in agentic coding and knowledge work, and costs 40% less to run than Opus 5 on typical workloads."
    },
    "updated": {
     "answer": false,
@@ -357,12 +357,12 @@
    "your_env": {
     "answer": true,
     "url": "https://www.anthropic.com/pricing",
-    "quote": "ise (self-serve) Enterprise (sales-assisted) Fable More information 50% of weekly limits on premium seats Yes Yes Opus Yes Yes Yes Sonnet Yes Yes Yes Haiku Yes Yes Yes Context window Mor"
+    "quote": "\u2026Enterprise (self-serve) Enterprise (sales-assisted) Fable More information 50% of weekly limits on premium seats Yes Yes Opus Yes Yes Yes Sonnet Yes Yes Yes Haiku Yes Yes Yes Context window More\u2026"
    },
    "audit_logs": {
     "answer": true,
     "url": "https://www.anthropic.com/pricing",
-    "quote": "access with fine grained permissioning System for Cross-domain Identity Management (SCIM) Audit logs Compliance API for observability and monitoring Custom data retention controls Network-le"
+    "quote": "All Team plan features, plus: Admins set user and org spend limits Role-based access with fine grained permissioning System for Cross-domain Identity Management (SCIM) Audit logs Compliance API for observability and monitoring Custom data retention controls Network-level access control IP allowlisting HIPAA-ready\u2026"
    },
    "human_approval": {
     "answer": false,
@@ -375,7 +375,7 @@
    "reseller_program": {
     "answer": true,
     "url": "https://www.anthropic.com/privacy",
-    "quote": "eedback Study Participation Data Inputs and Outputs Data provided through the Development Partner Program Scientific Research Consent Legitimate interests It is in our legitimate interests and in"
+    "quote": "Feedback Study Participation Data Inputs and Outputs Data provided through the Development Partner Program Scientific Research Consent Legitimate interests It is in our legitimate interests and in\u2026"
    },
    "referral_program": {
     "answer": false,
@@ -446,12 +446,12 @@
    "pricing": {
     "answer": true,
     "url": "https://expo.dev/pricing",
-    "quote": "nfidently with predictable pricing Free For solo developers working on a passion project. $ 0 /MONTH Start for free Includes: 15 Android and 15 iOS builds Low-priority queue 60 min. on CI/CD"
+    "quote": "$ 0 /MONTH Start for free Includes: 15 Android and 15 iOS builds Low-priority queue 60 min."
    },
    "free": {
     "answer": true,
     "url": "https://expo.dev/pricing",
-    "quote": "ith predictable pricing Free For solo developers working on a passion project. $ 0 /MONTH Start for free Includes: 15 Android and 15 iOS builds Low-priority queue 60 min. on CI/CD Workflows Subm"
+    "quote": "$ 0 /MONTH Start for free Includes: 15 Android and 15 iOS builds Low-priority queue 60 min."
    },
    "docs": {
     "answer": true,
@@ -471,7 +471,7 @@
    "updated": {
     "answer": true,
     "url": "https://expo.dev/changelog",
-    "quote": "Services Contact AI Enterprise Pricing Blog 50K Log in Sign up Changelog Follow Subscribe November 18, 2026 / Read more \u2192 The Expo Services App is out: Workflows, Observe and Expo Simulators on you"
+    "quote": "\u2026Services Contact AI Enterprise Pricing Blog 50K Log in Sign up Changelog Follow Subscribe November 18, 2026 / Read more \u2192 The Expo Services App is out: Workflows, Observe and Expo Simulators on your\u2026"
    },
    "no_training": {
     "answer": false,
@@ -486,7 +486,7 @@
    "certification": {
     "answer": true,
     "url": "https://expo.dev",
-    "quote": "@expo Build beautiful native apps Get started Recommended by Meta React Foundation Member SOC 2 Type II Compliant GDPR Compliant CCPA Compliant SSO Recommended by Meta React Foundation Member S"
+    "quote": "Patrick Aljord @patcito Just use @expo Build beautiful native apps Get started Recommended by Meta React Foundation Member SOC 2 Type II Compliant GDPR Compliant CCPA Compliant SSO Recommended by Meta React Foundation Member SOC\u2026"
    },
    "your_env": {
     "answer": false,
@@ -496,7 +496,7 @@
    "audit_logs": {
     "answer": true,
     "url": "https://expo.dev/security",
-    "quote": "tem. Supported identify providers include Okta, OneLogin, Google, and Microsoft Entra ID. Audit logging Audit logs of administrative activities are available for Enterprise subscribers. The"
+    "quote": "Audit logging Audit logs of administrative activities are available for Enterprise subscribers."
    },
    "human_approval": {
     "answer": false,
@@ -519,7 +519,7 @@
    "hosted_by_maker": {
     "answer": true,
     "url": "https://expo.dev/customers",
-    "quote": "pp with a three-person React team Read story The framework behind thousands of companies. Get started for free Talk to our team Site footer Newsletter Stay in touch with all things Expo Subscribe Prod"
+    "quote": "Get started for free Talk to our team Site footer Newsletter Stay in touch with all things Expo Subscribe Product\u2026"
    },
    "marketplaces": [],
    "bring_your_own": [
@@ -588,7 +588,7 @@
    "free": {
     "answer": true,
     "url": "https://gitlab.com",
-    "quote": "ter Newsletter Contact us Talk to sales Support portal Customer portal Request a demo Get free trial Sign in English Deutsch Espa\u00c3\u00b1ol Fran\u00c3\u00a7ais Italiano \u00e6\u0097\u00a5\u00e6\u009c\u00ac\u00e8\u00aa\u009e Portugu\u00c3\u00aas Get free trial G"
+    "quote": "\u2026About Jobs Press Handbook Leadership Investor relations Trust Center AI Transparency Center Newsletter Contact us Talk to sales Support portal Customer portal Request a demo Get free trial Sign in English Deutsch Espa\u00c3\u00b1ol Fran\u00c3\u00a7ais Italiano \u00e6\u0097\u00a5\u00e6\u009c\u00ac\u00e8\u00aa\u009e Portugu\u00c3\u00aas Get free trial GitLab Orbit is generally available."
    },
    "docs": {
     "answer": true,
@@ -603,7 +603,7 @@
    "result": {
     "answer": true,
     "url": "https://gitlab.com",
-    "quote": "or Federal security standards, air-gapped deployment, and compliance evidence by default. 13x faster security scanning Telecommunications Scale network infrastructure with confidence. Suppor"
+    "quote": "13x faster security scanning Telecommunications Scale network infrastructure with confidence."
    },
    "updated": {
     "answer": false,
@@ -633,7 +633,7 @@
    "audit_logs": {
     "answer": true,
     "url": "https://gitlab.com",
-    "quote": "me gates, no exceptions. 03 Traceability you can audit Every agent action shows up in the audit trail. No black box, no guessing what changed or who approved it. Migrate today Talk to sales B"
+    "quote": "03 Traceability you can audit Every agent action shows up in the audit trail."
    },
    "human_approval": {
     "answer": false,
@@ -714,12 +714,12 @@
    "pricing": {
     "answer": true,
     "url": "https://aircad.com/pricing",
-    "quote": "ber of places, open until January 31, 2027 or until they& x27;re taken. Pro, one user $29 $19 /month or $290 $190 a year \u00b7 Save 34 % with the Founder& x27;s Club Monthly Yearly Free For tryi"
+    "quote": "Pro, one user $29 $19 /month or $290 $190 a year \u00b7 Save 34 % with the Founder's Club Monthly Yearly Free For trying Aircad and personal projects."
    },
    "free": {
     "answer": true,
     "url": "https://aircad.com",
-    "quote": "ad: Online CAD for 2D Drafting and 3D Modeling Product Examples Docs Compare Blog Sign in Start for Free Draft, model, and document. Together. Precision 2D drafting and 3D modeling, with multipl"
+    "quote": "\u2026ad: Online CAD for 2D Drafting and 3D Modeling Product Examples Docs Compare Blog Sign in Start for Free Draft, model, and document."
    },
    "docs": {
     "answer": true,
@@ -764,7 +764,7 @@
    "audit_logs": {
     "answer": true,
     "url": "https://aircad.com",
-    "quote": "limited version history, so nothing is lost and any change can be traced back. A complete audit trail Every edit is kept with who made it and when, in an activity feed for the file. Compare a"
+    "quote": "A complete audit trail Every edit is kept with who made it and when, in an activity feed for the file."
    },
    "human_approval": {
     "answer": false,
@@ -849,7 +849,7 @@
    "pricing": {
     "answer": true,
     "url": "https://complexdiscovery.com",
-    "quote": "ess to Hosted Data User licensing is in an active state of structural transition. The $50\u2013$100 per user per month range is the most frequently cited (41.5%), but a striking 34.0% of respondents"
+    "quote": "The $50\u2013$100 per user per month range is the most frequently cited (41.5%), but a striking 34.0% of respondents report alternative pricing models \u2014 the highest alternative-model proportion among any category in the processing and hosting section."
    },
    "free": {
     "answer": false,
@@ -894,7 +894,7 @@
    "your_env": {
     "answer": true,
     "url": "https://complexdiscovery.com",
-    "quote": "imately 5.29 billion dollars in 2025 to approximately 8.87 billion dollars in 2030, while on-premise software grows from 1.37 billion to 2.08 billion. On-premise solutions persist where s"
+    "quote": "Off-premise software grows from approximately 5.29 billion dollars in 2025 to approximately 8.87 billion dollars in 2030, while on-premise software grows from 1.37 billion to 2.08 billion."
    },
    "audit_logs": {
     "answer": false,
@@ -904,7 +904,7 @@
    "human_approval": {
     "answer": true,
     "url": "https://complexdiscovery.com",
-    "quote": "50 per-document range emerging as a competitive zone that directly challenges traditional human review economics. This report covers all 25 survey questions, organized into four thematic secti"
+    "quote": "\u2026$0.11\u2013$0.50 per-document range emerging as a competitive zone that directly challenges traditional human review economics."
    }
   },
   "score": 4,
@@ -912,7 +912,7 @@
    "reseller_program": {
     "answer": true,
     "url": "https://complexdiscovery.com",
-    "quote": "ogy industry trade shows while developing and managing a $5.5 million events budget. As a Reseller Sales Consultant, she supported a network of more than 100 regional resellers across the"
+    "quote": "As a Reseller Sales Consultant, she supported a network of more than 100 regional resellers across the Midwest, with earlier roles including Sales Program Administrator."
    },
    "referral_program": {
     "answer": false,
@@ -922,7 +922,7 @@
    "hosted_by_maker": {
     "answer": true,
     "url": "https://complexdiscovery.com",
-    "quote": "firm change-of-control and data portability provisions before renewal. Organizations with managed services or managed review engagements at a combining provider should also ask how staffing, pric"
+    "quote": "Organizations with managed services or managed review engagements at a combining provider should also ask how staffing, pricing and service levels carry across the new owner."
    },
    "marketplaces": [],
    "bring_your_own": [],
@@ -943,8 +943,8 @@
   "license": "MIT",
   "industry": "General purpose",
   "type": "Framework",
-  "stars": 25538,
-  "star_gain_7d": 760,
+  "stars": 25544,
+  "star_gain_7d": 761,
   "momentum_basis": "estimated",
   "sources": [
    "github",
@@ -1045,7 +1045,7 @@
    "human_approval": {
     "answer": true,
     "url": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/README.md",
-    "quote": "w as a graph (explicit graph, parallel fan-out/fan-in, rollback edges, human-in-the-loop) Each phase takes about a week if you're going part-time. If you want to"
+    "quote": "\u2026workflow as a graph (explicit graph, parallel fan-out/fan-in, rollback edges, human-in-the-loop) Each phase takes about a week if you're going part-time."
    }
   },
   "score": 3,
@@ -1118,12 +1118,12 @@
    "pricing": {
     "answer": true,
     "url": "https://adeindex.com",
-    "quote": "iOS app Parallel agents Agent teams Remote session control \u00b7 beta \u00b7 paid tier only Price $50 /mo License GPL-3.0-or-later / BUSL-1.1 (server) \u00b7 Source-available Stars 28.8k Shipped 23d a"
+    "quote": "\u2026CLI iOS app Parallel agents Agent teams Remote session control \u00b7 beta \u00b7 paid tier only Price $50 /mo License GPL-3.0-or-later / BUSL-1.1 (server) \u00b7 Source-available Stars 28.8k Shipped 23d ago\u2026"
    },
    "free": {
     "answer": true,
     "url": "https://adeindex.com",
-    "quote": "d mobile Web iOS app Android app Parallel agents Worktree isolation Agent teams + 3 Price Free tier License Apache-2.0 Stars 24.3k Shipped 23h ago Web \u00b7 iOS app \u00b7 Android app Compare 2 in"
+    "quote": "All 240 1 in Desktop apps Paseo 52 getpaseo \u00b7 Desktop app Operate multiple coding agents from desktop and mobile Web iOS app Android app Parallel agents Worktree isolation Agent teams + 3 Price Free tier License Apache-2.0 Stars 24.3k Shipped 23h ago Web \u00b7 iOS app \u00b7 Android app Compare 2 in Desktop\u2026"
    },
    "docs": {
     "answer": false,
@@ -1163,7 +1163,7 @@
    "your_env": {
     "answer": true,
     "url": "https://adeindex.com",
-    "quote": "ilt 240 Desktop apps Paseo \u00b7 52 57 Terminal & TUI Herdr terminal workspace \u00b7 65 111 Web & self-hosted Paseo \u00b7 52 81 Remote & mobile Paseo \u00b7 52 Top agent workspaces Votes can only raise a sc"
+    "quote": "Four forms of agent workspace, each showing its highest Index score How the score is built 240 Desktop apps Paseo \u00b7 52 57 Terminal & TUI Herdr terminal workspace \u00b7 65 111 Web & self-hosted Paseo \u00b7 52 81 Remote & mobile Paseo \u00b7 52 Top agent workspaces Votes can only raise a score."
    },
    "audit_logs": {
     "answer": false,
@@ -1250,7 +1250,7 @@
    "free": {
     "answer": true,
     "url": "https://www.lorekit.io",
-    "quote": "s machines and teammates. Every memory is personal by default; org sharing is opt-in. The free plan holds 5,000 active memories at 120 requests a minute. Self-hosted Your own infrastructure"
+    "quote": "The free plan holds 5,000 active memories at 120 requests a minute."
    },
    "docs": {
     "answer": true,
@@ -1290,7 +1290,7 @@
    "your_env": {
     "answer": true,
     "url": "https://www.lorekit.io",
-    "quote": "fline guide Free \u00b7 5,000 memories Claude Code \u00b7 Cursor \u00b7 any MCP client Local, hosted, or self-hosted live demo Session A writes. Session B already knows. Two sessions, one store, no re-exp"
+    "quote": "Offline guide Free \u00b7 5,000 memories Claude Code \u00b7 Cursor \u00b7 any MCP client Local, hosted, or self-hosted live demo Session A writes."
    },
    "audit_logs": {
     "answer": false,
@@ -1449,7 +1449,7 @@
    "reseller_program": {
     "answer": true,
     "url": "https://europeanbusinessmagazine.com/docs",
-    "quote": "f accuracy, quality, and efficiency in their document processes. With BigHand acting as a reseller of DocStyle& 8217;s solutions, the client experience will be seamless, with BigHand provi"
+    "quote": "With BigHand acting as a reseller of DocStyle\u2019s solutions, the client experience will be seamless, with BigHand providing full implementation and support services directly."
    },
    "referral_program": {
     "answer": false,
@@ -1562,7 +1562,7 @@
    "your_env": {
     "answer": true,
     "url": "https://relatedb.ai",
-    "quote": "Your data Agent memory Codebase Recommendations Your own data Open source Read the code, run it locally, and add your own recipes. Part of your application Relate runs inside your application."
+    "quote": "\u2026writes Your data Agent memory Codebase Recommendations Your own data Open source Read the code, run it locally, and add your own recipes."
    },
    "audit_logs": {
     "answer": false,
@@ -1793,7 +1793,7 @@
    "result": {
     "answer": true,
     "url": "https://blog.atuin.sh",
-    "quote": "achine Start a task in Claude Code, then resume it in Codex 27 Oct 2026 Making Atuin sync 32x faster with packfiles Atuin sync is now 32x faster. We sync many thousands of records in single-"
+    "quote": "\u2026machine Start a task in Claude Code, then resume it in Codex 27 Oct 2026 Making Atuin sync 32x faster with packfiles Atuin sync is now 32x faster."
    },
    "updated": {
     "answer": false,
@@ -1818,7 +1818,7 @@
    "your_env": {
     "answer": true,
     "url": "https://blog.atuin.sh",
-    "quote": "ousands of records in single-digit seconds. 25 Aug 2026 Open Sourcing the Atuin AI Server Self host your own server for Atuin AI - the agent that lives in your terminal, and knows how you w"
+    "quote": "25 Aug 2026 Open Sourcing the Atuin AI Server Self host your own server for Atuin AI - the agent that lives in your terminal, and knows how you work 14 Jul 2026 Atuin v18.13 \u2013 better search, a PTY proxy, and AI for your shell A new release is out!"
    },
    "audit_logs": {
     "answer": false,
@@ -1919,7 +1919,7 @@
    "result": {
     "answer": true,
     "url": "https://brave.com",
-    "quote": "unk, you save Wi-Fi bandwidth and mobile data, battery life and CPU. And websites load 3x-6x faster. Less waiting = more time back in your day. Unparalleled privacy p]:pb-8 [& p]:leading-[3"
+    "quote": "And websites load 3x-6x faster."
    },
    "updated": {
     "answer": false,
@@ -1929,7 +1929,7 @@
    "no_training": {
     "answer": true,
     "url": "https://brave.com/privacy",
-    "quote": "e may cache large prompts to improve performance but these are deleted within minutes. We do not use your conversations for model training. Conversation history is stored locally on your device and (if you enable it) securely"
+    "quote": "We do not use your conversations for model training."
    },
    "security_page": {
     "answer": false,
@@ -2040,7 +2040,7 @@
    "customer": {
     "answer": true,
     "url": "https://developer.chrome.com",
-    "quote": "cumentation Baseline open in new web.dev open in new PageSpeed Insights audit open in new Case studies Blog New in Chrome / English Deutsch Espa\u00f1ol \u2013 Am\u00e9rica Latina Fran\u00e7ais Indonesia Italiano"
+    "quote": "All documentation Baseline open in new web.dev open in new PageSpeed Insights audit open in new Case studies Blog New in Chrome / English Deutsch Espa\u00f1ol \u2013 Am\u00e9rica Latina Fran\u00e7ais Indonesia Italiano\u2026"
    },
    "result": {
     "answer": false,
@@ -2164,12 +2164,12 @@
    "customer": {
     "answer": true,
     "url": "https://developers.googleblog.com",
-    "quote": "hot debugging, and direct publishing to your personal Google Play library. AI AI Homepage Case Studies Announcements Learn Explore Solve Gemini 4 Hydrogen: a faster model for general purpose r"
+    "quote": "AI AI Homepage Case Studies Announcements Learn Explore Solve Gemini 4 Hydrogen: a faster model for general purpose robotics\u2026"
    },
    "result": {
     "answer": true,
     "url": "https://developers.googleblog.com",
-    "quote": "A2UI now supports swappable inference formats, introducing A2UI Express which uses up to 3x fewer tokens and cuts latency by compiling compact Python-style syntax into standard A2UI JSON"
+    "quote": "\u2026formats A2UI now supports swappable inference formats, introducing A2UI Express which uses up to 3x fewer tokens and cuts latency by compiling compact Python-style syntax into standard A2UI JSON via Agent SDKs."
    },
    "updated": {
     "answer": false,
@@ -2580,7 +2580,7 @@
    "your_env": {
     "answer": true,
     "url": "https://www.tomshardware.com",
-    "quote": "uced his wife Alice Huang to Jensen and built $7.5 billion Nvidia AI GPU smuggling operation Premium members only \u00b7 November 13, 2026 NEWS ANALYSIS Google reworks TPU silicon into special"
+    "quote": "\u2026introduced his wife Alice Huang to Jensen and built $7.5 billion Nvidia AI GPU smuggling operation Premium members only \u00b7 November 13, 2026 NEWS ANALYSIS Google reworks TPU silicon into specialized\u2026"
    },
    "audit_logs": {
     "answer": false,
@@ -3292,7 +3292,9 @@
     "date": "2026-11-16"
    }
   ],
-  "pages_checked": [],
+  "pages_checked": [
+   "https://gizmodo.com"
+  ],
   "checks": {
    "pricing": {
     "answer": false,
@@ -5632,7 +5634,7 @@
   "url": "https://github.com/janestreet/agent_skills/blob/master/socratic-tutor/SKILL.md",
   "repo_url": null,
   "license": null,
-  "industry": "General purpose",
+  "industry": "Education",
   "type": "Agent",
   "stars": null,
   "star_gain_7d": null,
