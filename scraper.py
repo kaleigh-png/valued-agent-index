@@ -139,7 +139,8 @@ NOT_AGENT_RX = re.compile(
     r"skills?|prompts?|plugins? for|examples?|cookbook|workshop|roadmap|interview|study notes|"
     r"blog|newsletter|index(es)? (of|the)|directory|catalog|"
     r"gateway|router|proxy|runtime|harness|headless browser|mcp server|search engine|protocol|"
-    r"orchestrat\w+|observability|tracing|memory layer)\b", re.I)
+    r"orchestrat\w+|observability|tracing|memory layer|infrastructure|"
+    r"(cli|server|tool|tools|memory|sandbox|workspace|dashboard|ui|interface|model router) for (every |your |any |all |ai |coding |llm )*agents?)\b", re.I)
 # Agents built to deceive, evade or abuse are never listed, whatever their score.
 NEFARIOUS_RX = re.compile(
     r"\b(stealth|undetectable|anti-?detect(ion)?|evade|evasion|bypass(es|ing)? (bot|captcha|detection|paywall|2fa|mfa|rate limit)|"

@@ -15,6 +15,8 @@ AGENTS = [  # must be accepted
     "AI assistant that triages your inbox and drafts replies",
     "Autonomous agent that files expense reports",
     "Clone any viral video with AI agents",
+    "An on-device AI agent for Android that operates apps and the web to get things done",
+    "Run agents like Hermes and Deep Agents more securely, in a sandbox",
 ]
 NOT_AGENTS = [  # must be rejected
     "Awesome list of AI agents",
@@ -31,6 +33,9 @@ NOT_AGENTS = [  # must be rejected
     "Stealth Chromium that passes every bot detection test, built for AI agents",
     "Jailbreak any model with this autonomous agent",
     "Agent that posts fake reviews at scale",
+    "Computer use CLI for AI agents",
+    "One shared memory for every coding agent on your team",
+    "Infrastructure for continually self-improving agents",
 ]
 PRODUCT_URLS = ["https://tinyfish.ai", "https://github.com/foo/bar", "https://example.com/?utm=hn"]
 ARTICLE_URLS = [
