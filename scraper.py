@@ -55,10 +55,15 @@ def days_ago(iso):
 
 
 # ---------------------------------------------------------------- sources
-GITHUB_QUERIES = [
-    "topic:ai-agents", "topic:ai-agent", "topic:agentic-ai",
-    "topic:llm-agent", "topic:autonomous-agents", "agent in:name,description topic:llm",
-]
+GITHUB_QUERIES = [  # (query, minimum stars). Business jobs are rarer on GitHub, so their bar is lower.
+    ("topic:ai-agents", 200), ("topic:ai-agent", 200), ("topic:agentic-ai", 200),
+    ("topic:autonomous-agents", 200), ("agent in:name,description topic:llm", 200),
+] + [(f'"{job}" agent in:name,description,readme', 40) for job in [
+    "proposal", "rfp", "grant", "compliance", "audit", "contract", "legal", "recruiting", "resume screening",
+    "hiring", "invoice", "bookkeeping", "accounting", "customer support", "help desk", "sales", "outreach",
+    "lead generation", "crm", "marketing", "procurement", "inventory", "scheduling", "email", "insurance",
+    "real estate", "patient", "executive assistant", "virtual assistant", "data entry",
+]]
 
 
 def src_github(window_days):
@@ -66,9 +71,9 @@ def src_github(window_days):
     since = (NOW - dt.timedelta(days=window_days)).date().isoformat()
     created = (NOW - dt.timedelta(days=365)).date().isoformat()
     found = {}
-    for q in GITHUB_QUERIES:
+    for q, min_stars in GITHUB_QUERIES:
         url = ("https://api.github.com/search/repositories?q="
-               f"{q} pushed:>={since} created:>={created} stars:>=200"
+               f"{q} pushed:>={since} created:>={created} stars:>={min_stars}"
                "&sort=stars&order=desc&per_page=50")
         r = get(url, headers=GH_HEADERS)
         if r is None:
@@ -91,7 +96,7 @@ def src_github(window_days):
 def src_hackernews(window_days):
     ts = int((NOW - dt.timedelta(days=window_days)).timestamp())
     out = []
-    for q in ["AI agent", "agents", "agentic"]:
+    for q in ["AI agent", "agents", "agentic", "AI assistant", "automate", "Show HN agent"]:
         r = get("https://hn.algolia.com/api/v1/search_by_date",
                 params={"query": q, "tags": "(story,show_hn)",
                         "numericFilters": f"created_at_i>{ts},points>20",
@@ -110,7 +115,7 @@ def src_hackernews(window_days):
 
 def src_reddit(window_days):
     out = []
-    for sub in ["AI_Agents", "LocalLLaMA", "LLMDevs"]:
+    for sub in ["AI_Agents", "artificial", "smallbusiness", "sales", "recruiting", "legaltech", "Entrepreneur", "Accounting"]:
         r = get(f"https://www.reddit.com/r/{sub}/top.json",
                 params={"t": "week" if window_days <= 7 else "month", "limit": 100})
         if r is None:
@@ -129,6 +134,53 @@ def src_reddit(window_days):
     return out
 
 
+def src_producthunt(window_days):
+    """Launches on Product Hunt. Needs PRODUCT_HUNT_TOKEN (a free developer token);
+    without it the source is reported as 'no token' and skipped."""
+    token = os.getenv("PRODUCT_HUNT_TOKEN")
+    if not token:
+        source_status["producthunt"] = "no token"
+        return []
+    since = (NOW - dt.timedelta(days=window_days)).isoformat()
+    q = """query($after: DateTime!) { posts(postedAfter: $after, order: VOTES, first: 50) {
+             edges { node { name tagline website url votesCount createdAt topics { edges { node { slug } } } } } } }"""
+    try:
+        r = session.post("https://api.producthunt.com/v2/api/graphql", timeout=TIMEOUT,
+                         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+                         json={"query": q, "variables": {"after": since}})
+        data = r.json()["data"]["posts"]["edges"] if r.status_code == 200 else []
+    except Exception:
+        source_status["producthunt"] = "unreachable"
+        return []
+    out = []
+    for e in data:
+        n = e["node"]
+        if n.get("website"):
+            out.append({"source": "producthunt", "url": n["website"], "date": n["createdAt"],
+                        "title": f"{n['name']}: {n['tagline']}", "points": n.get("votesCount", 0)})
+    source_status["producthunt"] = "ok"
+    return out
+
+
+def src_listings():
+    """Claimed listings: makers and providers who submitted through the site and were
+    approved by hand. data/listings.json: [{"url": ..., "title": ..., "repo": "owner/name" (optional)}]."""
+    f = OUT / "listings.json"
+    if not f.exists():
+        source_status["listings"] = "none"
+        return []
+    out = []
+    for it in json.loads(f.read_text()):
+        m = {"source": "listed", "url": it["url"], "date": it.get("date", TODAY), "title": it.get("title", it["url"])}
+        if it.get("repo"):
+            r = get(f"https://api.github.com/repos/{it['repo']}", headers=GH_HEADERS)
+            if r is not None:
+                m["repo"], m["key"] = r.json(), f"gh:{it['repo'].lower()}"
+        out.append(m)
+    source_status["listings"] = "ok"
+    return out
+
+
 # ------------------------------------------------------- what counts
 # An agent here is a worker: software that does a job on someone's behalf.
 # Lists, frameworks, SDKs, courses, benchmarks and news articles are not.
@@ -137,10 +189,49 @@ NOT_AGENT_RX = re.compile(
     r"\b(awesome|curated|list of|collection|framework|sdk|library|toolkit|boilerplate|template|starter|"
     r"benchmark|leaderboard|dataset|eval(uation)?s?|paper|survey|course|tutorial|cheat ?sheet|guidance|guidelines|"
     r"skills?|prompts?|plugins? for|examples?|cookbook|workshop|roadmap|interview|study notes|"
-    r"blog|newsletter|index(es)? (of|the)|directory|catalog|"
+    r"blog|newsletter|magazine|news (site|outlet)|journalism|index(es)? (of|the)|directory|catalog|marketplace|bount(y|ies)|job board|"
     r"gateway|router|proxy|runtime|harness|headless browser|mcp server|search engine|protocol|"
-    r"orchestrat\w+|observability|tracing|memory layer|infrastructure|"
+    r"orchestrat\w+|observability|tracing|memory layer|infrastructure|execution rails|rails for agents|"
+    r"platform for (humans and )?agents|agent platform|built for agents|agent[- ]ready|org-?os|world model|design system|deployment platform|"
+    r"\berp\b|\bcad\b|webui|web ui|desktop companion|companion (app|for)|toolbox|agent brain|"
+    r"penetration test\w*|pentest\w*|red[- ]team\w*|offensive security|"
     r"(cli|server|tool|tools|memory|sandbox|workspace|dashboard|ui|interface|model router) for (every |your |any |all |ai |coding |llm )*agents?)\b", re.I)
+# The list is for people choosing a worker for their job or their life, so an agent
+# has to name the job it does. Developer tooling has its own audience and is left out.
+JOB_RX = re.compile(
+    r"\b(proposals?|rfps?|rfis?|bids?|grants?|capture management|compliance|audits?|auditor|soc ?2|iso ?27001|hipaa|gdpr|"
+    r"contracts?|legal|paralegal|litigation|due diligence|kyc|aml|fraud|insurance claims?|claims processing|underwriting|insurance|"
+    r"recruit\w*|hiring|candidates?|resume (screening|parsing|review)|screen(s|ing)? (resumes|candidates|applicants)|onboarding|\bhr\b|payroll|"
+    r"invoices?|invoicing|bookkeep\w*|accounting|accounts? (payable|receivable)|expenses?|receipts?|reconcil\w+|tax(es)?|"
+    r"customer (support|service|success)|help ?desk|support tickets?|churn|"
+    r"sales|outreach|lead (gen|generation)|leads|prospect\w*|cold email|crm|sales pipeline|quotes?|"
+    r"marketing|campaigns?|seo|social media|newsletters?|content calendar|"
+    r"procurement|purchase orders?|vendors?|suppliers?|inventory|order (processing|management|fulfil\w+)|fulfil\w+|logistics|shipping|supply chain|"
+    r"scheduling|appointments?|calendar|meetings?|meeting notes|inbox|follow-?ups?|(reads?|triages?|answers?|drafts?|sends?|manages?|handles?) (your |my )?emails?|"
+    r"reporting|data entry|spreadsheets?|intake|back office|"
+    r"patients?|clinical|medical|billing|collections|public records|foia|translation|transcription|note-?taking|"
+    r"executive assistant|virtual assistant|personal (assistant|agent)|executive team|office|receptionist|concierge|bookings?|"
+    r"tenants?|property management|real estate|students?|tutoring|grading|homework|classroom|"
+    r"travel|trips?|flights?|hotels?|itinerar\w+|shopping|grocer\w+|meal (plan\w*|prep)|recipes?|cooking|"
+    r"fitness|workouts?|training plan|health|habits?|wellness|budget\w*|personal finance|bills|subscriptions|"
+    r"investing|portfolio|trading|stock (analysis|monitoring)|job (search|hunt|applications?)|cover letters?|reminders?|to-?do|errands|chores|"
+    r"family|kids|parent\w*|journal\w*|day planning|"
+    r"gets? things done|does things|do things|everyday tasks|daily tasks|tasks for you|automates? the mundane|"
+    r"presentations?|slides|decks?|documents?|paperwork)\b", re.I)
+DEV_RX = re.compile(
+    r"\b(coding agents?|code (review|generation|editor|assistant|completion)|developers?|programm(ers?|ing)|\bide\b|"
+    r"terminal|\bcli\b|command[- ]line|pull requests?|devops|kubernetes|docker|repos?(itory|itories)?|github|"
+    r"sdk|api (client|wrapper)|claude code|codex|cursor|windsurf|cline|copilot|vibe[- ]cod\w+|software engineer\w*|"
+    r"debug\w*|compilers?|unit tests?|refactor\w*|codebases?|llm (gateway|router|proxy)|inference|"
+    r"self-?improv\w+ (workspace|agent)|agent (harness|workspace|runtime)|virtual machine|sandbox)\b", re.I)
+
+
+def job_of(text):
+    """The business job an agent names, or None."""
+    m = JOB_RX.search(text or "")
+    return m.group(0).lower() if m else None
+
+
 # Agents built to deceive, evade or abuse are never listed, whatever their score.
 NEFARIOUS_RX = re.compile(
     r"\b(stealth|undetectable|anti-?detect(ion)?|evade|evasion|bypass(es|ing)? (bot|captcha|detection|paywall|2fa|mfa|rate limit)|"
@@ -169,6 +260,9 @@ def why_not_agent(text):
     m = NOT_AGENT_RX.search(text)
     if m:
         return f"describes itself as a {m.group(0).lower()}, not a worker"
+    d = DEV_RX.search(text)
+    if d:
+        return f"developer tooling ({d.group(0).lower()})"
     if not AGENT_RX.search(text):
         return "never calls itself an agent, assistant or copilot"
     return None
@@ -502,6 +596,7 @@ INDUSTRIES = [  # first match wins, checked in this order
     ("Research & data", r"\b(research|data analys|analytics|sql|scrap|search)"),
     ("Browser & computer use", r"\b(browser|computer use|desktop|web automation)"),
     ("Operations & IT", r"\b(sysadmin|kubernetes|incident|on-call|it operations|itsm)"),
+    ("Personal & everyday", r"\b(personal|travel|trips?|grocer\w+|meals?|recipes?|fitness|workouts?|habits?|budget\w*|chores|household|home|family|parent\w*|reminders?|to-?do)\b"),
 ]
 FRAMEWORK_RX = r"\b(framework|sdk|library|toolkit|platform for building|build(ing)? (ai )?agents)\b"
 
@@ -544,7 +639,7 @@ def main():
     ap.add_argument("--board-size", type=int, default=50)
     a = ap.parse_args()
 
-    mentions = src_github(a.window) + src_hackernews(a.window) + src_reddit(a.window)
+    mentions = src_github(a.window) + src_hackernews(a.window) + src_reddit(a.window) + src_producthunt(a.window) + src_listings()
     agents = merge(mentions)
     live_sources = [s for s, v in source_status.items() if v == "ok"]
     # Never demand more sources than are reachable on this run.
@@ -562,8 +657,8 @@ def main():
             r = why_not_agent(blob) or (re.search(FRAMEWORK_RX, blob, re.I) and "describes itself as a framework")
             if r:
                 reject(k, r, blob); continue
-            if (repo.get("stargazers_count") or 0) < 200 and not repo.get("homepage"):
-                reject(k, "under 200 stars and no homepage", blob); continue
+            if (repo.get("stargazers_count") or 0) < 40 and not repo.get("homepage"):
+                reject(k, "under 40 stars and no homepage", blob); continue
             ag["_why"] = {"kind": "GitHub repo", "matched": AGENT_RX.search(blob).group(0).lower(),
                           "topics": [t for t in repo.get("topics", []) if "agent" in t][:3]}
         else:
@@ -582,9 +677,9 @@ def main():
         ag["_buzz"] = sum(1 for m in ag["mentions"] if m["source"] != "github") + len(srcs)
         rows.append(ag)
 
-    # Trending board = top N by (buzz, star gain). Deterministic.
+    # Read pages for the top candidates by (buzz, star gain), then keep the board. Deterministic.
     rows.sort(key=lambda x: (-x["_buzz"], -(x["_gain"] or 0), x["key"]))
-    rows = rows[: a.board_size]
+    rows = rows[: a.board_size * 3]
 
     out = []
     for i, ag in enumerate(rows, 1):
@@ -594,8 +689,18 @@ def main():
         hit = next((h for h in (NEFARIOUS_RX.search(pg["text"][:6000]) for pg in pages if pg["kind"] in ("readme", "home")) if h), None)
         if hit:
             reject(ag["key"], f"safety: {hit.group(0).lower()} on its own page"); continue
-        checks = run_checks(ag, pages)
         meta = ag.get("_meta") or {}
+        own = " ".join([repo.get("name") or "", repo.get("description") or "", " ".join(repo.get("topics", [])),
+                        meta.get("name", ""), meta.get("description", "")] +
+                       [m["title"] for m in ag["mentions"] if m["source"] != "github"][:3])
+        d = DEV_RX.search(" ".join([repo.get("description") or "", meta.get("description", "")]))
+        if d:
+            reject(ag["key"], f"developer tooling ({d.group(0).lower()})"); continue
+        job = job_of(own)
+        if not job:
+            reject(ag["key"], "names no job it does for someone", own); continue
+        ag["_why"]["job"] = job
+        checks = run_checks(ag, pages)
         desc = repo.get("description") or meta.get("description") or next((m["title"] for m in ag["mentions"]), "")
         name = repo.get("name") or meta.get("name") or ag["key"].split(":", 1)[1]
         if not repo and not pages:
@@ -625,6 +730,7 @@ def main():
 
     # Final order: score, then buzz, then star gain, then name.
     out.sort(key=lambda x: (-x["score"], -x["mentions_14d"], -(x["star_gain_7d"] or 0), x["name"].lower()))
+    out = out[: a.board_size]
     for i, x in enumerate(out, 1):
         x["rank"] = i
 

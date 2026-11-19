@@ -37,6 +37,18 @@ name, kinds (`managed`, `host`, `reseller`, `referral`), website, description, a
 agent ids they work with (or `"all"`). Edit it by hand after confirming a claim; it is
 never scraped.
 
+## What gets listed, and the two knobs that are yours
+The scraper only lists agents that do a job for someone at work or in life, and drops
+developer tooling, lists, frameworks and anything built to evade or deceive. See the
+"Listed because" and "Rejected this run" tables on `/admin` after each run.
+
+- **Product Hunt.** Launches there are a source once `PRODUCT_HUNT_TOKEN` is set on the
+  GitHub repo (Settings → Secrets → Actions) and passed in `daily.yml`. A developer token
+  is free at https://www.producthunt.com/v2/oauth/applications.
+- **Claimed listings.** Approve a maker or provider claim by adding it to
+  `data/listings.json`: `[{"url": "https://...", "title": "Name: what it does", "repo": "owner/name"}]`
+  (`repo` optional). It then goes through the same checks as everything else.
+
 ## Not connected yet
 - **Pulse emails** are collected but nothing sends them yet. That needs an email service.
 - **Reddit** often blocks GitHub's servers, so expect GitHub + Hacker News as sources.

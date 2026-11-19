@@ -590,7 +590,7 @@ function viewMethod(){
     <h1 style="margin-top:12px">How we score</h1>
     <p class="muted" style="font-size:19px;margin-top:16px">An agent gets on the list by trending and gets its rank from twelve yes/no checks. The same evidence always gives the same rank.</p>
     <h2>Who gets listed</h2>
-    <p>An agent here is software that does a job on someone's behalf. Lists, frameworks, SDKs, courses, benchmarks and news articles don't count. It joins when its code or its homepage is mentioned ${(S.run.min_sources_applied || S.run.min_sources_requested) === 1 ? 'on GitHub, Hacker News or Reddit' : `on at least ${S.run.min_sources_applied || S.run.min_sources_requested} of GitHub, Hacker News and Reddit`} in the last ${S.run.window_days} days. The list shows the top 50 by mentions, then by stars gained.</p>
+    <p>An agent here is software that does a job for someone, at work or in their life: proposals, support tickets, bookkeeping, hiring, travel, groceries and the like. Developer tools, lists, frameworks, courses, benchmarks and news articles don't count. It joins when its code or its homepage is mentioned ${(S.run.min_sources_applied || S.run.min_sources_requested) === 1 ? 'on GitHub, Hacker News or Reddit' : `on at least ${S.run.min_sources_applied || S.run.min_sources_requested} of GitHub, Hacker News and Reddit`} in the last ${S.run.window_days} days. The list shows the top 50 by mentions, then by stars gained.</p>
     <h2>The 12 checks</h2>
     <p>Each check is Yes or No. A Yes needs a quote on a public page. Unknown counts as No.</p>
     <div class="rubric">${groups.map(g => `<div><b>${esc(g)}</b><ol>${S.run.checks.filter(c=>c.group===g).map(c=>`<li>${esc(c.question)}</li>`).join('')}</ol></div>`).join('')}</div>
