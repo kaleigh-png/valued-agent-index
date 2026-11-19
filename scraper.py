@@ -260,6 +260,10 @@ def quote_around(text, s, e, pad=90, reach=150, cap=320):
     else:
         end = text.find(" ", e + pad, hi)
         end, tail = (end, "…") if end != -1 else (e + pad, "…")
+    if lead and tail:                                    # no sentence either side: menu or badge text, keep it short
+        start = text.rfind(" ", max(0, s - 45), s) + 1 or max(0, s - 45)
+        end = text.find(" ", e, min(len(text), e + 45))
+        end = end if end != -1 else min(len(text), e + 45)
     q = text[start:end].strip()
     if len(q) > cap:                                     # keep the match, trim the far side
         over = len(q) - cap
