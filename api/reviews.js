@@ -1,25 +1,13 @@
 // Reviews API. Anonymous yes/no reviews, one per browser per agent.
 // Storage: one Redis hash, field "<agent>:<uid>" -> review JSON.
-import { Redis } from '@upstash/redis';
-import { Ratelimit } from '@upstash/ratelimit';
+import { db, limiter, json, ipOf, str } from './_store.js';
 
 const ROLES = ['Executive','Operations','IT / Security','Engineering','Sales / Marketing','Finance / Legal','Other'];
 const SIZES = ['1–49','50–249','250–999','1,000–4,999','5,000+'];
 const RUNS = ['I run it myself',"The maker's hosted version",'Managed by a provider','Bought through a reseller'];
 const QS = ['did_job','production','recommend','fast_setup','cost_ok'];
 const HASH = 'reviews';
-
-let redis, limiter;
-function db() {
-  if (!redis) {
-    redis = Redis.fromEnv();
-    limiter = new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(5, '1 h'), prefix: 'rl:reviews' });
-  }
-  return redis;
-}
-const json = (body, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } });
 const pick = (v, list) => (list.includes(v) ? v : null);
-const str = (v, max) => (typeof v === 'string' ? v.trim().slice(0, max) : '');
 
 export async function GET() {
   try {
@@ -57,11 +45,9 @@ export async function POST(request) {
   if (QS.some(k => !r[k])) return json({ error: 'Answer all five yes/no questions.' }, 422);
 
   try {
-    const store = db();
-    const ip = (request.headers.get('x-forwarded-for') || 'unknown').split(',')[0].trim();
-    const { success } = await limiter.limit(ip);
+    const { success } = await limiter('reviews', 5, '1 h').limit(ipOf(request));
     if (!success) return json({ error: 'Too many reviews from this connection. Try again in an hour.' }, 429);
-    await store.hset(HASH, { [`${agent}:${uid}`]: JSON.stringify(r) });
+    await db().hset(HASH, { [`${agent}:${uid}`]: JSON.stringify(r) });
     return json({ review: { ...r, uid } });
   } catch (err) {
     console.error('reviews POST failed', err);

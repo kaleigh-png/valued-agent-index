@@ -93,7 +93,7 @@ main{padding-block:0 140px;min-height:70vh}
 .fpanel .lbl{font-size:13px;font-weight:600;color:var(--muted);width:90px;flex:none}
 .opt{border:1px solid var(--line);background:var(--bg);padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer}
 .opt[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
-.count{font-size:13px;color:var(--muted);margin:18px 0 4px;display:flex;justify-content:space-between;gap:10px}
+.count{font-size:13px;color:var(--muted);margin:18px 0 4px;display:flex;justify-content:flex-end;gap:10px;min-height:18px}
 .linkbtn{border:0;background:none;color:var(--accent);cursor:pointer;padding:0;font-size:13px}
 @media (max-width:640px){ .search{flex:1;width:auto} }
 
@@ -242,6 +242,11 @@ form input,form select,form textarea{font:inherit;font-size:15px;font-weight:400
 .rubric ol{margin:8px 0 0;padding-left:18px;font-size:14.5px}
 .formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px;align-items:start}
 .card{background:var(--soft);border-radius:var(--r);padding:22px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px}
+.pcard{display:block;color:var(--ink)}
+.pcard:hover{text-decoration:none;background:var(--accent-soft)}
+.pcard b{display:block;font-size:17px}
+.pcard span{display:block;color:var(--muted);font-size:13.5px;margin-top:4px}
 
 footer{border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
 footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -266,8 +271,8 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 </div>
 
 <footer><div class="wrap">
-  <span>Rank comes from 12 yes/no checks with public proof. No one pays for placement.</span>
   <span id="footStamp" class="tnum"></span>
+  <span>Valued Agent Reseller</span>
 </div></footer>
 
 <script>
@@ -276,6 +281,8 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ORDER = ['pricing','free','docs','customer','result','updated','no_training','security_page','certification','your_env','audit_logs','human_approval'];
 const SHORT = {pricing:'Public pricing', free:'Free tier', docs:'Public docs', customer:'Named customer', result:'Measured result', updated:'Updated in 30 days', no_training:"Won't train on your data", security_page:'Security page', certification:'SOC 2 / ISO 27001', your_env:'Runs in your environment', audit_logs:'Audit logs', human_approval:'Human approval step'};
+const INDUSTRY_FALLBACK = ['Security','Healthcare','Finance','Legal','Education','HR & recruiting','E-commerce','Real estate','Manufacturing & logistics','Sales & marketing','Customer support','Software engineering','Research & data','Browser & computer use','Operations & IT','General purpose'];
+const allIndustries = () => [...new Set([...(S.run.industries || INDUSTRY_FALLBACK), ...S.agents.map(a => a.industry)])].sort();
 const host = u => { try { return new URL(u).host.replace(/^www\./,''); } catch { return u; } };
 const store = { get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -330,7 +337,6 @@ function viewIndex(){
   const nf = S.must.length + (S.type !== 'All') + (S.sort !== 'rank');
   $('#app').innerHTML = `
     <section class="hero">
-      <div class="eyebrow">Updated ${esc(nice(S.hist.latest))}</div>
       <h1>Today's AI agent rankings</h1>
       <p>Agents everyone is talking about this week. We run and score each to help you make a confident decision on whether you'd want to use them.</p>
       <div class="periods" role="group" aria-label="Time period">${PERIODS.map(([k,l,b]) => { const ok = !b || (dayAt(b) && dayAt(b) !== S.hist.latest); return `<button type="button" data-p="${k}" aria-pressed="${S.period===k}" ${ok?'':'disabled'} title="${ok?'':'Available from '+esc(availableFrom(b))}">${l}</button>`; }).join('')}</div>
@@ -346,7 +352,7 @@ function viewIndex(){
       <div class="row"><span class="lbl">Type</span>${['All','Agent','Framework'].map(t => `<button class="opt" type="button" data-type="${t}" aria-pressed="${S.type===t}">${t==='All'?'All':t+'s'}</button>`).join('')}</div>
       <div class="row"><span class="lbl">Sort</span>${[['rank','Rank'],['momentum','Momentum'],['reviews','Most reviewed']].map(([v,l]) => `<button class="opt" type="button" data-sort="${v}" aria-pressed="${S.sort===v}">${l}</button>`).join('')}</div>
     </div>
-    <div class="count"><span id="cnt"></span><button class="linkbtn" id="reset" type="button" ${nf||S.industry!=='All'||S.q?'':'hidden'}>Clear all</button></div>
+    <div class="count"><button class="linkbtn" id="reset" type="button" ${nf||S.industry!=='All'||S.q?'':'hidden'}>Clear all</button></div>
     <div class="list" id="rows" role="list"></div>`;
   document.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { if (b.disabled) return; S.period = b.dataset.p; document.querySelectorAll('[data-p]').forEach(x => x.setAttribute('aria-pressed', x === b)); renderRows(true); });
   document.querySelectorAll('[data-ind]').forEach(b => b.onclick = () => { S.industry = b.dataset.ind; document.querySelectorAll('[data-ind]').forEach(x => x.setAttribute('aria-pressed', x === b)); renderRows(true); syncReset(); });
@@ -378,10 +384,9 @@ function renderRows(animate){
   if (pn) {
     const wk = dayAt(7);
     pn.textContent = S.period === 'now'
-      ? (wk && wk !== S.hist.latest ? `Arrows show movement since ${nice(wk)}.` : 'Movement arrows appear after a week of daily runs.')
+      ? (wk && wk !== S.hist.latest ? `Arrows show movement since ${nice(wk)}.` : '')
       : `The ranking as it stood on ${nice(dayAt(back))}.`;
   }
-  $('#cnt').textContent = `${list.length} agent${list.length===1?'':'s'}`;
   box.innerHTML = list.length ? list.map((a, i) => `
     <a class="item ${a.rank<=3?'top3':''} ${S.first?'enter':''}" role="listitem" data-id="${esc(a.id)}" href="${a._gone?'#index':'#agent-'+esc(a.id)}" style="${S.first?`animation-delay:${Math.min(i,12)*35}ms`:''}">
       <div class="rk"><b>${a.rank}</b>${a._mv ? `<span class="mv ${a._mv.cls}">${esc(a._mv.txt)}</span>` : ''}</div>
@@ -423,14 +428,42 @@ function viewCompare(){
         <button class="linkbtn" type="button" data-un="${esc(a.id)}">Remove</button></th>`).join('')}</tr></thead>
       <tbody>${groups.map(g => `<tr class="g"><th colspan="${list.length+1}">${esc(g)}</th></tr>` + S.run.checks.filter(c => c.group === g).map(c => `<tr><th>${esc(c.question)}</th>${list.map(a => `<td>${yn(a.checks[c.id].answer)}</td>`).join('')}</tr>`).join('')).join('')}
         <tr class="g"><th colspan="${list.length+1}">How to get it</th></tr>
-        <tr><th>Managed provider</th>${list.map(a => `<td>${yn((a.get_it.listed_managers||[]).length)}</td>`).join('')}</tr>
-        <tr><th>Reseller</th>${list.map(a => `<td>${yn(a.get_it.listed_resellers.length)}</td>`).join('')}</tr>
-        <tr><th>Hosted version</th>${list.map(a => `<td>${yn(a.get_it.hosted_by_maker.answer || a.get_it.marketplaces.length)}</td>`).join('')}</tr>
+        <tr><th>Managed provider</th>${list.map(a => `<td>${yn((a.get_it.listed_managers||[]).length || provs(a.id,'managed').length)}</td>`).join('')}</tr>
+        <tr><th>Reseller</th>${list.map(a => `<td>${yn(a.get_it.listed_resellers.length || provs(a.id,'reseller').length)}</td>`).join('')}</tr>
+        <tr><th>Hosted version</th>${list.map(a => `<td>${yn(a.get_it.hosted_by_maker.answer || a.get_it.marketplaces.length || provs(a.id,'host').length)}</td>`).join('')}</tr>
         <tr><th>Open source</th>${list.map(a => `<td>${yn(a.get_it.open_source)}</td>`).join('')}</tr>
         <tr class="g"><th colspan="${list.length+1}">People</th></tr>
         <tr><th>User reviews</th>${list.map(a => `<td class="small">${revTxt(a.id)}</td>`).join('')}</tr>
       </tbody></table></div>`;
   document.querySelectorAll('[data-un]').forEach(b => b.onclick = () => { toggleCmp(b.dataset.un); viewCompare(); });
+}
+
+/* ---------- providers ---------- */
+const KIND = {managed:'Managed agent provider', host:'Hosting platform', reseller:'Reseller', referral:'Referral partner'};
+const provs = (id, kind) => (S.providers||[]).filter(p => (!kind || (p.kinds||[]).includes(kind)) && (p.agents === 'all' || (p.agents||[]).includes(id)));
+const plink = p => `<a href="#provider-${esc(p.slug)}">${esc(p.name)}</a>`;
+function viewProvider(slug){
+  const p = (S.providers||[]).find(x => x.slug === slug);
+  if (!p) { $('#app').innerHTML = `<a class="back" href="#claim">‹ For providers</a><div class="empty"><h3>No provider page here</h3></div>`; return; }
+  const agents = p.agents === 'all' ? S.agents : S.agents.filter(a => (p.agents||[]).includes(a.id));
+  $('#app').innerHTML = `<a class="back" href="#claim">‹ For providers</a>
+    <section class="ahead"><div style="min-width:0">
+      <div class="eyebrow">${(p.kinds||[]).map(k => esc(KIND[k]||k)).join(' · ')}</div>
+      <h1 style="margin-top:10px">${esc(p.name)}</h1>
+      ${p.description ? `<p>${esc(p.description)}</p>` : ''}
+      <div class="acts"><a class="btn" href="#manage" id="pmg">Work with ${esc(p.name)}</a>${p.url ? `<a class="txt" href="${esc(p.url)}" target="_blank" rel="noopener">Website ›</a>` : ''}</div>
+    </div></section>
+    <section class="sec-block"><h2>Agents they ${(p.kinds||[]).includes('host') ? 'run or host' : 'work with'}</h2>
+      ${agents.length ? `<div class="list" style="margin-top:22px">${agents.map(a => `<a class="item" href="#agent-${esc(a.id)}"><div class="rk"><b>${a.rank}</b></div><div class="nm"><b>${esc(a.name)}</b><span>${esc(a.description)}</span></div><div class="sc"><span class="v">${a.score} <small>of 12</small></span></div><span class="chev" aria-hidden="true">›</span></a>`).join('')}</div>` : '<p class="lead">No agents listed yet.</p>'}
+    </section>`;
+  $('#pmg').onclick = () => { S.pickProvider = p.slug; S.pick = null; };
+  window.scrollTo(0,0);
+}
+function providerDirectory(){
+  const list = S.providers || [];
+  if (!list.length) return '';
+  return `<section class="sec-block"><h2>Listed providers</h2><p class="lead">Companies that run, host or resell agents on this list.</p>
+    <div class="pgrid">${list.map(p => `<a class="card pcard" href="#provider-${esc(p.slug)}"><b>${esc(p.name)}</b><span>${(p.kinds||[]).map(k => esc(KIND[k]||k)).join(' · ')}</span></a>`).join('')}</div></section>`;
 }
 
 /* ---------- agent page ---------- */
@@ -494,12 +527,12 @@ function viewAgent(id){
     </section>
 
     <section class="sec-block" id="getit"><h2>How to get it <span class="tag-ns">Not scored</span></h2>
-      <div class="callout"><div><h3>Manage it for me</h3><p>${(g.listed_managers||[]).length ? esc(g.listed_managers.join(', ')) : 'A provider sets it up and keeps it running for a monthly fee.'}</p></div><a class="btn" href="#manage" id="mg2">Request a provider</a></div>
+      <div class="callout"><div><h3>Manage it for me</h3><p>${provs(a.id,'managed').length ? `Run for customers by ${provs(a.id,'managed').map(plink).join(', ')}.` : (g.listed_managers||[]).length ? esc(g.listed_managers.join(', ')) : 'A provider sets it up and keeps it running for a monthly fee.'}</p></div><a class="btn" href="#manage" id="mg2">Request a provider</a></div>
       <div class="rows">
-        <div class="r"><div><div class="k">Who resells it?</div><div class="h">${g.listed_resellers.length ? g.listed_resellers.map(esc).join(', ') : 'No reseller listed yet.'} <a href="#claim">Resell it ›</a></div></div></div>
+        <div class="r"><div><div class="k">Who resells it?</div><div class="h">${[...provs(a.id,'reseller').map(plink), ...g.listed_resellers.map(esc)].join(', ') || 'No reseller listed yet.'} <a href="#claim">Resell it ›</a></div></div></div>
         <div class="r"><div><div class="k">Maker has a reseller program</div></div>${yesno(g.reseller_program.answer)}</div>
         <div class="r"><div><div class="k">Referral only?</div><div class="h">They pay referrals but don't let you resell it.</div></div>${yesno(g.referral_program.answer && !g.reseller_program.answer && !g.listed_resellers.length)}</div>
-        <div class="r"><div><div class="k">Hosted on</div><div class="h">${[g.hosted_by_maker.answer ? "The maker's cloud" : null, ...g.marketplaces].filter(Boolean).map(esc).join(' · ') || 'No hosted version found.'}</div></div>${yesno(g.hosted_by_maker.answer || g.marketplaces.length)}</div>
+        <div class="r"><div><div class="k">Hosted on</div><div class="h">${[g.hosted_by_maker.answer ? "The maker's cloud" : null, ...g.marketplaces.map(esc), ...provs(a.id,'host').map(plink)].filter(Boolean).join(' · ') || 'No hosted version found.'}</div></div>${yesno(g.hosted_by_maker.answer || g.marketplaces.length || provs(a.id,'host').length)}</div>
         <div class="r"><div><div class="k">Bring it to your platform</div><div class="h">${[g.open_source ? 'Open source' : null, g.self_host ? 'Self-host' : null, ...g.bring_your_own].filter(Boolean).map(esc).join(' · ') || 'No integration paths found.'}</div></div></div>
       </div>
     </section>
@@ -512,7 +545,7 @@ function viewAgent(id){
       <ul class="src">${a.mention_links.map(m => `<li><span class="muted small">${esc(m.source)} · ${esc(m.date)}</span><br><a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.title)}</a></li>`).join('')}</ul>
       <div class="callout"><div><h3>Is this your agent?</h3><p>Claim the listing to add evidence. You can't edit answers or scores.</p></div><a class="btn sec" href="#claim">Claim it</a></div>
     </section>`;
-  const pickMe = () => { S.pick = a.id; };
+  const pickMe = () => { S.pick = a.id; S.pickProvider = null; };
   $('#mg').onclick = pickMe; $('#mg2').onclick = pickMe;
   $('#cmpb').onclick = () => { toggleCmp(a.id); $('#cmpb').textContent = S.cmp.includes(a.id) ? '✓ Comparing' : 'Compare'; };
   bindReviews(a);
@@ -541,28 +574,40 @@ function viewMethod(){
     <p>Checks match text, so unusual wording can read as No, and an aside can occasionally read as Yes. Makers can fix both by claiming their listing.</p>
   </div>`;
 }
-function formShell(eyebrow, title, lede, formHtml, asideTitle, items){
+function formShell(eyebrow, title, lede, formHtml, asideTitle, items, kind, doneMsg, extra){
   $('#app').innerHTML = `<div class="page" style="max-width:none"><div style="max-width:640px"><div class="eyebrow">${eyebrow}</div><h1 style="margin-top:12px">${title}</h1>${lede ? `<p class="muted" style="font-size:19px;margin-top:16px">${lede}</p>` : ''}</div>
-    <div class="formgrid"><form class="card" id="f" novalidate>${formHtml}<div id="done" hidden></div></form>
-    <div style="padding:8px 4px"><h3>${asideTitle}</h3><ul style="padding-left:18px;color:var(--muted)">${items.map(i => `<li style="margin:8px 0">${i}</li>`).join('')}</ul></div></div></div>`;
-  $('#f').onsubmit = e => {
+    <div class="formgrid"><form class="card" id="f" novalidate>${formHtml}<label style="position:absolute;left:-9999px" aria-hidden="true">Website<input id="hp_url" tabindex="-1" autocomplete="off"></label><div id="done" hidden></div></form>
+    <div style="padding:8px 4px"><h3>${asideTitle}</h3><ul style="padding-left:18px;color:var(--muted)">${items.map(i => `<li style="margin:8px 0">${i}</li>`).join('')}</ul></div></div>${extra || ''}</div>`;
+  const form = $('#f');
+  form.onsubmit = async e => {
     e.preventDefault();
-    const bad = [...e.target.querySelectorAll('[required]')].find(i => !i.value.trim() || (i.type==='email' && !/^\S+@\S+\.\S+$/.test(i.value)));
+    const bad = [...form.querySelectorAll('[required]')].find(i => !i.value.trim() || (i.type==='email' && !/^\S+@\S+\.\S+$/.test(i.value)));
     const d = $('#done'); d.hidden = false;
     if (bad) { d.className = 'msg'; d.textContent = bad.type === 'email' ? 'Enter a valid email address.' : 'Fill in every required field.'; bad.focus(); return; }
-    d.className = 'ok'; d.textContent = "We're not taking submissions yet, so nothing was sent. Check back soon.";
+    const btn = form.querySelector('button[type="submit"]'); btn.disabled = true; d.className = 'msg'; d.textContent = 'Sending…';
+    const payload = { kind };
+    form.querySelectorAll('input,select,textarea').forEach(i => { if (i.id) payload[i.id] = i.value; });
+    try {
+      const res = await fetch('/api/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) { d.textContent = out.error && out.error !== 'unavailable' ? out.error : "That didn't send. Check your connection and try again."; return; }
+      d.className = 'ok'; d.textContent = doneMsg;
+      form.querySelectorAll('input:not([type=hidden]),textarea').forEach(i => { i.value = ''; });
+    } catch { d.textContent = "That didn't send. Check your connection and try again."; }
+    finally { btn.disabled = false; }
   };
 }
 const agentOptions = sel => S.agents.map(a => `<option value="${esc(a.id)}" ${a.id===sel?'selected':''}>${esc(a.name)}</option>`).join('');
-const viewManage = () => formShell('Managed agents', 'Manage it for me', 'Tell us what you need done and, if you know it, which agent. A provider who already runs it for other customers will set it up and keep it running for a monthly fee.',
-  `<label for="magent">Agent<select id="magent"><option value="general" ${S.pick ? '' : 'selected'}>General request (no specific agent)</option>${agentOptions(S.pick)}</select></label><label for="mjob">The job you want done<textarea id="mjob" rows="3" required placeholder="Draft first-pass proposal responses from our past bids"></textarea></label><div class="two"><label for="mco">Company<input id="mco" required autocomplete="organization"></label><label for="mem">Work email<input id="mem" type="email" required autocomplete="email"></label></div><button class="btn" type="submit">Request a provider</button>`,
-  'What managed includes', ["Setup in your environment or the provider's.", 'Monitoring, fixes and updates.', 'A named person you can call.', "Your provider never changes an agent's rank."]);
-const viewClaim = () => formShell('For makers, providers and resellers', 'Claim a listing', 'Makers add evidence to their agent page. Providers and resellers list the agents they run or sell. None of it changes the score.',
-  `<label for="role">I am<select id="role"><option>The maker of this agent</option><option>A provider who manages it for customers</option><option>A reseller who sells it</option><option>A referral partner</option></select></label><label for="agent">Agent<select id="agent">${agentOptions(S.pick)}</select></label><div class="two"><label for="co">Company<input id="co" required autocomplete="organization"></label><label for="em">Work email<input id="em" type="email" required autocomplete="email"></label></div><label for="ev">Evidence links, one per line<textarea id="ev" rows="3" placeholder="https://yourcompany.com/security"></textarea></label><button class="btn" type="submit">Submit claim</button>`,
-  'What happens next', ['We confirm you work for the company.', 'New evidence is re-checked against the same 12 rules.', 'Providers and resellers appear under “How to get it”.']);
+const industryOptions = () => allIndustries().map(i => `<option>${esc(i)}</option>`).join('');
+const viewManage = () => { const pv = (S.providers||[]).find(p => p.slug === S.pickProvider); formShell('Managed agents', 'Manage it for me', pv ? `This request goes to ${esc(pv.name)}. Tell us what you need done and, if you know it, which agent.` : 'Tell us what you need done and, if you know it, which agent. A provider who already runs it for other customers will set it up and keep it running for a monthly fee.',
+  `<label for="magent">Agent<select id="magent"><option value="general" ${S.pick ? '' : 'selected'}>General request (no specific agent)</option>${agentOptions(S.pick)}</select></label><label for="mjob">The job you want done<textarea id="mjob" rows="3" required placeholder="Draft first-pass proposal responses from our past bids"></textarea></label><div class="two"><label for="mco">Company<input id="mco" required autocomplete="organization"></label><label for="mem">Work email<input id="mem" type="email" required autocomplete="email"></label></div><input type="hidden" id="provider" value="${esc(S.pickProvider || '')}"><button class="btn" type="submit">Request a provider</button>`,
+  'What managed includes', ["Setup in your environment or the provider's.", 'Monitoring, fixes and updates.', 'A named person you can call.', "Your provider never changes an agent's rank."], 'manage', "Sent. A provider will be in touch at the email you gave."); };
+const viewClaim = () => formShell('For makers, providers and resellers', 'Claim a listing', 'Makers add evidence to their agent page. Providers, hosts and resellers list the agents they work with and get a page of their own. None of it changes the score.',
+  `<label for="role">I am<select id="role"><option>The maker of this agent</option><option>A provider who manages it for customers</option><option>A platform that can host it</option><option>A reseller who sells it</option><option>A referral partner</option></select></label><label for="agent">Agent<select id="agent"><option value="multiple" ${S.pick ? '' : 'selected'}>More than one agent</option>${agentOptions(S.pick)}</select></label><div class="two"><label for="co">Company<input id="co" required autocomplete="organization"></label><label for="em">Work email<input id="em" type="email" required autocomplete="email"></label></div><label for="web">Website<input id="web" type="url" placeholder="https://" autocomplete="url"></label><label for="about">About your company, for your provider page<textarea id="about" rows="3" maxlength="600" placeholder="What you do, who you do it for, and how you work with these agents."></textarea></label><label for="ev">Evidence links, one per line<textarea id="ev" rows="3" placeholder="https://yourcompany.com/security"></textarea></label><button class="btn" type="submit">Submit claim</button>`,
+  'What happens next', ['We confirm you work for the company.', 'New evidence is re-checked against the same 12 rules.', 'Providers, hosts and resellers get a page and appear under “How to get it”.'], 'claim', "Sent. We'll confirm the claim and be in touch.", providerDirectory());
 const viewPulse = () => formShell('Daily email', 'Agent Pulse', '',
-  `<label for="pem">Email<input id="pem" type="email" required autocomplete="email"></label><label for="pind">Industries<select id="pind"><option>All industries</option>${[...new Set(S.agents.map(a=>a.industry))].sort().map(i=>`<option>${esc(i)}</option>`).join('')}</select></label><button class="btn" type="submit">Subscribe</button>`,
-  "What's in it", ['Biggest movers by industry.', 'New agents on the list.', 'Checks that flipped from No to Yes.']);
+  `<label for="pem">Email<input id="pem" type="email" required autocomplete="email"></label><label for="pind">Industries<select id="pind"><option>All industries</option>${industryOptions()}</select></label><button class="btn" type="submit">Subscribe</button>`,
+  "What's in it", ['Biggest movers by industry.', 'New agents on the list.', 'Checks that flipped from No to Yes.'], 'pulse', "You're subscribed.");
 
 /* ---------- reviews (shared, stored outside the page) ---------- */
 S.reviews = {}; S.dbState = 'loading';
@@ -665,9 +710,10 @@ async function initReviews(){
 /* ---------- routing ---------- */
 function route(){
   const h = location.hash.slice(1) || 'index';
-  const section = h.startsWith('agent-') || h === 'compare' ? 'index' : h === 'manage' ? 'claim' : h;
+  const section = h.startsWith('agent-') || h === 'compare' ? 'index' : h === 'manage' || h.startsWith('provider-') ? 'claim' : h;
   document.querySelectorAll('[data-nav]').forEach(a => { if (a.dataset.nav === section) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
   if (h.startsWith('agent-')) viewAgent(h.slice(6));
+  else if (h.startsWith('provider-')) viewProvider(h.slice(9));
   else if (h === 'compare') viewCompare();
   else if (h === 'method') viewMethod();
   else if (h === 'claim') viewClaim();
@@ -675,14 +721,13 @@ function route(){
   else if (h === 'pulse') viewPulse();
   else viewIndex();
   renderTray();
-  if (!h.startsWith('agent-')) window.scrollTo(0,0);
+  if (!h.startsWith('agent-') && !h.startsWith('provider-')) window.scrollTo(0,0);
 }
-Promise.all(['agents.json','run.json','history.json'].map(f => fetch(f).then(r => r.json())))
-  .then(([agents, run, hist]) => {
-    S.agents = agents; S.run = run; S.hist = hist;
+Promise.all(['agents.json','run.json','history.json'].map(f => fetch(f).then(r => r.json())).concat([fetch('providers.json').then(r => r.ok ? r.json() : []).catch(() => [])]))
+  .then(([agents, run, hist, providers]) => {
+    S.agents = agents; S.run = run; S.hist = hist; S.providers = Array.isArray(providers) ? providers : [];
     S.cmp = (store.get('vaq-cmp') || []).filter(id => agents.some(a => a.id === id)).slice(0,3);
-    const live = Object.entries(run.sources).filter(([,v]) => v === 'ok').map(([k]) => k);
-    $('#footStamp').textContent = `Rubric v${run.rubric_version} · Sources this run: ${live.join(', ') || 'none'}`;
+    $('#footStamp').textContent = `Updated ${nice(hist.latest)}`;
     $('#trayClear').onclick = () => { S.cmp = []; store.set('vaq-cmp', []); renderTray(); };
     route(); addEventListener('hashchange', route);
     initReviews();

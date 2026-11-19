@@ -24,10 +24,21 @@ then open http://localhost:8765.
 `valuedagentreseller.com` and `www` are attached to the Vercel project. DNS lives at the
 registrar; the records Vercel expects are shown under the project's **Settings → Domains**.
 
+## Reviews and forms
+Both run on two small functions in `api/` backed by an Upstash Redis store on the Vercel
+project (provisioned with `vercel integration add upstash`). Reviews live in one hash;
+each form (claim, manage, Pulse) is a list. Read every submission at
+`https://valuedagentreseller.com/admin.html` with the admin key, which is the `ADMIN_KEY`
+environment variable on the Vercel project (a copy is in the untracked `.env.local`).
+
+## Providers
+`site/providers.json` lists the companies with a provider page (`#provider-<slug>`):
+name, kinds (`managed`, `host`, `reseller`, `referral`), website, description, and the
+agent ids they work with (or `"all"`). Edit it by hand after confirming a claim; it is
+never scraped.
+
 ## Not connected yet
-- **User reviews** show "Reviews open soon." They need a small database before launch.
-- **Claim, Manage it for me and Pulse forms** accept input but send nothing. A form
-  service (Formspree, Tally) or a tiny Vercel function can collect them.
+- **Pulse emails** are collected but nothing sends them yet. That needs an email service.
 - **Reddit** often blocks GitHub's servers, so expect GitHub + Hacker News as sources.
   The job uses `--min-sources 1` to keep the list full; raise it to 2 later and bump the
   rubric version.

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Submissions</title>
+<style>
+:root{--bg:#fff;--ink:#1A1C20;--muted:#6B7079;--line:#E6E8EC;--soft:#F5F6F8;--accent:#0A62D0}
+@media (prefers-color-scheme:dark){:root{--bg:#0B0C0E;--ink:#F2F3F5;--muted:#9BA1AB;--line:#25282E;--soft:#17191D;--accent:#5AA2FF}}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,-apple-system,system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:40px 20px}
+h1{font-size:28px;letter-spacing:-.02em;margin:0 0 20px}
+h2{font-size:18px;margin:36px 0 10px}
+form{display:flex;gap:8px;flex-wrap:wrap}
+input{font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-width:280px}
+button{font:inherit;padding:8px 16px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+th{color:var(--muted);font-weight:500}
+.msg{color:var(--muted);margin-top:14px}
+</style>
+</head>
+<body><div class="wrap">
+<h1>Submissions</h1>
+<form id="f"><input id="k" type="password" placeholder="Admin key" autocomplete="off"><button type="submit">Load</button></form>
+<p class="msg" id="m"></p>
+<div id="out"></div>
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const COLS = { claim: ['ts','role','agent','co','em','web','about','ev'], manage: ['ts','magent','mjob','mco','mem','provider'], pulse: ['ts','pem','pind'] };
+const NAMES = { claim: 'Claims', manage: 'Managed requests', pulse: 'Pulse subscribers' };
+async function load(key){
+  const m = document.getElementById('m'); m.textContent = 'Loading…';
+  const res = await fetch('/api/submissions', { headers: { 'x-admin-key': key } });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) { m.textContent = data.error || 'Could not load.'; return; }
+  try { localStorage.setItem('admin-key', key); } catch {}
+  m.textContent = '';
+  document.getElementById('out').innerHTML = Object.keys(COLS).map(k => `<h2>${NAMES[k]} (${(data[k]||[]).length})</h2>` + ((data[k]||[]).length
+    ? `<table><tr>${COLS[k].map(c => `<th>${c}</th>`).join('')}</tr>${data[k].map(r => `<tr>${COLS[k].map(c => `<td>${esc(c === 'ts' ? String(r[c]).slice(0,16).replace('T',' ') : r[c])}</td>`).join('')}</tr>`).join('')}</table>`
+    : '<p class="msg">None yet.</p>')).join('');
+}
+document.getElementById('f').onsubmit = e => { e.preventDefault(); load(document.getElementById('k').value.trim()); };
+try { const k = localStorage.getItem('admin-key'); if (k) { document.getElementById('k').value = k; load(k); } } catch {}
+</script>
+</div></body></html>

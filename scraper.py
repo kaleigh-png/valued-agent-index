@@ -368,11 +368,17 @@ INDUSTRIES = [  # first match wins, checked in this order
     ("Healthcare", r"\b(health|clinical|medical|patient|ehr)\b"),
     ("Finance", r"\b(financ|trading|stock|accounting|invoice|bookkeep|crypto)"),
     ("Legal", r"\b(legal|contract|law firm|compliance)"),
+    ("Education", r"\b(education|teacher|student|tutor|classroom|course)\b"),
+    ("HR & recruiting", r"\b(recruit|hiring|candidate|onboarding|payroll|\bhr\b)"),
+    ("E-commerce", r"\b(e-?commerce|shopify|storefront|product catalog|retail)"),
+    ("Real estate", r"\b(real estate|property manag|tenant|landlord)"),
+    ("Manufacturing & logistics", r"\b(manufactur|supply chain|logistics|warehouse|fleet)"),
     ("Sales & marketing", r"\b(sales|marketing|seo|lead|outreach|crm|ads?\b)"),
     ("Customer support", r"\b(customer support|helpdesk|support ticket|customer service)"),
     ("Software engineering", r"\b(cod(e|ing)|developer|ide\b|terminal|pull request|software engineer|devops|github)"),
     ("Research & data", r"\b(research|data analys|analytics|sql|scrap|search)"),
     ("Browser & computer use", r"\b(browser|computer use|desktop|web automation)"),
+    ("Operations & IT", r"\b(sysadmin|kubernetes|incident|on-call|it operations|itsm)"),
 ]
 FRAMEWORK_RX = r"\b(framework|sdk|library|toolkit|platform for building|build(ing)? (ai )?agents)\b"
 
@@ -486,6 +492,7 @@ def main():
         "rubric_version": RUBRIC_VERSION, "run_at": NOW.isoformat(timespec="minutes"),
         "window_days": a.window, "min_sources_requested": a.min_sources,
         "min_sources_applied": min_sources, "sources": source_status,
+        "industries": [n for n, _ in INDUSTRIES] + ["General purpose"],
         "checks": [{"id": c, "group": g, "question": q} for c, g, q in CHECKS],
         "agents": len(out)}, indent=1))
     print(json.dumps(source_status), file=sys.stderr)

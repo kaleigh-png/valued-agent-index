@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "brine",
+    "name": "Brine",
+    "kinds": ["managed", "host"],
+    "url": "",
+    "description": "",
+    "agents": []
+  }
+]
