@@ -7,7 +7,7 @@
     "contact": "sales@brine.ai",
     "description": "A shared workspace where your team and AI work on the same deliverable, with every action on record. Brine runs verified agents inside your own project, each built and kept current by a vetted Managed Agent Provider with a named person behind it.",
     "agents": [],
-    "agents_note": "Brine lists its own verified agents below, each built and run by a Managed Agent Provider. Ask about bringing an agent from this ranking into your Brine project.",
+    "agents_note": "Brine lists its own verified agents above, each built and run by a Managed Agent Provider. Ask about bringing an agent from this ranking into your Brine project.",
     "sections": [
       {
         "heading": "How Brine runs an agent for you",
