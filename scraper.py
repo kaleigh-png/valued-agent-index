@@ -16,7 +16,7 @@ Usage:
 Run it once a day (cron, GitHub Actions, etc.). Each run saves a snapshot in
 data/snapshots/, so star momentum becomes exact after 7 days of history.
 """
-import argparse, datetime as dt, json, os, re, sys, time
+import argparse, datetime as dt, html as htmllib, json, os, re, sys, time
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -173,8 +173,7 @@ SITE_PATHS = ["", "/pricing", "/security", "/trust", "/privacy", "/docs",
 def strip_html(html):
     html = re.sub(r"(?is)<(script|style|noscript|svg).*?</\1>", " ", html)
     text = re.sub(r"(?s)<[^>]+>", " ", html)
-    text = re.sub(r"&nbsp;|&#160;", " ", text)
-    text = re.sub(r"&amp;", "&", text)
+    text = htmllib.unescape(text).replace("\xa0", " ")
     return re.sub(r"\s+", " ", text).strip()
 
 
@@ -231,9 +230,46 @@ def collect_pages(agent):
 def clean_quote(t):
     t = re.sub(r"<[^>]*>?", " ", t)                     # html tags
     t = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", t)    # markdown links/images
-    t = re.sub(r"&\w+;", " ", t)
+    t = htmllib.unescape(t).replace("\xa0", " ")
     t = re.sub(r"[*#`|>_]{1,}|-{3,}|={3,}", " ", t)
     return re.sub(r"\s+", " ", t).strip()
+
+
+SENTENCE_END = re.compile(r"[.!?](?=\s|$)")
+
+
+def quote_around(text, s, e, pad=90, reach=150, cap=320):
+    """Cut a readable quote around text[s:e]: start at the beginning of the
+    sentence (if one starts within reach), otherwise at a word boundary with
+    an ellipsis; same at the end. Never cuts inside a word."""
+    lo = max(0, s - pad - reach)
+    ends = [m.end() for m in SENTENCE_END.finditer(text, lo, s)]
+    if ends:
+        start, lead = ends[-1], ""
+    elif s - pad <= 0:
+        start, lead = 0, ""
+    else:
+        start = text.rfind(" ", lo, s - pad)
+        start, lead = (start + 1, "…") if start != -1 else (s - pad, "…")
+    hi = min(len(text), e + pad + reach)
+    m = SENTENCE_END.search(text, e, hi)
+    if m:
+        end, tail = m.end(), ""
+    elif e + pad >= len(text):
+        end, tail = len(text), ""
+    else:
+        end = text.find(" ", e + pad, hi)
+        end, tail = (end, "…") if end != -1 else (e + pad, "…")
+    q = text[start:end].strip()
+    if len(q) > cap:                                     # keep the match, trim the far side
+        over = len(q) - cap
+        if (s - start) > (end - e):
+            cut = q.find(" ", over)
+            q, lead = (q[cut + 1:] if cut != -1 else q[over:]), "…"
+        else:
+            cut = q.rfind(" ", 0, len(q) - over)
+            q, tail = (q[:cut] if cut != -1 else q[:len(q) - over]), "…"
+    return lead + q + tail
 
 
 NEGATION = re.compile(r"\b(not|no|without|never|lacks?|missing|isn'?t|doesn'?t|don'?t)\b[^.|\n]{0,40}$", re.I)
@@ -252,8 +288,7 @@ def find(pages, pattern, kinds=None, negation_guard=True, accept=None):
                 continue
             if accept and not accept(m.group(0)):
                 continue
-            s, e = max(0, m.start() - 90), min(len(pg["text"]), m.end() + 90)
-            quote = clean_quote(pg["text"][s:e])
+            quote = clean_quote(quote_around(pg["text"], m.start(), m.end()))
             return {"answer": True, "url": pg["url"], "quote": quote}
     return None
 
