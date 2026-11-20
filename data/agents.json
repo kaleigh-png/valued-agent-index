@@ -294,7 +294,7 @@
    "travel"
   ],
   "type": "Agent",
-  "stars": 394916,
+  "stars": 394917,
   "star_gain_7d": 7650,
   "momentum_basis": "estimated",
   "sources": [
@@ -975,7 +975,7 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 8110,
+  "stars": 8111,
   "star_gain_7d": 365,
   "momentum_basis": "estimated",
   "sources": [
@@ -1116,7 +1116,7 @@
    "invoices"
   ],
   "type": "Agent",
-  "stars": 2792,
+  "stars": 2798,
   "star_gain_7d": 348,
   "momentum_basis": "estimated",
   "sources": [
@@ -1253,7 +1253,7 @@
    "crm"
   ],
   "type": "Agent",
-  "stars": 5498,
+  "stars": 5499,
   "star_gain_7d": 187,
   "momentum_basis": "estimated",
   "sources": [
@@ -1525,7 +1525,7 @@
    "data-reports"
   ],
   "type": "Agent",
-  "stars": 73559,
+  "stars": 73560,
   "star_gain_7d": 1637,
   "momentum_basis": "estimated",
   "sources": [
@@ -1664,7 +1664,7 @@
    "teaching"
   ],
   "type": "Agent",
-  "stars": 44019,
+  "stars": 44021,
   "star_gain_7d": 1211,
   "momentum_basis": "estimated",
   "sources": [
@@ -2196,8 +2196,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 9290,
-  "star_gain_7d": 2933,
+  "stars": 9292,
+  "star_gain_7d": 2931,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -2326,7 +2326,7 @@
    "presentations"
   ],
   "type": "Agent",
-  "stars": 78856,
+  "stars": 78859,
   "star_gain_7d": 1598,
   "momentum_basis": "estimated",
   "sources": [

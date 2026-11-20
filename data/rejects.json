@@ -1,5 +1,5 @@
 {
- "run_at": "2026-11-20T18:37+00:00",
+ "run_at": "2026-11-20T19:13+00:00",
  "rejected": [
   {
    "key": "web:foolscap.works",
@@ -512,9 +512,9 @@
    "text": "QuantDinger The most complete open-source, self-hosted Agentic Trading OS\u2014AI research, Python strategies, factor discove"
   },
   {
-   "key": "gh:xiaomimimo/mimo-code",
-   "reason": "developer tooling (cli)",
-   "text": "MiMo-Code MiMo Code: Where Models and Agents Co-Evolve ai ai-agents cli mimo mimo-code"
+   "key": "gh:nexu-io/openmotion",
+   "reason": "describes itself as a skills, not a worker",
+   "text": "openmotion The open-source Claude Motion & CapCut alternative. Turn a reference video into editable motion graphics with"
   },
   {
    "key": "gh:panniantong/agent-reach",
@@ -1232,11 +1232,6 @@
    "text": "ai-memory Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors "
   },
   {
-   "key": "gh:nexu-io/openmotion",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "openmotion The open-source Claude Motion & CapCut alternative. Turn a reference video into editable motion graphics with"
-  },
-  {
    "key": "gh:dsh-market/dsh-market",
    "reason": "describes itself as a harness, not a worker",
    "text": "dsh-market The plugin market inside DeepSeek Harness \u2014 browse, search, one-click install \u00b7 DSH \u53ef\u89c6\u5316\u63d2\u4ef6\u5e02\u573a deepseek-harness "
@@ -1262,14 +1257,14 @@
    "text": "open-pencil AI-native design editor. Open-source Figma alternative. ai collaboration design-editor figma-alternative ope"
   },
   {
-   "key": "gh:deeplethe/utopia",
-   "reason": "describes itself as a world model, not a worker",
-   "text": "utopia World's first open-source enterprise world model. agent-memory bitemporal graphrag knowledge-base knowledge-graph"
-  },
-  {
    "key": "gh:kajisho5/ffmpeg-skill",
    "reason": "describes itself as a skill, not a worker",
    "text": "ffmpeg-skill Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, f"
+  },
+  {
+   "key": "gh:deeplethe/utopia",
+   "reason": "describes itself as a world model, not a worker",
+   "text": "utopia World's first open-source enterprise world model. agent-memory bitemporal graphrag knowledge-base knowledge-graph"
   },
   {
    "key": "gh:momenbasel/puremac",
@@ -2710,6 +2705,11 @@
    "key": "gh:experientiallabs/experiential",
    "reason": "describes itself as a gateway, not a worker",
    "text": "experiential Experiential is the open source, zero markup gateway for BYOK, self-hosted and 1000+ marketplace models. It"
+  },
+  {
+   "key": "gh:xiaomimimo/mimo-code",
+   "reason": "developer tooling (cli)",
+   "text": "MiMo-Code MiMo Code: Where Models and Agents Co-Evolve ai ai-agents cli mimo mimo-code"
   },
   {
    "key": "gh:edge0-ai/edge0",

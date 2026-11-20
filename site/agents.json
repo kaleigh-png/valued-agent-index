@@ -8,9 +8,13 @@
   "repo_url": "https://github.com/warmbly/warmbly",
   "license": "Apache-2.0",
   "industry": "Sales & marketing",
+  "jobs": [
+   "outreach",
+   "content"
+  ],
   "type": "Agent",
-  "stars": 1070,
-  "star_gain_7d": 24,
+  "stars": 1080,
+  "star_gain_7d": 25,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -21,7 +25,7 @@
     "source": "github",
     "title": "warmbly/warmbly",
     "url": "https://github.com/warmbly/warmbly",
-    "date": "2026-11-18"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -67,7 +71,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/warmbly/warmbly",
-    "quote": "Last code push 2026-11-18"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": true,
@@ -130,10 +134,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 1,
-  "jobs": [
-   "outreach"
-  ]
+  "rank": 1
  },
  {
   "id": "foreactlabs-openexecutive",
@@ -144,9 +145,12 @@
   "repo_url": "https://github.com/ForeactLabs/OpenExecutive",
   "license": "Apache-2.0",
   "industry": "General purpose",
+  "jobs": [
+   "assistant"
+  ],
   "type": "Agent",
-  "stars": 5832,
-  "star_gain_7d": 254,
+  "stars": 5835,
+  "star_gain_7d": 252,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -157,7 +161,7 @@
     "source": "github",
     "title": "ForeactLabs/OpenExecutive",
     "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -210,7 +214,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": true,
@@ -273,10 +277,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 2,
-  "jobs": [
-   "assistant"
-  ]
+  "rank": 2
  },
  {
   "id": "openclaw-openclaw",
@@ -287,9 +288,14 @@
   "repo_url": "https://github.com/openclaw/openclaw",
   "license": "MIT",
   "industry": "Personal & everyday",
+  "jobs": [
+   "assistant",
+   "inbox-calendar",
+   "travel"
+  ],
   "type": "Agent",
-  "stars": 394809,
-  "star_gain_7d": 7672,
+  "stars": 394917,
+  "star_gain_7d": 7650,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -300,7 +306,7 @@
     "source": "github",
     "title": "openclaw/openclaw",
     "url": "https://github.com/openclaw/openclaw",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -347,7 +353,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/openclaw/openclaw",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -412,10 +418,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 3,
-  "jobs": [
-   "assistant"
-  ]
+  "rank": 3
  },
  {
   "id": "db-aeon-joshu-oss",
@@ -426,6 +429,9 @@
   "repo_url": "https://github.com/db-aeon/joshu-oss",
   "license": "NOASSERTION",
   "industry": "General purpose",
+  "jobs": [
+   "assistant"
+  ],
   "type": "Agent",
   "stars": 120,
   "star_gain_7d": 6,
@@ -546,10 +552,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 4,
-  "jobs": [
-   "assistant"
-  ]
+  "rank": 4
  },
  {
   "id": "sipeed-picoclaw",
@@ -560,9 +563,12 @@
   "repo_url": "https://github.com/sipeed/picoclaw",
   "license": "MIT",
   "industry": "General purpose",
+  "jobs": [
+   "assistant"
+  ],
   "type": "Agent",
-  "stars": 30141,
-  "star_gain_7d": 732,
+  "stars": 30144,
+  "star_gain_7d": 729,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -573,7 +579,7 @@
     "source": "github",
     "title": "sipeed/picoclaw",
     "url": "https://github.com/sipeed/picoclaw",
-    "date": "2026-11-05"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -616,7 +622,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/sipeed/picoclaw",
-    "quote": "Last code push 2026-11-05"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -678,10 +684,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 5,
-  "jobs": [
-   "assistant"
-  ]
+  "rank": 5
  },
  {
   "id": "zoharbabin-due-diligence-agents",
@@ -692,6 +695,11 @@
   "repo_url": "https://github.com/zoharbabin/due-diligence-agents",
   "license": "Apache-2.0",
   "industry": "Finance",
+  "jobs": [
+   "contracts",
+   "diligence",
+   "compliance"
+  ],
   "type": "Agent",
   "stars": 139,
   "star_gain_7d": 4,
@@ -813,11 +821,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 6,
-  "jobs": [
-   "contracts",
-   "diligence"
-  ]
+  "rank": 6
  },
  {
   "id": "hkuds-vibe-trading",
@@ -828,9 +832,14 @@
   "repo_url": "https://github.com/HKUDS/Vibe-Trading",
   "license": "MIT",
   "industry": "Finance",
+  "jobs": [
+   "markets",
+   "research",
+   "household"
+  ],
   "type": "Agent",
-  "stars": 38525,
-  "star_gain_7d": 1161,
+  "stars": 38610,
+  "star_gain_7d": 1158,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -841,7 +850,7 @@
     "source": "github",
     "title": "HKUDS/Vibe-Trading",
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -888,7 +897,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -951,10 +960,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 7,
-  "jobs": [
-   "markets"
-  ]
+  "rank": 7
  },
  {
   "id": "shy3130-tick-stock-panel",
@@ -965,9 +971,12 @@
   "repo_url": "https://github.com/shy3130/tick-stock-panel",
   "license": "MIT",
   "industry": "Finance",
+  "jobs": [
+   "markets"
+  ],
   "type": "Agent",
-  "stars": 8087,
-  "star_gain_7d": 367,
+  "stars": 8111,
+  "star_gain_7d": 365,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1091,10 +1100,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 8,
-  "jobs": [
-   "markets"
-  ]
+  "rank": 8
  },
  {
   "id": "n8n-io-nod",
@@ -1105,9 +1111,13 @@
   "repo_url": "https://github.com/n8n-io/nod",
   "license": "Apache-2.0",
   "industry": "Finance",
+  "jobs": [
+   "assistant",
+   "invoices"
+  ],
   "type": "Agent",
-  "stars": 2605,
-  "star_gain_7d": 331,
+  "stars": 2798,
+  "star_gain_7d": 348,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1118,7 +1128,7 @@
     "source": "github",
     "title": "n8n-io/nod",
     "url": "https://github.com/n8n-io/nod",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -1166,7 +1176,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/n8n-io/nod",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -1228,11 +1238,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 9,
-  "jobs": [
-   "assistant",
-   "invoices"
-  ]
+  "rank": 9
  },
  {
   "id": "melgarafael-deskcommcrm",
@@ -1243,8 +1249,11 @@
   "repo_url": "https://github.com/melgarafael/DeskcommCRM",
   "license": "MIT",
   "industry": "Real estate",
+  "jobs": [
+   "crm"
+  ],
   "type": "Agent",
-  "stars": 5482,
+  "stars": 5499,
   "star_gain_7d": 187,
   "momentum_basis": "estimated",
   "sources": [
@@ -1256,7 +1265,7 @@
     "source": "github",
     "title": "melgarafael/DeskcommCRM",
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -1302,7 +1311,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -1368,10 +1377,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 10,
-  "jobs": [
-   "crm"
-  ]
+  "rank": 10
  },
  {
   "id": "huabeitech-agent-desk",
@@ -1382,6 +1388,9 @@
   "repo_url": "https://github.com/huabeitech/agent-desk",
   "license": "Apache-2.0",
   "industry": "Customer support",
+  "jobs": [
+   "support-tickets"
+  ],
   "type": "Agent",
   "stars": 309,
   "star_gain_7d": 9,
@@ -1500,10 +1509,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 11,
-  "jobs": [
-   "support-tickets"
-  ]
+  "rank": 11
  },
  {
   "id": "zhulinsen-daily-stock-analysis",
@@ -1514,9 +1520,13 @@
   "repo_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
   "license": "MIT",
   "industry": "Finance",
+  "jobs": [
+   "markets",
+   "data-reports"
+  ],
   "type": "Agent",
-  "stars": 73465,
-  "star_gain_7d": 1641,
+  "stars": 73560,
+  "star_gain_7d": 1637,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1527,7 +1537,7 @@
     "source": "github",
     "title": "ZhuLinsen/daily_stock_analysis",
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -1579,7 +1589,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -1639,11 +1649,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 12,
-  "jobs": [
-   "markets",
-   "data-reports"
-  ]
+  "rank": 12
  },
  {
   "id": "thu-maic-openmaic",
@@ -1654,9 +1660,12 @@
   "repo_url": "https://github.com/THU-MAIC/OpenMAIC",
   "license": "MIT",
   "industry": "Education",
+  "jobs": [
+   "teaching"
+  ],
   "type": "Agent",
-  "stars": 43947,
-  "star_gain_7d": 1215,
+  "stars": 44021,
+  "star_gain_7d": 1211,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1667,7 +1676,7 @@
     "source": "github",
     "title": "THU-MAIC/OpenMAIC",
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -1709,7 +1718,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -1771,10 +1780,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 13,
-  "jobs": [
-   "teaching"
-  ]
+  "rank": 13
  },
  {
   "id": "tnt-likely-panwatch",
@@ -1785,8 +1791,11 @@
   "repo_url": "https://github.com/TNT-Likely/PanWatch",
   "license": "MIT",
   "industry": "Finance",
+  "jobs": [
+   "markets"
+  ],
   "type": "Agent",
-  "stars": 2536,
+  "stars": 2555,
   "star_gain_7d": 59,
   "momentum_basis": "estimated",
   "sources": [
@@ -1798,7 +1807,7 @@
     "source": "github",
     "title": "TNT-Likely/PanWatch",
     "url": "https://github.com/TNT-Likely/PanWatch",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -1844,7 +1853,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/TNT-Likely/PanWatch",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -1905,10 +1914,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 14,
-  "jobs": [
-   "markets"
-  ]
+  "rank": 14
  },
  {
   "id": "evolution-foundation-evo-crm-community",
@@ -1919,6 +1925,11 @@
   "repo_url": "https://github.com/evolution-foundation/evo-crm-community",
   "license": "NOASSERTION",
   "industry": "Real estate",
+  "jobs": [
+   "crm",
+   "support-tickets",
+   "content"
+  ],
   "type": "Agent",
   "stars": 312,
   "star_gain_7d": 9,
@@ -2036,11 +2047,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 15,
-  "jobs": [
-   "crm",
-   "support-tickets"
-  ]
+  "rank": 15
  },
  {
   "id": "lethe044-hermes-life-os",
@@ -2051,8 +2058,12 @@
   "repo_url": "https://github.com/Lethe044/hermes-life-os",
   "license": "MIT",
   "industry": "Personal & everyday",
+  "jobs": [
+   "health",
+   "household"
+  ],
   "type": "Agent",
-  "stars": 245,
+  "stars": 246,
   "star_gain_7d": 7,
   "momentum_basis": "estimated",
   "sources": [
@@ -2170,11 +2181,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 16,
-  "jobs": [
-   "health",
-   "household"
-  ]
+  "rank": 16
  },
  {
   "id": "wangzan101-mika",
@@ -2185,9 +2192,12 @@
   "repo_url": "https://github.com/wangzan101/Mika",
   "license": "Apache-2.0",
   "industry": "General purpose",
+  "jobs": [
+   "assistant"
+  ],
   "type": "Agent",
-  "stars": 9157,
-  "star_gain_7d": 3045,
+  "stars": 9292,
+  "star_gain_7d": 2931,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -2198,7 +2208,7 @@
     "source": "github",
     "title": "wangzan101/Mika",
     "url": "https://github.com/wangzan101/Mika",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -2243,7 +2253,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/wangzan101/Mika",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -2300,10 +2310,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 17,
-  "jobs": [
-   "assistant"
-  ]
+  "rank": 17
  },
  {
   "id": "hugohe3-ppt-master",
@@ -2314,9 +2321,13 @@
   "repo_url": "https://github.com/hugohe3/ppt-master",
   "license": "MIT",
   "industry": "General purpose",
+  "jobs": [
+   "paperwork",
+   "presentations"
+  ],
   "type": "Agent",
-  "stars": 78557,
-  "star_gain_7d": 1597,
+  "stars": 78859,
+  "star_gain_7d": 1598,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -2327,7 +2338,7 @@
     "source": "github",
     "title": "hugohe3/ppt-master",
     "url": "https://github.com/hugohe3/ppt-master",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "pages_checked": [
@@ -2371,7 +2382,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/hugohe3/ppt-master",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-20"
    },
    "no_training": {
     "answer": false,
@@ -2434,10 +2445,6 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 18,
-  "jobs": [
-   "paperwork",
-   "presentations"
-  ]
+  "rank": 18
  }
 ]
