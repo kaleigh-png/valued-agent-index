@@ -1,5 +1,5 @@
 {
- "run_at": "2026-11-20T17:14+00:00",
+ "run_at": "2026-11-20T18:37+00:00",
  "rejected": [
   {
    "key": "web:foolscap.works",
@@ -157,24 +157,9 @@
    "text": "Harvard researchers find AI coding agents shifted the bottleneck to code review"
   },
   {
-   "key": "gh:runanywhereai/trnrt",
-   "reason": "developer tooling (inference)",
-   "text": "Show HN: TrnRT \u2013 An open-source LLM inference engine for AWS Trainium"
-  },
-  {
-   "key": "web:yarn.so",
-   "reason": "never calls itself an agent, assistant or copilot",
-   "text": "Show HN: An API for word timestamps from speech, 75% within 20ms"
-  },
-  {
    "key": "gh:prapaa-ai/agav",
    "reason": "developer tooling (terminal)",
    "text": "Show HN: Agav \u2013 an open-source terminal agent designed to waste fewer tokens"
-  },
-  {
-   "key": "gh:yocontra/pulsar",
-   "reason": "describes itself as a harness, not a worker",
-   "text": "Show HN: Pulsar \u2013 cross-harness agent to agent communication and messaging"
   },
   {
    "key": "web:antonio.cx",
@@ -187,24 +172,9 @@
    "text": "Show HN: Fakemetrics.com \u2013 \"build in public\" like a superstar"
   },
   {
-   "key": "gh:withcoral/coral",
-   "reason": "describes itself as a gateway, not a worker",
-   "text": "Show HN: Coral \u2013 Open-source gateway where agents write their own tools"
-  },
-  {
-   "key": "gh:bitsinfra/gnomon",
-   "reason": "describes itself as a built for agents, not a worker",
-   "text": "Gnomon. Git for Postgres data, built for agents"
-  },
-  {
    "key": "web:googleblog.com",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "A2UI 1.0"
-  },
-  {
-   "key": "gh:aws/aws-emulator",
-   "reason": "never calls itself an agent, assistant or copilot",
-   "text": "AWS emulator"
   },
   {
    "key": "gh:klad-app/klad",
@@ -212,19 +182,9 @@
    "text": "Show HN: Klad, a paint app your coding agent can drive (source-available)"
   },
   {
-   "key": "gh:cattlecloud/litesql",
-   "reason": "describes itself as a library, not a worker",
-   "text": "Show HN: I created a library for correctly using SQLite in Go programs"
-  },
-  {
    "key": "gh:googlechrome/modern-web-guidance",
    "reason": "developer tooling (coding agent)",
    "text": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives"
-  },
-  {
-   "key": "web:aircad.com",
-   "reason": "never calls itself an agent, assistant or copilot",
-   "text": "Show HN: Aircad \u2013 Professional drafting and 3D modeling in the browser"
   },
   {
    "key": "gh:zigaowang/zigzag",
@@ -2022,14 +1982,14 @@
    "text": "US-New-Grad-Internship-Jobs US new grad, entry-level & internship jobs \u2014 updated daily by Workopia careers entry-level g"
   },
   {
-   "key": "gh:apify/awesome-skills",
-   "reason": "describes itself as a awesome, not a worker",
-   "text": "awesome-skills Community collection of Apify agent skills for AI coding assistants actor agent-skills ai-agents apify aw"
-  },
-  {
    "key": "gh:superhero-tech/superhero-skills",
    "reason": "describes itself as a skills, not a worker",
    "text": "superhero-skills Battle-tested agent skills for Product Builders. Part of the Product Builder OS by Superhero.tech: Supe"
+  },
+  {
+   "key": "gh:apify/awesome-skills",
+   "reason": "describes itself as a awesome, not a worker",
+   "text": "awesome-skills Community collection of Apify agent skills for AI coding assistants actor agent-skills ai-agents apify aw"
   },
   {
    "key": "gh:scottcjn/rustchain-bounties",
@@ -2180,11 +2140,6 @@
    "key": "gh:rerun-build/rerun",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "rerun AI coworkers that run your work. Self-hostable, AGPL-3.0. "
-  },
-  {
-   "key": "gh:rampstackco/claude-skills",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "claude-skills Stack-agnostic Claude Skills covering the full website lifecycle: brand, design, content, SEO, dev, ops, g"
   },
   {
    "key": "gh:freestylefly/awesome-gpt-image-2",
@@ -2422,14 +2377,14 @@
    "text": "hyperfide-oss The ai agent workflow tool that scales from small, simple projects to large, complex codebases. Community "
   },
   {
-   "key": "gh:ksenxx/kiss_ai",
-   "reason": "describes itself as a framework, not a worker",
-   "text": "kiss_ai KISS Sorcar: Keep it Simple, Stupid AI General Purpose Agent Framework for Long Horizon Tasks and AI Discovery "
-  },
-  {
    "key": "gh:zazencodes/zazencodes-season-3",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "zazencodes-season-3 YouTube video source code for Season 3 "
+  },
+  {
+   "key": "gh:ksenxx/kiss_ai",
+   "reason": "describes itself as a framework, not a worker",
+   "text": "kiss_ai KISS Sorcar: Keep it Simple, Stupid AI General Purpose Agent Framework for Long Horizon Tasks and AI Discovery "
   },
   {
    "key": "gh:kohaku-lab/kohakuterrarium",
@@ -3362,11 +3317,6 @@
    "text": "obscura The headless browser for AI agents and web scraping antidetect antidetect-browser browser browser-automation cdp"
   },
   {
-   "key": "gh:gastownhall/gastown",
-   "reason": "developer tooling (agent workspace)",
-   "text": "gastown Gas Town - multi-agent workspace manager "
-  },
-  {
    "key": "gh:cashew-labs/libretto",
    "reason": "describes itself as a toolkit, not a worker",
    "text": "libretto The AI toolkit for building reliable browser automations automation browser claude-code codex rpa"
@@ -3884,7 +3834,7 @@
   {
    "key": "web:gizmodo.com",
    "reason": "names no job it does for someone",
-   "text": "     The Fed Is Worried AI Agents Could Trigger a Bank Run The Fed Is Worried AI Agents Could Trigger a Bank Run The Fed"
+   "text": "     The Fed Is Worried AI Agents Could Trigger a Bank Run The Fed Is Worried AI Agents Could Trigger a Bank Run"
   },
   {
    "key": "web:relatedb.ai",
