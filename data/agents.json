@@ -130,7 +130,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 1
+  "rank": 1,
+  "jobs": [
+   "outreach"
+  ]
  },
  {
   "id": "foreactlabs-openexecutive",
@@ -270,7 +273,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 2
+  "rank": 2,
+  "jobs": [
+   "assistant"
+  ]
  },
  {
   "id": "openclaw-openclaw",
@@ -406,7 +412,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 3
+  "rank": 3,
+  "jobs": [
+   "assistant"
+  ]
  },
  {
   "id": "db-aeon-joshu-oss",
@@ -537,7 +546,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 4
+  "rank": 4,
+  "jobs": [
+   "assistant"
+  ]
  },
  {
   "id": "sipeed-picoclaw",
@@ -666,7 +678,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 5
+  "rank": 5,
+  "jobs": [
+   "assistant"
+  ]
  },
  {
   "id": "zoharbabin-due-diligence-agents",
@@ -798,7 +813,11 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 6
+  "rank": 6,
+  "jobs": [
+   "contracts",
+   "diligence"
+  ]
  },
  {
   "id": "hkuds-vibe-trading",
@@ -932,7 +951,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 7
+  "rank": 7,
+  "jobs": [
+   "markets"
+  ]
  },
  {
   "id": "shy3130-tick-stock-panel",
@@ -1069,7 +1091,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 8
+  "rank": 8,
+  "jobs": [
+   "markets"
+  ]
  },
  {
   "id": "n8n-io-nod",
@@ -1203,7 +1228,11 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 9
+  "rank": 9,
+  "jobs": [
+   "assistant",
+   "invoices"
+  ]
  },
  {
   "id": "melgarafael-deskcommcrm",
@@ -1339,7 +1368,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 10
+  "rank": 10,
+  "jobs": [
+   "crm"
+  ]
  },
  {
   "id": "huabeitech-agent-desk",
@@ -1468,7 +1500,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 11
+  "rank": 11,
+  "jobs": [
+   "support-tickets"
+  ]
  },
  {
   "id": "zhulinsen-daily-stock-analysis",
@@ -1604,7 +1639,11 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 12
+  "rank": 12,
+  "jobs": [
+   "markets",
+   "data-reports"
+  ]
  },
  {
   "id": "thu-maic-openmaic",
@@ -1732,7 +1771,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 13
+  "rank": 13,
+  "jobs": [
+   "teaching"
+  ]
  },
  {
   "id": "tnt-likely-panwatch",
@@ -1863,7 +1905,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 14
+  "rank": 14,
+  "jobs": [
+   "markets"
+  ]
  },
  {
   "id": "evolution-foundation-evo-crm-community",
@@ -1991,7 +2036,11 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 15
+  "rank": 15,
+  "jobs": [
+   "crm",
+   "support-tickets"
+  ]
  },
  {
   "id": "lethe044-hermes-life-os",
@@ -2121,7 +2170,11 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 16
+  "rank": 16,
+  "jobs": [
+   "health",
+   "household"
+  ]
  },
  {
   "id": "wangzan101-mika",
@@ -2247,7 +2300,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 17
+  "rank": 17,
+  "jobs": [
+   "assistant"
+  ]
  },
  {
   "id": "hugohe3-ppt-master",
@@ -2378,6 +2434,10 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 18
+  "rank": 18,
+  "jobs": [
+   "paperwork",
+   "presentations"
+  ]
  }
 ]

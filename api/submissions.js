@@ -1,20 +1,22 @@
-// Private read of every form submission. Needs the ADMIN_KEY env var,
+// Private read of everything people sent in. Needs the ADMIN_KEY env var,
 // sent as ?key=... or an x-admin-key header. Used by /admin.
-import { db, json } from './_store.js';
+import { db, json, adminOk, parse } from './_store.js';
+import { PENDING } from './stories.js';
 
 export async function GET(request) {
-  const key = process.env.ADMIN_KEY;
-  if (!key) return json({ error: 'ADMIN_KEY is not set on the project' }, 503);
-  const url = new URL(request.url);
-  const given = request.headers.get('x-admin-key') || url.searchParams.get('key') || '';
-  if (given.length !== key.length || given !== key) return json({ error: 'Not allowed' }, 401);
+  const auth = adminOk(request);
+  if (!auth.ok) return auth.res;
   try {
     const store = db();
     const out = {};
     for (const kind of ['claim', 'manage', 'pulse']) {
-      const raw = await store.lrange(`submissions:${kind}`, 0, -1);
-      out[kind] = raw.map(r => (typeof r === 'string' ? JSON.parse(r) : r));
+      out[kind] = (await store.lrange(`submissions:${kind}`, 0, -1)).map(parse);
     }
+    out.stories_pending = Object.values((await store.hgetall(PENDING)) || {}).map(parse).filter(Boolean)
+      .sort((x, y) => String(y.ts).localeCompare(String(x.ts)));
+    out.reports = (await store.lrange('reports', 0, -1)).map(parse).filter(Boolean);
+    out.jobs_named = (await store.lrange('jobs:named', 0, 999)).map(parse).filter(Boolean);
+    out.corrections = (await store.lrange('corrections', 0, 199)).map(parse).filter(Boolean);
     return json(out);
   } catch (err) {
     console.error('submissions failed', err);

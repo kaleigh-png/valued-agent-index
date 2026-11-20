@@ -20,6 +20,8 @@ import argparse, datetime as dt, html as htmllib, json, os, re, sys, time
 from pathlib import Path
 from urllib.parse import urlparse
 
+from jobmap import jobs_for
+
 import requests
 
 RUBRIC_VERSION = "1.0"
@@ -717,6 +719,7 @@ def main():
             or ag["mentions"][0]["url"],
             "repo_url": repo.get("html_url"), "license": (repo.get("license") or {}).get("spdx_id"),
             "industry": classify(blob),
+            "jobs": jobs_for(own),
             "type": "Agent",
             "stars": ag["_stars"], "star_gain_7d": ag["_gain"], "momentum_basis": ag["_basis"],
             "sources": ag["_srcs"], "mentions_14d": ag["_buzz"],
@@ -727,6 +730,18 @@ def main():
             "checks": checks, "score": sum(1 for c in checks.values() if c["answer"]),
             "get_it": get_it(pages, checks, repo),
         })
+
+    # Editor's blocklist: data/blocklist.json, [{"id": "...", "reason": "..."}].
+    # A listing removed here shows in the public reject log with the reason.
+    bl_path = Path("data/blocklist.json")
+    blocked = {b["id"]: b.get("reason", "") for b in json.loads(bl_path.read_text())} if bl_path.exists() else {}
+    kept = []
+    for x in out:
+        if x["id"] in blocked:
+            reject(x["id"], "removed by the editor: " + (blocked[x["id"]] or "no reason given"), x["description"])
+        else:
+            kept.append(x)
+    out = kept
 
     # Final order: score, then buzz, then star gain, then name.
     out.sort(key=lambda x: (-x["score"], -x["mentions_14d"], -(x["star_gain_7d"] or 0), x["name"].lower()))

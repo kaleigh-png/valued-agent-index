@@ -1,0 +1,295 @@
+{
+  "version": "1.0",
+  "note": "Function-first map of the jobs people hand to agents. Industries are tags, not a level. Job wording follows O*NET task style; functions follow the common cross-industry process groupings. Edit here, never in site/.",
+  "industries": [
+    "Defense & GovCon",
+    "Insurance",
+    "Banking & credit unions",
+    "Healthcare",
+    "Legal",
+    "Staffing & recruiting",
+    "Nonprofit & public sector",
+    "Real estate",
+    "Retail & e-commerce",
+    "Manufacturing & logistics",
+    "Education",
+    "Professional services",
+    "Software",
+    "Personal"
+  ],
+  "functions": [
+    "Sales & marketing",
+    "Customer support",
+    "Finance & accounting",
+    "HR & recruiting",
+    "Operations & admin",
+    "Legal, compliance & risk",
+    "Proposals, grants & procurement",
+    "IT & security operations",
+    "Research & analysis",
+    "Healthcare & clinical",
+    "Education",
+    "Property",
+    "Personal life"
+  ],
+  "jobs": [
+    {
+      "id": "find-leads",
+      "function": "Sales & marketing",
+      "name": "Find and qualify leads",
+      "match": "lead (gen|generation)|\\bleads\\b|prospect\\w*|lead list"
+    },
+    {
+      "id": "outreach",
+      "function": "Sales & marketing",
+      "name": "Cold outreach and follow-ups",
+      "match": "cold (email|outreach|call)|\\boutreach\\b|follow-?ups?|sequences?|warm intro"
+    },
+    {
+      "id": "crm",
+      "function": "Sales & marketing",
+      "name": "Keep the CRM and pipeline current",
+      "match": "\\bcrm\\b|sales pipeline|deal notes|pipeline"
+    },
+    {
+      "id": "content",
+      "function": "Sales & marketing",
+      "name": "Run social, content and campaigns",
+      "match": "social media|content calendar|newsletters?|\\bseo\\b|campaigns?|\\bmarketing\\b|blog posts?|linkedin posts?"
+    },
+    {
+      "id": "support-tickets",
+      "function": "Customer support",
+      "name": "Answer support tickets and chats",
+      "match": "customer (support|service)|help ?desk|support tickets?|support desk|live chat|chatbot for customers"
+    },
+    {
+      "id": "churn",
+      "function": "Customer support",
+      "name": "Keep customers from leaving",
+      "match": "churn|customer success|renewals?|retention"
+    },
+    {
+      "id": "invoices",
+      "function": "Finance & accounting",
+      "name": "Chase overdue invoices",
+      "match": "invoices?|invoicing|collections|accounts? receivable|overdue|dunning"
+    },
+    {
+      "id": "bills",
+      "function": "Finance & accounting",
+      "name": "Pay bills and code expenses",
+      "match": "accounts? payable|expenses?|receipts?|bill pay|vendor bills"
+    },
+    {
+      "id": "books",
+      "function": "Finance & accounting",
+      "name": "Close the books",
+      "match": "bookkeep\\w*|reconcil\\w+|accounting|month[- ]end|ledger|tax(es)? (prep|filing|return)"
+    },
+    {
+      "id": "finance-reports",
+      "function": "Finance & accounting",
+      "name": "Forecast cash and report numbers",
+      "match": "financial analys\\w+|cash ?flow|forecast\\w*|budget(ing)?\\b|financial report\\w*|\\bfp&a\\b"
+    },
+    {
+      "id": "markets",
+      "function": "Finance & accounting",
+      "name": "Watch markets and portfolios",
+      "match": "investing|portfolio|trading|stock (analysis|monitoring|research|screener)|stocks?\\b|crypto|markets?\\b|equities"
+    },
+    {
+      "id": "screen-applicants",
+      "function": "HR & recruiting",
+      "name": "Screen applicants",
+      "match": "resume (screening|parsing|review)|screen(s|ing)? (resumes|candidates|applicants)|candidates?|applicants?|recruit\\w*|hiring|sourcing candidates|interview scheduling"
+    },
+    {
+      "id": "onboarding",
+      "function": "HR & recruiting",
+      "name": "Onboard new hires",
+      "match": "onboarding|new hires?"
+    },
+    {
+      "id": "hr-questions",
+      "function": "HR & recruiting",
+      "name": "Run payroll and answer HR questions",
+      "match": "payroll|hr (questions|team|requests?|desk)|human resources|benefits questions|\\bpto\\b|time ?off requests?"
+    },
+    {
+      "id": "inbox-calendar",
+      "function": "Operations & admin",
+      "name": "Run the inbox and calendar",
+      "match": "inbox|(reads?|triages?|answers?|drafts?|sends?|manages?|handles?) (your |my )?emails?|scheduling|appointments?|calendar|meetings?\\b|booking"
+    },
+    {
+      "id": "meeting-notes",
+      "function": "Operations & admin",
+      "name": "Take meeting notes and follow through",
+      "match": "meeting notes|note-?taking|transcription|transcribe|action items"
+    },
+    {
+      "id": "paperwork",
+      "function": "Operations & admin",
+      "name": "Data entry, forms and paperwork",
+      "match": "data entry|spreadsheets?|paperwork|intake|back office|forms?\\b|documents?\\b|document processing|\\bocr\\b|extracts? data"
+    },
+    {
+      "id": "presentations",
+      "function": "Operations & admin",
+      "name": "Make presentations and documents",
+      "match": "presentations?|slides|decks?|powerpoint|reports? (from|for)|write-?ups?"
+    },
+    {
+      "id": "assistant",
+      "function": "Operations & admin",
+      "name": "Act as an assistant and get things done",
+      "match": "executive assistant|virtual assistant|personal (assistant|agent)|executive team|receptionist|concierge|gets? things done|does things|do things|everyday tasks|daily tasks|tasks for you|automates? the mundane|chief of staff|office manager"
+    },
+    {
+      "id": "purchasing",
+      "function": "Operations & admin",
+      "name": "Purchasing, orders and inventory",
+      "match": "procurement|purchase orders?|vendors?|suppliers?|inventory|order (processing|management|fulfil\\w+)|fulfil\\w+|logistics|shipping|supply chain|restock"
+    },
+    {
+      "id": "contracts",
+      "function": "Legal, compliance & risk",
+      "name": "Review contracts",
+      "match": "contracts?|\\blegal\\b|paralegal|litigation|\\bnda\\b|redlin\\w+|clauses?"
+    },
+    {
+      "id": "compliance",
+      "function": "Legal, compliance & risk",
+      "name": "Pass audits and stay compliant",
+      "match": "compliance|audits?|auditor|soc ?2|iso ?27001|hipaa|gdpr|\\bgrc\\b|policies|controls|evidence collection"
+    },
+    {
+      "id": "diligence",
+      "function": "Legal, compliance & risk",
+      "name": "Due diligence, KYC and fraud checks",
+      "match": "due diligence|\\bkyc\\b|\\baml\\b|fraud|background checks?|sanctions"
+    },
+    {
+      "id": "insurance",
+      "function": "Legal, compliance & risk",
+      "name": "Insurance claims and underwriting",
+      "match": "insurance claims?|claims processing|underwriting|insurance|adjuster|policy (admin|renewal)"
+    },
+    {
+      "id": "security-questionnaires",
+      "function": "Legal, compliance & risk",
+      "name": "Answer security and vendor questionnaires",
+      "match": "security questionnaires?|vendor questionnaires?|vendor risk|third[- ]party risk"
+    },
+    {
+      "id": "rfps",
+      "function": "Proposals, grants & procurement",
+      "name": "Find and track RFPs",
+      "match": "\\brfps?\\b|\\brfis?\\b|\\brfqs?\\b|\\bbids?\\b|capture management|sam\\.gov|solicitations?|amendments"
+    },
+    {
+      "id": "proposals",
+      "function": "Proposals, grants & procurement",
+      "name": "Write proposals and quotes",
+      "match": "proposals?|price quotes?|quoting|quotes? for customers|statements? of work|\\bsow\\b"
+    },
+    {
+      "id": "grants",
+      "function": "Proposals, grants & procurement",
+      "name": "Win and manage grants",
+      "match": "grants?\\b|grant (writing|management|reporting)|funders?"
+    },
+    {
+      "id": "public-records",
+      "function": "Proposals, grants & procurement",
+      "name": "Respond to public records requests",
+      "match": "public records|\\bfoia\\b|records requests?|open records"
+    },
+    {
+      "id": "security-alerts",
+      "function": "IT & security operations",
+      "name": "Triage security alerts and incidents",
+      "match": "security alerts?|soc analyst|threat (report|intel\\w*|hunting)|incident response|incidents?\\b|phishing reports?|alert triage"
+    },
+    {
+      "id": "it-tickets",
+      "function": "IT & security operations",
+      "name": "Handle IT tickets and access requests",
+      "match": "it tickets?|access requests?|password resets?|it help ?desk|\\bitsm\\b|service desk"
+    },
+    {
+      "id": "research",
+      "function": "Research & analysis",
+      "name": "Research companies, markets and people",
+      "match": "market research|competitive (research|intel\\w*)|company research|\\bresearch\\b|web research|literature review"
+    },
+    {
+      "id": "data-reports",
+      "function": "Research & analysis",
+      "name": "Build reports and dashboards from data",
+      "match": "reporting|dashboards?|analytics|data analys\\w+|\\bsql\\b|business intelligence|\\bkpis?\\b"
+    },
+    {
+      "id": "patients",
+      "function": "Healthcare & clinical",
+      "name": "Patient intake, scheduling and follow-up",
+      "match": "patients?|clinical|prior auth\\w*|patient (intake|scheduling|follow-?up)|appointment reminders"
+    },
+    {
+      "id": "medical-billing",
+      "function": "Healthcare & clinical",
+      "name": "Medical billing and coding",
+      "match": "medical (billing|coding)|\\bbilling\\b|claims? denials?|revenue cycle|\\bicd-?10\\b"
+    },
+    {
+      "id": "teaching",
+      "function": "Education",
+      "name": "Teach, tutor and grade",
+      "match": "students?|tutoring|tutor|grading|homework|classroom|lesson plans?|courses? for|teachers?"
+    },
+    {
+      "id": "property",
+      "function": "Property",
+      "name": "Manage tenants, listings and showings",
+      "match": "tenants\\b|tenant (screening|portal|requests?|communications?)|property management|real estate|landlords?|property listings|showings?|leases?\\b"
+    },
+    {
+      "id": "travel",
+      "function": "Personal life",
+      "name": "Plan and book travel",
+      "match": "travel|trips?\\b|flights?|hotels?|itinerar\\w+"
+    },
+    {
+      "id": "food",
+      "function": "Personal life",
+      "name": "Shop, plan meals and cook",
+      "match": "shopping|grocer\\w+|meal (plan\\w*|prep)|recipes?|cooking"
+    },
+    {
+      "id": "health",
+      "function": "Personal life",
+      "name": "Stay fit and healthy",
+      "match": "fitness|workouts?|training plan|\\bhealth\\b|habits?|wellness|sleep|nutrition"
+    },
+    {
+      "id": "home-money",
+      "function": "Personal life",
+      "name": "Manage money at home",
+      "match": "personal finance|household budget|\\bbills\\b|subscriptions|savings|spending"
+    },
+    {
+      "id": "job-search",
+      "function": "Personal life",
+      "name": "Find a job",
+      "match": "job (search|hunt|applications?)|cover letters?|resume (builder|writer)|apply to jobs"
+    },
+    {
+      "id": "household",
+      "function": "Personal life",
+      "name": "Run the household",
+      "match": "reminders?|to-?do|errands|chores|family|kids|parent\\w*|journal\\w*|day planning|life planner|life admin"
+    }
+  ]
+}

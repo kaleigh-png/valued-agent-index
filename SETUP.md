@@ -1,56 +1,70 @@
 # How valuedagentreseller.com is set up
 
-The site is the `site/` folder: one static page plus three JSON files. Nothing is built.
+The site is the `site/` folder: one static page, a private editor page, and JSON files.
+Nothing is built. Small functions in `api/` handle everything people send in.
 
 - **Code and archive:** GitHub, `kaleigh-png/valued-agent-index`.
 - **Hosting:** Vercel, project `valuedagentreseller`, serving `site/` (see `vercel.json`).
-- **Daily update:** the GitHub Action in `.github/workflows/daily.yml` runs the scraper at
-  10:17 UTC, copies fresh data into `site/`, and commits. Vercel watches the repo and
-  redeploys on every push to `main`, so the commit is what publishes.
+- **Daily scrape, weekly publish:** `.github/workflows/daily.yml` runs at 10:17 UTC every
+  day. Every run writes a preview to `site/next/`. Monday's run copies the data into
+  `site/`, which is what the public sees. Vercel redeploys on every push to `main`.
 
-## Run the update by hand
-GitHub → the repo → **Actions → Daily agent index → Run workflow**. The site updates a
-minute or two after the commit lands.
+## Publish early, or pull something
+- GitHub → the repo → **Actions → Agent index → Run workflow**, tick **publish**.
+- To keep an agent off the list, add it to `data/blocklist.json`:
+  `[{"id": "agent-id", "reason": "why"}]`. The reason is published in the reject log.
+- `/admin` → "Next publish" shows what Monday would add or drop.
+
+## The editor page
+`https://valuedagentreseller.com/admin` with the admin key (`ADMIN_KEY` on the Vercel
+project; a copy is in the untracked `.env.local`). It shows pending stories (approve,
+reject, add an editor's note), published stories (post a reply, unpublish), error reports
+and replies (publish a correction and close), jobs people named, help requests with the
+providers they chose, claims, Pulse subscribers, and the reject log.
+
+Rules for the editor:
+- Approve a story only after confirming the sender's email. Every story shows who wrote it.
+- Only people who ticked "tell me when an agent exists" left an email in the job box, and
+  it is for that message only. Nobody else may be contacted.
+- Help requests go to the providers the person ticked, and only them.
 
 ## Change the page
-Edit `site/index.html`, commit, push. Vercel redeploys automatically. To preview locally:
+Edit `site/index.html`, commit, push. To preview locally with the API working:
 
 ```
-python3 -m http.server 8765 --directory site
+vercel dev --listen 3333
 ```
-then open http://localhost:8765.
+then open http://localhost:3333. (`vercel env pull .env.local` first if the store vars are
+missing.) For the static page alone: `python3 -m http.server 8765 --directory site`.
 
 ## Domain
 `valuedagentreseller.com` and `www` are attached to the Vercel project. DNS lives at the
 registrar; the records Vercel expects are shown under the project's **Settings → Domains**.
 
-## Reviews and forms
-Both run on two small functions in `api/` backed by an Upstash Redis store on the Vercel
-project (provisioned with `vercel integration add upstash`). Reviews live in one hash;
-each form (claim, manage, Pulse) is a list. Read every submission at
-`https://valuedagentreseller.com/admin.html` with the admin key, which is the `ADMIN_KEY`
-environment variable on the Vercel project (a copy is in the untracked `.env.local`).
+## Storage
+An Upstash Redis store on the Vercel project (`vercel integration add upstash`). Keys:
+`reviews` (hash), `stories` and `stories:pending` (hashes), `jobs:named`, `reports`,
+`corrections`, `submissions:<kind>` (lists), `pulse:emails` (set).
 
 ## Providers
-`site/providers.json` lists the companies with a provider page (`#provider-<slug>`):
-name, kinds (`managed`, `host`, `reseller`, `referral`), website, description, and the
-agent ids they work with (or `"all"`). Edit it by hand after confirming a claim; it is
-never scraped.
+`site/providers.json`: slug, name, kinds (`managed`, `host`), `operator: true` for the
+company that runs the site, `jobs` (ids from `data/jobs.json`), website, contact, and the
+agent ids they work with. Edit it by hand after confirming a claim; it is never scraped.
 
-## What gets listed, and the two knobs that are yours
-The scraper only lists agents that do a job for someone at work or in life, and drops
-developer tooling, lists, frameworks and anything built to evade or deceive. See the
-"Listed because" and "Rejected this run" tables on `/admin` after each run.
+## The job map
+`data/jobs.json`: functions, industries (tags) and jobs, each with a regex that tags agents
+from their own description. Edit it, run `python tests/test_gate.py`, then `python
+tag_jobs.py` to re-tag the published list. Bump `version` when you change it. Jobs people
+type into the box that match nothing are the backlog for the next version.
 
-- **Product Hunt.** Launches there are a source once `PRODUCT_HUNT_TOKEN` is set on the
-  GitHub repo (Settings → Secrets → Actions) and passed in `daily.yml`. A developer token
-  is free at https://www.producthunt.com/v2/oauth/applications.
+## The two knobs that grow the list
+- **Product Hunt.** Set `PRODUCT_HUNT_TOKEN` on the GitHub repo (Settings → Secrets →
+  Actions). A developer token is free at https://www.producthunt.com/v2/oauth/applications.
 - **Claimed listings.** Approve a maker or provider claim by adding it to
-  `data/listings.json`: `[{"url": "https://...", "title": "Name: what it does", "repo": "owner/name"}]`
-  (`repo` optional). It then goes through the same checks as everything else.
+  `data/listings.json`: `[{"url": "https://...", "title": "Name: what it does", "repo": "owner/name"}]`.
+  It then goes through the same gate and checks as everything else.
 
 ## Not connected yet
-- **Pulse emails** are collected but nothing sends them yet. That needs an email service.
+- **Pulse emails** are collected but nothing sends them. That needs an email service.
+- **Story pages are hash routes** (`/#story-id`), so search engines don't index them yet.
 - **Reddit** often blocks GitHub's servers, so expect GitHub + Hacker News as sources.
-  The job uses `--min-sources 1` to keep the list full; raise it to 2 later and bump the
-  rubric version.

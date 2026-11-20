@@ -1,9 +1,22 @@
-name: Daily agent index
+name: Agent index
+
+# Scrapes every day, publishes once a week.
+#   Daily: run the gate tests, scrape, write data/ and a preview at site/next/
+#          (unlisted; /admin shows it as "next publish" with what is new or gone).
+#   Monday, or any run started by hand with "publish" ticked: copy data/ into site/,
+#          which is the published list. Pushing the commit is what deploys.
+# To pull something before Monday, add it to data/blocklist.json with a reason;
+# the reason shows in the public reject log.
 
 on:
   schedule:
     - cron: "17 10 * * *"   # every day at 10:17 UTC (5:17 AM Eastern)
-  workflow_dispatch:         # lets you run it by hand from the Actions tab
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish today's data to the site now (otherwise preview only)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -22,25 +35,43 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Check the listing gate against fixed cases
+      - name: Check the listing gate and job map against fixed cases
         run: python tests/test_gate.py
 
       - name: Run the scraper
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
         run: |
           pip install requests
           python scraper.py --min-sources 1
 
-      - name: Copy today's data into the site
-        run: cp data/agents.json data/run.json data/history.json data/rejects.json site/
+      - name: Write the preview (what Monday would publish)
+        run: |
+          mkdir -p site/next
+          cp data/agents.json data/run.json data/rejects.json site/next/
+          cp data/jobs.json site/jobs.json
+
+      - name: Publish (Mondays, or when asked)
+        if: ${{ github.event_name == 'schedule' || inputs.publish }}
+        run: |
+          if [ "${{ inputs.publish }}" = "true" ] || [ "$(date -u +%u)" = "1" ]; then
+            cp data/agents.json data/run.json data/history.json data/rejects.json site/
+            echo "published=yes" >> "$GITHUB_ENV"
+          else
+            echo "published=no" >> "$GITHUB_ENV"
+          fi
 
       # Pushing this commit is what publishes: Vercel watches the repo and
       # redeploys the site/ folder on every push to main.
-      - name: Save today's ranking to the repo (this is the archive)
+      - name: Save the run to the repo (this is the archive)
         run: |
           git config user.name "agent-index-bot"
           git config user.email "agent-index-bot@users.noreply.github.com"
           git add data site
-          git commit -m "Daily index $(date -u +%F)" || echo "No changes"
+          if [ "$published" = "yes" ]; then
+            git commit -m "Weekly list $(date -u +%F)" || echo "No changes"
+          else
+            git commit -m "Daily scrape $(date -u +%F) (preview only)" || echo "No changes"
+          fi
           git push

@@ -74,6 +74,30 @@ for u in PRODUCT_URLS:
     if not is_product_url(u): failed.append(f"should be a product url: {u}")
 for u in ARTICLE_URLS:
     if is_product_url(u): failed.append(f"should be an article: {u}")
+# The job map: every pattern compiles, ids are unique, every function is declared,
+# and a few plain sentences land on the job a person would expect.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from jobmap import load_jobs, jobs_for
+JM = load_jobs()
+ids = [j["id"] for j in JM["jobs"]]
+if len(ids) != len(set(ids)): failed.append("job map: duplicate ids")
+for j in JM["jobs"]:
+    if j["function"] not in JM["functions"]: failed.append(f"job map: {j['id']} has unknown function {j['function']!r}")
+JOB_CASES = [
+    ("It chases overdue invoices and posts replies to QuickBooks", "invoices"),
+    ("Screens resumes against your hiring criteria", "screen-applicants"),
+    ("Finds RFPs on SAM.gov and tracks amendments", "rfps"),
+    ("Answers customer support tickets in your help desk", "support-tickets"),
+    ("Plans meals and orders groceries every week", "food"),
+    ("Self-hosted CRM with native AI agents for teams that sell by chat", "crm"),
+    ("Single-tenant customer service platform", "support-tickets"),
+]
+for text, want in JOB_CASES:
+    got = jobs_for(text)
+    if want not in got: failed.append(f"job map: {text!r} should map to {want}, got {got}")
+if jobs_for("Single-tenant customer service platform") and "property" in jobs_for("Single-tenant customer service platform"):
+    failed.append("job map: 'single-tenant' must not read as property management")
+
 if failed:
     print("\n".join(failed)); sys.exit(1)
-print(f"gate ok: {len(AGENTS)+len(DEV_TOOLS)+len(NOT_AGENTS)+len(PRODUCT_URLS)+len(ARTICLE_URLS)} cases")
+print(f"gate ok: {len(AGENTS)+len(DEV_TOOLS)+len(NOT_AGENTS)+len(PRODUCT_URLS)+len(ARTICLE_URLS)+len(JOB_CASES)} cases")

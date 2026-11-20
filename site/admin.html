@@ -4,57 +4,127 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Submissions</title>
+<title>Editor</title>
 <style>
-:root{--bg:#fff;--ink:#1A1C20;--muted:#6B7079;--line:#E6E8EC;--soft:#F5F6F8;--accent:#0A62D0}
-@media (prefers-color-scheme:dark){:root{--bg:#0B0C0E;--ink:#F2F3F5;--muted:#9BA1AB;--line:#25282E;--soft:#17191D;--accent:#5AA2FF}}
+:root{--bg:#fff;--ink:#1A1C20;--muted:#6B7079;--line:#E6E8EC;--soft:#F5F6F8;--accent:#0A62D0;--up:#1E9E5A;--down:#C2410C}
+@media (prefers-color-scheme:dark){:root{--bg:#0B0C0E;--ink:#F2F3F5;--muted:#9BA1AB;--line:#25282E;--soft:#17191D;--accent:#5AA2FF;--up:#4ACF85;--down:#FF8A4C}}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,-apple-system,system-ui,sans-serif}
-.wrap{max-width:980px;margin:0 auto;padding:40px 20px}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 20px}
 h1{font-size:28px;letter-spacing:-.02em;margin:0 0 20px}
-h2{font-size:18px;margin:36px 0 10px}
-form{display:flex;gap:8px;flex-wrap:wrap}
-input{font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-width:280px}
-button{font:inherit;padding:8px 16px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+h2{font-size:18px;margin:40px 0 10px}
+form.key{display:flex;gap:8px;flex-wrap:wrap}
+input,textarea{font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+input.k{min-width:280px}
+button{font:inherit;padding:7px 14px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+button.sec{background:var(--soft);color:var(--ink)}
+button.warn{background:var(--down)}
 table{width:100%;border-collapse:collapse;font-size:14px}
 th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
 th{color:var(--muted);font-weight:500}
 .msg{color:var(--muted);margin-top:14px}
+.card{background:var(--soft);border-radius:14px;padding:18px;margin-top:12px}
+.card .who{font-size:13px;color:var(--muted)}
+.card b{display:block;font-size:16px;margin-top:6px}
+.card p{margin:8px 0 0;white-space:pre-wrap}
+.card .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.card .acts input{min-width:260px}
+.new{color:var(--up);font-weight:600}.gone{color:var(--down);font-weight:600}
+.nav{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin-bottom:8px}
 </style>
 </head>
 <body><div class="wrap">
-<h1>Submissions</h1>
-<form id="f"><input id="k" type="password" placeholder="Admin key" autocomplete="off"><button type="submit">Load</button></form>
+<h1>Editor</h1>
+<div class="nav"><a href="#pending">Pending stories</a><a href="#reports">Reports</a><a href="#jobs">Jobs named</a><a href="#help">Help requests</a><a href="#claims">Claims</a><a href="#next">Next publish</a><a href="#why">This week's list</a><a href="#rej">Rejected</a></div>
+<form class="key" id="f"><input class="k" id="k" type="password" placeholder="Admin key" autocomplete="off"><button type="submit">Load</button></form>
 <p class="msg" id="m"></p>
 <div id="out"></div>
-<h2>Today's list: why each agent is in</h2>
+<h2 id="next">Next publish: what Monday would change</h2>
+<div id="diff" class="msg">Loading…</div>
+<h2 id="why">This week's list: why each agent is in</h2>
 <div id="list" class="msg">Loading…</div>
-<h2>Rejected this run</h2>
-<div id="rej" class="msg">Loading…</div>
+<h2 id="rej">Rejected on the last run</h2>
+<div id="rejbox" class="msg">Loading…</div>
 <script>
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const COLS = { claim: ['ts','role','agent','co','em','web','about','ev'], manage: ['ts','magent','mjob','mco','mem','provider'], pulse: ['ts','pem','pind'] };
-const NAMES = { claim: 'Claims', manage: 'Managed requests', pulse: 'Pulse subscribers' };
+const d = ts => String(ts || '').slice(0,16).replace('T',' ');
+let KEY = '';
+async function act(body){
+  const res = await fetch('/api/admin', { method:'POST', headers:{'Content-Type':'application/json','x-admin-key':KEY}, body: JSON.stringify(body) });
+  const out = await res.json().catch(() => ({}));
+  if (!res.ok) { alert(out.error || 'Failed'); return false; }
+  return true;
+}
+function storyCard(s, pending){
+  return `<div class="card" data-id="${esc(s.id)}">
+    <div class="who">${esc(s.author)}${s.company ? ` · ${esc(s.company)}` : ''}${s.role ? ` · ${esc(s.role)}` : ''}${s.industry ? ` · ${esc(s.industry)}` : ''} · ${esc(d(s.ts))} · <a href="mailto:${esc(s.email)}">${esc(s.email)}</a></div>
+    <b>${esc(s.job || s.job_text)} with ${esc(s.agent || s.agent_name)}${s.agent_url ? ` · <a href="${esc(s.agent_url)}" target="_blank" rel="noopener">link</a>` : ''}</b>
+    ${s.job_text && s.job ? `<div class="who">In their words: ${esc(s.job_text)}</div>` : ''}
+    ${s.before ? `<p><b style="font-size:13px;display:inline">Before:</b> ${esc(s.before)}</p>` : ''}
+    <p>${esc(s.workflow)}</p>
+    ${s.outcome ? `<p><b style="font-size:13px;display:inline">Outcome:</b> ${esc(s.outcome)}</p>` : ''}
+    <div class="who">Runs: ${esc(s.runs)}${s.provider ? ` · ${esc(s.provider)}` : ''}</div>
+    ${pending ? `<div class="acts"><input placeholder="Editor's note (optional, shown)" data-note><button data-approve>Approve and publish</button><button class="warn" data-reject>Reject</button></div>`
+             : `<div class="acts"><input placeholder="Reply from (name, company)" data-who><input placeholder="Reply text" data-text style="flex:1"><button class="sec" data-reply>Post reply</button><button class="warn" data-unpub>Unpublish</button></div>`}
+  </div>`;
+}
 async function load(key){
+  KEY = key;
   const m = document.getElementById('m'); m.textContent = 'Loading…';
-  const res = await fetch('/api/submissions', { headers: { 'x-admin-key': key } });
+  const [res, st] = await Promise.all([fetch('/api/submissions', { headers: { 'x-admin-key': key } }), fetch('/api/stories', {cache:'no-store'})]);
   const data = await res.json().catch(() => ({}));
   if (!res.ok) { m.textContent = data.error || 'Could not load.'; return; }
+  const approved = ((await st.json().catch(() => ({}))).stories) || [];
   try { localStorage.setItem('admin-key', key); } catch {}
   m.textContent = '';
-  document.getElementById('out').innerHTML = Object.keys(COLS).map(k => `<h2>${NAMES[k]} (${(data[k]||[]).length})</h2>` + ((data[k]||[]).length
-    ? `<table><tr>${COLS[k].map(c => `<th>${c}</th>`).join('')}</tr>${data[k].map(r => `<tr>${COLS[k].map(c => `<td>${esc(c === 'ts' ? String(r[c]).slice(0,16).replace('T',' ') : r[c])}</td>`).join('')}</tr>`).join('')}</table>`
-    : '<p class="msg">None yet.</p>')).join('');
+  const pending = data.stories_pending || [];
+  const reports = (data.reports || []);
+  const open = reports.filter(r => r.status !== 'closed');
+  const jobs = data.jobs_named || [];
+  const byJob = {}; jobs.forEach(j => (j.matched || ['(unmatched)']).forEach(id => byJob[id] = (byJob[id] || 0) + 1));
+  document.getElementById('out').innerHTML = `
+    <h2 id="pending">Pending stories (${pending.length})</h2>${pending.length ? pending.map(s => storyCard(s, true)).join('') : '<p class="msg">None waiting.</p>'}
+    <h2>Published stories (${approved.length})</h2>${approved.length ? approved.map(s => storyCard(s, false)).join('') : '<p class="msg">None yet.</p>'}
+    <h2 id="reports">Reports and replies (${open.length} open)</h2>${reports.length ? `<table><tr><th>when</th><th>kind</th><th>about</th><th>from</th><th>what</th><th></th></tr>${reports.map(r => `<tr style="${r.status==='closed'?'opacity:.5':''}"><td>${esc(d(r.ts))}</td><td>${esc(r.kind)}</td><td>${r.agent ? `<a href="/#agent-${esc(r.agent)}">${esc(r.agent)}</a>` : ''}${r.story ? ` <a href="/#story-${esc(r.story)}">story</a>` : ''}</td><td>${esc(r.name)}${r.email ? `<br><a href="mailto:${esc(r.email)}">${esc(r.email)}</a>` : ''}</td><td>${esc(r.what)}</td><td>${r.status==='closed' ? 'closed' : `<div style="display:flex;flex-direction:column;gap:6px"><input placeholder="Correction note (published)" data-cnote style="min-width:200px"><button class="sec" data-correct="${esc(r.ts)}" data-agent="${esc(r.agent)}">Publish correction and close</button><button class="sec" data-close="${esc(r.ts)}">Close without note</button></div>`}</td></tr>`).join('')}</table>` : '<p class="msg">None.</p>'}
+    <h2>Corrections published (${(data.corrections||[]).length})</h2>${(data.corrections||[]).length ? `<table>${data.corrections.map(c => `<tr><td>${esc(d(c.ts))}</td><td>${esc(c.agent)}</td><td>${esc(c.note)}</td></tr>`).join('')}</table>` : '<p class="msg">None.</p>'}
+    <h2 id="jobs">Jobs named (${jobs.length}${jobs.length >= 1000 ? ', latest 1,000' : ''})</h2>
+    <p class="msg">Totals by job on the map. Only people who ticked “tell me” left an email; nobody else may be contacted.</p>
+    ${Object.keys(byJob).length ? `<table><tr><th>job</th><th>count</th></tr>${Object.entries(byJob).sort((a,b) => b[1]-a[1]).map(([k,v]) => `<tr><td>${esc(k)}</td><td>${v}</td></tr>`).join('')}</table>` : ''}
+    ${jobs.length ? `<table style="margin-top:12px"><tr><th>when</th><th>job, in their words</th><th>matched</th><th>wants to be told</th></tr>${jobs.map(j => `<tr><td>${esc(d(j.ts))}</td><td>${esc(j.job)}</td><td>${esc((j.matched||[]).join(', '))}</td><td>${j.notify ? `<a href="mailto:${esc(j.email)}">${esc(j.email)}</a>` : ''}</td></tr>`).join('')}</table>` : '<p class="msg">None yet.</p>'}
+    <h2 id="help">Help requests (${(data.manage||[]).length})</h2>
+    <p class="msg">Each goes only to the providers the person ticked. “any” means every listed provider.</p>
+    ${(data.manage||[]).length ? `<table><tr><th>when</th><th>agent</th><th>job</th><th>company</th><th>email</th><th>to</th></tr>${data.manage.map(r => `<tr><td>${esc(d(r.ts))}</td><td>${esc(r.magent)}</td><td>${esc(r.mjob)}</td><td>${esc(r.mco)}</td><td>${esc(r.mem)}</td><td>${esc(r.providers || r.provider || '')}</td></tr>`).join('')}</table>` : '<p class="msg">None yet.</p>'}
+    <h2 id="claims">Claims (${(data.claim||[]).length})</h2>
+    ${(data.claim||[]).length ? `<table><tr><th>when</th><th>role</th><th>agent</th><th>company</th><th>email</th><th>site</th><th>about</th><th>evidence</th><th>providers may contact</th></tr>${data.claim.map(r => `<tr><td>${esc(d(r.ts))}</td><td>${esc(r.role)}</td><td>${esc(r.agent)}</td><td>${esc(r.co)}</td><td>${esc(r.em)}</td><td>${esc(r.web)}</td><td>${esc(r.about)}</td><td>${esc(r.ev)}</td><td>${r.run_ok === 'yes' ? 'yes' : ''}</td></tr>`).join('')}</table>` : '<p class="msg">None yet.</p>'}
+    <h2>Pulse subscribers (${(data.pulse||[]).length})</h2>
+    ${(data.pulse||[]).length ? `<table><tr><th>when</th><th>email</th><th>industry</th></tr>${data.pulse.map(r => `<tr><td>${esc(d(r.ts))}</td><td>${esc(r.pem)}</td><td>${esc(r.pind)}</td></tr>`).join('')}</table>` : '<p class="msg">None yet.</p>'}`;
+  document.querySelectorAll('[data-approve]').forEach(b => b.onclick = async () => { const c = b.closest('.card'); if (await act({ action:'approve_story', id: c.dataset.id, note: c.querySelector('[data-note]').value })) load(KEY); });
+  document.querySelectorAll('[data-reject]').forEach(b => b.onclick = async () => { const c = b.closest('.card'); if (confirm('Reject and delete this story?') && await act({ action:'reject_story', id: c.dataset.id })) load(KEY); });
+  document.querySelectorAll('[data-unpub]').forEach(b => b.onclick = async () => { const c = b.closest('.card'); if (confirm('Take this story down?') && await act({ action:'unpublish_story', id: c.dataset.id })) load(KEY); });
+  document.querySelectorAll('[data-reply]').forEach(b => b.onclick = async () => { const c = b.closest('.card'); if (await act({ action:'add_reply', id: c.dataset.id, who: c.querySelector('[data-who]').value, text: c.querySelector('[data-text]').value })) load(KEY); });
+  document.querySelectorAll('[data-correct]').forEach(b => b.onclick = async () => { const note = b.parentElement.querySelector('[data-cnote]').value.trim(); if (!note) { alert('Write the correction note first.'); return; } if (await act({ action:'add_correction', agent: b.dataset.agent, note }) && await act({ action:'close_report', ts: b.dataset.correct })) load(KEY); });
+  document.querySelectorAll('[data-close]').forEach(b => b.onclick = async () => { if (await act({ action:'close_report', ts: b.dataset.close })) load(KEY); });
 }
 (async () => {
+  const get = async u => { const r = await fetch(u, {cache:'no-store'}); if (!r.ok) throw 0; return r.json(); };
+  let live = [], next = null;
+  try { live = await get('/agents.json'); } catch {}
+  try { next = await get('/next/agents.json'); } catch {}
   try {
-    const agents = await fetch('/agents.json', {cache:'no-store'}).then(r => r.json());
-    document.getElementById('list').outerHTML = `<table><tr><th>#</th><th>agent</th><th>score</th><th>kind</th><th>matched</th><th>sources</th><th>mentions</th></tr>${agents.map(x => `<tr><td>${x.rank}</td><td><a href="/#agent-${esc(x.id)}">${esc(x.name)}</a><br><span style="color:var(--muted)">${esc((x.description||'').slice(0,90))}</span></td><td>${x.score}</td><td>${esc((x.why||{}).kind||'')}</td><td>${esc((x.why||{}).matched||'')}${((x.why||{}).topics||[]).length ? ' · ' + esc(x.why.topics.join(', ')) : ''}</td><td>${esc((x.sources||[]).join(', '))}</td><td>${x.mentions_14d}</td></tr>`).join('')}</table>`;
+    document.getElementById('list').outerHTML = `<table><tr><th>#</th><th>agent</th><th>score</th><th>jobs</th><th>matched</th><th>sources</th><th>mentions</th></tr>${live.map(x => `<tr><td>${x.rank}</td><td><a href="/#agent-${esc(x.id)}">${esc(x.name)}</a><br><span style="color:var(--muted)">${esc((x.description||'').slice(0,90))}</span></td><td>${x.score}</td><td>${esc((x.jobs||[]).join(', '))}</td><td>${esc((x.why||{}).matched||'')} · ${esc((x.why||{}).job||'')}</td><td>${esc((x.sources||[]).join(', '))}</td><td>${x.mentions_14d}</td></tr>`).join('')}</table>`;
   } catch { document.getElementById('list').textContent = 'Could not load agents.json.'; }
+  const diff = document.getElementById('diff');
+  if (!next) diff.textContent = 'No preview yet. It appears after the next daily run.';
+  else {
+    const liveIds = new Set(live.map(a => a.id)), nextIds = new Set(next.map(a => a.id));
+    const added = next.filter(a => !liveIds.has(a.id)), gone = live.filter(a => !nextIds.has(a.id));
+    diff.outerHTML = `<p class="msg">Preview from the latest scrape: ${next.length} agents. <span class="new">${added.length} new</span>, <span class="gone">${gone.length} would drop off</span>. To keep one off, add its id to data/blocklist.json with a reason. To publish before Monday, run the Action with “publish” ticked.</p>
+      ${added.length ? `<table><tr><th>new</th><th>jobs</th><th>why</th></tr>${added.map(x => `<tr><td>${esc(x.name)}<br><span style="color:var(--muted)">${esc((x.description||'').slice(0,100))}</span></td><td>${esc((x.jobs||[]).join(', '))}</td><td>${esc((x.why||{}).matched||'')} · ${esc((x.why||{}).job||'')}</td></tr>`).join('')}</table>` : ''}
+      ${gone.length ? `<table style="margin-top:12px"><tr><th>dropping off</th></tr>${gone.map(x => `<tr><td>${esc(x.name)} (#${x.rank})</td></tr>`).join('')}</table>` : ''}`;
+  }
   try {
-    const r = await fetch('/rejects.json', {cache:'no-store'}); if (!r.ok) throw 0;
-    const d = await r.json();
-    document.getElementById('rej').outerHTML = `<p class="msg">${esc(d.rejected.length)} rejected on the run at ${esc(String(d.run_at).replace('T',' '))}</p><table><tr><th>candidate</th><th>reason</th><th>text</th></tr>${d.rejected.map(x => `<tr><td>${esc(x.key)}</td><td>${esc(x.reason)}</td><td style="color:var(--muted)">${esc(x.text)}</td></tr>`).join('')}</table>`;
-  } catch { document.getElementById('rej').textContent = 'No reject log published yet. It appears after the next daily run.'; }
+    const r = await get('/next/rejects.json').catch(() => get('/rejects.json'));
+    document.getElementById('rejbox').outerHTML = `<p class="msg">${esc(r.rejected.length)} rejected on the run at ${esc(d(r.run_at))}</p><table><tr><th>candidate</th><th>reason</th><th>text</th></tr>${r.rejected.map(x => `<tr><td>${esc(x.key)}</td><td>${esc(x.reason)}</td><td style="color:var(--muted)">${esc(x.text)}</td></tr>`).join('')}</table>`;
+  } catch { document.getElementById('rejbox').textContent = 'No reject log yet.'; }
 })();
 document.getElementById('f').onsubmit = e => { e.preventDefault(); load(document.getElementById('k').value.trim()); };
 try { const k = localStorage.getItem('admin-key'); if (k) { document.getElementById('k').value = k; load(k); } } catch {}

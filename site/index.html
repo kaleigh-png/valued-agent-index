@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Valued Agent Reseller: today's AI agent rankings</title>
-<meta name="description" content="Fifty trending AI agents, scored on twelve yes/no checks with a public source for every Yes. Updated daily. No one pays for placement.">
+<title>Valued Agent Reseller: AI agents by the job they do</title>
+<meta name="description" content="Find an AI agent by the job you want done, read what it did for people like you, and get help running it. Operated by Brine AI, which is listed like any other provider.">
 <link rel="canonical" href="https://valuedagentreseller.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Valued Agent Reseller">
-<meta property="og:title" content="Valued Agent Reseller: today's AI agent rankings">
-<meta property="og:description" content="Fifty trending AI agents, scored on twelve yes/no checks with a public source for every Yes.">
+<meta property="og:title" content="Valued Agent Reseller: AI agents by the job they do">
+<meta property="og:description" content="Find an AI agent by the job you want done, read what it did for people like you, and get help running it.">
 <meta property="og:url" content="https://valuedagentreseller.com/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231A1C20'/%3E%3Crect x='10' y='10' width='12' height='12' rx='2' fill='%23fff'/%3E%3C/svg%3E">
@@ -18,8 +18,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: calm, one column, generous whitespace. One list that moves over time
-   (this week vs. past weeks), each agent opening into a quiet spec page. */
+/* Layout: calm, one column, generous whitespace. The site starts from the job,
+   opens into the agents that do it and the stories of people who ran them. */
 :root{
   --bg:#FFFFFF; --soft:#F5F6F8; --ink:#1A1C20; --muted:#6B7079; --faint:#A1A6AE; --line:#E6E8EC;
   --accent:#0A62D0; --accent-soft:#EAF2FD; --on-accent:#FFFFFF;
@@ -39,7 +39,7 @@
   color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01";margin:0}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -63,23 +63,48 @@ header.top .wrap{display:flex;align-items:center;gap:20px;height:52px}
 .mark i{width:14px;height:14px;border-radius:4px;background:var(--ink);display:inline-block;position:relative}
 .mark i::after{content:"";position:absolute;inset:4px;border-radius:1.5px;background:var(--bg)}
 nav.main{margin-left:auto;display:flex;gap:22px}
-nav.main a{font-size:13.5px;color:var(--muted)}
+nav.main a{font-size:13.5px;color:var(--muted);white-space:nowrap}
 nav.main a:hover,nav.main a[aria-current="page"]{color:var(--ink);text-decoration:none}
-@media (max-width:600px){ nav.main{gap:14px} nav.main a[data-nav="pulse"]{display:none} .mark span{display:none} }
+@media (max-width:700px){ nav.main{gap:14px} nav.main a[data-nav="pulse"],nav.main a[data-nav="list"]{display:none} .mark span{display:none} }
 
 main{padding-block:0 140px;min-height:70vh}
 
-/* hero */
-.hero{text-align:center;padding:72px 0 40px}
-.hero h1{max-width:19ch;margin:14px auto 0}
+/* hero + job box */
+.hero{text-align:center;padding:72px 0 28px}
+.hero h1{max-width:18ch;margin:14px auto 0}
 .hero p{max-width:46ch;margin:18px auto 0;font-size:19px;color:var(--muted);line-height:1.45}
-.periods{display:inline-flex;gap:2px;padding:3px;background:var(--soft);border-radius:999px;margin-top:34px;max-width:100%;overflow-x:auto}
+form.jobbox{display:flex;flex-direction:row;gap:8px;max-width:620px;margin:30px auto 0;background:var(--soft);padding:6px;border-radius:999px}
+.jobbox input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:17px;padding:10px 16px;color:var(--ink)}
+.jobbox input::placeholder{color:var(--faint)}
+.jobnote{font-size:13.5px;color:var(--muted);margin-top:12px;min-height:20px}
+.jobnote.ok{color:var(--up)}
+.notify{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.notify input{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 12px;border-radius:999px;width:240px;max-width:100%}
+@media (max-width:640px){ form.jobbox{border-radius:22px;flex-direction:column} .jobbox .btn{justify-content:center} }
+
+/* job tiles */
+.fn{margin-top:48px}
+.fn h2{font-size:15px;font-weight:600;color:var(--muted);letter-spacing:0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:12px}
+.tile{display:block;color:var(--ink);background:var(--soft);border-radius:14px;padding:14px 16px;min-height:78px}
+.tile:hover{text-decoration:none;background:var(--accent-soft)}
+.tile b{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em}
+.tile span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+.tile.dim b{color:var(--muted);font-weight:500}
+.tile.dim span{color:var(--faint)}
+.tile.hit{outline:2px solid var(--accent)}
+
+/* strip of this week's list */
+.weekstrip{margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.weekstrip .head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.weekstrip .head a{font-size:14px}
+
+/* periods + controls (full list page) */
+.periods{display:inline-flex;gap:2px;padding:3px;background:var(--soft);border-radius:999px;margin-top:28px;max-width:100%;overflow-x:auto}
 .periods button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap}
 .periods button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .periods button:disabled{cursor:default;opacity:.45}
 .periodnote{font-size:13px;color:var(--muted);margin-top:12px;min-height:20px}
-
-/* controls */
 .controls{display:flex;gap:10px;align-items:center;margin:20px 0 6px;flex-wrap:wrap}
 .inds{display:flex;gap:6px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none;padding:2px}
 .inds::-webkit-scrollbar{display:none}
@@ -145,7 +170,7 @@ main{padding-block:0 140px;min-height:70vh}
 .btn.sec{background:var(--soft);color:var(--ink)}
 .btn.sm{font-size:13.5px;padding:7px 14px}
 
-/* agent page */
+/* agent / job / story pages */
 .back{display:inline-block;font-size:14px;margin:28px 0 0}
 .ahead{padding:36px 0 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
 .ahead p{font-size:19px;color:var(--muted);max-width:52ch;margin:14px 0 0;line-height:1.45}
@@ -158,6 +183,9 @@ main{padding-block:0 140px;min-height:70vh}
 .big .ubig b{font-size:34px;letter-spacing:-.03em;line-height:1}
 .big .ubig a{font-size:14px}
 @media (max-width:700px){ .ahead{grid-template-columns:1fr} .big{text-align:left} .big b{font-size:64px} }
+.jobtags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.jobtag{font-size:13px;background:var(--soft);color:var(--ink);padding:5px 12px;border-radius:999px}
+.jobtag:hover{background:var(--accent-soft);text-decoration:none}
 .strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:36px}
 .strip>div{background:var(--soft);border-radius:14px;padding:14px 16px}
 .strip .k{font-size:13px;color:var(--muted)}
@@ -196,6 +224,26 @@ main{padding-block:0 140px;min-height:70vh}
 .hist .hrow b{display:block;font-size:20px;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
 .src{list-style:none;padding:0;margin:22px 0 0;border-top:1px solid var(--line)}
 .src li{padding:14px 2px;border-bottom:1px solid var(--line);font-size:14.5px;overflow-wrap:anywhere}
+.inline-form{margin-top:16px;padding:22px;background:var(--soft);border-radius:var(--r)}
+
+/* stories */
+.stories{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:22px}
+.story{display:block;color:var(--ink);background:var(--soft);border-radius:var(--r);padding:20px}
+.story:hover{text-decoration:none;background:var(--accent-soft)}
+.story .who{font-size:12.5px;color:var(--muted)}
+.story b{display:block;font-size:17px;letter-spacing:-.015em;margin-top:8px}
+.story p{margin:8px 0 0;font-size:14.5px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.story .out{margin-top:12px;font-size:14px;font-weight:600;color:var(--up)}
+.sbody{margin-top:36px;max-width:680px}
+.sbody h2{margin-top:36px;font-size:17px}
+.sbody p{white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:28px}
+.facts div{background:var(--soft);border-radius:14px;padding:14px 16px}
+.facts .k{font-size:12.5px;color:var(--muted)}
+.facts .v{font-weight:600;margin-top:2px;overflow-wrap:anywhere}
+.reply{margin-top:16px;padding:16px 18px;border-left:3px solid var(--line)}
+.reply .who{font-size:12.5px;color:var(--muted)}
+.reply p{margin:6px 0 0}
 
 /* reviews */
 .qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:22px}
@@ -219,10 +267,13 @@ main{padding-block:0 140px;min-height:70vh}
 #rf{margin-top:20px;padding:22px;background:var(--soft);border-radius:var(--r)}
 form{display:flex;flex-direction:column;gap:14px}
 form label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+form label.check{flex-direction:row;align-items:center;gap:10px;font-weight:400}
+form label.check input{width:18px;height:18px;margin:0}
 form input,form select,form textarea{font:inherit;font-size:15px;font-weight:400;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 12px;border-radius:10px}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 .ok{font-size:14px;color:var(--up);background:var(--up-soft);padding:12px 14px;border-radius:10px}
 .msg{font-size:14px;color:var(--muted)}
+.hint{font-size:13px;font-weight:400;color:var(--muted)}
 
 /* compare */
 .cmpwrap{overflow-x:auto;margin-top:30px}
@@ -269,6 +320,11 @@ form input,form select,form textarea{font:inherit;font-size:15px;font-weight:400
 .pcard:hover{text-decoration:none;background:var(--accent-soft)}
 .pcard b{display:block;font-size:17px}
 .pcard span{display:block;color:var(--muted);font-size:13.5px;margin-top:4px}
+details.plain{margin-top:12px}
+details.plain summary{cursor:pointer;color:var(--accent);font-size:14.5px}
+.rejtable{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}
+.rejtable td{padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.rejtable td:first-child{white-space:nowrap;color:var(--muted)}
 
 footer{border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
 footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -279,8 +335,10 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 <header class="top"><div class="wrap">
   <a class="mark" href="#index"><i aria-hidden="true"></i><span>Valued Agent Reseller</span></a>
   <nav class="main" aria-label="Main">
-    <a href="#index" data-nav="index">Rankings</a>
-    <a href="#method" data-nav="method">How we score</a>
+    <a href="#index" data-nav="index">Jobs</a>
+    <a href="#stories" data-nav="stories">Stories</a>
+    <a href="#list" data-nav="list">This week</a>
+    <a href="#method" data-nav="method">How it works</a>
     <a href="#claim" data-nav="claim">For providers</a>
     <a href="#pulse" data-nav="pulse">Pulse</a>
   </nav>
@@ -294,20 +352,31 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 
 <footer><div class="wrap">
   <span id="footStamp" class="tnum"></span>
-  <span>Powered by <a href="https://brine.ai" target="_blank" rel="noopener">Brine AI</a></span>
+  <span>Operated by <a href="https://brine.ai" target="_blank" rel="noopener">Brine AI</a> · <a href="#method">How it works</a></span>
 </div></footer>
 
 <script>
-const S = {agents:[], run:null, hist:null, period:'now', industry:'All', type:'All', q:'', sort:'rank', must:[], cmp:[], pick:null, fopen:false, first:true};
+const S = {agents:[], run:null, hist:null, jobs:null, stories:[], jobStats:null, corrections:null, rejects:null,
+  period:'now', industry:'All', q:'', sort:'rank', must:[], cmp:[], pick:null, pickJob:null, fopen:false, first:true, hq:''};
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ORDER = ['pricing','free','docs','customer','result','updated','no_training','security_page','certification','your_env','audit_logs','human_approval'];
 const SHORT = {pricing:'Public pricing', free:'Free tier', docs:'Public docs', customer:'Named customer', result:'Measured result', updated:'Updated in 30 days', no_training:"Won't train on your data", security_page:'Security page', certification:'SOC 2 / ISO 27001', your_env:'Runs in your environment', audit_logs:'Audit logs', human_approval:'Human approval step'};
-const INDUSTRY_FALLBACK = ['Security','Healthcare','Finance','Legal','Education','HR & recruiting','E-commerce','Real estate','Manufacturing & logistics','Sales & marketing','Customer support','Software engineering','Research & data','Browser & computer use','Operations & IT','General purpose'];
-const allIndustries = () => [...new Set([...(S.run.industries || INDUSTRY_FALLBACK), ...S.agents.map(a => a.industry)])].sort();
 const host = u => { try { return new URL(u).host.replace(/^www\./,''); } catch { return u; } };
 const store = { get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+
+/* ---------- jobs map ---------- */
+const JOBS = () => (S.jobs && S.jobs.jobs) || [];
+const jobById = id => JOBS().find(j => j.id === id);
+const jobRx = j => { try { return new RegExp('\\b(?:' + j.match + ')\\b', 'i'); } catch { return /$^/; } };
+const matchJobs = text => JOBS().filter(j => jobRx(j).test(text || '')).map(j => j.id);
+const agentsFor = jid => S.agents.filter(a => (a.jobs || []).includes(jid)).sort((x,y) => x.rank - y.rank);
+const storiesFor = jid => S.stories.filter(s => s.job === jid);
+const storiesAbout = aid => S.stories.filter(s => s.agent === aid);
+const provsFor = jid => (S.providers || []).filter(p => (p.jobs || []).includes(jid));
+const jobLink = jid => { const j = jobById(jid); return j ? `<a class="jobtag" href="#job-${esc(j.id)}">${esc(j.name)}</a>` : ''; };
 
 /* ---------- archive (real runs only) ---------- */
 const PERIODS = [['now','This week',0],['1w','Last week',7],['1m','1 month ago',30],['6m','6 months ago',182],['1y','1 year ago',365]];
@@ -330,13 +399,91 @@ function movement(id, curRank){
   return d > 0 ? {cls:'up', txt:`▲ ${d}`} : d < 0 ? {cls:'down', txt:`▼ ${-d}`} : {cls:'same', txt:'—'};
 }
 
-/* ---------- index ---------- */
+/* ---------- home: the job box and the job map ---------- */
+function tile(j, hit){
+  const n = agentsFor(j.id).length, m = storiesFor(j.id).length, p = provsFor(j.id).length;
+  const bits = [n ? plural(n, 'agent') : null, m ? plural(m, 'story') : null, p ? plural(p, 'provider') : null].filter(Boolean);
+  return `<a class="tile ${bits.length ? '' : 'dim'} ${hit ? 'hit' : ''}" href="#job-${esc(j.id)}"><b>${esc(j.name)}</b><span>${bits.length ? esc(bits.join(' · ')) : 'Nobody listed yet'}</span></a>`;
+}
+function jobMap(q, hits){
+  const fns = (S.jobs && S.jobs.functions) || [];
+  const ql = (q || '').trim().toLowerCase();
+  return fns.map(fn => {
+    let list = JOBS().filter(j => j.function === fn);
+    if (ql) list = list.filter(j => hits.includes(j.id) || j.name.toLowerCase().includes(ql) || fn.toLowerCase().includes(ql));
+    if (!list.length) return '';
+    return `<section class="fn"><h2>${esc(fn)}</h2><div class="tiles">${list.map(j => tile(j, hits.includes(j.id))).join('')}</div></section>`;
+  }).join('') || `<div class="empty"><h3>No job on the map matches</h3>Press “Find an agent” and we’ll record it. That is how new jobs get added.</div>`;
+}
+function viewHome(){
+  const top = [...S.agents].sort((x,y) => x.rank - y.rank).slice(0,5);
+  const named = S.jobStats && S.jobStats.count ? `${S.jobStats.count.toLocaleString()} jobs named so far.` : '';
+  $('#app').innerHTML = `
+    <section class="hero">
+      <h1>What job do you want off your plate?</h1>
+      <form class="jobbox" id="jb" novalidate><input id="jq" type="search" placeholder="Chasing overdue invoices" aria-label="The job" value="${esc(S.hq)}" autocomplete="off"><label style="position:absolute;left:-9999px" aria-hidden="true">Website<input id="hp_url" tabindex="-1" autocomplete="off"></label><button class="btn" type="submit">Find an agent</button></form>
+      <div class="jobnote" id="jnote">${esc(named)}</div>
+      <div class="notify" id="notify" hidden><input id="jmail" type="email" placeholder="you@company.com" aria-label="Email"><button class="btn sec sm" type="button" id="jtell">Tell me when one exists</button></div>
+    </section>
+    <div id="map">${jobMap(S.hq, S.hq ? matchJobs(S.hq) : [])}</div>
+    <section class="weekstrip"><div class="head"><h2>Most discussed this week</h2><a href="#list">All ${S.agents.length} ›</a></div>
+      <div class="list" style="margin-top:16px">${top.map(a => row(a, movement(a.id, a.rank))).join('')}</div></section>`;
+  const jq = $('#jq'), note = $('#jnote'), map = $('#map');
+  let t;
+  jq.oninput = () => { S.hq = jq.value; clearTimeout(t); t = setTimeout(() => { map.innerHTML = jobMap(S.hq, S.hq ? matchJobs(S.hq) : []); }, 120); };
+  $('#jb').onsubmit = async e => {
+    e.preventDefault();
+    const job = jq.value.trim();
+    if (job.length < 4) { note.className = 'jobnote'; note.textContent = 'Say the job in a few words.'; jq.focus(); return; }
+    const hits = matchJobs(job);
+    map.innerHTML = jobMap(job, hits);
+    S.lastJob = job;
+    note.className = 'jobnote'; note.textContent = 'Noted.';
+    try { await fetch('/api/jobs', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ job, hp_url: $('#hp_url').value }) }); } catch {}
+    if (hits.length && hits.some(h => agentsFor(h).length)) { note.className = 'jobnote ok'; note.textContent = `${plural(hits.reduce((n,h) => n + agentsFor(h).length, 0), 'agent')} below do this.`; $('#notify').hidden = true; const first = map.querySelector('.tile.hit'); if (first) first.scrollIntoView({behavior: reduced() ? 'auto' : 'smooth', block:'center'}); }
+    else { note.textContent = 'No agent on the list does this yet.'; $('#notify').hidden = false; }
+  };
+  $('#jtell').onclick = async () => {
+    const email = $('#jmail').value.trim();
+    if (!/^\S+@\S+\.\S+$/.test(email)) { note.className = 'jobnote'; note.textContent = 'Enter a valid email address.'; return; }
+    try {
+      const res = await fetch('/api/jobs', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ job: S.lastJob || jq.value.trim(), email, notify: true }) });
+      if (res.ok) { note.className = 'jobnote ok'; note.textContent = "We'll email you when an agent for this is listed. Nothing else."; $('#notify').hidden = true; }
+      else note.textContent = "That didn't send. Try again.";
+    } catch { note.textContent = "That didn't send. Try again."; }
+  };
+}
+
+/* ---------- job page ---------- */
+function viewJob(id){
+  const j = jobById(id);
+  if (!j) { $('#app').innerHTML = `<a class="back" href="#index">‹ Jobs</a><div class="empty"><h3>No job here by that name</h3></div>`; return; }
+  const agents = agentsFor(id), stories = storiesFor(id), provs = provsFor(id);
+  $('#app').innerHTML = `<a class="back" href="#index">‹ Jobs</a>
+    <section class="phero">
+      <div class="eyebrow">${esc(j.function)}</div>
+      <h1>${esc(j.name)}</h1>
+      <div class="acts"><a class="btn" href="#manage" id="jhelp">Get help with this job</a><a class="btn sec" href="#share" id="jshare">Share your story</a></div>
+    </section>
+    <section class="sec-block" style="margin-top:48px"><h2>Agents that do it</h2>
+      ${agents.length ? `<div class="list" style="margin-top:18px">${agents.map(a => row(a, movement(a.id, a.rank))).join('')}</div>` : `<div class="empty"><h3>No agent on this week's list names this job</h3>Agents join by being talked about. Know one? <a href="#claim">List it ›</a></div>`}
+    </section>
+    <section class="sec-block"><h2>Stories</h2>
+      ${stories.length ? `<div class="stories">${stories.map(storyCard).join('')}</div>` : `<p class="lead">No story for this job yet. If you've automated it, <a href="#share">tell people how ›</a></p>`}
+    </section>
+    ${provs.length ? `<section class="sec-block"><h2>Providers who do this job</h2><div class="pgrid">${provs.map(p => `<a class="card pcard" href="#provider-${esc(p.slug)}"><b>${esc(p.name)}</b><span>${(p.kinds||[]).map(k => esc(KIND[k]||k)).join(' · ')}</span></a>`).join('')}</div></section>` : ''}`;
+  $('#jhelp').onclick = () => { S.pickJob = id; S.pick = null; };
+  $('#jshare').onclick = () => { S.pickJob = id; S.pick = null; };
+  window.scrollTo(0,0);
+}
+
+/* ---------- list page (most discussed, with archive) ---------- */
 function currentRows(){
   if (S.period === 'now') return S.agents.map(a => ({...a, _mv: movement(a.id, a.rank)}));
   const day = dayAt(PERIODS.find(p => p[0] === S.period)[2]);
   return (S.hist.days[day] || []).map(r => {
     const now = S.agents.find(a => a.id === r.id);
-    return {...(now || {}), ...r, description: now ? now.description : 'No longer on the list', type: now ? now.type : '', checks: now ? now.checks : null,
+    return {...(now || {}), ...r, description: now ? now.description : 'No longer on the list', checks: now ? now.checks : null,
       _mv: now ? {cls:'same', txt:`Now #${now.rank}`} : {cls:'same', txt:'Dropped off'}, _gone: !now};
   });
 }
@@ -344,23 +491,29 @@ function filtered(){
   const q = S.q.trim().toLowerCase();
   let list = currentRows().filter(a =>
     (S.industry === 'All' || a.industry === S.industry) &&
-    (S.type === 'All' || a.type === S.type) &&
     (!S.must.length || (a.checks && S.must.every(k => a.checks[k].answer))) &&
-    (!q || [a.name, a.owner, a.description, a.industry].join(' ').toLowerCase().includes(q)));
+    (!q || [a.name, a.owner, a.description, a.industry, ...(a.jobs||[]).map(id => (jobById(id)||{}).name)].join(' ').toLowerCase().includes(q)));
   if (S.sort === 'momentum') list.sort((x,y) => (y.star_gain_7d||0) - (x.star_gain_7d||0) || x.rank - y.rank);
   else if (S.sort === 'reviews') list.sort((x,y) => ((S.reviews[y.id]||[]).length - (S.reviews[x.id]||[]).length) || x.rank - y.rank);
   else list.sort((x,y) => x.rank - y.rank);
   return list;
 }
-
-function viewIndex(){
+function row(a, mv, i){
+  const us = userScore(a.id);
+  return `<a class="item ${a.rank<=3?'top3':''} ${S.first && i != null ?'enter':''}" role="listitem" data-id="${esc(a.id)}" href="${a._gone?'#list':'#agent-'+esc(a.id)}" style="${S.first && i != null ?`animation-delay:${Math.min(i,12)*35}ms`:''}">
+      <div class="rk"><b>${a.rank}</b>${mv ? `<span class="mv ${mv.cls}">${esc(mv.txt)}</span>` : ''}</div>
+      <div class="nm"><b>${esc(a.name)}</b><span>${esc(a.description)}</span></div>
+      <div class="sc"><span class="v">${a.score} <small>of 12</small></span><div class="bar"><i style="width:${a.score/12*100}%"></i></div>${us ? `<span class="us tnum">${us.pct}% · ${plural(us.n, 'review')}</span>` : ''}</div>
+      <span class="chev" aria-hidden="true">›</span>
+    </a>`;
+}
+function viewList(){
   const cnt = i => S.agents.filter(x => x.industry === i).length;
   const inds = ['All', ...[...new Set(S.agents.map(a => a.industry))].sort((a,b) => cnt(b) - cnt(a))];
-  const nf = S.must.length + (S.type !== 'All') + (S.sort !== 'rank');
+  const nf = S.must.length + (S.sort !== 'rank');
   $('#app').innerHTML = `
-    <section class="hero">
-      <h1>Today's AI agent rankings</h1>
-      <p>Agents everyone is talking about this week. We run and score each to help you make a confident decision on whether you'd want to use them.</p>
+    <section class="hero" style="padding-bottom:20px">
+      <h1>Most discussed this week</h1>
       <div class="periods" role="group" aria-label="Time period">${PERIODS.map(([k,l,b]) => { const ok = !b || (dayAt(b) && dayAt(b) !== S.hist.latest); return `<button type="button" data-p="${k}" aria-pressed="${S.period===k}" ${ok?'':'disabled'} title="${ok?'':'Available from '+esc(availableFrom(b))}">${l}</button>`; }).join('')}</div>
       <div class="periodnote" id="pnote"></div>
     </section>
@@ -386,15 +539,14 @@ function viewIndex(){
     renderRows(true); syncReset();
   });
   setOpt('data-must', 'must', true); setOpt('data-sort', 'sort');
-  $('#reset').onclick = () => { Object.assign(S, {industry:'All', type:'All', must:[], q:'', sort:'rank'}); viewIndex(); };
+  $('#reset').onclick = () => { Object.assign(S, {industry:'All', must:[], q:'', sort:'rank'}); viewList(); };
   renderRows(false);
 }
 function syncReset(){
-  const nf = S.must.length + (S.type !== 'All') + (S.sort !== 'rank');
+  const nf = S.must.length + (S.sort !== 'rank');
   $('#fbtn').textContent = 'Filters' + (nf ? ` · ${nf}` : ''); $('#fbtn').classList.toggle('has', !!nf);
   $('#reset').hidden = !(nf || S.industry !== 'All' || S.q);
 }
-
 function renderRows(animate){
   const box = $('#rows'); if (!box) return;
   const before = {};
@@ -406,15 +558,9 @@ function renderRows(animate){
     const wk = dayAt(7);
     pn.textContent = S.period === 'now'
       ? (wk && wk !== S.hist.latest ? `Arrows show movement since ${nice(wk)}.` : '')
-      : `The ranking as it stood on ${nice(dayAt(back))}.`;
+      : `The list as it stood on ${nice(dayAt(back))}.`;
   }
-  box.innerHTML = list.length ? list.map((a, i) => `
-    <a class="item ${a.rank<=3?'top3':''} ${S.first?'enter':''}" role="listitem" data-id="${esc(a.id)}" href="${a._gone?'#index':'#agent-'+esc(a.id)}" style="${S.first?`animation-delay:${Math.min(i,12)*35}ms`:''}">
-      <div class="rk"><b>${a.rank}</b>${a._mv ? `<span class="mv ${a._mv.cls}">${esc(a._mv.txt)}</span>` : ''}</div>
-      <div class="nm"><b>${esc(a.name)}</b><span>${esc(a.description)}</span></div>
-      <div class="sc"><span class="v">${a.score} <small>of 12</small></span><div class="bar"><i style="width:${a.score/12*100}%"></i></div>${userScore(a.id) ? `<span class="us tnum">${userScore(a.id).pct}% · ${userScore(a.id).n} review${userScore(a.id).n===1?'':'s'}</span>` : ''}</div>
-      <span class="chev" aria-hidden="true">›</span>
-    </a>`).join('') : `<div class="empty"><h3>No agents match</h3>Try another industry or remove a filter.</div>`;
+  box.innerHTML = list.length ? list.map((a, i) => row(a, a._mv, i)).join('') : `<div class="empty"><h3>No agents match</h3>Try another industry or remove a filter.</div>`;
   S.first = false;
   if (animate && !reduced()) box.querySelectorAll('.item').forEach(el => {
     const was = before[el.dataset.id], now = el.getBoundingClientRect().top;
@@ -437,30 +583,32 @@ function renderTray(){
 }
 function viewCompare(){
   const list = S.cmp.map(id => S.agents.find(x => x.id === id)).filter(Boolean);
-  if (list.length < 2) { $('#app').innerHTML = `<a class="back" href="#index">‹ Rankings</a><div class="empty"><h3>Add two or three agents to compare</h3>Open an agent and choose “Compare”.</div>`; return; }
+  if (list.length < 2) { $('#app').innerHTML = `<a class="back" href="#list">‹ This week</a><div class="empty"><h3>Add two or three agents to compare</h3>Open an agent and choose “Compare”.</div>`; return; }
   const best = Math.max(...list.map(a => a.score));
   const groups = [...new Set(S.run.checks.map(c => c.group))];
   const yn = v => v ? '<span class="yes">✓</span>' : '<span class="no">—</span>';
-  $('#app').innerHTML = `<a class="back" href="#index">‹ Rankings</a>
+  $('#app').innerHTML = `<a class="back" href="#list">‹ This week</a>
     <div style="padding-top:28px"><h1>Compare</h1></div>
     <div class="cmpwrap"><table class="cmpt">
       <thead><tr><th></th>${list.map(a => `<th><a href="#agent-${esc(a.id)}" style="color:var(--ink);font-size:19px;font-weight:600">${esc(a.name)}</a>
         <div class="${a.score===best?'bestc':''}" style="font-size:40px;font-weight:600;letter-spacing:-.04em;line-height:1.1;margin-top:6px">${a.score}<span style="font-size:15px;color:var(--muted);font-weight:400;letter-spacing:0"> of 12</span></div>
         <button class="linkbtn" type="button" data-un="${esc(a.id)}">Remove</button></th>`).join('')}</tr></thead>
       <tbody>${groups.map(g => `<tr class="g"><th colspan="${list.length+1}">${esc(g)}</th></tr>` + S.run.checks.filter(c => c.group === g).map(c => `<tr><th>${esc(c.question)}</th>${list.map(a => `<td>${yn(a.checks[c.id].answer)}</td>`).join('')}</tr>`).join('')).join('')}
+        <tr class="g"><th colspan="${list.length+1}">Jobs</th></tr>
+        <tr><th>Does</th>${list.map(a => `<td class="small">${(a.jobs||[]).map(id => esc((jobById(id)||{}).name)).filter(Boolean).join(', ') || '—'}</td>`).join('')}</tr>
         <tr class="g"><th colspan="${list.length+1}">How to get it</th></tr>
-        <tr><th>Managed provider</th>${list.map(a => `<td>${yn((a.get_it.listed_managers||[]).length || provs(a.id,'managed').length)}</td>`).join('')}</tr>
-        <tr><th>Reseller</th>${list.map(a => `<td>${yn(a.get_it.listed_resellers.length || provs(a.id,'reseller').length)}</td>`).join('')}</tr>
+        <tr><th>A provider runs it</th>${list.map(a => `<td>${yn((a.get_it.listed_managers||[]).length || provs(a.id,'managed').length)}</td>`).join('')}</tr>
         <tr><th>Hosted version</th>${list.map(a => `<td>${yn(a.get_it.hosted_by_maker.answer || a.get_it.marketplaces.length || provs(a.id,'host').length)}</td>`).join('')}</tr>
         <tr><th>Open source</th>${list.map(a => `<td>${yn(a.get_it.open_source)}</td>`).join('')}</tr>
         <tr class="g"><th colspan="${list.length+1}">People</th></tr>
+        <tr><th>Stories</th>${list.map(a => `<td class="small">${storiesAbout(a.id).length || '—'}</td>`).join('')}</tr>
         <tr><th>User reviews</th>${list.map(a => `<td class="small">${revTxt(a.id)}</td>`).join('')}</tr>
       </tbody></table></div>`;
   document.querySelectorAll('[data-un]').forEach(b => b.onclick = () => { toggleCmp(b.dataset.un); viewCompare(); });
 }
 
 /* ---------- providers ---------- */
-const KIND = {managed:'Managed agent provider', host:'Hosting platform', reseller:'Reseller', referral:'Referral partner'};
+const KIND = {managed:'Runs agents for customers', host:'Hosting platform', reseller:'Reseller', referral:'Referral partner'};
 const provs = (id, kind) => (S.providers||[]).filter(p => (!kind || (p.kinds||[]).includes(kind)) && (p.agents === 'all' || (p.agents||[]).includes(id)));
 const plink = p => `<a href="#provider-${esc(p.slug)}">${esc(p.name)}</a>`;
 function viewProvider(slug){
@@ -469,28 +617,31 @@ function viewProvider(slug){
   const agents = p.agents === 'all' ? S.agents : S.agents.filter(a => (p.agents||[]).includes(a.id));
   const mail = p.contact ? `<a class="btn" href="mailto:${esc(p.contact)}">Email ${esc(p.name)}</a>` : '';
   const site = p.url ? `<a class="btn sec" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(host(p.url))} ›</a>` : '';
+  const jobs = (p.jobs||[]).map(jobLink).join('');
   $('#app').innerHTML = `<a class="back" href="#claim">‹ For providers</a>
     <section class="phero">
-      <div class="eyebrow">${(p.kinds||[]).map(k => esc(KIND[k]||k)).join(' · ')}</div>
+      <div class="eyebrow">${(p.kinds||[]).map(k => esc(KIND[k]||k)).join(' · ')}${p.operator ? ' · Operates this site' : ''}</div>
       <h1>${esc(p.name)}</h1>
       ${p.tagline ? `<p>${esc(p.tagline)}</p>` : p.description ? `<p>${esc(p.description)}</p>` : ''}
-      <div class="acts">${mail}${site}<a class="txt" href="#manage" id="pmg">Request through us ›</a></div>
+      <div class="acts">${mail}${site}<a class="txt" href="#manage" id="pmg">Request through this site ›</a></div>
       ${p.contact ? `<div class="pmail"><a href="mailto:${esc(p.contact)}">${esc(p.contact)}</a></div>` : ''}
+      ${jobs ? `<div class="jobtags">${jobs}</div>` : ''}
     </section>
     ${(p.stats||[]).length ? `<div class="strip pstats">${p.stats.map(x => `<div><div class="v">${esc(x.v)}</div><div class="k">${esc(x.k)}</div></div>`).join('')}</div>` : ''}
     ${(p.steps||[]).length ? `<section class="sec-block"><h2>How it works</h2><div class="psteps">${p.steps.map((x,i) => `<div><span class="num">${i+1}</span><b>${esc(x.t)}</b><span>${esc(x.d)}</span></div>`).join('')}</div></section>` : ''}
     ${(p.checks||[]).length ? `<section class="sec-block"><h2>Before an agent goes live</h2><div class="pchecks">${p.checks.map(x => `<div><span class="dot y" aria-hidden="true">✓</span>${esc(x)}</div>`).join('')}</div></section>` : ''}
     ${(p.agents_list||[]).length ? `<section class="sec-block"><h2>Agents ${esc(p.name)} runs</h2><div class="pagents">${p.agents_list.map(x => `<div><b>${esc(x.name)}</b><span>${esc(x.who)}</span></div>`).join('')}</div></section>` : ''}
-    ${agents.length ? `<section class="sec-block"><h2>From this ranking</h2><div class="list" style="margin-top:22px">${agents.map(a => `<a class="item" href="#agent-${esc(a.id)}"><div class="rk"><b>${a.rank}</b></div><div class="nm"><b>${esc(a.name)}</b><span>${esc(a.description)}</span></div><div class="sc"><span class="v">${a.score} <small>of 12</small></span></div><span class="chev" aria-hidden="true">›</span></a>`).join('')}</div></section>` : ''}
+    ${agents.length ? `<section class="sec-block"><h2>From this week's list</h2><div class="list" style="margin-top:22px">${agents.map(a => row(a)).join('')}</div></section>` : ''}
     ${p.partner ? `<div class="callout" style="margin-top:72px"><div><h3>${esc(p.partner.t)}</h3><p>${esc(p.partner.d)}</p></div>${mail}</div>` : ''}
+    ${p.operator ? `<p class="muted small" style="margin-top:40px">${esc(p.name)} operates this site and is listed like any other provider. It gets no rank, no routing preference and no say in who else is listed. <a href="#method">How it works ›</a></p>` : ''}
     <section class="pcta"><h2>Talk to ${esc(p.name)}</h2><div class="acts" style="justify-content:center">${mail}${site}</div></section>`;
-  $('#pmg').onclick = () => { S.pickProvider = p.slug; S.pick = null; };
+  $('#pmg').onclick = () => { S.pickProvider = p.slug; S.pick = null; S.pickJob = null; };
   window.scrollTo(0,0);
 }
 function providerDirectory(){
   const list = S.providers || [];
   if (!list.length) return '';
-  return `<section class="sec-block"><h2>Listed providers</h2><p class="lead">Companies that run, host or resell agents on this list.</p>
+  return `<section class="sec-block"><h2>Listed providers</h2><p class="lead">Companies that run or host agents on this list. Requests go to the ones you pick.</p>
     <div class="pgrid">${list.map(p => `<a class="card pcard" href="#provider-${esc(p.slug)}"><b>${esc(p.name)}</b><span>${(p.kinds||[]).map(k => esc(KIND[k]||k)).join(' · ')}</span></a>`).join('')}</div></section>`;
 }
 
@@ -505,7 +656,7 @@ function histBlock(a){
     const xy = pts.map((p,i) => [i/(pts.length-1)*(W-20)+10, (p.r-1)/(max-1)*(H-20)+10]);
     chart = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Rank over time"><polyline fill="none" stroke="var(--accent)" stroke-width="2.5" points="${xy.map(p=>p.join(',')).join(' ')}"/></svg>`;
   } else chart = '';
-  return `<div class="hist">${chart}<div class="hrow"><div>Today<b>#${a.rank}</b></div>${cell('Last week', dayAt(7))}${cell('1 month ago', dayAt(30))}<div>Days on the list<b>${pts.length}</b></div></div></div>`;
+  return `<div class="hist">${chart}<div class="hrow"><div>Now<b>#${a.rank}</b></div>${cell('Last week', dayAt(7))}${cell('1 month ago', dayAt(30))}<div>Runs on the list<b>${pts.length}</b></div></div></div>`;
 }
 function userScore(id){
   const l = (S.reviews||{})[id] || [];
@@ -516,27 +667,60 @@ function userScore(id){
 }
 function revTxt(id){
   const u = userScore(id);
-  return u ? `${u.pct}% positive · ${u.n} review${u.n>1?'s':''}` : 'No reviews yet';
+  return u ? `${u.pct}% positive · ${plural(u.n, 'review')}` : 'No reviews yet';
 }
 function userBig(id){
   const u = userScore(id);
-  return u ? `<b>${u.pct}%</b><span>user score · ${u.n} review${u.n>1?'s':''}</span>` : `<a href="#reviews" class="rvlink">No reviews yet</a>`;
+  return u ? `<b>${u.pct}%</b><span>user score · ${plural(u.n, 'review')}</span>` : `<a href="#reviews" class="rvlink">No reviews yet</a>`;
+}
+function reportForm(agentId, storyId, kind){
+  const isReply = kind === 'reply';
+  return `<div class="inline-form" id="rpt" hidden><form id="rptf" novalidate>
+      ${isReply ? `<label for="rp-name">Who is replying<input id="rp-name" maxlength="80" placeholder="Jane Doe, Acme"></label>` : ''}
+      <label for="rp-what">${isReply ? 'Your reply' : 'What is wrong'}<textarea id="rp-what" rows="3" maxlength="1500" placeholder="${isReply ? 'What you want readers to know.' : 'Which line, and what it should say. A link to a public page helps.'}"></textarea></label>
+      <label for="rp-mail">Email <span class="hint">so we can follow up. Not shown.</span><input id="rp-mail" type="email" autocomplete="email"></label>
+      <label style="position:absolute;left:-9999px" aria-hidden="true">Website<input id="rp-hp" tabindex="-1" autocomplete="off"></label>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="submit">${isReply ? 'Send reply' : 'Send report'}</button><button class="btn sec" type="button" id="rp-cancel">Cancel</button></div>
+      <div id="rp-msg" class="msg" hidden></div>
+    </form></div>`;
+}
+function bindReport(agentId, storyId, kind, opener){
+  const box = $('#rpt'), f = $('#rptf'); if (!box || !f) return;
+  const open = $(opener); if (open) open.onclick = () => { box.hidden = false; (f.querySelector('#rp-name') || f.querySelector('#rp-what')).focus(); };
+  $('#rp-cancel').onclick = () => { box.hidden = true; };
+  f.onsubmit = async e => {
+    e.preventDefault();
+    const msg = $('#rp-msg'); msg.hidden = false; msg.className = 'msg';
+    const payload = { kind, agent: agentId || '', story: storyId || '', what: $('#rp-what').value.trim(), email: $('#rp-mail').value.trim(), name: ($('#rp-name') || {value:''}).value.trim(), hp_url: $('#rp-hp').value };
+    if (payload.what.length < 5) { msg.textContent = kind === 'reply' ? 'Write the reply.' : 'Say what is wrong.'; return; }
+    if (kind === 'reply' && !payload.name) { msg.textContent = 'Say who is replying.'; return; }
+    msg.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/report', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) { msg.textContent = out.error && out.error !== 'unavailable' ? out.error : "That didn't send. Try again."; return; }
+      msg.className = 'ok'; msg.textContent = kind === 'reply' ? 'Sent. A person reads it and posts it under the story.' : 'Sent. A person checks every report, and fixes are listed on the How it works page.';
+      f.querySelectorAll('input,textarea').forEach(i => i.value = '');
+    } catch { msg.textContent = "That didn't send. Try again."; }
+  };
 }
 function viewAgent(id){
   const a = S.agents.find(x => x.id === id);
-  if (!a) { $('#app').innerHTML = `<a class="back" href="#index">‹ Rankings</a><div class="empty"><h3>This agent isn't on this week's list</h3></div>`; return; }
+  if (!a) { $('#app').innerHTML = `<a class="back" href="#list">‹ This week</a><div class="empty"><h3>This agent isn't on this week's list</h3></div>`; return; }
   const meta = Object.fromEntries(S.run.checks.map(c => [c.id, c]));
   const groups = [...new Set(S.run.checks.map(c => c.group))];
-  const g = a.get_it, mv = movement(a.id, a.rank), inCmp = S.cmp.includes(a.id);
+  const g = a.get_it, mv = movement(a.id, a.rank), inCmp = S.cmp.includes(a.id), stories = storiesAbout(a.id);
   const yesno = b => b ? '<span class="yes">Yes</span>' : '<span class="no">No</span>';
   const proof = v => `<div class="proof">“${esc(v.quote)}”<cite><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(host(v.url))}${esc(new URL(v.url).pathname.slice(0,48))}</a></cite></div>`;
+  const runners = provs(a.id,'managed');
   $('#app').innerHTML = `
-    <a class="back" href="#index">‹ Rankings</a>
+    <a class="back" href="#list">‹ This week</a>
     <section class="ahead">
       <div style="min-width:0">
         <div class="eyebrow">#${a.rank} · ${esc(a.industry)}${mv ? ` · <span class="mv ${mv.cls}">${esc(mv.txt)}</span>` : ''}</div>
         <h1 style="margin-top:10px">${esc(a.name)}</h1>
         <p>${esc(a.description)}</p>
+        ${(a.jobs||[]).length ? `<div class="jobtags">${a.jobs.map(jobLink).join('')}</div>` : ''}
         <div class="acts">
           <a class="btn" href="#manage" id="mg">Get help with this agent</a>
           ${g.open_source && a.repo_url ? `<a class="btn sec" href="${esc(a.repo_url)}" target="_blank" rel="noopener">Run it yourself ›</a>` : a.url ? `<a class="btn sec" href="${esc(a.url)}" target="_blank" rel="noopener">Get it from the maker ›</a>` : ''}
@@ -549,6 +733,11 @@ function viewAgent(id){
     </section>
     <div class="strip">${groups.map(gr => { const ks = ORDER.filter(k => meta[k].group === gr), y = ks.filter(k => a.checks[k].answer).length; return `<div><div class="k">${esc(gr)}</div><div class="v">${y} of ${ks.length}</div><div class="bar"><i style="width:${y/ks.length*100}%"></i></div></div>`; }).join('')}</div>
 
+    <section class="sec-block" id="stories"><h2>Stories <span class="tag-ns">Not scored</span></h2>
+      ${stories.length ? `<div class="stories">${stories.map(storyCard).join('')}</div>` : `<p class="lead">Nobody has written up running this one yet.</p>`}
+      <div class="acts" style="margin-top:18px"><a class="btn sec" href="#share" id="sharea">Share your story</a></div>
+    </section>
+
     <section class="sec-block" id="checks"><h2>The 12 checks</h2><p class="lead">A Yes needs a quote from a public page. No evidence counts as No.</p>
       <div class="checks">${ORDER.map(k => { const v = a.checks[k]; return v.answer
         ? `<details class="ck"><summary><span class="dot y" aria-hidden="true">✓</span><span>${esc(meta[k].question)} <span class="grp">${esc(meta[k].group)}</span></span><span class="more">Proof</span></summary>${proof(v)}</details>`
@@ -556,12 +745,9 @@ function viewAgent(id){
     </section>
 
     <section class="sec-block" id="getit"><h2>How to get it <span class="tag-ns">Not scored</span></h2>
-      <div class="callout"><div><h3>Manage it for me</h3><p>${provs(a.id,'managed').length ? `Run for customers by ${provs(a.id,'managed').map(plink).join(', ')}.` : (g.listed_managers||[]).length ? esc(g.listed_managers.join(', ')) : 'A provider sets it up and keeps it running for a monthly fee.'}</p></div><a class="btn" href="#manage" id="mg2">Request a provider</a></div>
+      <div class="callout"><div><h3>Have someone run it</h3><p>${runners.length ? `Listed providers who run it: ${runners.map(plink).join(', ')}.` : (g.listed_managers||[]).length ? esc(g.listed_managers.join(', ')) : 'A provider sets it up and keeps it running. Your request goes to the providers you pick.'}</p></div><a class="btn" href="#manage" id="mg2">Pick a provider</a></div>
       <div class="rows">
         <div class="r"><div><div class="k">Do it yourself</div><div class="h">${g.open_source ? `Open source${a.license ? ` (${esc(a.license)})` : ''}${g.self_host ? ' · runs in your environment' : ''}. ${a.repo_url ? `<a href="${esc(a.repo_url)}" target="_blank" rel="noopener">Get the code ›</a>` : ''}` : 'Not open source. Use the maker\'s own version.'}</div></div>${yesno(g.open_source)}</div>
-        <div class="r"><div><div class="k">Who resells it?</div><div class="h">${[...provs(a.id,'reseller').map(plink), ...g.listed_resellers.map(esc)].join(', ') || 'No reseller listed yet.'} <a href="#claim">Resell it ›</a></div></div></div>
-        <div class="r"><div><div class="k">Maker has a reseller program</div></div>${yesno(g.reseller_program.answer)}</div>
-        <div class="r"><div><div class="k">Referral only?</div><div class="h">They pay referrals but don't let you resell it.</div></div>${yesno(g.referral_program.answer && !g.reseller_program.answer && !g.listed_resellers.length)}</div>
         <div class="r"><div><div class="k">Hosted on</div><div class="h">${[g.hosted_by_maker.answer ? "The maker's cloud" : null, ...g.marketplaces.map(esc), ...provs(a.id,'host').map(plink)].filter(Boolean).join(' · ') || 'No hosted version found.'}</div></div>${yesno(g.hosted_by_maker.answer || g.marketplaces.length || provs(a.id,'host').length)}</div>
         <div class="r"><div><div class="k">Bring it to your platform</div><div class="h">${[g.open_source ? 'Open source' : null, g.self_host ? 'Self-host' : null, ...g.bring_your_own].filter(Boolean).map(esc).join(' · ') || 'No integration paths found.'}</div></div></div>
       </div>
@@ -571,40 +757,109 @@ function viewAgent(id){
 
     ${reviewsPanel(a)}
 
-    <section class="sec-block" id="why"><h2>Why it's trending</h2>
+    <section class="sec-block" id="why"><h2>Why it's on the list</h2>
       <ul class="src">${a.mention_links.map(m => `<li><span class="muted small">${esc(m.source)} · ${esc(m.date)}</span><br><a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.title)}</a></li>`).join('')}</ul>
       <div class="callout"><div><h3>Is this your agent?</h3><p>Claim the listing to add evidence. You can't edit answers or scores.</p></div><a class="btn sec" href="#claim">Claim it</a></div>
+      <p class="small" style="margin-top:28px"><button class="linkbtn" type="button" id="rp-open" style="font-size:14px">Report an error on this page ›</button></p>
+      ${reportForm(a.id, '', 'error')}
     </section>`;
-  const pickMe = () => { S.pick = a.id; S.pickProvider = null; };
-  $('#mg').onclick = pickMe; $('#mg2').onclick = pickMe;
+  const pickMe = () => { S.pick = a.id; S.pickProvider = null; S.pickJob = null; };
+  $('#mg').onclick = pickMe; $('#mg2').onclick = pickMe; $('#sharea').onclick = pickMe;
   $('#cmpb').onclick = () => { toggleCmp(a.id); $('#cmpb').textContent = S.cmp.includes(a.id) ? '✓ Comparing' : 'Compare'; };
   bindReviews(a);
+  bindReport(a.id, '', 'error', '#rp-open');
+  window.scrollTo(0,0);
+}
+
+/* ---------- stories ---------- */
+const AUTHORS = ['A customer who uses it', 'The maker of the agent', 'A consultant who set it up'];
+const SRUNS = ['We run it ourselves', "The maker's hosted version", 'A provider runs it for us'];
+const authorShort = s => s.author === AUTHORS[1] ? 'Maker' : s.author === AUTHORS[2] ? 'Consultant' : 'Customer';
+const storyTitle = s => { const j = jobById(s.job); return j ? j.name : s.job_text || 'A job'; };
+const storyAgent = s => { const a = S.agents.find(x => x.id === s.agent); return a ? a.name : s.agent_name || s.agent || 'an agent'; };
+function storyCard(s){
+  return `<a class="story" href="#story-${esc(s.id)}"><div class="who">${esc(authorShort(s))}${s.company ? ` · ${esc(s.company)}` : ''}${s.industry ? ` · ${esc(s.industry)}` : ''}</div>
+    <b>${esc(storyTitle(s))} with ${esc(storyAgent(s))}</b><p>${esc(s.workflow)}</p>${s.outcome ? `<div class="out">${esc(s.outcome)}</div>` : ''}</a>`;
+}
+function viewStories(){
+  const fns = (S.jobs && S.jobs.functions) || [];
+  const f = S.sfn || 'All';
+  const list = S.stories.filter(s => f === 'All' || (jobById(s.job)||{}).function === f);
+  const used = fns.filter(fn => S.stories.some(s => (jobById(s.job)||{}).function === fn));
+  $('#app').innerHTML = `<section class="hero" style="padding-bottom:20px"><h1>Stories</h1>
+      <div class="acts" style="justify-content:center"><a class="btn" href="#share">Share your story</a></div></section>
+    ${used.length > 1 ? `<div class="controls"><div class="inds" role="group" aria-label="Function">${['All', ...used].map(x => `<button class="chip" type="button" data-fn="${esc(x)}" aria-pressed="${f===x}">${esc(x)}</button>`).join('')}</div></div>` : ''}
+    ${list.length ? `<div class="stories">${list.map(storyCard).join('')}</div>` : `<div class="empty"><h3>No stories published yet</h3>Each one is a job someone automated, the agent they used, how it runs and who ran it. A person reads every story before it goes up.</div>`}`;
+  document.querySelectorAll('[data-fn]').forEach(b => b.onclick = () => { S.sfn = b.dataset.fn; viewStories(); });
+}
+function viewStory(id){
+  const s = S.stories.find(x => x.id === id);
+  if (!s) { $('#app').innerHTML = `<a class="back" href="#stories">‹ Stories</a><div class="empty"><h3>${S.dbState === 'loading' ? 'Loading…' : 'No story here'}</h3></div>`; return; }
+  const a = S.agents.find(x => x.id === s.agent), j = jobById(s.job);
+  const agentLink = a ? `<a href="#agent-${esc(a.id)}">${esc(a.name)}</a>` : s.agent_url ? `<a href="${esc(s.agent_url)}" target="_blank" rel="noopener">${esc(s.agent_name || s.agent)}</a>` : esc(s.agent_name || s.agent);
+  $('#app').innerHTML = `<a class="back" href="#stories">‹ Stories</a>
+    <section class="phero">
+      <div class="eyebrow">${esc(authorShort(s))}${s.role ? ` · ${esc(s.role)}` : ''}${s.company ? ` · ${esc(s.company)}` : ''}${s.industry ? ` · ${esc(s.industry)}` : ''} · ${esc(String(s.approved_at || s.ts).slice(0,10))}</div>
+      <h1>${esc(storyTitle(s))} with ${esc(storyAgent(s))}</h1>
+      ${s.outcome ? `<p style="color:var(--up);font-weight:600">${esc(s.outcome)}</p>` : ''}
+    </section>
+    <div class="facts">
+      <div><div class="k">Job</div><div class="v">${j ? `<a href="#job-${esc(j.id)}">${esc(j.name)}</a>` : esc(s.job_text)}</div></div>
+      <div><div class="k">Agent</div><div class="v">${agentLink}</div></div>
+      <div><div class="k">Where it runs</div><div class="v">${esc(s.runs)}${s.provider ? ` · ${esc(s.provider)}` : ''}</div></div>
+      <div><div class="k">Written by</div><div class="v">${esc(s.author)}</div></div>
+    </div>
+    <div class="sbody">
+      ${s.before ? `<h2>Before</h2><p>${esc(s.before)}</p>` : ''}
+      <h2>How it runs</h2><p>${esc(s.workflow)}</p>
+      ${s.editor_note ? `<p class="muted small">Editor's note: ${esc(s.editor_note)}</p>` : ''}
+      ${(s.replies||[]).length ? `<h2>Replies</h2>${s.replies.map(r => `<div class="reply"><div class="who">${esc(r.who)} · ${esc(String(r.ts).slice(0,10))}</div><p>${esc(r.text)}</p></div>`).join('')}` : ''}
+      <p class="small" style="margin-top:36px">Named in this story? <button class="linkbtn" type="button" id="rp-open" style="font-size:14px">Reply ›</button> · <a href="#method">How stories are checked</a></p>
+      ${reportForm(s.agent || '', s.id, 'reply')}
+    </div>`;
+  bindReport(s.agent || '', s.id, 'reply', '#rp-open');
   window.scrollTo(0,0);
 }
 
 /* ---------- method + forms ---------- */
 function viewMethod(){
   const groups = [...new Set(S.run.checks.map(c => c.group))];
+  const rej = S.rejects && S.rejects.rejected ? S.rejects.rejected : null;
+  const cor = S.corrections;
   $('#app').innerHTML = `<div class="page">
-    <div class="eyebrow">Rubric v${esc(S.run.rubric_version)}</div>
-    <h1 style="margin-top:12px">How we score</h1>
-    <p class="muted" style="font-size:19px;margin-top:16px">An agent gets on the list by trending and gets its rank from twelve yes/no checks. The same evidence always gives the same rank.</p>
+    <div class="eyebrow">Method v${esc(S.run.rubric_version)} · job map v${esc((S.jobs||{}).version || '1')}</div>
+    <h1 style="margin-top:12px">How it works</h1>
+    <p class="muted" style="font-size:19px;margin-top:16px">You start from a job. The site shows the agents that say they do it, what they pass, and what happened when someone ran one.</p>
+    <h2>Who runs this</h2>
+    <p>Brine AI operates the site and pays for it. Brine is listed as a provider like any other: it gets no rank, no routing preference, and no say in who else is listed. No one pays for placement. Help requests go to the providers you pick, and only to them.</p>
     <h2>Who gets listed</h2>
-    <p>An agent here is software that does a job for someone, at work or in their life: proposals, support tickets, bookkeeping, hiring, travel, groceries and the like. Developer tools, lists, frameworks, courses, benchmarks and news articles don't count. It joins when its code or its homepage is mentioned ${(S.run.min_sources_applied || S.run.min_sources_requested) === 1 ? 'on GitHub, Hacker News or Reddit' : `on at least ${S.run.min_sources_applied || S.run.min_sources_requested} of GitHub, Hacker News and Reddit`} in the last ${S.run.window_days} days. The list shows the top 50 by mentions, then by stars gained.</p>
+    <p>An agent here is software that does a job for someone, at work or in their life. Developer tools, lists, frameworks, courses, benchmarks and news articles don't count. It joins when its code or its homepage is mentioned ${(S.run.min_sources_applied || S.run.min_sources_requested) === 1 ? 'on GitHub, Hacker News, Reddit or Product Hunt' : `on at least ${S.run.min_sources_applied || S.run.min_sources_requested} of GitHub, Hacker News, Reddit and Product Hunt`} in the last ${S.run.window_days} days, or when a maker lists it and it passes the same gate. The gate is a fixed set of rules, checked against a fixed set of test cases before every run, and the run stops if one flips. Agents built to deceive, evade or abuse are never listed.</p>
+    <h2>The jobs</h2>
+    <p>Each agent is tagged with the jobs its own description names, from a fixed map of ${JOBS().length} jobs in ${((S.jobs||{}).functions||[]).length} functions. The map is public and versioned. Jobs people type into the box feed the next version.</p>
     <h2>The 12 checks</h2>
     <p>Each check is Yes or No. A Yes needs a quote on a public page. Unknown counts as No.</p>
     <div class="rubric">${groups.map(g => `<div><b>${esc(g)}</b><ol>${S.run.checks.filter(c=>c.group===g).map(c=>`<li>${esc(c.question)}</li>`).join('')}</ol></div>`).join('')}</div>
     <h2>Order</h2>
-    <ul><li>Score is the number of Yes answers out of 12. Every check counts the same.</li><li>Ties go to more mentions, then more stars gained, then name A to Z.</li></ul>
-    <h2>History</h2>
-    <p>Every daily run is saved. Movement arrows compare today with a week ago, and the archive shows past rankings exactly as they stood. Nothing is estimated or back-filled.</p>
+    <ul><li>“Most discussed” means exactly that: the list is ordered by checks passed, then by how many people mentioned it, then by stars gained. It is not a judgment of which agent is best.</li><li>Ties go to name A to Z.</li></ul>
+    <h2>Weekly, with a person in the loop</h2>
+    <p>The scraper runs every day. The list is published once a week, after a person looks at what is new, what moved, and anything odd. Every run is saved, so the archive shows past lists exactly as they stood.</p>
+    <h2>Stories</h2>
+    <ul><li>A story is a job someone automated, the agent, how it runs, where, and who helped. A person reads every story before it is published, and confirms the sender's email.</li><li>Every story says who wrote it: a customer, the agent's maker, or a consultant who was paid to set it up.</li><li>Anyone named in a story can reply, and the reply is posted under it.</li><li>Stories never change a score.</li></ul>
+    <h2>Corrections</h2>
+    <p>Every agent page has a “Report an error” link. Fixes are listed here with the date.</p>
+    ${cor === null ? '<p class="muted">Loading…</p>' : cor.length ? `<table class="rejtable">${cor.map(c => `<tr><td>${esc(String(c.ts).slice(0,10))}</td><td>${c.agent ? `<a href="#agent-${esc(c.agent)}">${esc(c.agent)}</a>: ` : ''}${esc(c.note)}</td></tr>`).join('')}</table>` : '<p class="muted">No corrections yet.</p>'}
+    <h2>What was turned away</h2>
+    <p>Every candidate the gate rejected on the last run, with the reason. ${rej ? `${rej.length.toLocaleString()} on ${esc(String(S.rejects.run_at).slice(0,10))}.` : ''}</p>
+    ${rej ? `<details class="plain"><summary>Show the reject log</summary><table class="rejtable">${rej.slice(0,400).map(r => `<tr><td>${esc(r.key)}</td><td>${esc(r.reason)}</td></tr>`).join('')}</table>${rej.length > 400 ? `<p class="muted small">First 400 of ${rej.length}. The full log is in <a href="/rejects.json">rejects.json</a>.</p>` : ''}</details>` : '<p class="muted">The log appears after the next run.</p>'}
     <h2>The rules</h2>
-    <ul><li>No one pays for rank. Managed providers, resellers and hosting never change a score.</li><li>User reviews are shown next to the score and never change it.</li><li>Makers can add evidence, not edit answers or scores.</li><li>Rubric changes get a new version number and date.</li><li>The scraper reads public pages only and respects robots.txt.</li></ul>
+    <ul><li>No one pays for rank. Providers, hosts and makers never change a score.</li><li>User reviews and stories are shown next to the score and never change it.</li><li>Makers can add evidence, not edit answers or scores.</li><li>Method changes get a new version number and date.</li><li>The scraper reads public pages only, through each source's own API where there is one, and respects robots.txt. It stores agent and company data, not people's names or handles.</li><li>The job box keeps your email only if you ask to be told when an agent exists, and uses it for nothing else.</li></ul>
     <h2>Known limits</h2>
-    <p>Checks match text, so unusual wording can read as No, and an aside can occasionally read as Yes. Makers can fix both by claiming their listing.</p>
+    <p>Checks match text, so unusual wording can read as No, and an aside can occasionally read as Yes. Job tags come from an agent's own description, so an agent can do more than it says. Makers can fix both by claiming their listing.</p>
+    <h2>Disputes</h2>
+    <p>To dispute or remove a listing or a story, use “Report an error” on the page, or email <a href="mailto:editor@valuedagentreseller.com">editor@valuedagentreseller.com</a>.</p>
   </div>`;
 }
-function formShell(eyebrow, title, lede, formHtml, asideTitle, items, kind, doneMsg, extra){
+function formShell(eyebrow, title, lede, formHtml, asideTitle, items, kind, doneMsg, extra, onSubmit){
   $('#app').innerHTML = `<div class="page" style="max-width:none"><div style="max-width:640px"><div class="eyebrow">${eyebrow}</div><h1 style="margin-top:12px">${title}</h1>${lede ? `<p class="muted" style="font-size:19px;margin-top:16px">${lede}</p>` : ''}</div>
     <div class="formgrid"><form class="card" id="f" novalidate>${formHtml}<label style="position:absolute;left:-9999px" aria-hidden="true">Website<input id="hp_url" tabindex="-1" autocomplete="off"></label><div id="done" hidden></div></form>
     <div style="padding:8px 4px"><h3>${asideTitle}</h3><ul style="padding-left:18px;color:var(--muted)">${items.map(i => `<li style="margin:8px 0">${i}</li>`).join('')}</ul></div></div>${extra || ''}</div>`;
@@ -614,30 +869,66 @@ function formShell(eyebrow, title, lede, formHtml, asideTitle, items, kind, done
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.value.trim() || (i.type==='email' && !/^\S+@\S+\.\S+$/.test(i.value)));
     const d = $('#done'); d.hidden = false;
     if (bad) { d.className = 'msg'; d.textContent = bad.type === 'email' ? 'Enter a valid email address.' : 'Fill in every required field.'; bad.focus(); return; }
-    const btn = form.querySelector('button[type="submit"]'); btn.disabled = true; d.className = 'msg'; d.textContent = 'Sending…';
     const payload = { kind };
-    form.querySelectorAll('input,select,textarea').forEach(i => { if (i.id) payload[i.id] = i.value; });
+    form.querySelectorAll('input,select,textarea').forEach(i => { if (i.id && i.type !== 'checkbox') payload[i.id] = i.value; });
+    const checks = [...form.querySelectorAll('input[type=checkbox][name]:checked')].map(i => i.value);
+    if (onSubmit) { const err = onSubmit(payload, checks); if (err) { d.className = 'msg'; d.textContent = err; return; } }
+    const btn = form.querySelector('button[type="submit"]'); btn.disabled = true; d.className = 'msg'; d.textContent = 'Sending…';
     try {
-      const res = await fetch('/api/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const res = await fetch(kind === 'story' ? '/api/stories' : '/api/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const out = await res.json().catch(() => ({}));
       if (!res.ok) { d.textContent = out.error && out.error !== 'unavailable' ? out.error : "That didn't send. Check your connection and try again."; return; }
       d.className = 'ok'; d.textContent = doneMsg;
-      form.querySelectorAll('input:not([type=hidden]),textarea').forEach(i => { i.value = ''; });
+      form.querySelectorAll('input:not([type=hidden]):not([type=checkbox]),textarea').forEach(i => { i.value = ''; });
     } catch { d.textContent = "That didn't send. Check your connection and try again."; }
     finally { btn.disabled = false; }
   };
 }
 const agentOptions = sel => S.agents.map(a => `<option value="${esc(a.id)}" ${a.id===sel?'selected':''}>${esc(a.name)}</option>`).join('');
-const industryOptions = () => allIndustries().map(i => `<option>${esc(i)}</option>`).join('');
-const viewManage = () => { const pv = (S.providers||[]).find(p => p.slug === S.pickProvider); formShell('Managed agents', 'Manage it for me', pv ? `This request goes to ${esc(pv.name)}. Tell us what you need done and, if you know it, which agent.` : 'Tell us what you need done and, if you know it, which agent. A provider who already runs it for other customers will set it up and keep it running for a monthly fee.',
-  `<label for="magent">Agent<select id="magent"><option value="general" ${S.pick ? '' : 'selected'}>General request (no specific agent)</option>${agentOptions(S.pick)}</select></label><label for="mjob">The job you want done<textarea id="mjob" rows="3" required placeholder="Draft first-pass proposal responses from our past bids"></textarea></label><div class="two"><label for="mco">Company<input id="mco" required autocomplete="organization"></label><label for="mem">Work email<input id="mem" type="email" required autocomplete="email"></label></div><input type="hidden" id="provider" value="${esc(S.pickProvider || '')}"><button class="btn" type="submit">Request a provider</button>`,
-  'What managed includes', ["Setup in your environment or the provider's.", 'Monitoring, fixes and updates.', 'A named person you can call.', "Your provider never changes an agent's rank."], 'manage', "Sent. A provider will be in touch at the email you gave."); };
-const viewClaim = () => formShell('For makers, providers and resellers', 'Claim a listing', 'Makers add evidence to their agent page. Providers, hosts and resellers list the agents they work with and get a page of their own. None of it changes the score.',
-  `<label for="role">I am<select id="role"><option>The maker of this agent</option><option>A provider who manages it for customers</option><option>A platform that can host it</option><option>A reseller who sells it</option><option>A referral partner</option></select></label><label for="agent">Agent<select id="agent"><option value="multiple" ${S.pick ? '' : 'selected'}>More than one agent</option>${agentOptions(S.pick)}</select></label><div class="two"><label for="co">Company<input id="co" required autocomplete="organization"></label><label for="em">Work email<input id="em" type="email" required autocomplete="email"></label></div><label for="web">Website<input id="web" type="url" placeholder="https://" autocomplete="url"></label><label for="about">About your company, for your provider page<textarea id="about" rows="3" maxlength="600" placeholder="What you do, who you do it for, and how you work with these agents."></textarea></label><label for="ev">Evidence links, one per line<textarea id="ev" rows="3" placeholder="https://yourcompany.com/security"></textarea></label><button class="btn" type="submit">Submit claim</button>`,
-  'What happens next', ['We confirm you work for the company.', 'New evidence is re-checked against the same 12 rules.', 'Providers, hosts and resellers get a page and appear under “How to get it”.'], 'claim', "Sent. We'll confirm the claim and be in touch.", providerDirectory());
-const viewPulse = () => formShell('Daily email', 'Agent Pulse', '',
-  `<label for="pem">Email<input id="pem" type="email" required autocomplete="email"></label><label for="pind">Industries<select id="pind"><option>All industries</option>${industryOptions()}</select></label><button class="btn" type="submit">Subscribe</button>`,
-  "What's in it", ['Biggest movers by industry.', 'New agents on the list.', 'Checks that flipped from No to Yes.'], 'pulse', "You're subscribed.");
+const jobOptions = sel => ((S.jobs||{}).functions||[]).map(fn => `<optgroup label="${esc(fn)}">${JOBS().filter(j => j.function === fn).map(j => `<option value="${esc(j.id)}" ${j.id===sel?'selected':''}>${esc(j.name)}</option>`).join('')}</optgroup>`).join('');
+const industryOptions = () => ((S.jobs||{}).industries||[]).map(i => `<option>${esc(i)}</option>`).join('');
+function viewManage(){
+  const list = (S.providers||[]).filter(p => (p.kinds||[]).some(k => k === 'managed' || k === 'host'));
+  const pv = S.pickProvider;
+  const jobName = S.pickJob ? (jobById(S.pickJob)||{}).name : '';
+  formShell('Help with an agent', 'Get help', 'Your request goes to the providers you tick, and only to them. Brine operates this site and is listed like any other provider.',
+    `<label for="magent">Agent<select id="magent"><option value="general" ${S.pick ? '' : 'selected'}>Not sure yet</option>${agentOptions(S.pick)}</select></label>
+     <label for="mjob">The job you want done<textarea id="mjob" rows="3" required placeholder="Chase overdue invoices and post the replies to our accounting system">${esc(jobName)}</textarea></label>
+     <div class="two"><label for="mco">Company<input id="mco" required autocomplete="organization"></label><label for="mem">Work email<input id="mem" type="email" required autocomplete="email"></label></div>
+     <fieldset style="border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:8px"><legend style="font-size:14px;font-weight:500;margin-bottom:4px">Send it to</legend>
+       <label class="check"><input type="checkbox" name="prov" value="any" ${pv ? '' : 'checked'}>Every listed provider</label>
+       ${list.map(p => `<label class="check"><input type="checkbox" name="prov" value="${esc(p.slug)}" ${pv === p.slug ? 'checked' : ''}>${esc(p.name)}${p.operator ? ' <span class="hint">(operates this site)</span>' : ''}</label>`).join('')}
+     </fieldset>
+     <input type="hidden" id="providers" value="">
+     <button class="btn" type="submit">Send request</button>`,
+    'What happens next', ['Each provider you picked gets the request and replies to you directly.', 'Nothing is sent to anyone you did not tick.', "A provider never changes an agent's rank."], 'manage', 'Sent to the providers you picked. They reply to the email you gave.', providerDirectory(),
+    (payload, checks) => { if (!checks.length) return 'Tick at least one provider.'; payload.providers = checks.includes('any') ? 'any' : checks.join(','); return null; });
+}
+const viewClaim = () => formShell('For makers and providers', 'Claim a listing', 'Makers add evidence to their agent page. Providers and hosts list the agents they run and get a page of their own. None of it changes the score.',
+  `<label for="role">I am<select id="role"><option>The maker of this agent</option><option>A provider who runs it for customers</option><option>A platform that can host it</option></select></label><label for="agent">Agent<select id="agent"><option value="multiple" ${S.pick ? '' : 'selected'}>More than one agent, or one not listed yet</option>${agentOptions(S.pick)}</select></label><div class="two"><label for="co">Company<input id="co" required autocomplete="organization"></label><label for="em">Work email<input id="em" type="email" required autocomplete="email"></label></div><label for="web">Website<input id="web" type="url" placeholder="https://" autocomplete="url"></label><label for="about">About your company, for your page<textarea id="about" rows="3" maxlength="600" placeholder="What you do, who you do it for, and how you work with these agents."></textarea></label><label for="ev">Evidence links, one per line<textarea id="ev" rows="3" placeholder="https://yourcompany.com/security"></textarea></label><label class="check"><input type="checkbox" id="run_ok" name="run_ok" value="yes">Providers listed here may contact me about running this agent for customers</label><button class="btn" type="submit">Submit claim</button>`,
+  'What happens next', ['We confirm you work for the company.', 'New evidence is re-checked against the same 12 rules.', 'Providers and hosts get a page and appear under “How to get it”.', 'Nobody contacts you unless you ticked the box.'], 'claim', "Sent. We'll confirm the claim and be in touch.", providerDirectory(),
+  (payload, checks) => { payload.run_ok = checks.includes('yes') ? 'yes' : ''; return null; });
+const viewPulse = () => formShell('Weekly email', 'Agent Pulse', '',
+  `<label for="pem">Email<input id="pem" type="email" required autocomplete="email"></label><label for="pind">Industry<select id="pind"><option>All industries</option>${industryOptions()}</select></label><button class="btn" type="submit">Subscribe</button>`,
+  "What's in it", ['New agents on the list.', 'New stories.', 'Jobs people named that no agent does yet.'], 'pulse', "You're subscribed.");
+function viewShare(){
+  const a = S.agents.find(x => x.id === S.pick);
+  formShell('Your story', 'Share your story', 'The job, the agent, how it runs, and who ran it. A person reads every story before it goes up.',
+    `<label for="job">The job<select id="job"><option value="">Pick the closest…</option>${jobOptions(S.pickJob)}<option value="other">Something else</option></select></label>
+     <label for="job_text">In your words <span class="hint">one line</span><input id="job_text" maxlength="160" placeholder="Chasing overdue invoices from 300 small customers"></label>
+     <label for="agent">The agent<select id="agent"><option value="">Pick one…</option>${agentOptions(S.pick)}<option value="other">Not on the list</option></select></label>
+     <div class="two"><label for="agent_name">Agent name <span class="hint">if not on the list</span><input id="agent_name" maxlength="80" value="${esc(a ? '' : '')}"></label><label for="agent_url">Link to it<input id="agent_url" type="url" placeholder="https://"></label></div>
+     <label for="before">Before <span class="hint">how the job got done, and what it cost</span><textarea id="before" rows="2" maxlength="400"></textarea></label>
+     <label for="workflow">How it runs now<textarea id="workflow" rows="5" maxlength="1500" required placeholder="What kicks it off, what it reads, what it writes, where a person steps in."></textarea></label>
+     <label for="outcome">What changed <span class="hint">a number if you have one</span><input id="outcome" maxlength="300" placeholder="Days to collect went from 41 to 12"></label>
+     <div class="two"><label for="runs">Where it runs<select id="runs" required><option value="">Choose…</option>${SRUNS.map(r => `<option>${esc(r)}</option>`).join('')}</select></label><label for="provider">Provider, if one runs it<input id="provider" maxlength="80"></label></div>
+     <div class="two"><label for="author">Who you are<select id="author" required><option value="">Choose…</option>${AUTHORS.map(r => `<option>${esc(r)}</option>`).join('')}</select></label><label for="industry">Industry<select id="industry"><option value="">Choose…</option>${industryOptions()}</select></label></div>
+     <div class="two"><label for="company">Company <span class="hint">shown</span><input id="company" maxlength="120" autocomplete="organization"></label><label for="role">Your role <span class="hint">shown</span><input id="role" maxlength="80" autocomplete="organization-title"></label></div>
+     <label for="email">Work email <span class="hint">to confirm the story. Never shown.</span><input id="email" type="email" required autocomplete="email"></label>
+     <button class="btn" type="submit">Send the story</button>`,
+    'Before it goes up', ['A person reads it and confirms your email.', 'It says who wrote it: a customer, the maker, or a consultant.', 'Anyone named in it can reply under it.', 'It never changes a score.'], 'story', 'Sent. A person reads every story before it goes up.', '',
+    payload => { if (!payload.job && !payload.job_text) return 'Pick a job or say it in your words.'; if (payload.job === 'other') payload.job = ''; if (payload.agent === 'other') payload.agent = ''; if (!payload.agent && !payload.agent_name) return 'Name the agent.'; return null; });
+}
 
 /* ---------- reviews (shared, stored outside the page) ---------- */
 S.reviews = {}; S.dbState = 'loading';
@@ -713,56 +1004,61 @@ function bindReviews(a){
     } finally { btn.disabled = false; }
   };
 }
-function refreshReviews(){
+function refreshLive(){
   const h = location.hash.slice(1);
   if (h.startsWith('agent-')) { const a = S.agents.find(x => x.id === h.slice(6)); if (a) { fillReviews(a); const ub = $('#ubig'); if (ub) ub.innerHTML = userBig(a.id); } }
-  if (h === 'compare') viewCompare();
-  if (!h || h === 'index') renderRows(false);
+  if (h === 'compare' || h === 'stories' || h.startsWith('story-') || h.startsWith('job-') || h === 'method' || !h || h === 'index') route();
+  if (h === 'list') renderRows(false);
 }
 function getUid(){
   let u = store.get('var-uid');
   if (!/^[a-f0-9]{32}$/.test(u || '')) { u = [...crypto.getRandomValues(new Uint8Array(16))].map(b => b.toString(16).padStart(2,'0')).join(''); store.set('var-uid', u); }
   return u;
 }
-async function initReviews(){
+async function initLive(){
   S.uid = getUid();
-  try {
-    const res = await fetch('/api/reviews', { cache: 'no-store' });
-    if (!res.ok) throw new Error(res.status);
-    const { byAgent } = await res.json();
-    S.reviews = {};
-    Object.entries(byAgent || {}).forEach(([aid, l]) => { if (S.agents.some(x => x.id === aid)) S.reviews[aid] = l; });
-    S.dbState = 'ok';
-  } catch { S.dbState = 'off'; }
-  refreshReviews();
+  const get = async (url, fallback) => { try { const r = await fetch(url, { cache: 'no-store' }); if (!r.ok) throw 0; return await r.json(); } catch { return fallback; } };
+  const [rv, st, js, co, rj] = await Promise.all([get('/api/reviews', null), get('/api/stories', null), get('/api/jobs', null), get('/api/corrections', null), get('rejects.json', null)]);
+  S.reviews = {};
+  if (rv) { Object.entries(rv.byAgent || {}).forEach(([aid, l]) => { if (S.agents.some(x => x.id === aid)) S.reviews[aid] = l; }); S.dbState = 'ok'; } else S.dbState = 'off';
+  S.stories = (st && st.stories) || [];
+  S.jobStats = js;
+  S.corrections = co ? co.corrections : [];
+  S.rejects = rj;
+  refreshLive();
 }
 
 /* ---------- routing ---------- */
 function route(){
   const h = location.hash.slice(1) || 'index';
-  const section = h.startsWith('agent-') || h === 'compare' ? 'index' : h === 'manage' || h.startsWith('provider-') ? 'claim' : h;
+  const section = h.startsWith('agent-') || h === 'compare' || h === 'list' ? 'list' : h === 'manage' || h.startsWith('provider-') ? 'claim' : h.startsWith('story-') || h === 'share' ? 'stories' : h.startsWith('job-') ? 'index' : h;
   document.querySelectorAll('[data-nav]').forEach(a => { if (a.dataset.nav === section) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
   if (h.startsWith('agent-')) viewAgent(h.slice(6));
+  else if (h.startsWith('job-')) viewJob(h.slice(4));
+  else if (h.startsWith('story-')) viewStory(h.slice(6));
   else if (h.startsWith('provider-')) viewProvider(h.slice(9));
+  else if (h === 'list') viewList();
+  else if (h === 'stories') viewStories();
+  else if (h === 'share') viewShare();
   else if (h === 'compare') viewCompare();
   else if (h === 'method') viewMethod();
   else if (h === 'claim') viewClaim();
   else if (h === 'manage') viewManage();
   else if (h === 'pulse') viewPulse();
-  else viewIndex();
+  else viewHome();
   renderTray();
-  if (!h.startsWith('agent-') && !h.startsWith('provider-')) window.scrollTo(0,0);
+  if (!h.startsWith('agent-') && !h.startsWith('provider-') && !h.startsWith('job-') && !h.startsWith('story-')) window.scrollTo(0,0);
 }
-Promise.all(['agents.json','run.json','history.json'].map(f => fetch(f).then(r => r.json())).concat([fetch('providers.json').then(r => r.ok ? r.json() : []).catch(() => [])]))
-  .then(([agents, run, hist, providers]) => {
-    S.agents = agents; S.run = run; S.hist = hist; S.providers = Array.isArray(providers) ? providers : [];
+Promise.all(['agents.json','run.json','history.json','jobs.json'].map(f => fetch(f).then(r => r.json())).concat([fetch('providers.json').then(r => r.ok ? r.json() : []).catch(() => [])]))
+  .then(([agents, run, hist, jobs, providers]) => {
+    S.agents = agents; S.run = run; S.hist = hist; S.jobs = jobs; S.providers = Array.isArray(providers) ? providers : [];
     S.cmp = (store.get('vaq-cmp') || []).filter(id => agents.some(a => a.id === id)).slice(0,3);
-    $('#footStamp').textContent = `Updated ${nice(hist.latest)}`;
+    $('#footStamp').textContent = `Published ${nice(hist.latest)}`;
     $('#trayClear').onclick = () => { S.cmp = []; store.set('vaq-cmp', []); renderTray(); };
     route(); addEventListener('hashchange', route);
-    initReviews();
+    initLive();
   })
-  .catch(() => { $('#app').innerHTML = '<div class="empty"><h3>The rankings didn\'t load</h3>Refresh the page to try again.</div>'; });
+  .catch(() => { $('#app').innerHTML = '<div class="empty"><h3>The site didn\'t load</h3>Refresh the page to try again.</div>'; });
 </script>
 </body>
 </html>
