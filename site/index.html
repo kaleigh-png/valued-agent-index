@@ -1053,7 +1053,7 @@ Promise.all(['agents.json','run.json','history.json','jobs.json'].map(f => fetch
   .then(([agents, run, hist, jobs, providers]) => {
     S.agents = agents; S.run = run; S.hist = hist; S.jobs = jobs; S.providers = Array.isArray(providers) ? providers : [];
     S.cmp = (store.get('vaq-cmp') || []).filter(id => agents.some(a => a.id === id)).slice(0,3);
-    $('#footStamp').textContent = `Published ${nice(hist.latest)}`;
+    $('#footStamp').textContent = `List published ${nice(hist.latest)}`;
     $('#trayClear').onclick = () => { S.cmp = []; store.set('vaq-cmp', []); renderTray(); };
     route(); addEventListener('hashchange', route);
     initLive();
