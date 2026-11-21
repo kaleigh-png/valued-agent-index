@@ -13,7 +13,7 @@
    "content"
   ],
   "type": "Agent",
-  "stars": 1080,
+  "stars": 1089,
   "star_gain_7d": 25,
   "momentum_basis": "estimated",
   "sources": [
@@ -25,7 +25,7 @@
     "source": "github",
     "title": "warmbly/warmbly",
     "url": "https://github.com/warmbly/warmbly",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -71,7 +71,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/warmbly/warmbly",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": true,
@@ -149,8 +149,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 5835,
-  "star_gain_7d": 252,
+  "stars": 5836,
+  "star_gain_7d": 251,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -161,7 +161,7 @@
     "source": "github",
     "title": "ForeactLabs/OpenExecutive",
     "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -214,7 +214,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": true,
@@ -294,8 +294,8 @@
    "travel"
   ],
   "type": "Agent",
-  "stars": 394917,
-  "star_gain_7d": 7650,
+  "stars": 394969,
+  "star_gain_7d": 7631,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -306,7 +306,7 @@
     "source": "github",
     "title": "openclaw/openclaw",
     "url": "https://github.com/openclaw/openclaw",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -353,7 +353,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/openclaw/openclaw",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -567,8 +567,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 30144,
-  "star_gain_7d": 729,
+  "stars": 30147,
+  "star_gain_7d": 727,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -838,8 +838,8 @@
    "household"
   ],
   "type": "Agent",
-  "stars": 38610,
-  "star_gain_7d": 1158,
+  "stars": 38645,
+  "star_gain_7d": 1154,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -850,7 +850,7 @@
     "source": "github",
     "title": "HKUDS/Vibe-Trading",
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -897,7 +897,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -975,8 +975,8 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 8111,
-  "star_gain_7d": 365,
+  "stars": 8138,
+  "star_gain_7d": 364,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -987,7 +987,7 @@
     "source": "github",
     "title": "shy3130/tick-stock-panel",
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "date": "2026-11-19"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -1039,7 +1039,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "quote": "Last code push 2026-11-19"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -1116,8 +1116,8 @@
    "invoices"
   ],
   "type": "Agent",
-  "stars": 2798,
-  "star_gain_7d": 348,
+  "stars": 2940,
+  "star_gain_7d": 360,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1128,7 +1128,7 @@
     "source": "github",
     "title": "n8n-io/nod",
     "url": "https://github.com/n8n-io/nod",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -1176,7 +1176,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/n8n-io/nod",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -1253,8 +1253,8 @@
    "crm"
   ],
   "type": "Agent",
-  "stars": 5499,
-  "star_gain_7d": 187,
+  "stars": 5508,
+  "star_gain_7d": 186,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1265,7 +1265,7 @@
     "source": "github",
     "title": "melgarafael/DeskcommCRM",
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -1311,7 +1311,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -1525,8 +1525,8 @@
    "data-reports"
   ],
   "type": "Agent",
-  "stars": 73560,
-  "star_gain_7d": 1637,
+  "stars": 73629,
+  "star_gain_7d": 1634,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1537,7 +1537,7 @@
     "source": "github",
     "title": "ZhuLinsen/daily_stock_analysis",
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -1589,7 +1589,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -1641,6 +1641,8 @@
    },
    "marketplaces": [],
    "bring_your_own": [
+    "Claude Code",
+    "Codex",
     "Docker",
     "Python package"
    ],
@@ -1664,8 +1666,8 @@
    "teaching"
   ],
   "type": "Agent",
-  "stars": 44021,
-  "star_gain_7d": 1211,
+  "stars": 44072,
+  "star_gain_7d": 1208,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1676,7 +1678,7 @@
     "source": "github",
     "title": "THU-MAIC/OpenMAIC",
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -1718,7 +1720,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -1795,7 +1797,7 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 2555,
+  "stars": 2556,
   "star_gain_7d": 59,
   "momentum_basis": "estimated",
   "sources": [
@@ -1807,7 +1809,7 @@
     "source": "github",
     "title": "TNT-Likely/PanWatch",
     "url": "https://github.com/TNT-Likely/PanWatch",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -1853,7 +1855,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/TNT-Likely/PanWatch",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -1917,139 +1919,6 @@
   "rank": 14
  },
  {
-  "id": "evolution-foundation-evo-crm-community",
-  "name": "evo-crm-community",
-  "owner": "evolution-foundation",
-  "description": "Open source and self-hosted AI-powered customer service platform. Single-tenant, no multi-account, no per-user charges \u2014 you run the complete stack on your server.",
-  "url": "https://evolutionfoundation.com.br",
-  "repo_url": "https://github.com/evolution-foundation/evo-crm-community",
-  "license": "NOASSERTION",
-  "industry": "Real estate",
-  "jobs": [
-   "crm",
-   "support-tickets",
-   "content"
-  ],
-  "type": "Agent",
-  "stars": 312,
-  "star_gain_7d": 9,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "evolution-foundation/evo-crm-community",
-    "url": "https://github.com/evolution-foundation/evo-crm-community",
-    "date": "2026-11-06"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/evolution-foundation/evo-crm-community/blob/main/README.md",
-   "https://github.com/evolution-foundation/evo-crm-community/blob/main/SECURITY.md",
-   "https://evolutionfoundation.com.br"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "agents",
-   "topics": [
-    "ai-agents"
-   ],
-   "job": "crm"
-  },
-  "checks": {
-   "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "free": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "docs": {
-    "answer": true,
-    "url": "https://github.com/evolution-foundation/evo-crm-community/blob/main/README.md",
-    "quote": "\u2026href=\"https://docs.evolutionfoundation.com.br\""
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/evolution-foundation/evo-crm-community",
-    "quote": "Last code push 2026-11-06"
-   },
-   "no_training": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://github.com/evolution-foundation/evo-crm-community/blob/main/SECURITY.md",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": true,
-    "url": "https://github.com/evolution-foundation/evo-crm-community/blob/main/README.md",
-    "quote": "It brings together authentication, CRM, AI agents, agent processing, bot pipelines and a modern frontend into a unified, self-hostable stack."
-   },
-   "audit_logs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "human_approval": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   }
-  },
-  "score": 4,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "marketplaces": [],
-   "bring_your_own": [
-    "Docker"
-   ],
-   "self_host": true,
-   "open_source": false,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 15
- },
- {
   "id": "lethe044-hermes-life-os",
   "name": "hermes-life-os",
   "owner": "Lethe044",
@@ -2063,7 +1932,7 @@
    "household"
   ],
   "type": "Agent",
-  "stars": 246,
+  "stars": 247,
   "star_gain_7d": 7,
   "momentum_basis": "estimated",
   "sources": [
@@ -2181,7 +2050,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 16
+  "rank": 15
  },
  {
   "id": "wangzan101-mika",
@@ -2196,8 +2065,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 9292,
-  "star_gain_7d": 2931,
+  "stars": 9413,
+  "star_gain_7d": 2849,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -2208,7 +2077,7 @@
     "source": "github",
     "title": "wangzan101/Mika",
     "url": "https://github.com/wangzan101/Mika",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "pages_checked": [
@@ -2253,7 +2122,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/wangzan101/Mika",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-21"
    },
    "no_training": {
     "answer": false,
@@ -2310,7 +2179,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 17
+  "rank": 16
  },
  {
   "id": "hugohe3-ppt-master",
@@ -2326,8 +2195,8 @@
    "presentations"
   ],
   "type": "Agent",
-  "stars": 78859,
-  "star_gain_7d": 1598,
+  "stars": 79059,
+  "star_gain_7d": 1597,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -2442,6 +2311,161 @@
    ],
    "self_host": false,
    "open_source": true,
+   "listed_managers": [],
+   "listed_resellers": []
+  },
+  "rank": 17
+ },
+ {
+  "id": "getagentmall-com",
+  "name": "AgentMall: Reliable commerce execution for personal agents",
+  "owner": null,
+  "description": "One API for your personal agent to search, build a basket and check out at real stores, with spending limits, vaulted credentials and a virtual card per agent.",
+  "url": "https://getagentmall.com",
+  "repo_url": null,
+  "license": null,
+  "industry": "Research & data",
+  "jobs": [
+   "assistant",
+   "home-money",
+   "food"
+  ],
+  "type": "Agent",
+  "stars": null,
+  "star_gain_7d": null,
+  "momentum_basis": null,
+  "sources": [
+   "hackernews"
+  ],
+  "mentions_14d": 6,
+  "mention_links": [
+   {
+    "source": "hackernews",
+    "title": "Show HN: AgentMall \u2013 Let your AI agent buy groceries",
+    "url": "https://getagentmall.com",
+    "date": "2026-11-19"
+   },
+   {
+    "source": "hackernews",
+    "title": "Show HN: AgentMall \u2013 Let your AI agent buy groceries",
+    "url": "https://getagentmall.com",
+    "date": "2026-11-19"
+   },
+   {
+    "source": "hackernews",
+    "title": "Show HN: AgentMall \u2013 Let your AI agent buy groceries",
+    "url": "https://getagentmall.com",
+    "date": "2026-11-19"
+   },
+   {
+    "source": "hackernews",
+    "title": "Show HN: AgentMall \u2013 Let your AI agent buy groceries",
+    "url": "https://getagentmall.com",
+    "date": "2026-11-19"
+   },
+   {
+    "source": "hackernews",
+    "title": "Show HN: AgentMall \u2013 Let your AI agent buy groceries",
+    "url": "https://getagentmall.com",
+    "date": "2026-11-19"
+   }
+  ],
+  "pages_checked": [
+   "https://getagentmall.com",
+   "https://getagentmall.com/pricing",
+   "https://getagentmall.com/privacy"
+  ],
+  "why": {
+   "kind": "product site",
+   "matched": "agent",
+   "topics": [],
+   "job": "personal agent"
+  },
+  "checks": {
+   "pricing": {
+    "answer": true,
+    "url": "https://getagentmall.com/pricing",
+    "quote": "$20 /mo 25 concurrent sessions 120 min session duration Sign up Most popular Startup For teams scaling browser agents in production."
+   },
+   "free": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "docs": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "customer": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "result": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "updated": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "no_training": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "security_page": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "certification": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "your_env": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "audit_logs": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "human_approval": {
+    "answer": true,
+    "url": "https://getagentmall.com",
+    "quote": "4:12 Muse Need AA batteries, the big pack Three at Target, all in stock: Energizer MAX AA, 20 pack $19.99 Duracell Coppertop AA, 20 $21.49 up&up AA, 20 pack $14.99 Approve the exact basket Checkout is bound to the reviewed items and total."
+   }
+  },
+  "score": 2,
+  "get_it": {
+   "reseller_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "referral_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "hosted_by_maker": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "marketplaces": [],
+   "bring_your_own": [
+    "REST API"
+   ],
+   "self_host": false,
+   "open_source": false,
    "listed_managers": [],
    "listed_resellers": []
   },
