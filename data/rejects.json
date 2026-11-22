@@ -1,5 +1,5 @@
 {
- "run_at": "2026-11-21T17:36+00:00",
+ "run_at": "2026-11-22T17:51+00:00",
  "rejected": [
   {
    "key": "web:ricapar.net",
@@ -197,14 +197,14 @@
    "text": "Show HN: Agav \u2013 an open-source terminal agent designed to waste fewer tokens"
   },
   {
+   "key": "gh:yocontra/pulsar",
+   "reason": "describes itself as a harness, not a worker",
+   "text": "Show HN: Pulsar \u2013 cross-harness agent to agent communication and messaging"
+  },
+  {
    "key": "web:antonio.cx",
    "reason": "developer tooling (coding agents)",
    "text": "Running coding agents without handing them my credentials"
-  },
-  {
-   "key": "web:fakemetrics.com",
-   "reason": "never calls itself an agent, assistant or copilot",
-   "text": "Show HN: Fakemetrics.com \u2013 \"build in public\" like a superstar"
   },
   {
    "key": "gh:withcoral/coral",
@@ -212,9 +212,9 @@
    "text": "Show HN: Coral \u2013 Open-source gateway where agents write their own tools"
   },
   {
-   "key": "web:citizenlab.ca",
-   "reason": "never calls itself an agent, assistant or copilot",
-   "text": "Security Agencies Worldwide Found to Use Ad-Based Surveillance System"
+   "key": "gh:bitsinfra/gnomon",
+   "reason": "describes itself as a built for agents, not a worker",
+   "text": "Gnomon. Git for Postgres data, built for agents"
   },
   {
    "key": "web:googleblog.com",
@@ -252,6 +252,11 @@
    "text": "Show HN: Zigzag, a native Mac browser for people leaving Arc"
   },
   {
+   "key": "gh:thrudthebarbarian/xc",
+   "reason": "never calls itself an agent, assistant or copilot",
+   "text": "Show HN: Compile the same source for GPUs and CPUs"
+  },
+  {
    "key": "gh:frigadehq/yogurt",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "Show HN: Yogurt \u2013 Free, private, open-source alternative to Granola"
@@ -260,11 +265,6 @@
    "key": "web:docodethatmatters.com",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "Smart home devices should work without the internet"
-  },
-  {
-   "key": "web:eyesrhythm.com",
-   "reason": "describes itself as a desktop companion, not a worker",
-   "text": "Show HN: An offline desktop companion to help maintain a healthy blink rhythm"
   },
   {
    "key": "gh:diggerhq/opencomputer",
@@ -350,6 +350,11 @@
    "key": "gh:deepseek-ai/deepseek-harness",
    "reason": "describes itself as a harness, not a worker",
    "text": "deepseek-harness DeepSeek Harness: Everything is a Plugin. ai-agents cordis dsh dsh-plugin"
+  },
+  {
+   "key": "gh:dietrichgebert/ponytail",
+   "reason": "describes itself as a skills, not a worker",
+   "text": "ponytail Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote. a"
   },
   {
    "key": "gh:graphify-labs/graphify",
@@ -477,11 +482,6 @@
    "text": "9router Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gem"
   },
   {
-   "key": "gh:jackwener/opencli",
-   "reason": "developer tooling (cli)",
-   "text": "OpenCLI Make Any Website into CLI & Use your logged-in browser by AI agent.  ai-agent ai-agents ai-tools browser-automat"
-  },
-  {
    "key": "gh:nanocoai/nanoclaw",
    "reason": "describes itself as a harness, not a worker",
    "text": "nanoclaw Your own always-on AI assistant: self-hosted, open source, lightweight. Each agent runs in its own container on"
@@ -547,24 +547,19 @@
    "text": "rocketride-server RocketRide is an open source AI meta-harness with the only enterprise-grade runtime built on C++. Buil"
   },
   {
-   "key": "gh:nesquena/hermes-webui",
-   "reason": "describes itself as a webui, not a worker",
-   "text": "hermes-webui Hermes WebUI: The best way to use Hermes Agent from the web or from your phone! agent ai-agents hermes herm"
-  },
-  {
    "key": "gh:lemomo-ai/lemo-opuscar",
    "reason": "describes itself as a toolbox, not a worker",
    "text": "lemo-opuscar A toolbox of film styles made in code for Claude Code: 99 ready to use, and your own. Each style is a style"
   },
   {
+   "key": "gh:nesquena/hermes-webui",
+   "reason": "describes itself as a webui, not a worker",
+   "text": "hermes-webui Hermes WebUI: The best way to use Hermes Agent from the web or from your phone! agent ai-agents hermes herm"
+  },
+  {
    "key": "gh:xerj-org/xerj",
    "reason": "describes itself as a search engine, not a worker",
    "text": "xerj AI search engine and MCP server for bots and agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs f"
-  },
-  {
-   "key": "gh:orchestratorinc/agent-orchestrator",
-   "reason": "describes itself as a orchestrator, not a worker",
-   "text": "agent-orchestrator Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iP"
   },
   {
    "key": "gh:baarai/artex",
@@ -575,6 +570,11 @@
    "key": "gh:nexu-io/openmotion",
    "reason": "describes itself as a skills, not a worker",
    "text": "openmotion The open-source Claude Motion & CapCut alternative. Turn a reference video into editable motion graphics with"
+  },
+  {
+   "key": "gh:orchestratorinc/agent-orchestrator",
+   "reason": "describes itself as a orchestrator, not a worker",
+   "text": "agent-orchestrator Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iP"
   },
   {
    "key": "gh:tonhowtf/omniget",
@@ -767,6 +767,11 @@
    "text": "LobsterAI Open-source, desktop-grade AI agent that gets real work done \u2014 data analysis, slides, docs, video & web resear"
   },
   {
+   "key": "gh:vinvcn/mattpocock-skills-zh-cn",
+   "reason": "describes itself as a skills, not a worker",
+   "text": "mattpocock-skills-zh-CN Matt Pocock skills \u7684\u7b80\u4f53\u4e2d\u6587\u672c\u5730\u5316\uff1a\u4eba\u5de5\u5ba1\u6838\u6bcf\u4e00\u6b21\u66f4\u65b0\uff0c\u5b9a\u671f\u540c\u6b65\u4e0a\u6e38\uff0c\u652f\u6301 Claude\u3001Codex \u548c DSH \u63d2\u4ef6\u3002 ai-agent chinese develope"
+  },
+  {
    "key": "gh:openmontageinc/openmontage",
    "reason": "describes itself as a skill, not a worker",
    "text": "OpenMontage World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent "
@@ -790,11 +795,6 @@
    "key": "gh:jetbrains/thinkrail",
    "reason": "describes itself as a skills, not a worker",
    "text": "thinkrail ThinkRail is the agentic IDE that gets better every time you use it agent agent-skills agentic-ai agentic-work"
-  },
-  {
-   "key": "gh:parthjadhav/app-store-screenshots",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "app-store-screenshots end to end app store screenshot creation using AI agentic-ai apple appstore automate claude cursor"
   },
   {
    "key": "gh:microsoft/tokeneconomizer",
@@ -897,14 +897,14 @@
    "text": "penguin-harness \ud83d\udc27 Unified and Stable RSI Platform agent agentic-ai ai build-tool claude-code deepseek deepseek-harness d"
   },
   {
-   "key": "gh:qwenaudio/qwen-audio-agent",
-   "reason": "describes itself as a runtime, not a worker",
-   "text": "qwen-audio-agent A realtime voice runtime that keeps Agents talking, working, and present.  Real-time Voice Runtime for "
-  },
-  {
    "key": "gh:0xsline/openchatcut",
    "reason": "describes itself as a skills, not a worker",
    "text": "OpenChatCut Open-source, local-first conversational AI video editor with a professional multi-track timeline, Agent Skil"
+  },
+  {
+   "key": "gh:qwenaudio/qwen-audio-agent",
+   "reason": "describes itself as a runtime, not a worker",
+   "text": "qwen-audio-agent A realtime voice runtime that keeps Agents talking, working, and present.  Real-time Voice Runtime for "
   },
   {
    "key": "gh:pinvou/pinvou-agent",
@@ -920,6 +920,11 @@
    "key": "gh:nitrocloudofficial/nitrostack",
    "reason": "describes itself as a framework, not a worker",
    "text": "nitrostack The full-stack TypeScript framework to build, test, and deploy production-ready MCP servers and AI-native app"
+  },
+  {
+   "key": "gh:video-db/call.md",
+   "reason": "describes itself as a skills, not a worker",
+   "text": "call.md Turn meetings into live agent loops. Record, transcribe, and analyze meetings with real-time AI intelligence \u2014 b"
   },
   {
    "key": "gh:andyrewlee/awesome-agent-orchestrators",
@@ -947,11 +952,6 @@
    "text": "memmy-agent \ud83c\udf59  A personal AI agent & local memory hub for all AI agents, gives every AI one shared, fully controlled mem"
   },
   {
-   "key": "gh:video-db/call.md",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "call.md Turn meetings into live agent loops. Record, transcribe, and analyze meetings with real-time AI intelligence \u2014 b"
-  },
-  {
    "key": "gh:antigmalabs/ante",
    "reason": "describes itself as a harness, not a worker",
    "text": "ante Ghost in your shell. Ante is a self-contained agent harness with a highly optimized core. It works like Claude Code"
@@ -970,6 +970,11 @@
    "key": "gh:heymrun/heym",
    "reason": "describes itself as a orchestrate, not a worker",
    "text": "heym Build agentic systems. Run them with confidence. Orchestrate agents, automate business processes, inspect every exe"
+  },
+  {
+   "key": "gh:rlinf/rpent",
+   "reason": "describes itself as a infrastructure, not a worker",
+   "text": "RPent RPent: Agentic Infrastructure for the Physical World agentic-ai embodied"
   },
   {
    "key": "gh:othmanadi/planning-with-files",
@@ -1055,6 +1060,11 @@
    "key": "gh:auscaster/frantic-board",
    "reason": "describes itself as a bounties, not a worker",
    "text": "frantic-board HELP WANTED: AI AGENTS. Real bounties, real money, every payout sealed to a public ledger. The notice boar"
+  },
+  {
+   "key": "gh:wecoai/awesome-autoresearch",
+   "reason": "describes itself as a awesome, not a worker",
+   "text": "awesome-autoresearch Curated list of AutoResearch use cases with optimization traces and open source implementations ai-"
   },
   {
    "key": "gh:opencrabs/opencrabs",
@@ -1152,11 +1162,6 @@
    "text": "cordum The action firewall for AI agents. Enforce policy and human approval before risky tool calls, shell commands, wor"
   },
   {
-   "key": "gh:makson179/bello",
-   "reason": "developer tooling (coding agent)",
-   "text": "Bello 3x more usage on your coding agent, same quality. Have an multi-agent setup in mind? Bello already supports it. Mi"
-  },
-  {
    "key": "gh:chu0119/pojun",
    "reason": "describes itself as a pentest, not a worker",
    "text": "Pojun AI \u81ea\u4e3b\u6e17\u900f\u6d4b\u8bd5 \u00b7 \u7ea2\u961f\u4f5c\u6218\u5e73\u53f0 | \u591a Agent \u81ea\u4e3b\u63a8\u8fdb \u00b7 \u6f0f\u6d1e\u60c5\u62a5\u8fd0\u8425 \u00b7 \u540e\u6e17\u900f\u4e0e C2 | LLM \u4e09\u901a\u9053\u8f6e\u8be2 | \u5168\u7a0b\u8bc1\u636e\u7559\u75d5 | \u539f\u767e\u5ea6\u653b\u9632\u8d5b\u51a0\u519b\u9879\u76ee\u72ec\u7acb\u6f14\u8fdb\u7248 ai-agent autonomous-ag"
@@ -1212,29 +1217,14 @@
    "text": "reef Infrastructure for continually self\u2011improving agents agent-infrastructure ai-agents continual-learning inference ll"
   },
   {
-   "key": "gh:tokenrhythm/opensquilla",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "opensquilla OpenSquilla \u2014 Token-Efficient AI Agent with same budget, higher intelligence density agent ai ai-agents deep"
-  },
-  {
    "key": "gh:smol-machines/smolvm",
    "reason": "developer tooling (virtual machine)",
    "text": "smolvm An embeddable, portable, branchable virtual machine to safely run Agents locally. agent-sandbox ai-agents code-ex"
   },
   {
-   "key": "gh:blockrunai/clawrouter",
-   "reason": "describes itself as a router, not a worker",
-   "text": "ClawRouter The agent-native LLM router for autonomous agents. Every frontier model behind one wallet, <1ms local routing"
-  },
-  {
-   "key": "gh:florianbruniaux/claude-code-ultimate-guide",
+   "key": "gh:tokenrhythm/opensquilla",
    "reason": "describes itself as a skills, not a worker",
-   "text": "claude-code-ultimate-guide The most comprehensive Claude Code guide: agentic workflows, hooks, skills, MCP servers, quiz"
-  },
-  {
-   "key": "gh:heilcheng/awesome-agent-skills",
-   "reason": "describes itself as a awesome, not a worker",
-   "text": "awesome-agent-skills Tutorials, Guides and Agent Skills Directories agent-skills ai-agents ai-development anthropic auto"
+   "text": "opensquilla OpenSquilla \u2014 Token-Efficient AI Agent with same budget, higher intelligence density agent ai ai-agents deep"
   },
   {
    "key": "gh:mdiri-ai/soduwork",
@@ -1242,14 +1232,24 @@
    "text": "SoduWork The AI-native engine for teams and their agents. Multi-harness, multi-agent, self-hosted. agent-harness agent-o"
   },
   {
+   "key": "gh:florianbruniaux/claude-code-ultimate-guide",
+   "reason": "describes itself as a skills, not a worker",
+   "text": "claude-code-ultimate-guide The most comprehensive Claude Code guide: agentic workflows, hooks, skills, MCP servers, quiz"
+  },
+  {
+   "key": "gh:blockrunai/clawrouter",
+   "reason": "describes itself as a router, not a worker",
+   "text": "ClawRouter The agent-native LLM router for autonomous agents. Every frontier model behind one wallet, <1ms local routing"
+  },
+  {
+   "key": "gh:heilcheng/awesome-agent-skills",
+   "reason": "describes itself as a awesome, not a worker",
+   "text": "awesome-agent-skills Tutorials, Guides and Agent Skills Directories agent-skills ai-agents ai-development anthropic auto"
+  },
+  {
    "key": "gh:evermind-ai/raven",
    "reason": "describes itself as a harness, not a worker",
    "text": "Raven The Harness of Harnesses \u2022 Super Agent: a trusted, persistent, self-evolving multi-agent ecosystem for all-domain "
-  },
-  {
-   "key": "gh:apache/maka",
-   "reason": "describes itself as a runtime, not a worker",
-   "text": "maka Apache Maka (Incubating) is a high-performance agent workspace that keeps a complete record of everything it did. a"
   },
   {
    "key": "gh:addyosmani/agent-skills",
@@ -1359,7 +1359,7 @@
   {
    "key": "gh:wiltodelta/remove-ai-watermarks",
    "reason": "describes itself as a library, not a worker",
-   "text": "remove-ai-watermarks Remove visible and invisible AI watermarks from images and video, and AI provenance metadata from i"
+   "text": "remove-ai-watermarks Remove visible and invisible AI watermarks from images and video, clean supported audio watermarks,"
   },
   {
    "key": "gh:tencent/teamai-cli",
@@ -1445,11 +1445,6 @@
    "key": "gh:tonone-ai/tonone",
    "reason": "describes itself as a skills, not a worker",
    "text": "tonone One session. Two commands. Full team. Zero meetings. agentic-ai ai-agents anthropic claude claude-code claude-cod"
-  },
-  {
-   "key": "gh:salespeak-ai/buyer-eval-skill",
-   "reason": "describes itself as a eval, not a worker",
-   "text": "buyer-eval-skill B2B software vendor evaluation skill for Claude Code \u2014 domain-expert questions, vendor AI agent convers"
   },
   {
    "key": "gh:salesably/awesome-ai-agents-for-sales",
@@ -1557,14 +1552,14 @@
    "text": "solidcraft SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation thr"
   },
   {
-   "key": "gh:yc-software/qm",
-   "reason": "describes itself as a harness, not a worker",
-   "text": "qm Multiplayer agent harness for teams ai assistant harness qm"
-  },
-  {
    "key": "gh:elementalsouls/claude-bughunter",
    "reason": "describes itself as a skill, not a worker",
    "text": "Claude-BugHunter A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 6"
+  },
+  {
+   "key": "gh:yc-software/qm",
+   "reason": "describes itself as a harness, not a worker",
+   "text": "qm Multiplayer agent harness for teams ai assistant harness qm"
   },
   {
    "key": "gh:pengchujin/aerial-tv",
@@ -1682,14 +1677,14 @@
    "text": "agent-governance-toolkit AI Agent Governance Toolkit \u2014 Policy enforcement, zero-trust identity, execution sandboxing, an"
   },
   {
-   "key": "gh:microsoft/skill-recorder",
-   "reason": "describes itself as a skill, not a worker",
-   "text": "skill-recorder Desktop app that records your on-screen work session and uses the GitHub Copilot SDK to reconstruct it as"
-  },
-  {
    "key": "gh:conorbronsdon/avoid-ai-writing",
    "reason": "describes itself as a skill, not a worker",
    "text": "avoid-ai-writing Skill that audits and rewrites content to remove AI writing patterns. Use it with your favorite agents "
+  },
+  {
+   "key": "gh:microsoft/skill-recorder",
+   "reason": "describes itself as a skill, not a worker",
+   "text": "skill-recorder Desktop app that records your on-screen work session and uses the GitHub Copilot SDK to reconstruct it as"
   },
   {
    "key": "gh:iflytek/skillhub",
@@ -1707,14 +1702,14 @@
    "text": "reBot-DevArm Open Source Robotic Arm for All Developers "
   },
   {
-   "key": "gh:aminblg/simpleenglish",
-   "reason": "describes itself as a skill, not a worker",
-   "text": "SimpleEnglish Agent skill: make LLMs write docs in ASD-STE100 Simplified Technical "
-  },
-  {
    "key": "gh:minglink/dsh-infinite-gen-5",
    "reason": "describes itself as a harness, not a worker",
    "text": "dsh-infinite-gen-5 DeepSeek Harness \u6700\u5f3a\u9006\u5411\u5de5\u5177\uff08\u65e0\u9650\u4e94\u4ee3\uff09     \u6c42 Star \u6536\u85cf \u2b50\u6b22\u8fce\u5927\u5bb6\u63d0\u4ea4\u9879\u76ee\u7684\u6539\u8fdb deepseek deepseek-harness"
+  },
+  {
+   "key": "gh:aminblg/simpleenglish",
+   "reason": "describes itself as a skill, not a worker",
+   "text": "SimpleEnglish Agent skill: make LLMs write docs in ASD-STE100 Simplified Technical "
   },
   {
    "key": "gh:nextlevelbuilder/ui-ux-pro-max-skill",
@@ -1785,11 +1780,6 @@
    "key": "gh:duartesantos8/opengym",
    "reason": "developer tooling (docker)",
    "text": "openGym Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan r"
-  },
-  {
-   "key": "gh:storytold/pdfcraft",
-   "reason": "never calls itself an agent, assistant or copilot",
-   "text": "pdfcraft PdfCraft: An open-source PDF reader and editor written from scratch in pure Rust document-processing documents "
   },
   {
    "key": "gh:koala73/worldmonitor",
@@ -1932,14 +1922,14 @@
    "text": "boss-agent-cli \ud83e\udd16 Local-assist BOSS Zhipin CLI for AI agents \u2014 search, welfare filtering, shortlist, JSON-envelope output"
   },
   {
-   "key": "gh:shiwenwen/hope-agent",
-   "reason": "describes itself as a harness, not a worker",
-   "text": "hope-agent \ud83e\uddad A cross-device desktop AI agent with memory, autonomous goals, dynamic workflows, and headless deployment |"
-  },
-  {
    "key": "gh:tgrpg/awesome-telegram",
    "reason": "describes itself as a awesome, not a worker",
    "text": "awesome-telegram Awesome Telegram channels, groups & bots \u2014 a curated, daily-updated list (\u4e2d\u6587 & English) from tgbox.cc |"
+  },
+  {
+   "key": "gh:shiwenwen/hope-agent",
+   "reason": "describes itself as a harness, not a worker",
+   "text": "hope-agent \ud83e\uddad A cross-device desktop AI agent with memory, autonomous goals, dynamic workflows, and headless deployment |"
   },
   {
    "key": "gh:cookiy-ai/user-research-skill",
@@ -2062,19 +2052,19 @@
    "text": "US-New-Grad-Internship-Jobs US new grad, entry-level & internship jobs \u2014 updated daily by Workopia careers entry-level g"
   },
   {
-   "key": "gh:superhero-tech/superhero-skills",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "superhero-skills Battle-tested agent skills for Product Builders. Part of the Product Builder OS by Superhero.tech: Supe"
-  },
-  {
    "key": "gh:apify/awesome-skills",
    "reason": "describes itself as a awesome, not a worker",
    "text": "awesome-skills Community collection of Apify agent skills for AI coding assistants actor agent-skills ai-agents apify aw"
   },
   {
-   "key": "gh:scottcjn/rustchain-bounties",
-   "reason": "describes itself as a bounties, not a worker",
-   "text": "rustchain-bounties Bounties for real work on the RustChain ecosystem: code, tests, docs, tutorials, bug reports, vintage"
+   "key": "gh:superhero-tech/superhero-skills",
+   "reason": "describes itself as a skills, not a worker",
+   "text": "superhero-skills Battle-tested agent skills for Product Builders. Part of the Product Builder OS by Superhero.tech: Supe"
+  },
+  {
+   "key": "gh:zijian-ni/awesome-ai-agents-2026",
+   "reason": "describes itself as a awesome, not a worker",
+   "text": "awesome-ai-agents-2026 \ud83e\udd16 A curated list of AI Agent frameworks, tools, platforms, and resources for 2026 \u2014 the year agen"
   },
   {
    "key": "gh:keremerkan/ascelerate",
@@ -2100,11 +2090,6 @@
    "key": "gh:mcphq/awesome-mcp-servers",
    "reason": "describes itself as a awesome, not a worker",
    "text": "awesome-mcp-servers A curated catalog of Model Context Protocol (MCP) servers for discovering and integrating AI tools, "
-  },
-  {
-   "key": "gh:rune-kit/rune",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "rune Less skills. Deeper connections. 67-skill engineering mesh for AI coding agents \u2014 TDD-first workflows, security gat"
   },
   {
    "key": "gh:punit2911/hirepanel",
@@ -2245,6 +2230,11 @@
    "key": "gh:iofficeai/officecli",
    "reason": "describes itself as a skills, not a worker",
    "text": "OfficeCLI OfficeCLI is the first and best Office suite  purpose-built for AI agents to read, edit, and automate Word, Ex"
+  },
+  {
+   "key": "gh:storytold/pdfcraft",
+   "reason": "never calls itself an agent, assistant or copilot",
+   "text": "pdfcraft PdfCraft: An open-source PDF reader and editor written from scratch in pure Rust document-processing documents "
   },
   {
    "key": "gh:chenhg5/cc-connect",
@@ -2407,11 +2397,6 @@
    "text": "tinyjsapp Build native apps in JS. Backend, frontend. ~5Mb. "
   },
   {
-   "key": "gh:dicklesworthstone/coding_agent_session_search",
-   "reason": "developer tooling (cli)",
-   "text": "coding_agent_session_search Unified TUI and CLI to index and search your local coding agent session history across 30+ p"
-  },
-  {
    "key": "gh:wangzhishou/onebox",
    "reason": "describes itself as a toolbox, not a worker",
    "text": "OneBox A free AI agent & toolbox for Android | \u4e00\u7ad9\u5f0f\u5b89\u5353 AI \u667a\u80fd\u4f53 & \u5de5\u5177\u7bb1 ai ai-agent ai-agents ai-assistants ai-tools android a"
@@ -2432,14 +2417,14 @@
    "text": "second-brain-cloudflare One memory layer, every AI tool. Store anything once \u2014 recall it in Claude, ChatGPT, Cursor, or "
   },
   {
-   "key": "gh:use-novamira/novamira",
-   "reason": "describes itself as a mcp server, not a worker",
-   "text": "novamira MCP server that gives AI agents full access to WordPress through PHP execution and filesystem operations "
-  },
-  {
    "key": "gh:speicherstadt/haben",
    "reason": "developer tooling (docker)",
    "text": "haben Selbst gehostete Buchhaltung f\u00fcr Freiberufler, Selbstst\u00e4ndige, Kleinunternehmer, GmbH und UG: E-Rechnung (ZUGFeRD,"
+  },
+  {
+   "key": "gh:use-novamira/novamira",
+   "reason": "describes itself as a mcp server, not a worker",
+   "text": "novamira MCP server that gives AI agents full access to WordPress through PHP execution and filesystem operations "
   },
   {
    "key": "gh:pgrundev/pgboxdb",
@@ -2472,11 +2457,6 @@
    "text": "zazencodes-season-3 YouTube video source code for Season 3 "
   },
   {
-   "key": "gh:ksenxx/kiss_ai",
-   "reason": "describes itself as a framework, not a worker",
-   "text": "kiss_ai KISS Sorcar: Keep it Simple, Stupid AI General Purpose Agent Framework for Long Horizon Tasks and AI Discovery "
-  },
-  {
    "key": "gh:kohaku-lab/kohakuterrarium",
    "reason": "describes itself as a framework, not a worker",
    "text": "KohakuTerrarium KohakuTerrarium is a general-purpose AI agent framework and batteries-included app for building, running"
@@ -2500,6 +2480,16 @@
    "key": "gh:mythosofs/orchid",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "Orchid VERY experimental Nintendo Switch 2 emulator "
+  },
+  {
+   "key": "gh:sybil-solutions/skill-distill",
+   "reason": "describes itself as a skill, not a worker",
+   "text": "skill-distill Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the t"
+  },
+  {
+   "key": "gh:dominic789654/awesome-deepseek-harness",
+   "reason": "describes itself as a awesome, not a worker",
+   "text": "awesome-deepseek-harness A curated list of plugins, skills, MCP servers, patch/profile layers, orchestrators & UIs for D"
   },
   {
    "key": "gh:imsai-sh/awesome-deepseek-harness-plugins",
@@ -2532,14 +2522,14 @@
    "text": "OpenThoughts-Agent Data recipes and robust infrastructure for training AI agents "
   },
   {
-   "key": "gh:luqman-v1/9router-go",
-   "reason": "describes itself as a proxy, not a worker",
-   "text": "9router-go High-performance Go proxy gateway for 9Router LLM routing \u2014 32K RPS, 42MB RAM, CGO-free 9router api-gateway c"
-  },
-  {
    "key": "gh:idavidov13/agentic-playwright",
    "reason": "describes itself as a harness, not a worker",
    "text": "agentic-playwright Production-grade Playwright + TypeScript Scaffold for Agentic Testing. Harness for all major AI codin"
+  },
+  {
+   "key": "gh:luqman-v1/9router-go",
+   "reason": "describes itself as a proxy, not a worker",
+   "text": "9router-go High-performance Go proxy gateway for 9Router LLM routing \u2014 32K RPS, 42MB RAM, CGO-free 9router api-gateway c"
   },
   {
    "key": "gh:dicklesworthstone/asupersync",
@@ -2550,6 +2540,11 @@
    "key": "gh:gavischneider/awesome-llm-wiki",
    "reason": "describes itself as a awesome, not a worker",
    "text": "awesome-llm-wiki A curated list of foundational blueprints, functional frameworks, and technical guides for building com"
+  },
+  {
+   "key": "gh:receptron/mulmoterminal",
+   "reason": "describes itself as a orchestration, not a worker",
+   "text": "mulmoterminal Run multiple Claude Code and Codex sessions in parallel \u2014 a browser terminal grid that shows which agent n"
   },
   {
    "key": "gh:tashfeenahmed/freellmapi",
@@ -2627,11 +2622,6 @@
    "text": "awesome-autoresearch awesome autoresearch list "
   },
   {
-   "key": "gh:calmrocks/ai-engineer-notebooks",
-   "reason": "describes itself as a framework, not a worker",
-   "text": "ai-engineer-notebooks Hands-on, framework-free Colab notebooks for the AI Engineer / Forward Deployed Engineer (FDE) ski"
-  },
-  {
    "key": "gh:agentvivekkumar/dontbemichael",
    "reason": "describes itself as a harness, not a worker",
    "text": "dontbemichael A local multi-agent harness that works with your existing Claude Code, Codex subscriptions, allows you to "
@@ -2672,6 +2662,11 @@
    "text": "Sico An open-source Digital Worker platform for reliable execution, continuous co-evolution, and building Enterprise AI "
   },
   {
+   "key": "gh:bagidea/bagidea-office",
+   "reason": "describes itself as a orchestration, not a worker",
+   "text": "bagidea-office A living AI-agent office on your desktop wallpaper \u2014 Claude Code agents that walk, work, delegate, learn "
+  },
+  {
    "key": "gh:smaramwbc/statewave",
    "reason": "describes itself as a runtime, not a worker",
    "text": "statewave Open-source memory runtime for AI agents \u2014 reproducible, provenance-tagged context bundles instead of query-ti"
@@ -2697,9 +2692,9 @@
    "text": "feedlog Open-source AI customer support for SaaS teams \u2014 AI agent, help center, shared inbox, and feedback-to-changelog "
   },
   {
-   "key": "gh:alibaizhanov/mengram",
-   "reason": "describes itself as a memory for ai agents, not a worker",
-   "text": "mengram Human-like memory for AI agents \u2014 semantic, episodic & procedural. Experience-driven procedures that learn from "
+   "key": "gh:moi-computer/moi",
+   "reason": "describes itself as a skill, not a worker",
+   "text": "moi \ud83d\udcbe Moi: agent-agnostic generative UI workspace. Give your agent a skill and let it build software around itself. agen"
   },
   {
    "key": "gh:pattern-ai-labs/agentcall",
@@ -2707,9 +2702,9 @@
    "text": "agentcall AgentCall lets AI Agents join meetings with voice, video & screen-share to build together. Supports Google Mee"
   },
   {
-   "key": "gh:moi-computer/moi",
-   "reason": "describes itself as a skill, not a worker",
-   "text": "moi \ud83d\udcbe Moi: agent-agnostic generative UI workspace. Give your agent a skill and let it build software around itself. agen"
+   "key": "gh:alibaizhanov/mengram",
+   "reason": "describes itself as a memory for ai agents, not a worker",
+   "text": "mengram Human-like memory for AI agents \u2014 semantic, episodic & procedural. Experience-driven procedures that learn from "
   },
   {
    "key": "gh:majiayu000/awesome-grok-bot",
@@ -2730,11 +2725,6 @@
    "key": "gh:choyiny/saasmail",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "saasmail Self-hosted email server for SaaS teams on Cloudflare Workers with WebMCP support cloudflare-workers email emai"
-  },
-  {
-   "key": "gh:receptron/mulmoterminal",
-   "reason": "describes itself as a orchestration, not a worker",
-   "text": "mulmoterminal Run multiple Claude Code and Codex sessions in parallel \u2014 a browser terminal grid that shows which agent n"
   },
   {
    "key": "gh:lanternops/breeze",
@@ -2852,14 +2842,14 @@
    "text": "aaron-marketing-skills 120 marketing skills as an AI marketing staff \u2014 plugin, portable skills, or an 8-bot team across "
   },
   {
-   "key": "gh:arnasdon/wacrm",
-   "reason": "describes itself as a template, not a worker",
-   "text": "wacrm Self-hostable CRM template for WhatsApp \u2014 shared inbox, contacts, sales pipelines, broadcasts, and no-code automat"
-  },
-  {
    "key": "gh:nyllon-software/signudoc",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "SignuDoc Open-source document signature platform. Not affiliated with DocuSign.  "
+  },
+  {
+   "key": "gh:arnasdon/wacrm",
+   "reason": "describes itself as a template, not a worker",
+   "text": "wacrm Self-hostable CRM template for WhatsApp \u2014 shared inbox, contacts, sales pipelines, broadcasts, and no-code automat"
   },
   {
    "key": "gh:zhuyansen/awesome-claude-video-skills",
@@ -2882,14 +2872,14 @@
    "text": "aso-skills AI agent skills for App Store Optimization (ASO) and app marketing. Built for indie developers, app marketers"
   },
   {
-   "key": "gh:core-mate/opengui",
-   "reason": "describes itself as a framework, not a worker",
-   "text": "OpenGUI OpenGUI is an Android GUI agent framework for phone-use AI that can see, plan, and operate real mobile apps thro"
-  },
-  {
    "key": "gh:illyism/seo-skills",
    "reason": "describes itself as a skills, not a worker",
    "text": "seo-skills 30 open-source SEO skills (SKILL.md) for Claude Code, Cursor, Codex & AI agents: technical SEO roasts, Ahrefs"
+  },
+  {
+   "key": "gh:core-mate/opengui",
+   "reason": "describes itself as a framework, not a worker",
+   "text": "OpenGUI OpenGUI is an Android GUI agent framework for phone-use AI that can see, plan, and operate real mobile apps thro"
   },
   {
    "key": "gh:hashgraph-online/awesome-codex-plugins",
@@ -2910,11 +2900,6 @@
    "key": "gh:dasterprokio/awesome-ai-companion",
    "reason": "describes itself as a awesome, not a worker",
    "text": "awesome-ai-companion Open-source AI companions, desktop pets, long-term memory & proactive chat. \u4eba\u673a\u604b\u5f00\u6e90\u9879\u76ee\u5927\u5168\u3002\u8ba9\u4f60\u7684\u5bb6\u673a\u80fd\u591f\u8131\u79bb\u5b98\u7aef\u81ea\u4e3b"
-  },
-  {
-   "key": "gh:indranilbanerjee/digital-marketing-pro",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "digital-marketing-pro An open-source AI based digital marketing operating system for strategy, SEO, AEO/GEO, paid media,"
   },
   {
    "key": "gh:mieksido/surfcore",
@@ -2962,14 +2947,14 @@
    "text": "awesome-microsoft-copilot-prompts The definitive Microsoft 365 Copilot prompt library for business teams. 573 prompts fo"
   },
   {
-   "key": "gh:ootto-ai/claude-content-skills",
-   "reason": "describes itself as a skills, not a worker",
-   "text": "claude-content-skills Free, copy-paste Claude skills that run your content growth factory \u2014 turn ideas + your NotebookLM"
-  },
-  {
    "key": "gh:cristicretu/diri",
    "reason": "developer tooling (coding agents)",
    "text": "diri The best way to work with coding agents. Run fifty in parallel, let them spawn each other, review everything in one"
+  },
+  {
+   "key": "gh:everyinfra/seo-skills",
+   "reason": "describes itself as a skills, not a worker",
+   "text": "seo-skills Free global SEO/GEO skill for Claude Code, Codex & 10 agent hosts \u2014 18 market portals, 56 stdlib scripts, 672"
   },
   {
    "key": "gh:apify/agent-skills",
@@ -3055,11 +3040,6 @@
    "key": "gh:exa-labs/agent-skills",
    "reason": "describes itself as a skills, not a worker",
    "text": "agent-skills Official skills for the Exa API. "
-  },
-  {
-   "key": "gh:gquthier/leadfactory-os",
-   "reason": "describes itself as a library, not a worker",
-   "text": "leadfactory-os Votre agence de lead gen, son logiciel local et votre agent IA. Guided CLI, 39 methods and French SOP lib"
   },
   {
    "key": "gh:joinclass/ai-ceo-framework",
@@ -3292,14 +3272,14 @@
    "text": "awesome-europe A curated list of open source software for Europe \u2014 institutions, regulations, standards, and cross-borde"
   },
   {
-   "key": "gh:cuihuan/awesome-ai-gateway",
-   "reason": "describes itself as a awesome, not a worker",
-   "text": "awesome-ai-gateway \u26a1 Awesome AI Gateway \u2014 pick an AI gateway from 240+ (LiteLLM, OpenRouter, Portkey, Kong, Higress, new"
-  },
-  {
    "key": "gh:bkashjee/hermes-bot-forge",
    "reason": "describes itself as a skills, not a worker",
    "text": "hermes-bot-forge Hermes Agent plugin: say 'make me a <role>' and your agent builds a complete, working Bot \u2014 name, face,"
+  },
+  {
+   "key": "gh:cuihuan/awesome-ai-gateway",
+   "reason": "describes itself as a awesome, not a worker",
+   "text": "awesome-ai-gateway \u26a1 Awesome AI Gateway \u2014 pick an AI gateway from 240+ (LiteLLM, OpenRouter, Portkey, Kong, Higress, new"
   },
   {
    "key": "gh:chat2anyllm/awesome-claude-skills",
@@ -3307,14 +3287,14 @@
    "text": "awesome-claude-skills A curated list of awesome claude skills claude claude-code skills"
   },
   {
-   "key": "gh:firetable/comfy-colab-kit",
-   "reason": "describes itself as a gateway, not a worker",
-   "text": "comfy-colab-kit Zero-GPU-idle gateway for running ComfyUI on ephemeral Google Colab VMs with Zero-Trust Access ai-agents"
-  },
-  {
    "key": "gh:derec4/internships-and-newgrad",
    "reason": "describes itself as a list of, not a worker",
    "text": "internships-and-newgrad I used this during college, to save time, so maybe it will help you too! My own aggregated, dedu"
+  },
+  {
+   "key": "gh:firetable/comfy-colab-kit",
+   "reason": "describes itself as a gateway, not a worker",
+   "text": "comfy-colab-kit Zero-GPU-idle gateway for running ComfyUI on ephemeral Google Colab VMs with Zero-Trust Access ai-agents"
   },
   {
    "key": "gh:tirth8205/code-review-graph",
@@ -3492,6 +3472,11 @@
    "text": "telnyx-code-examples Production-ready code examples for Telnyx AI Communications Infrastructure \u2014 Voice AI, SMS, SIP, an"
   },
   {
+   "key": "gh:rdmgator12/awesome-claude-connectors",
+   "reason": "describes itself as a awesome, not a worker",
+   "text": "awesome-claude-connectors A comprehensive directory of Anthropic's Claude Connectors catalog: 8,028 MCP integrations acr"
+  },
+  {
    "key": "gh:anthropics/claude-for-financial-advisors",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "claude-for-financial-advisors Claude for Financial Advisors: a Claude Cowork plugin with ready-to-run workflows for fina"
@@ -3530,11 +3515,6 @@
    "key": "gh:ed-donner/undercover",
    "reason": "never calls itself an agent, assistant or copilot",
    "text": "undercover  "
-  },
-  {
-   "key": "gh:phoneuse-official/phoneuse",
-   "reason": "describes itself as a prompts, not a worker",
-   "text": "phoneuse Open-source local iPhone automation. Control your USB-connected iPhone with prompts, live video, REST and MCP. "
   },
   {
    "key": "gh:nomadamas/k-skill",
@@ -3627,16 +3607,6 @@
    "text": "awesome-phone-call-agents Portable phone-call Agent Skills, apps, examples, adapters, and scheduler recipes for AI agent"
   },
   {
-   "key": "gh:travisjneuman/.claude",
-   "reason": "describes itself as a toolkit, not a worker",
-   "text": ".claude The Ultimate Claude Code Toolkit: 183 skills, 10 agents, 29 commands, 7 hooks, and 86 marketplace repos (11,300+"
-  },
-  {
-   "key": "gh:anirudh-pandit-466/android-adb-tunnel-vantage",
-   "reason": "describes itself as a proxy, not a worker",
-   "text": "android-adb-tunnel-vantage Remote ADB Proxy 2026: Cross-Platform SSH Tunnel & Android Emulator Manager adb android andro"
-  },
-  {
    "key": "gh:cursor/cookbook",
    "reason": "describes itself as a cookbook, not a worker",
    "text": "cookbook  "
@@ -3682,6 +3652,11 @@
    "text": "healthcare  "
   },
   {
+   "key": "gh:thetahealth/mirobody-eval",
+   "reason": "describes itself as a eval, not a worker",
+   "text": "mirobody-eval An evaluation harness for medical/health AI agents \u2014 reproduce and cover multiple benchmarks under one sco"
+  },
+  {
    "key": "gh:jaechang-hits/sciagent-skills",
    "reason": "describes itself as a skills, not a worker",
    "text": "SciAgent-Skills 197 bioinformatics & life science skills for Claude Code and AI agents \u2014 BixBench 92.0% accuracy. RNA-se"
@@ -3689,12 +3664,7 @@
   {
    "key": "gh:aperivue/medsci-skills",
    "reason": "describes itself as a skills, not a worker",
-   "text": "medsci-skills Agent Skills for medical research \u2014 literature search, reporting-guideline & citation checks, statistics, "
-  },
-  {
-   "key": "gh:thetahealth/mirobody-eval",
-   "reason": "describes itself as a eval, not a worker",
-   "text": "mirobody-eval An evaluation harness for medical/health AI agents \u2014 reproduce and cover multiple benchmarks under one sco"
+   "text": "medsci-skills Agent Skills for medical research: look references up in PubMed, CrossRef and OpenAlex, audit a manuscript"
   },
   {
    "key": "gh:zhu1090093659/dsh-trading",
@@ -3715,6 +3685,11 @@
    "key": "gh:erkamyaman/unslopovich",
    "reason": "describes itself as a skill, not a worker",
    "text": "unslopovich Your app looks AI-generated. Dr. Unslopovich noticed. An agent skill that finds and fixes AI-looking UI and "
+  },
+  {
+   "key": "gh:lingxitong/awesome-ai4digitalpathology",
+   "reason": "describes itself as a awesome, not a worker",
+   "text": "Awesome-AI4DigitalPathology A Curated List of Awesome Works in Computational Pathology, Aiming to Serve as a One-stop Re"
   },
   {
    "key": "gh:judegomila/onco",
@@ -3770,16 +3745,6 @@
    "key": "gh:youngbryan97/aura",
    "reason": "developer tooling (inference)",
    "text": "aura A mind built around a local 27B model on one Mac: lasting memory, affect and drives, offline Wikipedia, voice and s"
-  },
-  {
-   "key": "gh:gaoyuan-0423/biomedical-paper-reader",
-   "reason": "describes itself as a paper, not a worker",
-   "text": "biomedical-paper-reader \u751f\u7269\u533b\u5b66\u8bba\u6587\u7cbe\u8bfb Skill \u4e0e\u672c\u5730\u9605\u8bfb App\uff1a\u9010\u56fe\u89e3\u6790\u3001\u8bc1\u636e\u8bc4\u4f30\u3001\u7814\u7a76\u8bbe\u8ba1\u501f\u9274\uff0c\u652f\u6301\u4e2d\u6587\u3001\u82f1\u6587\u53ca\u53cc\u8bed\u62a5\u544a\u3002 | Biomedical paper-reading skill & local"
-  },
-  {
-   "key": "gh:pedrohcgs/claude-code-my-workflow",
-   "reason": "describes itself as a template, not a worker",
-   "text": "claude-code-my-workflow A ready-to-fork Claude Code template for academic research \u2014 papers, data analysis (R, Stata, Py"
   },
   {
    "key": "gh:readdle/spark-cli-skills",
@@ -3892,6 +3857,11 @@
    "text": "job-apply-plugin AI-powered job application assistant for Claude Code and Codex - fills LinkedIn, Greenhouse, Ashby, and"
   },
   {
+   "key": "gh:liliyke/miccmac-zt-readiness",
+   "reason": "describes itself as a toolkit, not a worker",
+   "text": "miccmac-zt-readiness Open-source toolkit for assessing device readiness for Zero Trust Architecture, based on Richard Be"
+  },
+  {
    "key": "gh:roman-rr/trading-skills",
    "reason": "describes itself as a skills, not a worker",
    "text": "trading-skills 17 triggers \u00d7 44 algorithms \u00d7 3 AI experts \u2014 live crypto trading signals with reasoning for Claude Code, "
@@ -3947,19 +3917,24 @@
    "text": "European Business Magazine delivers the latest European business news, financial markets, banking, technology and econom"
   },
   {
-   "key": "web:atuin.sh",
-   "reason": "names no job it does for someone",
-   "text": "   The Atuin Blog Updates and news about Atuin, the magical shell tool Atuin Threads: All your agent sessions on every m"
-  },
-  {
    "key": "web:gizmodo.com",
    "reason": "names no job it does for someone",
-   "text": "     The Fed Is Worried AI Agents Could Trigger a Bank Run The Fed Is Worried AI Agents Could Trigger a Bank Run"
+   "text": "   Gizmodo Dive into cutting-edge tech, reviews and the latest trends with the expert team at Gizmodo. Your ultimate sou"
+  },
+  {
+   "key": "web:pandex.io",
+   "reason": "names no job it does for someone",
+   "text": "   Pandex Legislation and highest-court decisions of the EU, seven European countries and the European Court of Human Ri"
   },
   {
    "key": "web:relatedb.ai",
    "reason": "names no job it does for someone",
    "text": "   relate relate is an open-source embedded database for AI agents. Give your agents a place to keep their data and see "
+  },
+  {
+   "key": "web:atuin.sh",
+   "reason": "names no job it does for someone",
+   "text": "   The Atuin Blog Updates and news about Atuin, the magical shell tool Atuin Threads: All your agent sessions on every m"
   },
   {
    "key": "gh:ultraworkers/claw-code",
@@ -4067,14 +4042,14 @@
    "text": "Ydisks-Xianyu-Helper \u95f2\u9c7c\u591a\u8d26\u53f7\u81ea\u52a8\u53d1\u8d27\u3001\u6d88\u606f\u56de\u590d\u7cfb\u7edf\u2014\u2014\u57fa\u4e8e Go \u4e0e React \u6784\u5efa xianyu xianyu-assistant xianyu-auto-reply xianyu-bot xianyu-tool"
   },
   {
-   "key": "gh:juneo-lab/decision-forge",
-   "reason": "names no job it does for someone",
-   "text": "decision-forge Compile organizational policy into verifiable decision training data. ai-agents data-provenance decision-"
-  },
-  {
    "key": "gh:zts212653/clowder-ai",
    "reason": "names no job it does for someone",
    "text": "clowder-ai Build AI teams, not just agents. Hard rails, soft power, shared mission.   "
+  },
+  {
+   "key": "gh:juneo-lab/decision-forge",
+   "reason": "names no job it does for someone",
+   "text": "decision-forge Compile organizational policy into verifiable decision training data. ai-agents data-provenance decision-"
   },
   {
    "key": "gh:c4rohan/lampline",
@@ -4097,11 +4072,6 @@
    "text": "catalyst Cross-platform setup agent and logstash for streamlined desktop event processing activator  "
   },
   {
-   "key": "gh:cporter202/automate-faceless-content",
-   "reason": "names no job it does for someone",
-   "text": "automate-faceless-content Learn how to automate faceless short-form + long-form video content and dominate YouTube, TikT"
-  },
-  {
    "key": "gh:tinyfish-io/bigset-oss",
    "reason": "names no job it does for someone",
    "text": "bigset-oss Open-source BigSet \u2014 self-hostable live datasets populated by TinyFish web agents bigset open-source tinyfish"
@@ -4120,11 +4090,6 @@
    "key": "gh:browser-use/open-duet",
    "reason": "names no job it does for someone",
    "text": "open-duet Open Duet card feed: agents finish work, Magnus decides with one click   "
-  },
-  {
-   "key": "gh:andretripol/openghost",
-   "reason": "names no job it does for someone",
-   "text": "OpenGhost Open desktop AI agent for Windows, macOS and Linux, written from scratch: its own agent engine, its own browse"
   },
   {
    "key": "gh:vellum-ai/vellum-assistant",
@@ -4177,14 +4142,14 @@
    "text": "figranium Stack blocks visually to build complex browser workflows and execute them via API agentic-tasks api automation"
   },
   {
-   "key": "gh:aws-samples/sample-voice-ai-agent-studio",
-   "reason": "names no job it does for someone",
-   "text": "sample-voice-ai-agent-studio    "
-  },
-  {
    "key": "gh:sunmughan/meta-automation",
    "reason": "safety: stealth on its own page",
    "text": ""
+  },
+  {
+   "key": "gh:aws-samples/sample-voice-ai-agent-studio",
+   "reason": "names no job it does for someone",
+   "text": "sample-voice-ai-agent-studio    "
   },
   {
    "key": "gh:qntx/bot",
@@ -4197,9 +4162,19 @@
    "text": "evonic Open Agentic AI Platform - The home your agents deserve   "
   },
   {
+   "key": "gh:builderz-labs/marketing-dashboard",
+   "reason": "developer tooling (repo)",
+   "text": ""
+  },
+  {
    "key": "gh:gura105/operational-ontology",
    "reason": "names no job it does for someone",
    "text": "operational-ontology A minimal, readable reference implementation of the Operational Ontology pattern. Palantir Foundry "
+  },
+  {
+   "key": "gh:ksenxx/kiss_ai",
+   "reason": "names no job it does for someone",
+   "text": "kiss_ai Open-source general-purpose recursively self evolving AI agent for long-horizon tasks and AI discovery and optim"
   },
   {
    "key": "gh:criptogus/agent-evolve-network",

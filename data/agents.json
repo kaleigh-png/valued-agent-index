@@ -13,7 +13,7 @@
    "content"
   ],
   "type": "Agent",
-  "stars": 1089,
+  "stars": 1094,
   "star_gain_7d": 25,
   "momentum_basis": "estimated",
   "sources": [
@@ -25,7 +25,7 @@
     "source": "github",
     "title": "warmbly/warmbly",
     "url": "https://github.com/warmbly/warmbly",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
@@ -71,7 +71,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/warmbly/warmbly",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": true,
@@ -149,8 +149,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 5836,
-  "star_gain_7d": 251,
+  "stars": 5833,
+  "star_gain_7d": 249,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -161,7 +161,7 @@
     "source": "github",
     "title": "ForeactLabs/OpenExecutive",
     "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
@@ -214,7 +214,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": true,
@@ -294,8 +294,8 @@
    "travel"
   ],
   "type": "Agent",
-  "stars": 394969,
-  "star_gain_7d": 7631,
+  "stars": 395045,
+  "star_gain_7d": 7611,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -306,7 +306,7 @@
     "source": "github",
     "title": "openclaw/openclaw",
     "url": "https://github.com/openclaw/openclaw",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
@@ -353,7 +353,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/openclaw/openclaw",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": false,
@@ -421,140 +421,6 @@
   "rank": 3
  },
  {
-  "id": "db-aeon-joshu-oss",
-  "name": "joshu-oss",
-  "owner": "db-aeon",
-  "description": "Open source AI assistant based on Hermes",
-  "url": "https://www.joshu.me",
-  "repo_url": "https://github.com/db-aeon/joshu-oss",
-  "license": "NOASSERTION",
-  "industry": "General purpose",
-  "jobs": [
-   "assistant"
-  ],
-  "type": "Agent",
-  "stars": 120,
-  "star_gain_7d": 6,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "db-aeon/joshu-oss",
-    "url": "https://github.com/db-aeon/joshu-oss",
-    "date": "2026-11-07"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/db-aeon/joshu-oss/blob/main/README.md",
-   "https://www.joshu.me",
-   "https://www.joshu.me/security",
-   "https://www.joshu.me/privacy",
-   "https://www.joshu.me/docs"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "assistant",
-   "topics": [
-    "agentic-ai",
-    "hermes-agent"
-   ],
-   "job": "executive assistant"
-  },
-  "checks": {
-   "pricing": {
-    "answer": true,
-    "url": "https://www.joshu.me",
-    "quote": "$95 / month After your 14-day free trial."
-   },
-   "free": {
-    "answer": true,
-    "url": "https://github.com/db-aeon/joshu-oss/blob/main/README.md",
-    "quote": "If you would rather not run a server, joshu.me hosts a box for you with a 14-day free trial."
-   },
-   "docs": {
-    "answer": true,
-    "url": "https://www.joshu.me/docs",
-    "quote": "Public documentation page"
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/db-aeon/joshu-oss",
-    "quote": "Last code push 2026-11-07"
-   },
-   "no_training": {
-    "answer": true,
-    "url": "https://www.joshu.me",
-    "quote": "We do not train models on your data."
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://www.joshu.me/security",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": true,
-    "url": "https://github.com/db-aeon/joshu-oss/blob/main/README.md",
-    "quote": "\u2026[Self-host\u2026"
-   },
-   "audit_logs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "human_approval": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   }
-  },
-  "score": 7,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": true,
-    "url": "https://www.joshu.me",
-    "quote": "\u2026AI scheduling assistant Best AI executive assistants Lindy alternatives Company About News Affiliate program Contact Open source Portable Soul Works with Email Phone Desktop Gmail Outlook Google Calendar Calendly Slack Microsoft Teams Zoom Telegram WhatsApp Google Drive Dropbox Notion HubSpot Salesforce All connectors\u2026"
-   },
-   "hosted_by_maker": {
-    "answer": true,
-    "url": "https://www.joshu.me",
-    "quote": "\u2026executive assistant that does the work joshu Connectors Data Guides Manual News Pricing \u2605 120 Start free trial Open menu \u52a9\u624b Assistant in Japanese Joshu , the AI executive assistant that books the meeting ."
-   },
-   "marketplaces": [],
-   "bring_your_own": [
-    "Docker"
-   ],
-   "self_host": true,
-   "open_source": false,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 4
- },
- {
   "id": "sipeed-picoclaw",
   "name": "picoclaw",
   "owner": "sipeed",
@@ -567,8 +433,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 30147,
-  "star_gain_7d": 727,
+  "stars": 30149,
+  "star_gain_7d": 725,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -684,7 +550,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 5
+  "rank": 4
  },
  {
   "id": "zoharbabin-due-diligence-agents",
@@ -821,7 +687,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 6
+  "rank": 5
  },
  {
   "id": "hkuds-vibe-trading",
@@ -838,8 +704,8 @@
    "household"
   ],
   "type": "Agent",
-  "stars": 38645,
-  "star_gain_7d": 1154,
+  "stars": 38692,
+  "star_gain_7d": 1151,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -850,7 +716,7 @@
     "source": "github",
     "title": "HKUDS/Vibe-Trading",
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
@@ -882,7 +748,7 @@
    "docs": {
     "answer": true,
     "url": "https://github.com/HKUDS/Vibe-Trading/blob/main/README.md",
-    "quote": "\u2026href=\"https://vibetrading.wiki/docs/\" Docs \u2026"
+    "quote": "\u2026are self-reported and stars are personal.\"/ Website \u00b7 Docs \u00b7 News \u00b7 Features \u2026"
    },
    "customer": {
     "answer": false,
@@ -897,7 +763,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": false,
@@ -960,147 +826,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 7
- },
- {
-  "id": "shy3130-tick-stock-panel",
-  "name": "tick-stock-panel",
-  "owner": "shy3130",
-  "description": "TSP\u81ea\u6258\u7ba1\u3001\u96f6\u8fd0\u7ef4\u7684 A \u80a1\u300c\u81ea\u5efa\u7b56\u7565 + \u76d1\u63a7 + \u56de\u6d4b\u300d\u91cf\u5316\u5de5\u4f5c\u53f0  | LLM\u80fd\u529b\u9a71\u4f7f\u7b56\u7565\u5b9a\u5236+\u4e2a\u80a1\u5206\u6790+\u590d\u76d8 | \u81ea\u7531\u63a5\u5165\u7b2c\u4e09\u65b9\u6570\u636e\u6e90\u4e0e\u4e2a\u6027\u5316\u6269\u5c55\u6570\u636e | \u4e2a\u4eba\u5f00\u6e90",
-  "url": "https://tsp.shy313.com",
-  "repo_url": "https://github.com/shy3130/tick-stock-panel",
-  "license": "MIT",
-  "industry": "Finance",
-  "jobs": [
-   "markets"
-  ],
-  "type": "Agent",
-  "stars": 8138,
-  "star_gain_7d": 364,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "shy3130/tick-stock-panel",
-    "url": "https://github.com/shy3130/tick-stock-panel",
-    "date": "2026-11-21"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/shy3130/tick-stock-panel/blob/main/README.md",
-   "https://tsp.shy313.com",
-   "https://tsp.shy313.com/pricing",
-   "https://tsp.shy313.com/security",
-   "https://tsp.shy313.com/trust",
-   "https://tsp.shy313.com/privacy",
-   "https://tsp.shy313.com/docs",
-   "https://tsp.shy313.com/customers",
-   "https://tsp.shy313.com/case-studies",
-   "https://tsp.shy313.com/changelog"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "agent",
-   "topics": [
-    "ai-agent"
-   ],
-   "job": "trading"
-  },
-  "checks": {
-   "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "free": {
-    "answer": true,
-    "url": "https://github.com/shy3130/tick-stock-panel",
-    "quote": "Open-source license: MIT (free to use)"
-   },
-   "docs": {
-    "answer": true,
-    "url": "https://tsp.shy313.com/docs",
-    "quote": "Public documentation page"
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/shy3130/tick-stock-panel",
-    "quote": "Last code push 2026-11-21"
-   },
-   "no_training": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://tsp.shy313.com/security",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": true,
-    "url": "https://github.com/shy3130/tick-stock-panel/blob/main/README.md",
-    "quote": "\u2026\u2b07\ufe0f bash docker run\u2026"
-   },
-   "audit_logs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "human_approval": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   }
-  },
-  "score": 5,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "marketplaces": [],
-   "bring_your_own": [
-    "Codex",
-    "Docker",
-    "npm package"
-   ],
-   "self_host": true,
-   "open_source": true,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 8
+  "rank": 6
  },
  {
   "id": "n8n-io-nod",
@@ -1116,8 +842,8 @@
    "invoices"
   ],
   "type": "Agent",
-  "stars": 2940,
-  "star_gain_7d": 360,
+  "stars": 3062,
+  "star_gain_7d": 368,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1128,7 +854,7 @@
     "source": "github",
     "title": "n8n-io/nod",
     "url": "https://github.com/n8n-io/nod",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
@@ -1176,7 +902,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/n8n-io/nod",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": false,
@@ -1238,7 +964,145 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 9
+  "rank": 7
+ },
+ {
+  "id": "shy3130-tick-stock-panel",
+  "name": "tick-stock-panel",
+  "owner": "shy3130",
+  "description": "TSP\u81ea\u6258\u7ba1\u3001\u96f6\u8fd0\u7ef4\u7684 A \u80a1\u300c\u81ea\u5efa\u7b56\u7565 + \u76d1\u63a7 + \u56de\u6d4b\u300d\u91cf\u5316\u5de5\u4f5c\u53f0  | LLM\u80fd\u529b\u9a71\u4f7f\u7b56\u7565\u5b9a\u5236+\u4e2a\u80a1\u5206\u6790+\u590d\u76d8 | \u81ea\u7531\u63a5\u5165\u7b2c\u4e09\u65b9\u6570\u636e\u6e90\u4e0e\u4e2a\u6027\u5316\u6269\u5c55\u6570\u636e | \u4e2a\u4eba\u5f00\u6e90",
+  "url": "https://tsp.shy313.com",
+  "repo_url": "https://github.com/shy3130/tick-stock-panel",
+  "license": "MIT",
+  "industry": "Finance",
+  "jobs": [
+   "markets"
+  ],
+  "type": "Agent",
+  "stars": 8184,
+  "star_gain_7d": 364,
+  "momentum_basis": "estimated",
+  "sources": [
+   "github"
+  ],
+  "mentions_14d": 1,
+  "mention_links": [
+   {
+    "source": "github",
+    "title": "shy3130/tick-stock-panel",
+    "url": "https://github.com/shy3130/tick-stock-panel",
+    "date": "2026-11-22"
+   }
+  ],
+  "pages_checked": [
+   "https://github.com/shy3130/tick-stock-panel/blob/main/README.md",
+   "https://tsp.shy313.com",
+   "https://tsp.shy313.com/pricing",
+   "https://tsp.shy313.com/security",
+   "https://tsp.shy313.com/trust",
+   "https://tsp.shy313.com/privacy",
+   "https://tsp.shy313.com/docs",
+   "https://tsp.shy313.com/customers",
+   "https://tsp.shy313.com/case-studies",
+   "https://tsp.shy313.com/changelog"
+  ],
+  "why": {
+   "kind": "GitHub repo",
+   "matched": "agent",
+   "topics": [
+    "ai-agent"
+   ],
+   "job": "trading"
+  },
+  "checks": {
+   "pricing": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "free": {
+    "answer": true,
+    "url": "https://github.com/shy3130/tick-stock-panel",
+    "quote": "Open-source license: MIT (free to use)"
+   },
+   "docs": {
+    "answer": true,
+    "url": "https://tsp.shy313.com/docs",
+    "quote": "Public documentation page"
+   },
+   "customer": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "result": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "updated": {
+    "answer": true,
+    "url": "https://github.com/shy3130/tick-stock-panel",
+    "quote": "Last code push 2026-11-22"
+   },
+   "no_training": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "security_page": {
+    "answer": true,
+    "url": "https://tsp.shy313.com/security",
+    "quote": "Public security page / policy"
+   },
+   "certification": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "your_env": {
+    "answer": true,
+    "url": "https://github.com/shy3130/tick-stock-panel/blob/main/README.md",
+    "quote": "\u2026 data/ \u3002 bash docker run\u2026"
+   },
+   "audit_logs": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "human_approval": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   }
+  },
+  "score": 5,
+  "get_it": {
+   "reseller_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "referral_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "hosted_by_maker": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "marketplaces": [],
+   "bring_your_own": [
+    "Docker"
+   ],
+   "self_host": true,
+   "open_source": true,
+   "listed_managers": [],
+   "listed_resellers": []
+  },
+  "rank": 8
  },
  {
   "id": "melgarafael-deskcommcrm",
@@ -1253,7 +1117,7 @@
    "crm"
   ],
   "type": "Agent",
-  "stars": 5508,
+  "stars": 5518,
   "star_gain_7d": 186,
   "momentum_basis": "estimated",
   "sources": [
@@ -1265,7 +1129,7 @@
     "source": "github",
     "title": "melgarafael/DeskcommCRM",
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
@@ -1311,7 +1175,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": false,
@@ -1377,6 +1241,140 @@
    "listed_managers": [],
    "listed_resellers": []
   },
+  "rank": 9
+ },
+ {
+  "id": "tnt-likely-panwatch",
+  "name": "PanWatch",
+  "owner": "TNT-Likely",
+  "description": "PanWatch \u2014 AI stock monitoring for A-shares, HK & US markets, powered by TradingAgents. Portfolio insights, real-time alerts & automated reports.\uff5c\u76ef\u76d8\u4fa0\uff1a\u8986\u76d6 A\u80a1/\u6e2f\u80a1/\u7f8e\u80a1\u7684 AI \u76ef\u76d8\u3001\u6301\u4ed3\u5206\u6790\u3001\u5b9e\u65f6\u63d0\u9192\u4e0e\u81ea\u52a8\u62a5\u544a\u3002",
+  "url": "https://github.com/TNT-Likely/PanWatch#quick-start",
+  "repo_url": "https://github.com/TNT-Likely/PanWatch",
+  "license": "MIT",
+  "industry": "Finance",
+  "jobs": [
+   "markets"
+  ],
+  "type": "Agent",
+  "stars": 2558,
+  "star_gain_7d": 59,
+  "momentum_basis": "estimated",
+  "sources": [
+   "github"
+  ],
+  "mentions_14d": 1,
+  "mention_links": [
+   {
+    "source": "github",
+    "title": "TNT-Likely/PanWatch",
+    "url": "https://github.com/TNT-Likely/PanWatch",
+    "date": "2026-11-22"
+   }
+  ],
+  "pages_checked": [
+   "https://github.com/TNT-Likely/PanWatch/blob/main/README.md",
+   "https://github.com/TNT-Likely/PanWatch/blob/main/SECURITY.md"
+  ],
+  "why": {
+   "kind": "GitHub repo",
+   "matched": "agent",
+   "topics": [
+    "agent",
+    "ai-agent",
+    "trading-agents"
+   ],
+   "job": "stock monitoring"
+  },
+  "checks": {
+   "pricing": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "free": {
+    "answer": true,
+    "url": "https://github.com/TNT-Likely/PanWatch",
+    "quote": "Open-source license: MIT (free to use)"
+   },
+   "docs": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "customer": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "result": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "updated": {
+    "answer": true,
+    "url": "https://github.com/TNT-Likely/PanWatch",
+    "quote": "Last code push 2026-11-22"
+   },
+   "no_training": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "security_page": {
+    "answer": true,
+    "url": "https://github.com/TNT-Likely/PanWatch/blob/main/SECURITY.md",
+    "quote": "Public security page / policy"
+   },
+   "certification": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "your_env": {
+    "answer": true,
+    "url": "https://github.com/TNT-Likely/PanWatch/blob/main/README.md",
+    "quote": "PanWatch \u2014 Self-hosted AI stock monitoring English \u7b80\u4f53\u4e2d\u6587 \u65e5\u672c\u8a9e Monitor A-shares, Hong Kong, and U.S."
+   },
+   "audit_logs": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "human_approval": {
+    "answer": true,
+    "url": "https://github.com/TNT-Likely/PanWatch/blob/main/README.md",
+    "quote": "Scan the new QR code with PanWatch, approve the connection on the web, and check that your holdings match."
+   }
+  },
+  "score": 5,
+  "get_it": {
+   "reseller_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "referral_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "hosted_by_maker": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "marketplaces": [],
+   "bring_your_own": [
+    "Docker",
+    "Python package",
+    "npm package"
+   ],
+   "self_host": true,
+   "open_source": true,
+   "listed_managers": [],
+   "listed_resellers": []
+  },
   "rank": 10
  },
  {
@@ -1392,7 +1390,7 @@
    "support-tickets"
   ],
   "type": "Agent",
-  "stars": 309,
+  "stars": 310,
   "star_gain_7d": 9,
   "momentum_basis": "estimated",
   "sources": [
@@ -1525,8 +1523,8 @@
    "data-reports"
   ],
   "type": "Agent",
-  "stars": 73629,
-  "star_gain_7d": 1634,
+  "stars": 73704,
+  "star_gain_7d": 1630,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1537,20 +1535,13 @@
     "source": "github",
     "title": "ZhuLinsen/daily_stock_analysis",
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
    "https://github.com/ZhuLinsen/daily_stock_analysis/blob/main/README.md",
    "https://dsa.zhulinsen.tech",
-   "https://dsa.zhulinsen.tech/pricing",
-   "https://dsa.zhulinsen.tech/security",
-   "https://dsa.zhulinsen.tech/trust",
-   "https://dsa.zhulinsen.tech/privacy",
-   "https://dsa.zhulinsen.tech/docs",
-   "https://dsa.zhulinsen.tech/customers",
-   "https://dsa.zhulinsen.tech/case-studies",
-   "https://dsa.zhulinsen.tech/changelog"
+   "https://dsa.zhulinsen.tech/docs"
   ],
   "why": {
    "kind": "GitHub repo",
@@ -1589,7 +1580,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": false,
@@ -1597,9 +1588,9 @@
     "quote": null
    },
    "security_page": {
-    "answer": true,
-    "url": "https://dsa.zhulinsen.tech/security",
-    "quote": "Public security page / policy"
+    "answer": false,
+    "url": null,
+    "quote": null
    },
    "certification": {
     "answer": false,
@@ -1607,9 +1598,9 @@
     "quote": null
    },
    "your_env": {
-    "answer": false,
-    "url": null,
-    "quote": null
+    "answer": true,
+    "url": "https://dsa.zhulinsen.tech",
+    "quote": "\u2026QUICK START 4 \u00e7\u00a7\u008d\u00e5\u0090\u00af\u00e5\u008a\u00a8\u00e6\u0096\u00b9\u00e5\u00bc\u008f\u00ef\u00bc\u008c\u00e6\u008c\u0089\u00e9\u009c\u0080\u00e9\u0080\u0089\u00e6\u008b\u00a9\u00e9\u0097\u00a8\u00e6\u00a7\u009b \u00e6\u00a1\u008c\u00e9\u009d\u00a2\u00e5\u00ae\u00a2\u00e6\u0088\u00b7\u00e7\u00ab\u00af (0 \u00e4\u00bb\u00a3\u00e7 \u0081) GitHub Actions Docker Compose \u00e6\u009c\u00ac\u00e5\u009c\u00b0 Python Windows / macOS \u00e5\u00ae\u0089\u00e8\u00a3 \u00e5\u008c \u00e5\u00bc\u0080\u00e7\u00ae\u00b1\u00e5\u008d\u00b3\u00e7\u0094\u00a8\u00ef\u00bc\u008c\u00e5\u0086 \u00e7\u00bd\u00ae\u00e5\u00ae\u008c\u00e6\u0095\u00b4\u00e5\u00b7\u00a5\u00e4\u00bd\u009c\u00e5\u008f\u00b0\u00e4\u00b8\u008e\u00e9 \u008d\u00e7\u00bd\u00ae\u00e5\u0090\u0091\u00e5\u00af\u00bc\u00e3\u0080\u0082 \u00e6\u009f\u00a5\u00e7\u009c\u008b\u00e5\u00af\u00b9\u00e5\u00ba\u0094\u00e6\u0096\u0087\u00e6\u00a1\u00a3 \u00e2\u0086\u0092 Electron \u00e6\u00a1\u008c\u00e9\u009d\u00a2\u00e7\u00ab\u00af \u00c2\u00b7 Windows / macOS \u00e4\u00b8\u0080\u00e9\u0094\u00ae\u00e5\u00ae\u0089\u00e8\u00a3 \u00e5\u00a4\u008d\u00e5\u0088\u00b6\u00e5\u0091\u00bd\u00e4\u00bb\u00a4 1."
    },
    "audit_logs": {
     "answer": false,
@@ -1646,7 +1637,7 @@
     "Docker",
     "Python package"
    ],
-   "self_host": false,
+   "self_host": true,
    "open_source": true,
    "listed_managers": [],
    "listed_resellers": []
@@ -1666,8 +1657,8 @@
    "teaching"
   ],
   "type": "Agent",
-  "stars": 44072,
-  "star_gain_7d": 1208,
+  "stars": 44132,
+  "star_gain_7d": 1205,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1678,7 +1669,7 @@
     "source": "github",
     "title": "THU-MAIC/OpenMAIC",
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
@@ -1720,7 +1711,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": false,
@@ -1783,140 +1774,6 @@
    "listed_resellers": []
   },
   "rank": 13
- },
- {
-  "id": "tnt-likely-panwatch",
-  "name": "PanWatch",
-  "owner": "TNT-Likely",
-  "description": "PanWatch \u2014 AI stock monitoring for A-shares, HK & US markets, powered by TradingAgents. Portfolio insights, real-time alerts & automated reports.\uff5c\u76ef\u76d8\u4fa0\uff1a\u8986\u76d6 A\u80a1/\u6e2f\u80a1/\u7f8e\u80a1\u7684 AI \u76ef\u76d8\u3001\u6301\u4ed3\u5206\u6790\u3001\u5b9e\u65f6\u63d0\u9192\u4e0e\u81ea\u52a8\u62a5\u544a\u3002",
-  "url": "https://github.com/TNT-Likely/PanWatch#quick-start",
-  "repo_url": "https://github.com/TNT-Likely/PanWatch",
-  "license": "MIT",
-  "industry": "Finance",
-  "jobs": [
-   "markets"
-  ],
-  "type": "Agent",
-  "stars": 2556,
-  "star_gain_7d": 59,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "TNT-Likely/PanWatch",
-    "url": "https://github.com/TNT-Likely/PanWatch",
-    "date": "2026-11-21"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/TNT-Likely/PanWatch/blob/main/README.md",
-   "https://github.com/TNT-Likely/PanWatch/blob/main/SECURITY.md"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "agent",
-   "topics": [
-    "agent",
-    "ai-agent",
-    "trading-agents"
-   ],
-   "job": "stock monitoring"
-  },
-  "checks": {
-   "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "free": {
-    "answer": true,
-    "url": "https://github.com/TNT-Likely/PanWatch",
-    "quote": "Open-source license: MIT (free to use)"
-   },
-   "docs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/TNT-Likely/PanWatch",
-    "quote": "Last code push 2026-11-21"
-   },
-   "no_training": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://github.com/TNT-Likely/PanWatch/blob/main/SECURITY.md",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": true,
-    "url": "https://github.com/TNT-Likely/PanWatch/blob/main/README.md",
-    "quote": "PanWatch \u2014 Self-hosted AI stock monitoring English \u7b80\u4f53\u4e2d\u6587 \u65e5\u672c\u8a9e Monitor A-shares, Hong Kong, and U.S."
-   },
-   "audit_logs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "human_approval": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   }
-  },
-  "score": 4,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "marketplaces": [],
-   "bring_your_own": [
-    "Docker",
-    "Python package",
-    "npm package"
-   ],
-   "self_host": true,
-   "open_source": true,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 14
  },
  {
   "id": "lethe044-hermes-life-os",
@@ -2050,7 +1907,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 15
+  "rank": 14
  },
  {
   "id": "wangzan101-mika",
@@ -2065,8 +1922,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 9413,
-  "star_gain_7d": 2849,
+  "stars": 9610,
+  "star_gain_7d": 2787,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -2077,7 +1934,7 @@
     "source": "github",
     "title": "wangzan101/Mika",
     "url": "https://github.com/wangzan101/Mika",
-    "date": "2026-11-21"
+    "date": "2026-11-22"
    }
   ],
   "pages_checked": [
@@ -2122,7 +1979,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/wangzan101/Mika",
-    "quote": "Last code push 2026-11-21"
+    "quote": "Last code push 2026-11-22"
    },
    "no_training": {
     "answer": false,
@@ -2179,7 +2036,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 16
+  "rank": 15
  },
  {
   "id": "hugohe3-ppt-master",
@@ -2195,7 +2052,7 @@
    "presentations"
   ],
   "type": "Agent",
-  "stars": 79059,
+  "stars": 79262,
   "star_gain_7d": 1597,
   "momentum_basis": "estimated",
   "sources": [
@@ -2314,13 +2171,13 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 17
+  "rank": 16
  },
  {
   "id": "getagentmall-com",
   "name": "AgentMall: Reliable commerce execution for personal agents",
   "owner": null,
-  "description": "One API for your personal agent to search, build a basket and check out at real stores, with spending limits, vaulted credentials and a virtual card per agent.",
+  "description": "One API for your personal agent to search, build a basket and check out at real stores, with spending limits and vaulted credentials.",
   "url": "https://getagentmall.com",
   "repo_url": null,
   "license": null,
@@ -2469,6 +2326,6 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 18
+  "rank": 17
  }
 ]
