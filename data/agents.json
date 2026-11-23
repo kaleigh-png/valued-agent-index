@@ -13,7 +13,7 @@
    "content"
   ],
   "type": "Agent",
-  "stars": 1094,
+  "stars": 1104,
   "star_gain_7d": 25,
   "momentum_basis": "estimated",
   "sources": [
@@ -25,7 +25,7 @@
     "source": "github",
     "title": "warmbly/warmbly",
     "url": "https://github.com/warmbly/warmbly",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -71,7 +71,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/warmbly/warmbly",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": true,
@@ -149,8 +149,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 5833,
-  "star_gain_7d": 249,
+  "stars": 5834,
+  "star_gain_7d": 247,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -294,8 +294,8 @@
    "travel"
   ],
   "type": "Agent",
-  "stars": 395045,
-  "star_gain_7d": 7611,
+  "stars": 395113,
+  "star_gain_7d": 7588,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -306,7 +306,7 @@
     "source": "github",
     "title": "openclaw/openclaw",
     "url": "https://github.com/openclaw/openclaw",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -353,7 +353,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/openclaw/openclaw",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": false,
@@ -433,8 +433,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 30149,
-  "star_gain_7d": 725,
+  "stars": 30153,
+  "star_gain_7d": 722,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -704,8 +704,8 @@
    "household"
   ],
   "type": "Agent",
-  "stars": 38692,
-  "star_gain_7d": 1151,
+  "stars": 38738,
+  "star_gain_7d": 1147,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -716,7 +716,7 @@
     "source": "github",
     "title": "HKUDS/Vibe-Trading",
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -763,7 +763,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": false,
@@ -842,8 +842,8 @@
    "invoices"
   ],
   "type": "Agent",
-  "stars": 3062,
-  "star_gain_7d": 368,
+  "stars": 3257,
+  "star_gain_7d": 384,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -854,7 +854,7 @@
     "source": "github",
     "title": "n8n-io/nod",
     "url": "https://github.com/n8n-io/nod",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -902,7 +902,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/n8n-io/nod",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": false,
@@ -970,7 +970,7 @@
   "id": "shy3130-tick-stock-panel",
   "name": "tick-stock-panel",
   "owner": "shy3130",
-  "description": "TSP\u81ea\u6258\u7ba1\u3001\u96f6\u8fd0\u7ef4\u7684 A \u80a1\u300c\u81ea\u5efa\u7b56\u7565 + \u76d1\u63a7 + \u56de\u6d4b\u300d\u91cf\u5316\u5de5\u4f5c\u53f0  | LLM\u80fd\u529b\u9a71\u4f7f\u7b56\u7565\u5b9a\u5236+\u4e2a\u80a1\u5206\u6790+\u590d\u76d8 | \u81ea\u7531\u63a5\u5165\u7b2c\u4e09\u65b9\u6570\u636e\u6e90\u4e0e\u4e2a\u6027\u5316\u6269\u5c55\u6570\u636e | \u4e2a\u4eba\u5f00\u6e90",
+  "description": "TSP\u81ea\u6258\u7ba1\u3001\u96f6\u8fd0\u7ef4\u7684 A \u80a1\u300c\u81ea\u5efa\u7b56\u7565 + \u76d1\u63a7 + \u56de\u6d4b\u300d\u91cf\u5316\u5de5\u4f5c\u53f0  | LLM\u80fd\u529b\u9a71\u4f7f\u7b56\u7565\u5b9a\u5236+\u4e2a\u80a1\u5206\u6790+\u590d\u76d8 | \u81ea\u7531\u63a5\u5165\u7b2c\u4e09\u65b9\u6570\u636e\u6e90\u4e0e\u4e2a\u6027\u5316\u6269\u5c55\u6570\u636e ",
   "url": "https://tsp.shy313.com",
   "repo_url": "https://github.com/shy3130/tick-stock-panel",
   "license": "MIT",
@@ -979,8 +979,8 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 8184,
-  "star_gain_7d": 364,
+  "stars": 8215,
+  "star_gain_7d": 362,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -991,7 +991,7 @@
     "source": "github",
     "title": "shy3130/tick-stock-panel",
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -1043,7 +1043,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": false,
@@ -1117,8 +1117,8 @@
    "crm"
   ],
   "type": "Agent",
-  "stars": 5518,
-  "star_gain_7d": 186,
+  "stars": 5529,
+  "star_gain_7d": 185,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1129,7 +1129,7 @@
     "source": "github",
     "title": "melgarafael/DeskcommCRM",
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -1175,7 +1175,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": false,
@@ -1256,7 +1256,7 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 2558,
+  "stars": 2563,
   "star_gain_7d": 59,
   "momentum_basis": "estimated",
   "sources": [
@@ -1390,7 +1390,7 @@
    "support-tickets"
   ],
   "type": "Agent",
-  "stars": 310,
+  "stars": 311,
   "star_gain_7d": 9,
   "momentum_basis": "estimated",
   "sources": [
@@ -1523,7 +1523,7 @@
    "data-reports"
   ],
   "type": "Agent",
-  "stars": 73704,
+  "stars": 73983,
   "star_gain_7d": 1630,
   "momentum_basis": "estimated",
   "sources": [
@@ -1535,7 +1535,7 @@
     "source": "github",
     "title": "ZhuLinsen/daily_stock_analysis",
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -1580,7 +1580,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": false,
@@ -1657,8 +1657,8 @@
    "teaching"
   ],
   "type": "Agent",
-  "stars": 44132,
-  "star_gain_7d": 1205,
+  "stars": 44291,
+  "star_gain_7d": 1204,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1669,7 +1669,7 @@
     "source": "github",
     "title": "THU-MAIC/OpenMAIC",
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -1711,7 +1711,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": false,
@@ -1922,8 +1922,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 9610,
-  "star_gain_7d": 2787,
+  "stars": 9757,
+  "star_gain_7d": 2698,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1934,7 +1934,7 @@
     "source": "github",
     "title": "wangzan101/Mika",
     "url": "https://github.com/wangzan101/Mika",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
    }
   ],
   "pages_checked": [
@@ -1979,7 +1979,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/wangzan101/Mika",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-23"
    },
    "no_training": {
     "answer": false,
@@ -2052,8 +2052,8 @@
    "presentations"
   ],
   "type": "Agent",
-  "stars": 79262,
-  "star_gain_7d": 1597,
+  "stars": 79563,
+  "star_gain_7d": 1598,
   "momentum_basis": "estimated",
   "sources": [
    "github"
