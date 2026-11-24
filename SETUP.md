@@ -47,9 +47,13 @@ An Upstash Redis store on the Vercel project (`vercel integration add upstash`).
 `corrections`, `submissions:<kind>` (lists), `pulse:emails` (set).
 
 ## Providers
-`site/providers.json`: slug, name, kinds (`managed`, `host`), `operator: true` for the
-company that runs the site, `jobs` (ids from `data/jobs.json`), website, contact, and the
-agent ids they work with. Edit it by hand after confirming a claim; it is never scraped.
+`site/providers.json`, one entry per provider: slug, name, kinds (`managed`, `host`),
+`operator: true` for the company that runs the site, `description` (one line), `icp` (who they
+work with, one line), `url`, `contact`, `jobs` (ids from `data/jobs.json`), `agents` (ids of
+listed agents they run) and `agents_run` (`{name, who, url}` for agents not on the list). Every
+provider page has the same sections and nothing else: who they are, jobs they take on, agents
+they run, and approved stories that name them as the provider. Edit the file by hand after
+confirming a claim; it is never scraped.
 
 ## The job map
 `data/jobs.json`: functions, industries (tags) and jobs, each with a regex that tags agents

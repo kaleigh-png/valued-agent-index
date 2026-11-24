@@ -4,7 +4,7 @@
 import { db, limiter, json, ipOf, str, isEmail } from './_store.js';
 
 const KINDS = {
-  claim:  { fields: { role: 80, agent: 80, co: 120, em: 200, web: 300, about: 600, ev: 2000, run_ok: 10 }, required: ['co', 'em'], email: 'em' },
+  claim:  { fields: { role: 80, agent: 80, co: 120, em: 200, web: 300, icp: 160, about: 600, ev: 2000, run_ok: 10 }, required: ['co', 'em'], email: 'em' },
   manage: { fields: { magent: 80, mjob: 1000, mco: 120, mem: 200, providers: 300 }, required: ['mjob', 'mco', 'mem', 'providers'], email: 'mem' },
   pulse:  { fields: { pem: 200, pind: 80 }, required: ['pem'], email: 'pem' },
 };

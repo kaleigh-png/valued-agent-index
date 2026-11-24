@@ -7,6 +7,10 @@
       "host"
     ],
     "operator": true,
+    "description": "Runs verified AI agents for you inside your own workspace, with a named person behind each one.",
+    "icp": "Government contractors, local agencies and nonprofits, staffing and recruiting teams, MSPs, and small professional-services firms.",
+    "url": "https://brine.ai",
+    "contact": "sales@brine.ai",
     "jobs": [
       "rfps",
       "proposals",
@@ -19,54 +23,8 @@
       "security-questionnaires",
       "content"
     ],
-    "url": "https://brine.ai",
-    "contact": "sales@brine.ai",
-    "tagline": "Verified AI agents, run for you inside your own workspace, with a named person behind each one.",
-    "stats": [
-      {
-        "v": "<1¢",
-        "k": "per applicant screened, down from $67"
-      },
-      {
-        "v": "6 hrs",
-        "k": "for an internal audit, down from 48"
-      },
-      {
-        "v": "6",
-        "k": "checks before an agent goes live"
-      },
-      {
-        "v": "3 mo",
-        "k": "hands-on support with every customer"
-      }
-    ],
-    "steps": [
-      {
-        "t": "Name the job",
-        "d": "One repetitive job you want off your plate."
-      },
-      {
-        "t": "Get matched",
-        "d": "A verified agent built by people who do that job."
-      },
-      {
-        "t": "It proves itself",
-        "d": "Runs on your real work before going live."
-      },
-      {
-        "t": "Someone owns it",
-        "d": "A named lead handles fixes and updates."
-      }
-    ],
-    "checks": [
-      "Does the job",
-      "A second model checks every run",
-      "Sees only what you give it",
-      "Every action logged",
-      "Spend is capped",
-      "A named lead owns it"
-    ],
-    "agents_list": [
+    "agents": [],
+    "agents_run": [
       {
         "name": "Proposal & capture writer",
         "who": "Government contractors"
@@ -107,11 +65,6 @@
         "name": "Marketing manager",
         "who": "Small firms and founders"
       }
-    ],
-    "partner": {
-      "t": "Built an agent?",
-      "d": "Brine lists it, finds the customers, and pays you 80% of every sale."
-    },
-    "agents": []
+    ]
   }
 ]

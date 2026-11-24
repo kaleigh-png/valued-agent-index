@@ -10,7 +10,7 @@ name: Agent index
 
 on:
   schedule:
-    - cron: "17 10 * * *"   # every day at 10:17 UTC (5:17 AM Eastern)
+    - cron: "1 5 * * *"   # 05:01 UTC = 12:01 AM Eastern in winter, 1:01 AM in summer. GitHub may start it late.
   workflow_dispatch:
     inputs:
       publish:
