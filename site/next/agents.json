@@ -1,5 +1,148 @@
 [
  {
+  "id": "foreactlabs-openexecutive",
+  "name": "OpenExecutive",
+  "owner": "ForeactLabs",
+  "description": "AI-powered virtual executive team \u2014 a single coherent executive persona backed by 8 specialist agents (FastAPI + Next.js).",
+  "url": "https://openexecutive.ai",
+  "repo_url": "https://github.com/ForeactLabs/OpenExecutive",
+  "license": "Apache-2.0",
+  "industry": "General purpose",
+  "jobs": [
+   "assistant"
+  ],
+  "type": "Agent",
+  "stars": 5841,
+  "star_gain_7d": 245,
+  "momentum_basis": "estimated",
+  "sources": [
+   "github"
+  ],
+  "mentions_14d": 1,
+  "mention_links": [
+   {
+    "source": "github",
+    "title": "ForeactLabs/OpenExecutive",
+    "url": "https://github.com/ForeactLabs/OpenExecutive",
+    "date": "2026-11-25"
+   }
+  ],
+  "pages_checked": [
+   "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
+   "https://github.com/ForeactLabs/OpenExecutive/blob/main/SECURITY.md",
+   "https://openexecutive.ai",
+   "https://openexecutive.ai/pricing",
+   "https://openexecutive.ai/security",
+   "https://openexecutive.ai/trust",
+   "https://openexecutive.ai/privacy",
+   "https://openexecutive.ai/docs",
+   "https://openexecutive.ai/customers",
+   "https://openexecutive.ai/case-studies",
+   "https://openexecutive.ai/changelog"
+  ],
+  "why": {
+   "kind": "GitHub repo",
+   "matched": "agents",
+   "topics": [
+    "multi-agent"
+   ],
+   "job": "executive team"
+  },
+  "checks": {
+   "pricing": {
+    "answer": true,
+    "url": "https://openexecutive.ai",
+    "quote": "Starter $100 / month For one owner getting started."
+   },
+   "free": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive",
+    "quote": "Open-source license: APACHE-2.0 (free to use)"
+   },
+   "docs": {
+    "answer": true,
+    "url": "https://openexecutive.ai/docs",
+    "quote": "Public documentation page"
+   },
+   "customer": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "result": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "updated": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive",
+    "quote": "Last code push 2026-11-25"
+   },
+   "no_training": {
+    "answer": true,
+    "url": "https://openexecutive.ai/privacy",
+    "quote": "We do not use Customer Content to train AI models, and we do not sell or share personal data for cross-context behavioral advertising."
+   },
+   "security_page": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/SECURITY.md",
+    "quote": "Public security page / policy"
+   },
+   "certification": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "your_env": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
+    "quote": "\u2026Self-hosted\u2026"
+   },
+   "audit_logs": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
+    "quote": "\u2026Audit logging \u2502\u2026"
+   },
+   "human_approval": {
+    "answer": true,
+    "url": "https://openexecutive.ai/privacy",
+    "quote": "If this ever changes, we will update this policy and give you any rights the law requires, including the right to request human review."
+   }
+  },
+  "score": 9,
+  "get_it": {
+   "reseller_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "referral_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "hosted_by_maker": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
+    "quote": "A managed cloud offering is coming (https://openexecutive.ai), where you can get access without deploying anything yourself."
+   },
+   "marketplaces": [],
+   "bring_your_own": [
+    "MCP server",
+    "Claude Code",
+    "Cursor",
+    "Docker",
+    "npm package"
+   ],
+   "self_host": true,
+   "open_source": true,
+   "listed_managers": [],
+   "listed_resellers": []
+  },
+  "rank": 1
+ },
+ {
   "id": "warmbly-warmbly",
   "name": "warmbly",
   "owner": "warmbly",
@@ -13,7 +156,7 @@
    "content"
   ],
   "type": "Agent",
-  "stars": 1104,
+  "stars": 1108,
   "star_gain_7d": 25,
   "momentum_basis": "estimated",
   "sources": [
@@ -25,7 +168,7 @@
     "source": "github",
     "title": "warmbly/warmbly",
     "url": "https://github.com/warmbly/warmbly",
-    "date": "2026-11-23"
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
@@ -71,7 +214,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/warmbly/warmbly",
-    "quote": "Last code push 2026-11-23"
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": true,
@@ -134,23 +277,23 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 1
+  "rank": 2
  },
  {
-  "id": "foreactlabs-openexecutive",
-  "name": "OpenExecutive",
-  "owner": "ForeactLabs",
-  "description": "AI-powered virtual executive team \u2014 a single coherent executive persona backed by 8 specialist agents (FastAPI + Next.js).",
-  "url": "https://openexecutive.ai",
-  "repo_url": "https://github.com/ForeactLabs/OpenExecutive",
-  "license": "Apache-2.0",
+  "id": "db-aeon-joshu-oss",
+  "name": "joshu-oss",
+  "owner": "db-aeon",
+  "description": "Open source AI assistant based on Hermes",
+  "url": "https://www.joshu.me",
+  "repo_url": "https://github.com/db-aeon/joshu-oss",
+  "license": "NOASSERTION",
   "industry": "General purpose",
   "jobs": [
    "assistant"
   ],
   "type": "Agent",
-  "stars": 5834,
-  "star_gain_7d": 247,
+  "stars": 119,
+  "star_gain_7d": 5,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -159,46 +302,41 @@
   "mention_links": [
    {
     "source": "github",
-    "title": "ForeactLabs/OpenExecutive",
-    "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "date": "2026-11-22"
+    "title": "db-aeon/joshu-oss",
+    "url": "https://github.com/db-aeon/joshu-oss",
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
-   "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
-   "https://github.com/ForeactLabs/OpenExecutive/blob/main/SECURITY.md",
-   "https://openexecutive.ai",
-   "https://openexecutive.ai/pricing",
-   "https://openexecutive.ai/security",
-   "https://openexecutive.ai/trust",
-   "https://openexecutive.ai/privacy",
-   "https://openexecutive.ai/docs",
-   "https://openexecutive.ai/customers",
-   "https://openexecutive.ai/case-studies",
-   "https://openexecutive.ai/changelog"
+   "https://github.com/db-aeon/joshu-oss/blob/main/README.md",
+   "https://www.joshu.me",
+   "https://www.joshu.me/security",
+   "https://www.joshu.me/privacy",
+   "https://www.joshu.me/docs"
   ],
   "why": {
    "kind": "GitHub repo",
-   "matched": "agents",
+   "matched": "assistant",
    "topics": [
-    "multi-agent"
+    "agentic-ai",
+    "hermes-agent"
    ],
-   "job": "executive team"
+   "job": "executive assistant"
   },
   "checks": {
    "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
+    "answer": true,
+    "url": "https://www.joshu.me",
+    "quote": "$75 / month After your 14-day free trial."
    },
    "free": {
     "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "quote": "Open-source license: APACHE-2.0 (free to use)"
+    "url": "https://github.com/db-aeon/joshu-oss/blob/main/README.md",
+    "quote": "If you would rather not run a server, joshu.me hosts a box for you with a 14-day free trial."
    },
    "docs": {
     "answer": true,
-    "url": "https://openexecutive.ai/docs",
+    "url": "https://www.joshu.me/docs",
     "quote": "Public documentation page"
    },
    "customer": {
@@ -213,17 +351,17 @@
    },
    "updated": {
     "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "quote": "Last code push 2026-11-22"
+    "url": "https://github.com/db-aeon/joshu-oss",
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": true,
-    "url": "https://openexecutive.ai/privacy",
-    "quote": "We do not use Customer Content to train AI models, and we do not sell or share personal data for cross-context behavioral advertising."
+    "url": "https://www.joshu.me",
+    "quote": "We do not train models on your data."
    },
    "security_page": {
     "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/SECURITY.md",
+    "url": "https://www.joshu.me/security",
     "quote": "Public security page / policy"
    },
    "certification": {
@@ -233,157 +371,18 @@
    },
    "your_env": {
     "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
-    "quote": "\u2026Self-hosted\u2026"
+    "url": "https://github.com/db-aeon/joshu-oss/blob/main/README.md",
+    "quote": "\u2026[Self-host\u2026"
    },
    "audit_logs": {
-    "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
-    "quote": "\u2026Audit logging \u2502\u2026"
+    "answer": false,
+    "url": null,
+    "quote": null
    },
    "human_approval": {
-    "answer": true,
-    "url": "https://openexecutive.ai/privacy",
-    "quote": "If this ever changes, we will update this policy and give you any rights the law requires, including the right to request human review."
-   }
-  },
-  "score": 8,
-  "get_it": {
-   "reseller_program": {
     "answer": false,
     "url": null,
     "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
-    "quote": "A managed cloud offering is coming (https://openexecutive.ai), where you can get access without deploying anything yourself."
-   },
-   "marketplaces": [],
-   "bring_your_own": [
-    "MCP server",
-    "Claude Code",
-    "Cursor",
-    "Docker",
-    "npm package"
-   ],
-   "self_host": true,
-   "open_source": true,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 2
- },
- {
-  "id": "openclaw-openclaw",
-  "name": "openclaw",
-  "owner": "openclaw",
-  "description": "The AI that really does things. Any OS. Any Platform. The lobster way. \ud83e\udd9e ",
-  "url": "https://openclaw.ai",
-  "repo_url": "https://github.com/openclaw/openclaw",
-  "license": "MIT",
-  "industry": "Personal & everyday",
-  "jobs": [
-   "assistant",
-   "inbox-calendar",
-   "travel"
-  ],
-  "type": "Agent",
-  "stars": 395113,
-  "star_gain_7d": 7588,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "openclaw/openclaw",
-    "url": "https://github.com/openclaw/openclaw",
-    "date": "2026-11-23"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/openclaw/openclaw/blob/main/README.md",
-   "https://github.com/openclaw/openclaw/blob/main/SECURITY.md",
-   "https://openclaw.ai",
-   "https://openclaw.ai/security",
-   "https://openclaw.ai/trust",
-   "https://openclaw.ai/privacy",
-   "https://openclaw.ai/docs"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "assistant",
-   "topics": [],
-   "job": "does things"
-  },
-  "checks": {
-   "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "free": {
-    "answer": true,
-    "url": "https://github.com/openclaw/openclaw",
-    "quote": "Open-source license: MIT (free to use)"
-   },
-   "docs": {
-    "answer": true,
-    "url": "https://github.com/openclaw/openclaw/blob/main/README.md",
-    "quote": "One Gateway runs it as a personal claw on a laptop or as a shared multiplayer claw; configuration is the only difference."
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/openclaw/openclaw",
-    "quote": "Last code push 2026-11-23"
-   },
-   "no_training": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://github.com/openclaw/openclaw/blob/main/SECURITY.md",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": true,
-    "url": "https://github.com/openclaw/openclaw/blob/main/SECURITY.md",
-    "quote": "Limit container capabilities with --cap-drop=ALL Example secure Docker run: bash docker run --read-only --cap-drop=ALL \\ -v openclaw-data:/app/data \\ openclaw/openclaw:latest Security Scanning OpenClaw uses several security and release-validation layers."
-   },
-   "audit_logs": {
-    "answer": true,
-    "url": "https://openclaw.ai/docs",
-    "quote": "\u2026run history\u2026"
-   },
-   "human_approval": {
-    "answer": true,
-    "url": "https://github.com/openclaw/openclaw/blob/main/SECURITY.md",
-    "quote": "Set autoApproveChanges: false globally or per agent to require human approval for delegated persistent changes."
    }
   },
   "score": 7,
@@ -394,27 +393,21 @@
     "quote": null
    },
    "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
+    "answer": true,
+    "url": "https://www.joshu.me",
+    "quote": "\u2026AI scheduling assistant Best AI executive assistants Lindy alternatives Company About News Affiliate program Contact Open source Portable Soul Works with Email Phone Desktop Gmail Outlook Google Calendar Calendly Slack Microsoft Teams Zoom Telegram WhatsApp Google Drive Dropbox Notion HubSpot Salesforce All connectors\u2026"
    },
    "hosted_by_maker": {
     "answer": true,
-    "url": "https://openclaw.ai/docs",
-    "quote": "Developers, power users, and teams who want an AI assistant they can message from anywhere \u2014 without giving up control of their data or relying on a hosted service."
+    "url": "https://www.joshu.me",
+    "quote": "\u2026executive assistant that does the work joshu Connectors Data Guides Manual News Pricing \u2605 119 Start free trial Open menu \u52a9\u624b Assistant in Japanese Joshu , the AI executive assistant that books the meeting ."
    },
    "marketplaces": [],
    "bring_your_own": [
-    "MCP server",
-    "Claude Code",
-    "Cursor",
-    "Codex",
-    "Docker",
-    "REST API",
-    "npm package"
+    "Docker"
    ],
    "self_host": true,
-   "open_source": true,
+   "open_source": false,
    "listed_managers": [],
    "listed_resellers": []
   },
@@ -433,8 +426,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 30153,
-  "star_gain_7d": 722,
+  "stars": 30159,
+  "star_gain_7d": 718,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -553,143 +546,6 @@
   "rank": 4
  },
  {
-  "id": "zoharbabin-due-diligence-agents",
-  "name": "due-diligence-agents",
-  "owner": "zoharbabin",
-  "description": "Legal flags a risk. Finance flags another. We connect and cite. Open-source forensic M&A due diligence: 13 AI agents read your data room across 9 domains (Legal, Finance, Commercial, Tech, Cyber, HR, Tax, Regulatory, ESG), cross-reference findings no single reviewer connects, and trace every one to an exact page & quote.",
-  "url": "https://zoharbabin.com/due-diligence-agents/",
-  "repo_url": "https://github.com/zoharbabin/due-diligence-agents",
-  "license": "Apache-2.0",
-  "industry": "Finance",
-  "jobs": [
-   "contracts",
-   "diligence",
-   "compliance"
-  ],
-  "type": "Agent",
-  "stars": 139,
-  "star_gain_7d": 4,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "zoharbabin/due-diligence-agents",
-    "url": "https://github.com/zoharbabin/due-diligence-agents",
-    "date": "2026-11-17"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/zoharbabin/due-diligence-agents/blob/main/README.md",
-   "https://github.com/zoharbabin/due-diligence-agents/blob/main/SECURITY.md",
-   "https://zoharbabin.com"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "agents",
-   "topics": [
-    "ai-agents",
-    "multi-agent"
-   ],
-   "job": "legal"
-  },
-  "checks": {
-   "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "free": {
-    "answer": true,
-    "url": "https://github.com/zoharbabin/due-diligence-agents",
-    "quote": "Open-source license: APACHE-2.0 (free to use)"
-   },
-   "docs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/zoharbabin/due-diligence-agents",
-    "quote": "Last code push 2026-11-17"
-   },
-   "no_training": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://github.com/zoharbabin/due-diligence-agents/blob/main/SECURITY.md",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": true,
-    "url": "https://github.com/zoharbabin/due-diligence-agents/blob/main/README.md",
-    "quote": "\u2026(SOC2/ISO27001),\u2026"
-   },
-   "your_env": {
-    "answer": true,
-    "url": "https://github.com/zoharbabin/due-diligence-agents/blob/main/README.md",
-    "quote": "You run it yourself, on your own infrastructure and LLM account."
-   },
-   "audit_logs": {
-    "answer": true,
-    "url": "https://github.com/zoharbabin/due-diligence-agents/blob/main/README.md",
-    "quote": "\u2026audit trail\u2026"
-   },
-   "human_approval": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   }
-  },
-  "score": 6,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "marketplaces": [],
-   "bring_your_own": [
-    "MCP server",
-    "Claude Code",
-    "Docker",
-    "Python package"
-   ],
-   "self_host": true,
-   "open_source": true,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 5
- },
- {
   "id": "hkuds-vibe-trading",
   "name": "Vibe-Trading",
   "owner": "HKUDS",
@@ -704,8 +560,8 @@
    "household"
   ],
   "type": "Agent",
-  "stars": 38738,
-  "star_gain_7d": 1147,
+  "stars": 38884,
+  "star_gain_7d": 1143,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -716,7 +572,7 @@
     "source": "github",
     "title": "HKUDS/Vibe-Trading",
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "date": "2026-11-23"
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
@@ -763,7 +619,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "quote": "Last code push 2026-11-23"
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": false,
@@ -826,7 +682,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 6
+  "rank": 5
  },
  {
   "id": "n8n-io-nod",
@@ -842,8 +698,8 @@
    "invoices"
   ],
   "type": "Agent",
-  "stars": 3257,
-  "star_gain_7d": 384,
+  "stars": 3439,
+  "star_gain_7d": 394,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -854,7 +710,7 @@
     "source": "github",
     "title": "n8n-io/nod",
     "url": "https://github.com/n8n-io/nod",
-    "date": "2026-11-23"
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
@@ -902,7 +758,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/n8n-io/nod",
-    "quote": "Last code push 2026-11-23"
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": false,
@@ -964,7 +820,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 7
+  "rank": 6
  },
  {
   "id": "shy3130-tick-stock-panel",
@@ -979,8 +835,8 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 8215,
-  "star_gain_7d": 362,
+  "stars": 8276,
+  "star_gain_7d": 361,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -991,7 +847,7 @@
     "source": "github",
     "title": "shy3130/tick-stock-panel",
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "date": "2026-11-23"
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
@@ -1043,7 +899,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "quote": "Last code push 2026-11-23"
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": false,
@@ -1102,7 +958,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 8
+  "rank": 7
  },
  {
   "id": "melgarafael-deskcommcrm",
@@ -1117,8 +973,8 @@
    "crm"
   ],
   "type": "Agent",
-  "stars": 5529,
-  "star_gain_7d": 185,
+  "stars": 5544,
+  "star_gain_7d": 184,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1129,7 +985,7 @@
     "source": "github",
     "title": "melgarafael/DeskcommCRM",
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "date": "2026-11-23"
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
@@ -1175,7 +1031,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "quote": "Last code push 2026-11-23"
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": false,
@@ -1241,7 +1097,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 9
+  "rank": 8
  },
  {
   "id": "tnt-likely-panwatch",
@@ -1256,7 +1112,7 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 2563,
+  "stars": 2568,
   "star_gain_7d": 59,
   "momentum_basis": "estimated",
   "sources": [
@@ -1268,7 +1124,7 @@
     "source": "github",
     "title": "TNT-Likely/PanWatch",
     "url": "https://github.com/TNT-Likely/PanWatch",
-    "date": "2026-11-22"
+    "date": "2026-11-24"
    }
   ],
   "pages_checked": [
@@ -1314,7 +1170,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/TNT-Likely/PanWatch",
-    "quote": "Last code push 2026-11-22"
+    "quote": "Last code push 2026-11-24"
    },
    "no_training": {
     "answer": false,
@@ -1375,7 +1231,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 10
+  "rank": 9
  },
  {
   "id": "huabeitech-agent-desk",
@@ -1390,7 +1246,7 @@
    "support-tickets"
   ],
   "type": "Agent",
-  "stars": 311,
+  "stars": 312,
   "star_gain_7d": 9,
   "momentum_basis": "estimated",
   "sources": [
@@ -1507,7 +1363,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 11
+  "rank": 10
  },
  {
   "id": "zhulinsen-daily-stock-analysis",
@@ -1523,8 +1379,8 @@
    "data-reports"
   ],
   "type": "Agent",
-  "stars": 73983,
-  "star_gain_7d": 1630,
+  "stars": 74533,
+  "star_gain_7d": 1634,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1535,7 +1391,7 @@
     "source": "github",
     "title": "ZhuLinsen/daily_stock_analysis",
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "date": "2026-11-23"
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
@@ -1580,7 +1436,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "quote": "Last code push 2026-11-23"
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": false,
@@ -1642,7 +1498,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 12
+  "rank": 11
  },
  {
   "id": "thu-maic-openmaic",
@@ -1657,8 +1513,8 @@
    "teaching"
   ],
   "type": "Agent",
-  "stars": 44291,
-  "star_gain_7d": 1204,
+  "stars": 44425,
+  "star_gain_7d": 1200,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1669,7 +1525,7 @@
     "source": "github",
     "title": "THU-MAIC/OpenMAIC",
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "date": "2026-11-23"
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
@@ -1711,7 +1567,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "quote": "Last code push 2026-11-23"
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": false,
@@ -1773,7 +1629,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 13
+  "rank": 12
  },
  {
   "id": "lethe044-hermes-life-os",
@@ -1801,7 +1657,7 @@
     "source": "github",
     "title": "Lethe044/hermes-life-os",
     "url": "https://github.com/Lethe044/hermes-life-os",
-    "date": "2026-11-18"
+    "date": "2026-11-24"
    }
   ],
   "pages_checked": [
@@ -1846,7 +1702,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/Lethe044/hermes-life-os",
-    "quote": "Last code push 2026-11-18"
+    "quote": "Last code push 2026-11-24"
    },
    "no_training": {
     "answer": false,
@@ -1907,7 +1763,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 14
+  "rank": 13
  },
  {
   "id": "wangzan101-mika",
@@ -1922,8 +1778,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 9757,
-  "star_gain_7d": 2698,
+  "stars": 9961,
+  "star_gain_7d": 2580,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -1934,7 +1790,7 @@
     "source": "github",
     "title": "wangzan101/Mika",
     "url": "https://github.com/wangzan101/Mika",
-    "date": "2026-11-23"
+    "date": "2026-11-25"
    }
   ],
   "pages_checked": [
@@ -1979,7 +1835,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/wangzan101/Mika",
-    "quote": "Last code push 2026-11-23"
+    "quote": "Last code push 2026-11-25"
    },
    "no_training": {
     "answer": false,
@@ -2036,7 +1892,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 15
+  "rank": 14
  },
  {
   "id": "hugohe3-ppt-master",
@@ -2052,8 +1908,8 @@
    "presentations"
   ],
   "type": "Agent",
-  "stars": 79563,
-  "star_gain_7d": 1598,
+  "stars": 80157,
+  "star_gain_7d": 1602,
   "momentum_basis": "estimated",
   "sources": [
    "github"
@@ -2171,7 +2027,7 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 16
+  "rank": 15
  },
  {
   "id": "getagentmall-com",
@@ -2326,6 +2182,6 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 17
+  "rank": 16
  }
 ]
