@@ -1,148 +1,5 @@
 [
  {
-  "id": "foreactlabs-openexecutive",
-  "name": "OpenExecutive",
-  "owner": "ForeactLabs",
-  "description": "AI-powered virtual executive team \u2014 a single coherent executive persona backed by 8 specialist agents (FastAPI + Next.js).",
-  "url": "https://openexecutive.ai",
-  "repo_url": "https://github.com/ForeactLabs/OpenExecutive",
-  "license": "Apache-2.0",
-  "industry": "General purpose",
-  "jobs": [
-   "assistant"
-  ],
-  "type": "Agent",
-  "stars": 5841,
-  "star_gain_7d": 245,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "ForeactLabs/OpenExecutive",
-    "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "date": "2026-11-25"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
-   "https://github.com/ForeactLabs/OpenExecutive/blob/main/SECURITY.md",
-   "https://openexecutive.ai",
-   "https://openexecutive.ai/pricing",
-   "https://openexecutive.ai/security",
-   "https://openexecutive.ai/trust",
-   "https://openexecutive.ai/privacy",
-   "https://openexecutive.ai/docs",
-   "https://openexecutive.ai/customers",
-   "https://openexecutive.ai/case-studies",
-   "https://openexecutive.ai/changelog"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "agents",
-   "topics": [
-    "multi-agent"
-   ],
-   "job": "executive team"
-  },
-  "checks": {
-   "pricing": {
-    "answer": true,
-    "url": "https://openexecutive.ai",
-    "quote": "Starter $100 / month For one owner getting started."
-   },
-   "free": {
-    "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "quote": "Open-source license: APACHE-2.0 (free to use)"
-   },
-   "docs": {
-    "answer": true,
-    "url": "https://openexecutive.ai/docs",
-    "quote": "Public documentation page"
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "quote": "Last code push 2026-11-25"
-   },
-   "no_training": {
-    "answer": true,
-    "url": "https://openexecutive.ai/privacy",
-    "quote": "We do not use Customer Content to train AI models, and we do not sell or share personal data for cross-context behavioral advertising."
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/SECURITY.md",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
-    "quote": "\u2026Self-hosted\u2026"
-   },
-   "audit_logs": {
-    "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
-    "quote": "\u2026Audit logging \u2502\u2026"
-   },
-   "human_approval": {
-    "answer": true,
-    "url": "https://openexecutive.ai/privacy",
-    "quote": "If this ever changes, we will update this policy and give you any rights the law requires, including the right to request human review."
-   }
-  },
-  "score": 9,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": true,
-    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
-    "quote": "A managed cloud offering is coming (https://openexecutive.ai), where you can get access without deploying anything yourself."
-   },
-   "marketplaces": [],
-   "bring_your_own": [
-    "MCP server",
-    "Claude Code",
-    "Cursor",
-    "Docker",
-    "npm package"
-   ],
-   "self_host": true,
-   "open_source": true,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 1
- },
- {
   "id": "warmbly-warmbly",
   "name": "warmbly",
   "owner": "warmbly",
@@ -156,9 +13,9 @@
    "content"
   ],
   "type": "Agent",
-  "stars": 1108,
-  "star_gain_7d": 25,
-  "momentum_basis": "estimated",
+  "stars": 1111,
+  "star_gain_7d": 41,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -168,7 +25,7 @@
     "source": "github",
     "title": "warmbly/warmbly",
     "url": "https://github.com/warmbly/warmbly",
-    "date": "2026-11-25"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -214,7 +71,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/warmbly/warmbly",
-    "quote": "Last code push 2026-11-25"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": true,
@@ -277,6 +134,149 @@
    "listed_managers": [],
    "listed_resellers": []
   },
+  "rank": 1
+ },
+ {
+  "id": "foreactlabs-openexecutive",
+  "name": "OpenExecutive",
+  "owner": "ForeactLabs",
+  "description": "AI-powered virtual executive team \u2014 a single coherent executive persona backed by 8 specialist agents (FastAPI + Next.js).",
+  "url": "https://openexecutive.ai",
+  "repo_url": "https://github.com/ForeactLabs/OpenExecutive",
+  "license": "Apache-2.0",
+  "industry": "General purpose",
+  "jobs": [
+   "assistant"
+  ],
+  "type": "Agent",
+  "stars": 5844,
+  "star_gain_7d": 12,
+  "momentum_basis": "measured",
+  "sources": [
+   "github"
+  ],
+  "mentions_14d": 1,
+  "mention_links": [
+   {
+    "source": "github",
+    "title": "ForeactLabs/OpenExecutive",
+    "url": "https://github.com/ForeactLabs/OpenExecutive",
+    "date": "2026-11-26"
+   }
+  ],
+  "pages_checked": [
+   "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
+   "https://github.com/ForeactLabs/OpenExecutive/blob/main/SECURITY.md",
+   "https://openexecutive.ai",
+   "https://openexecutive.ai/pricing",
+   "https://openexecutive.ai/security",
+   "https://openexecutive.ai/trust",
+   "https://openexecutive.ai/privacy",
+   "https://openexecutive.ai/docs",
+   "https://openexecutive.ai/customers",
+   "https://openexecutive.ai/case-studies",
+   "https://openexecutive.ai/changelog"
+  ],
+  "why": {
+   "kind": "GitHub repo",
+   "matched": "agents",
+   "topics": [
+    "multi-agent"
+   ],
+   "job": "executive team"
+  },
+  "checks": {
+   "pricing": {
+    "answer": true,
+    "url": "https://openexecutive.ai",
+    "quote": "Starter $100 / month For one owner getting started."
+   },
+   "free": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive",
+    "quote": "Open-source license: APACHE-2.0 (free to use)"
+   },
+   "docs": {
+    "answer": true,
+    "url": "https://openexecutive.ai/docs",
+    "quote": "Public documentation page"
+   },
+   "customer": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "result": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "updated": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive",
+    "quote": "Last code push 2026-11-26"
+   },
+   "no_training": {
+    "answer": true,
+    "url": "https://openexecutive.ai/privacy",
+    "quote": "We do not use Customer Content to train AI models, and we do not sell or share personal data for cross-context behavioral advertising."
+   },
+   "security_page": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/SECURITY.md",
+    "quote": "Public security page / policy"
+   },
+   "certification": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "your_env": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
+    "quote": "\u2026Self-hosted\u2026"
+   },
+   "audit_logs": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
+    "quote": "\u2026Audit logging \u2502\u2026"
+   },
+   "human_approval": {
+    "answer": true,
+    "url": "https://openexecutive.ai/privacy",
+    "quote": "If this ever changes, we will update this policy and give you any rights the law requires, including the right to request human review."
+   }
+  },
+  "score": 9,
+  "get_it": {
+   "reseller_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "referral_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "hosted_by_maker": {
+    "answer": true,
+    "url": "https://github.com/ForeactLabs/OpenExecutive/blob/main/README.md",
+    "quote": "A managed cloud offering is coming (https://openexecutive.ai), where you can get access without deploying anything yourself."
+   },
+   "marketplaces": [],
+   "bring_your_own": [
+    "MCP server",
+    "Claude Code",
+    "Cursor",
+    "Docker",
+    "npm package"
+   ],
+   "self_host": true,
+   "open_source": true,
+   "listed_managers": [],
+   "listed_resellers": []
+  },
   "rank": 2
  },
  {
@@ -292,9 +292,9 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 119,
-  "star_gain_7d": 5,
-  "momentum_basis": "estimated",
+  "stars": 120,
+  "star_gain_7d": 0,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -400,7 +400,7 @@
    "hosted_by_maker": {
     "answer": true,
     "url": "https://www.joshu.me",
-    "quote": "\u2026executive assistant that does the work joshu Connectors Data Guides Manual News Pricing \u2605 119 Start free trial Open menu \u52a9\u624b Assistant in Japanese Joshu , the AI executive assistant that books the meeting ."
+    "quote": "\u2026executive assistant that does the work joshu Connectors Data Guides Manual News Pricing \u2605 120 Start free trial Open menu \u52a9\u624b Assistant in Japanese Joshu , the AI executive assistant that books the meeting ."
    },
    "marketplaces": [],
    "bring_your_own": [
@@ -426,9 +426,9 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 30159,
-  "star_gain_7d": 718,
-  "momentum_basis": "estimated",
+  "stars": 30170,
+  "star_gain_7d": 29,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -546,6 +546,144 @@
   "rank": 4
  },
  {
+  "id": "n8n-io-nod",
+  "name": "nod",
+  "owner": "n8n-io",
+  "description": "Open source personal agent with its own computer. It chases invoices, preps your calls and cancels trials on real websites, and asks before it acts. Runs on your machine with the model you choose. By n8n.",
+  "url": "https://nod.n8n.io/",
+  "repo_url": "https://github.com/n8n-io/nod",
+  "license": "Apache-2.0",
+  "industry": "Finance",
+  "jobs": [
+   "assistant",
+   "invoices"
+  ],
+  "type": "Agent",
+  "stars": 3818,
+  "star_gain_7d": 1213,
+  "momentum_basis": "measured",
+  "sources": [
+   "github"
+  ],
+  "mentions_14d": 1,
+  "mention_links": [
+   {
+    "source": "github",
+    "title": "n8n-io/nod",
+    "url": "https://github.com/n8n-io/nod",
+    "date": "2026-11-26"
+   }
+  ],
+  "pages_checked": [
+   "https://github.com/n8n-io/nod/blob/main/README.md",
+   "https://github.com/n8n-io/nod/blob/main/SECURITY.md",
+   "https://nod.n8n.io",
+   "https://nod.n8n.io/docs"
+  ],
+  "why": {
+   "kind": "GitHub repo",
+   "matched": "agent",
+   "topics": [
+    "agents",
+    "ai-agent",
+    "personal-agent"
+   ],
+   "job": "personal agent"
+  },
+  "checks": {
+   "pricing": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "free": {
+    "answer": true,
+    "url": "https://github.com/n8n-io/nod",
+    "quote": "Open-source license: APACHE-2.0 (free to use)"
+   },
+   "docs": {
+    "answer": true,
+    "url": "https://github.com/n8n-io/nod/blob/main/README.md",
+    "quote": "\u2026href=\"https://nod.n8n.io/docs/ gh-dark-mode-only\""
+   },
+   "customer": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "result": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "updated": {
+    "answer": true,
+    "url": "https://github.com/n8n-io/nod",
+    "quote": "Last code push 2026-11-26"
+   },
+   "no_training": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "security_page": {
+    "answer": true,
+    "url": "https://github.com/n8n-io/nod/blob/main/SECURITY.md",
+    "quote": "Public security page / policy"
+   },
+   "certification": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "your_env": {
+    "answer": true,
+    "url": "https://github.com/n8n-io/nod/blob/main/README.md",
+    "quote": "Run it on a Mac mini or your own server to keep it always on."
+   },
+   "audit_logs": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "human_approval": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   }
+  },
+  "score": 5,
+  "get_it": {
+   "reseller_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "referral_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "hosted_by_maker": {
+    "answer": true,
+    "url": "https://github.com/n8n-io/nod/blob/main/README.md",
+    "quote": "A hosted version is next on the list."
+   },
+   "marketplaces": [],
+   "bring_your_own": [
+    "MCP server",
+    "n8n",
+    "Docker",
+    "REST API"
+   ],
+   "self_host": true,
+   "open_source": true,
+   "listed_managers": [],
+   "listed_resellers": []
+  },
+  "rank": 5
+ },
+ {
   "id": "hkuds-vibe-trading",
   "name": "Vibe-Trading",
   "owner": "HKUDS",
@@ -560,9 +698,9 @@
    "household"
   ],
   "type": "Agent",
-  "stars": 38884,
-  "star_gain_7d": 1143,
-  "momentum_basis": "estimated",
+  "stars": 38966,
+  "star_gain_7d": 441,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -572,7 +710,7 @@
     "source": "github",
     "title": "HKUDS/Vibe-Trading",
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "date": "2026-11-25"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -619,7 +757,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "quote": "Last code push 2026-11-25"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": false,
@@ -682,144 +820,6 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 5
- },
- {
-  "id": "n8n-io-nod",
-  "name": "nod",
-  "owner": "n8n-io",
-  "description": "Open source personal agent with its own computer. It chases invoices, preps your calls and cancels trials on real websites, and asks before it acts. Runs on your machine with the model you choose. By n8n.",
-  "url": "https://nod.n8n.io/",
-  "repo_url": "https://github.com/n8n-io/nod",
-  "license": "Apache-2.0",
-  "industry": "Finance",
-  "jobs": [
-   "assistant",
-   "invoices"
-  ],
-  "type": "Agent",
-  "stars": 3439,
-  "star_gain_7d": 394,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "n8n-io/nod",
-    "url": "https://github.com/n8n-io/nod",
-    "date": "2026-11-25"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/n8n-io/nod/blob/main/README.md",
-   "https://github.com/n8n-io/nod/blob/main/SECURITY.md",
-   "https://nod.n8n.io",
-   "https://nod.n8n.io/docs"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "agent",
-   "topics": [
-    "agents",
-    "ai-agent",
-    "personal-agent"
-   ],
-   "job": "personal agent"
-  },
-  "checks": {
-   "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "free": {
-    "answer": true,
-    "url": "https://github.com/n8n-io/nod",
-    "quote": "Open-source license: APACHE-2.0 (free to use)"
-   },
-   "docs": {
-    "answer": true,
-    "url": "https://github.com/n8n-io/nod/blob/main/README.md",
-    "quote": "\u2026href=\"https://nod.n8n.io/docs/ gh-dark-mode-only\""
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/n8n-io/nod",
-    "quote": "Last code push 2026-11-25"
-   },
-   "no_training": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://github.com/n8n-io/nod/blob/main/SECURITY.md",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": true,
-    "url": "https://github.com/n8n-io/nod/blob/main/README.md",
-    "quote": "Run it on a Mac mini or your own server to keep it always on."
-   },
-   "audit_logs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "human_approval": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   }
-  },
-  "score": 5,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": true,
-    "url": "https://github.com/n8n-io/nod/blob/main/README.md",
-    "quote": "A hosted version is next on the list."
-   },
-   "marketplaces": [],
-   "bring_your_own": [
-    "MCP server",
-    "n8n",
-    "Docker",
-    "REST API"
-   ],
-   "self_host": true,
-   "open_source": true,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
   "rank": 6
  },
  {
@@ -835,9 +835,9 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 8276,
-  "star_gain_7d": 361,
-  "momentum_basis": "estimated",
+  "stars": 8315,
+  "star_gain_7d": 228,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -847,7 +847,7 @@
     "source": "github",
     "title": "shy3130/tick-stock-panel",
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "date": "2026-11-25"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -899,7 +899,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "quote": "Last code push 2026-11-25"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": false,
@@ -973,9 +973,9 @@
    "crm"
   ],
   "type": "Agent",
-  "stars": 5544,
-  "star_gain_7d": 184,
-  "momentum_basis": "estimated",
+  "stars": 5564,
+  "star_gain_7d": 82,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -985,7 +985,7 @@
     "source": "github",
     "title": "melgarafael/DeskcommCRM",
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "date": "2026-11-25"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -1031,7 +1031,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "quote": "Last code push 2026-11-25"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": false,
@@ -1112,9 +1112,9 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 2568,
-  "star_gain_7d": 59,
-  "momentum_basis": "estimated",
+  "stars": 2572,
+  "star_gain_7d": 36,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -1124,7 +1124,7 @@
     "source": "github",
     "title": "TNT-Likely/PanWatch",
     "url": "https://github.com/TNT-Likely/PanWatch",
-    "date": "2026-11-24"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -1170,7 +1170,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/TNT-Likely/PanWatch",
-    "quote": "Last code push 2026-11-24"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": false,
@@ -1246,9 +1246,9 @@
    "support-tickets"
   ],
   "type": "Agent",
-  "stars": 312,
-  "star_gain_7d": 9,
-  "momentum_basis": "estimated",
+  "stars": 313,
+  "star_gain_7d": 4,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -1379,9 +1379,9 @@
    "data-reports"
   ],
   "type": "Agent",
-  "stars": 74533,
-  "star_gain_7d": 1634,
-  "momentum_basis": "estimated",
+  "stars": 74731,
+  "star_gain_7d": 1266,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -1391,7 +1391,7 @@
     "source": "github",
     "title": "ZhuLinsen/daily_stock_analysis",
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "date": "2026-11-25"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -1436,7 +1436,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "quote": "Last code push 2026-11-25"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": false,
@@ -1513,9 +1513,9 @@
    "teaching"
   ],
   "type": "Agent",
-  "stars": 44425,
-  "star_gain_7d": 1200,
-  "momentum_basis": "estimated",
+  "stars": 44491,
+  "star_gain_7d": 544,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -1525,7 +1525,7 @@
     "source": "github",
     "title": "THU-MAIC/OpenMAIC",
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "date": "2026-11-25"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -1567,7 +1567,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "quote": "Last code push 2026-11-25"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": false,
@@ -1646,8 +1646,8 @@
   ],
   "type": "Agent",
   "stars": 247,
-  "star_gain_7d": 7,
-  "momentum_basis": "estimated",
+  "star_gain_7d": 2,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -1766,135 +1766,6 @@
   "rank": 13
  },
  {
-  "id": "wangzan101-mika",
-  "name": "Mika",
-  "owner": "wangzan101",
-  "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
-  "url": "https://mikaphone.com",
-  "repo_url": "https://github.com/wangzan101/Mika",
-  "license": "Apache-2.0",
-  "industry": "General purpose",
-  "jobs": [
-   "assistant"
-  ],
-  "type": "Agent",
-  "stars": 9961,
-  "star_gain_7d": 2580,
-  "momentum_basis": "estimated",
-  "sources": [
-   "github"
-  ],
-  "mentions_14d": 1,
-  "mention_links": [
-   {
-    "source": "github",
-    "title": "wangzan101/Mika",
-    "url": "https://github.com/wangzan101/Mika",
-    "date": "2026-11-25"
-   }
-  ],
-  "pages_checked": [
-   "https://github.com/wangzan101/Mika/blob/main/README.md",
-   "https://mikaphone.com"
-  ],
-  "why": {
-   "kind": "GitHub repo",
-   "matched": "agent",
-   "topics": [
-    "ai-agent",
-    "mobile-agent"
-   ],
-   "job": "get things done"
-  },
-  "checks": {
-   "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "free": {
-    "answer": true,
-    "url": "https://github.com/wangzan101/Mika",
-    "quote": "Open-source license: APACHE-2.0 (free to use)"
-   },
-   "docs": {
-    "answer": true,
-    "url": "https://github.com/wangzan101/Mika/blob/main/README.md",
-    "quote": "Send this to the AI agent on it and it will set everything up for you: Follow https://github.com/wangzan101/Mika/blob/main/docs/install-with-agent.en.md to install Mika on the Android phone connected over USB. What it can do \u2026"
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": true,
-    "url": "https://github.com/wangzan101/Mika",
-    "quote": "Last code push 2026-11-25"
-   },
-   "no_training": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "security_page": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "audit_logs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "human_approval": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   }
-  },
-  "score": 3,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "marketplaces": [],
-   "bring_your_own": [],
-   "self_host": false,
-   "open_source": true,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 14
- },
- {
   "id": "hugohe3-ppt-master",
   "name": "ppt-master",
   "owner": "hugohe3",
@@ -1908,9 +1779,9 @@
    "presentations"
   ],
   "type": "Agent",
-  "stars": 80157,
-  "star_gain_7d": 1602,
-  "momentum_basis": "estimated",
+  "stars": 80444,
+  "star_gain_7d": 1887,
+  "momentum_basis": "measured",
   "sources": [
    "github"
   ],
@@ -2027,7 +1898,275 @@
    "listed_managers": [],
    "listed_resellers": []
   },
+  "rank": 14
+ },
+ {
+  "id": "wangzan101-mika",
+  "name": "Mika",
+  "owner": "wangzan101",
+  "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
+  "url": "https://mikaphone.com",
+  "repo_url": "https://github.com/wangzan101/Mika",
+  "license": "Apache-2.0",
+  "industry": "General purpose",
+  "jobs": [
+   "assistant"
+  ],
+  "type": "Agent",
+  "stars": 10055,
+  "star_gain_7d": 898,
+  "momentum_basis": "measured",
+  "sources": [
+   "github"
+  ],
+  "mentions_14d": 1,
+  "mention_links": [
+   {
+    "source": "github",
+    "title": "wangzan101/Mika",
+    "url": "https://github.com/wangzan101/Mika",
+    "date": "2026-11-26"
+   }
+  ],
+  "pages_checked": [
+   "https://github.com/wangzan101/Mika/blob/main/README.md",
+   "https://mikaphone.com"
+  ],
+  "why": {
+   "kind": "GitHub repo",
+   "matched": "agent",
+   "topics": [
+    "ai-agent",
+    "mobile-agent"
+   ],
+   "job": "get things done"
+  },
+  "checks": {
+   "pricing": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "free": {
+    "answer": true,
+    "url": "https://github.com/wangzan101/Mika",
+    "quote": "Open-source license: APACHE-2.0 (free to use)"
+   },
+   "docs": {
+    "answer": true,
+    "url": "https://github.com/wangzan101/Mika/blob/main/README.md",
+    "quote": "Send this to the AI agent on it and it will set everything up for you: Follow https://github.com/wangzan101/Mika/blob/main/docs/install-with-agent.en.md to install Mika on the Android phone connected over USB. What it can do \u2026"
+   },
+   "customer": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "result": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "updated": {
+    "answer": true,
+    "url": "https://github.com/wangzan101/Mika",
+    "quote": "Last code push 2026-11-26"
+   },
+   "no_training": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "security_page": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "certification": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "your_env": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "audit_logs": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "human_approval": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   }
+  },
+  "score": 3,
+  "get_it": {
+   "reseller_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "referral_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "hosted_by_maker": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "marketplaces": [],
+   "bring_your_own": [],
+   "self_host": false,
+   "open_source": true,
+   "listed_managers": [],
+   "listed_resellers": []
+  },
   "rank": 15
+ },
+ {
+  "id": "europeanbusinessmagazine-com",
+  "name": "One moment, please...",
+  "owner": null,
+  "description": "AI agents ask better questions than KPMG accountants in audit trial",
+  "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
+  "repo_url": null,
+  "license": null,
+  "industry": "General purpose",
+  "jobs": [
+   "compliance"
+  ],
+  "type": "Agent",
+  "stars": null,
+  "star_gain_7d": null,
+  "momentum_basis": null,
+  "sources": [
+   "hackernews"
+  ],
+  "mentions_14d": 3,
+  "mention_links": [
+   {
+    "source": "hackernews",
+    "title": "AI agents ask better questions than KPMG accountants in audit trial",
+    "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
+    "date": "2026-11-18"
+   },
+   {
+    "source": "hackernews",
+    "title": "AI agents ask better questions than KPMG accountants in audit trial",
+    "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
+    "date": "2026-11-18"
+   }
+  ],
+  "pages_checked": [
+   "https://europeanbusinessmagazine.com",
+   "https://europeanbusinessmagazine.com/pricing",
+   "https://europeanbusinessmagazine.com/security",
+   "https://europeanbusinessmagazine.com/trust",
+   "https://europeanbusinessmagazine.com/privacy",
+   "https://europeanbusinessmagazine.com/docs",
+   "https://europeanbusinessmagazine.com/customers",
+   "https://europeanbusinessmagazine.com/case-studies",
+   "https://europeanbusinessmagazine.com/changelog"
+  ],
+  "why": {
+   "kind": "product site",
+   "matched": "agents",
+   "topics": [],
+   "job": "audit"
+  },
+  "checks": {
+   "pricing": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "free": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "docs": {
+    "answer": true,
+    "url": "https://europeanbusinessmagazine.com/docs",
+    "quote": "Public documentation page"
+   },
+   "customer": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "result": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "updated": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "no_training": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "security_page": {
+    "answer": true,
+    "url": "https://europeanbusinessmagazine.com/security",
+    "quote": "Public security page / policy"
+   },
+   "certification": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "your_env": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "audit_logs": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "human_approval": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   }
+  },
+  "score": 2,
+  "get_it": {
+   "reseller_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "referral_program": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "hosted_by_maker": {
+    "answer": false,
+    "url": null,
+    "quote": null
+   },
+   "marketplaces": [],
+   "bring_your_own": [],
+   "self_host": false,
+   "open_source": false,
+   "listed_managers": [],
+   "listed_resellers": []
+  },
+  "rank": 16
  },
  {
   "id": "getagentmall-com",
@@ -2096,9 +2235,9 @@
   },
   "checks": {
    "pricing": {
-    "answer": true,
-    "url": "https://getagentmall.com/pricing",
-    "quote": "$20 /mo 25 concurrent sessions 120 min session duration Sign up Most popular Startup For teams scaling browser agents in production."
+    "answer": false,
+    "url": null,
+    "quote": null
    },
    "free": {
     "answer": false,
@@ -2156,7 +2295,7 @@
     "quote": "4:12 Muse Need AA batteries, the big pack Three at Target, all in stock: Energizer MAX AA, 20 pack $19.99 Duracell Coppertop AA, 20 $21.49 up&up AA, 20 pack $14.99 Approve the exact basket Checkout is bound to the reviewed items and total."
    }
   },
-  "score": 2,
+  "score": 1,
   "get_it": {
    "reseller_program": {
     "answer": false,
@@ -2182,6 +2321,6 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 16
+  "rank": 17
  }
 ]
