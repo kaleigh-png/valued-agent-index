@@ -13,8 +13,8 @@
    "content"
   ],
   "type": "Agent",
-  "stars": 1111,
-  "star_gain_7d": 41,
+  "stars": 1113,
+  "star_gain_7d": 33,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -25,7 +25,7 @@
     "source": "github",
     "title": "warmbly/warmbly",
     "url": "https://github.com/warmbly/warmbly",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -71,7 +71,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/warmbly/warmbly",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": true,
@@ -149,8 +149,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 5844,
-  "star_gain_7d": 12,
+  "stars": 5846,
+  "star_gain_7d": 11,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -161,7 +161,7 @@
     "source": "github",
     "title": "ForeactLabs/OpenExecutive",
     "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -214,7 +214,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ForeactLabs/OpenExecutive",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": true,
@@ -426,8 +426,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 30170,
-  "star_gain_7d": 29,
+  "stars": 30174,
+  "star_gain_7d": 30,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -438,7 +438,7 @@
     "source": "github",
     "title": "sipeed/picoclaw",
     "url": "https://github.com/sipeed/picoclaw",
-    "date": "2026-11-20"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -481,7 +481,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/sipeed/picoclaw",
-    "quote": "Last code push 2026-11-20"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": false,
@@ -559,8 +559,8 @@
    "invoices"
   ],
   "type": "Agent",
-  "stars": 3818,
-  "star_gain_7d": 1213,
+  "stars": 4189,
+  "star_gain_7d": 1391,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -571,7 +571,7 @@
     "source": "github",
     "title": "n8n-io/nod",
     "url": "https://github.com/n8n-io/nod",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -619,7 +619,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/n8n-io/nod",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": false,
@@ -698,7 +698,7 @@
    "household"
   ],
   "type": "Agent",
-  "stars": 38966,
+  "stars": 39051,
   "star_gain_7d": 441,
   "momentum_basis": "measured",
   "sources": [
@@ -710,7 +710,7 @@
     "source": "github",
     "title": "HKUDS/Vibe-Trading",
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -757,7 +757,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": false,
@@ -835,8 +835,8 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 8315,
-  "star_gain_7d": 228,
+  "stars": 8346,
+  "star_gain_7d": 235,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -847,7 +847,7 @@
     "source": "github",
     "title": "shy3130/tick-stock-panel",
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -899,7 +899,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/shy3130/tick-stock-panel",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": false,
@@ -973,8 +973,8 @@
    "crm"
   ],
   "type": "Agent",
-  "stars": 5564,
-  "star_gain_7d": 82,
+  "stars": 5585,
+  "star_gain_7d": 86,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -985,7 +985,7 @@
     "source": "github",
     "title": "melgarafael/DeskcommCRM",
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -1031,7 +1031,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/melgarafael/DeskcommCRM",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": false,
@@ -1112,8 +1112,8 @@
    "markets"
   ],
   "type": "Agent",
-  "stars": 2572,
-  "star_gain_7d": 36,
+  "stars": 2576,
+  "star_gain_7d": 21,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -1246,8 +1246,8 @@
    "support-tickets"
   ],
   "type": "Agent",
-  "stars": 313,
-  "star_gain_7d": 4,
+  "stars": 314,
+  "star_gain_7d": 5,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -1379,8 +1379,8 @@
    "data-reports"
   ],
   "type": "Agent",
-  "stars": 74731,
-  "star_gain_7d": 1266,
+  "stars": 74976,
+  "star_gain_7d": 1416,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -1391,7 +1391,7 @@
     "source": "github",
     "title": "ZhuLinsen/daily_stock_analysis",
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -1436,7 +1436,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": false,
@@ -1513,8 +1513,8 @@
    "teaching"
   ],
   "type": "Agent",
-  "stars": 44491,
-  "star_gain_7d": 544,
+  "stars": 44842,
+  "star_gain_7d": 821,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -1525,7 +1525,7 @@
     "source": "github",
     "title": "THU-MAIC/OpenMAIC",
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -1567,7 +1567,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/THU-MAIC/OpenMAIC",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": false,
@@ -1646,7 +1646,7 @@
   ],
   "type": "Agent",
   "stars": 247,
-  "star_gain_7d": 2,
+  "star_gain_7d": 1,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -1657,7 +1657,7 @@
     "source": "github",
     "title": "Lethe044/hermes-life-os",
     "url": "https://github.com/Lethe044/hermes-life-os",
-    "date": "2026-11-24"
+    "date": "2026-11-26"
    }
   ],
   "pages_checked": [
@@ -1702,7 +1702,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/Lethe044/hermes-life-os",
-    "quote": "Last code push 2026-11-24"
+    "quote": "Last code push 2026-11-26"
    },
    "no_training": {
     "answer": false,
@@ -1779,8 +1779,8 @@
    "presentations"
   ],
   "type": "Agent",
-  "stars": 80444,
-  "star_gain_7d": 1887,
+  "stars": 80724,
+  "star_gain_7d": 1865,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -1913,8 +1913,8 @@
    "assistant"
   ],
   "type": "Agent",
-  "stars": 10055,
-  "star_gain_7d": 898,
+  "stars": 10116,
+  "star_gain_7d": 824,
   "momentum_basis": "measured",
   "sources": [
    "github"
@@ -1925,7 +1925,7 @@
     "source": "github",
     "title": "wangzan101/Mika",
     "url": "https://github.com/wangzan101/Mika",
-    "date": "2026-11-26"
+    "date": "2026-11-27"
    }
   ],
   "pages_checked": [
@@ -1970,7 +1970,7 @@
    "updated": {
     "answer": true,
     "url": "https://github.com/wangzan101/Mika",
-    "quote": "Last code push 2026-11-26"
+    "quote": "Last code push 2026-11-27"
    },
    "no_training": {
     "answer": false,
@@ -2028,145 +2028,6 @@
    "listed_resellers": []
   },
   "rank": 15
- },
- {
-  "id": "europeanbusinessmagazine-com",
-  "name": "One moment, please...",
-  "owner": null,
-  "description": "AI agents ask better questions than KPMG accountants in audit trial",
-  "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
-  "repo_url": null,
-  "license": null,
-  "industry": "General purpose",
-  "jobs": [
-   "compliance"
-  ],
-  "type": "Agent",
-  "stars": null,
-  "star_gain_7d": null,
-  "momentum_basis": null,
-  "sources": [
-   "hackernews"
-  ],
-  "mentions_14d": 3,
-  "mention_links": [
-   {
-    "source": "hackernews",
-    "title": "AI agents ask better questions than KPMG accountants in audit trial",
-    "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
-    "date": "2026-11-18"
-   },
-   {
-    "source": "hackernews",
-    "title": "AI agents ask better questions than KPMG accountants in audit trial",
-    "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
-    "date": "2026-11-18"
-   }
-  ],
-  "pages_checked": [
-   "https://europeanbusinessmagazine.com",
-   "https://europeanbusinessmagazine.com/pricing",
-   "https://europeanbusinessmagazine.com/security",
-   "https://europeanbusinessmagazine.com/trust",
-   "https://europeanbusinessmagazine.com/privacy",
-   "https://europeanbusinessmagazine.com/docs",
-   "https://europeanbusinessmagazine.com/customers",
-   "https://europeanbusinessmagazine.com/case-studies",
-   "https://europeanbusinessmagazine.com/changelog"
-  ],
-  "why": {
-   "kind": "product site",
-   "matched": "agents",
-   "topics": [],
-   "job": "audit"
-  },
-  "checks": {
-   "pricing": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "free": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "docs": {
-    "answer": true,
-    "url": "https://europeanbusinessmagazine.com/docs",
-    "quote": "Public documentation page"
-   },
-   "customer": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "result": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "updated": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "no_training": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "security_page": {
-    "answer": true,
-    "url": "https://europeanbusinessmagazine.com/security",
-    "quote": "Public security page / policy"
-   },
-   "certification": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "your_env": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "audit_logs": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "human_approval": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   }
-  },
-  "score": 2,
-  "get_it": {
-   "reseller_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "referral_program": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "hosted_by_maker": {
-    "answer": false,
-    "url": null,
-    "quote": null
-   },
-   "marketplaces": [],
-   "bring_your_own": [],
-   "self_host": false,
-   "open_source": false,
-   "listed_managers": [],
-   "listed_resellers": []
-  },
-  "rank": 16
  },
  {
   "id": "getagentmall-com",
@@ -2321,6 +2182,6 @@
    "listed_managers": [],
    "listed_resellers": []
   },
-  "rank": 17
+  "rank": 16
  }
 ]
